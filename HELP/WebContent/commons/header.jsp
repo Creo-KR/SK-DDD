@@ -213,7 +213,7 @@
 			<ul>
 
 
-				<li><a href="#" onclick="return false;"> 정보공개 </a>
+				<li><a href="#" onclick="return false;"> SOOMGO </a>
 
 					<div class="submenu" style="display: none;">
 						<div class="submenu_inner open">
@@ -227,7 +227,7 @@
 
 								<li><a
 									href="/kor/subpage/contents.asp?cn=NUW0DXA8&ln=0RMYQRKK&sb=586TZXLE&tb=6DQ6YAF"
-									target="_self" title="">정보공개제도 안내</a></li>
+									target="_self" title=""> Search</a></li>
 
 
 								<li><a
