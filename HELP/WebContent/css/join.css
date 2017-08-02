@@ -869,10 +869,10 @@ body.eMobilePopup {
 
 .xans-member-join a {
 	display: inline-block;
-	width: 70px;
-	line-height: 20px;
+	width: 150px;
+	line-height: 30px;
 	font-family: Arial;
-	font-size: 11px;
+	font-size: 17px;
 	background: #999;
 	color: #fff;
 	text-align: center;
@@ -1065,7 +1065,7 @@ input, select, textarea {
 select {
 	height: 24px;
 	border: 1px solid #d5d5d5;
-	box-sizing: border-box;
+	box-sizing: content-box;
 	border-radius: 5px;
 }
 
