@@ -37,10 +37,19 @@ $(function(){
 			
 			})
 		});
-	//회원 가입 버튼 눌렀을 때
-	$("#joinButton").on("click", function(){
-		alert("회원 가입 되었습니다.");
-	});
+	//회원 가입 버튼 눌렀을 때, 약관 동의 체크
+	    $("#joinButton").click(function(){    
+            if(!$("#agree_privacy_check0").is(":checked")){
+                alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다.");
+                return false;
+            }else if(!$("#agree_service_check0").is(":checked")){
+                alert("모든 약관에 동의 하셔야 다음 단계로 진행 가능합니다..");
+                return false;
+            }else{
+            	alert("회원 가입 되었습니다.");
+            }
+        });    
+
 	
 	//비밀번호 확인
 	$('#user_passwd_confirm').keyup(function(){ 

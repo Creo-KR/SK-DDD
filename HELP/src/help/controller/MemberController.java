@@ -29,9 +29,16 @@ public class MemberController {
 		System.out.println(service);
 		System.out.println(m_type);
 		ch_m_type = Integer.parseInt(m_type);
+		if(ch_m_type == 0) {
+			return "pages/join";
+		} else {
+			return "pages/joinGosu";
+		}
 		//model.addAttribute("m_type", ch_m_type);
-		return "pages/join";
+		
 	}
+	
+	
 	@RequestMapping(value="addMember.help", method=RequestMethod.POST)
 	public String addMember(
 			MemberVO member, Model model, @RequestParam String m_email2,
@@ -47,8 +54,9 @@ public class MemberController {
 		return "index";
 	}
 	
-	@ResponseBody
+	
 	@RequestMapping(value="idCheckAction.help", method=RequestMethod.POST)
+	@ResponseBody
 	public Integer idCheck(@RequestParam String m_id){
 		System.out.println("들어옴?");
 		System.out.println(m_id);

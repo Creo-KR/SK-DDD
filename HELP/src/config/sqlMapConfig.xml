@@ -4,5 +4,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="MemberVO" type="help.vo.MemberVO"/>
+		<typeAlias alias="GosuVO" type="help.vo.GosuVO"/>
 	</typeAliases>		
 </configuration>
