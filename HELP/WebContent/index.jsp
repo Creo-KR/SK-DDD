@@ -17,9 +17,6 @@
 
 		</div>
 	</div>
-	<!-- //#three end --> <!-- //p_conwrap --> <a
-		href="javascript:void(0);" class="section_next"
-		onclick="move_Right(); return false;">다음</a>
+	<%@ include file="commons/footer.jsp"%>
 </body>
 </html>
-<%@ include file="commons/footer.jsp"%>
