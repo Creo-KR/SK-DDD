@@ -34,7 +34,7 @@
 
 	<filter-mapping>
 		<filter-name>CharacterEncodingFilter</filter-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.help</url-pattern>
 	</filter-mapping>
 	<!-- 인코딩 설정 끝 -->
 	<servlet>
@@ -49,6 +49,6 @@
 
 	<servlet-mapping>
 		<servlet-name>springDispatcherServlet</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.help</url-pattern>
 	</servlet-mapping>
 </web-app>
