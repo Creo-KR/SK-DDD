@@ -14,7 +14,7 @@
 	<div id="container">
 		<div class="main_contents">
 			<!-- 본문영역 -->
-			<form action="addMember.do" method="post">
+			<form action="addMember.help" method="post">
 			<div class="contents_inner">
 				<div class="xans-element- xans-member xans-member-join ">
 
