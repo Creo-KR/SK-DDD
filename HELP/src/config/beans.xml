@@ -8,7 +8,9 @@
 
 	<mvc:annotation-driven />
 
-	<context:component-scan base-package="help" />
+	<context:component-scan base-package="help" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,6 +30,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:help/mapper/memberMapper.xml</value>
+				<value>classpath:help/mapper/chatMapper.xml</value>
 			</list>
 		</property>
 	</bean>
