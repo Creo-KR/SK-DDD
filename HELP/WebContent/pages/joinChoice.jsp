@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%@ include file="commons/header.jsp"%>
+<%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/join.css" />
@@ -23,7 +23,7 @@
 							<h4>불법TM신고</h4>
 							<p>영업점의 불법행위를 증빙할 수 있는 자료를 첨부하시어 신고 접수하시면 조사에 도움이 됩니다.</p>
 							<div class="btn-box">
-								<a href="${pageContext.request.contextPath}/join.jsp?m_type=0" class="btn-green">신고하기</a>
+								<a href="join.do?m_type=0" class="btn-green">신고하기</a>
 							</div>
 						</div>
 					</div>
@@ -56,6 +56,6 @@
 
 	</div>
 	</div>
-	<%@ include file="commons/footer.jsp"%>
+	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>

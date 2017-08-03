@@ -23,7 +23,7 @@ public class HelpJnitTest {
 	@Test
 	public void addMember() {
 		MemberVO member = new MemberVO(
-				1, "prohibit174", "1234", "±èµ¿¿í", "prohibit174@nate.com", "01022611085", 0, 0
+				"prohibit174", "1234", "ê¹€ë™ìš±", "prohibit174@nate.com", "01022611085", 0, 0
 				);
 		
 		session.insert("memberMapper.addMember", member);

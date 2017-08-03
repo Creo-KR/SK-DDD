@@ -5,16 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%@ include file="commons/header.jsp"%>
+<%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/join.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/join.js"></script>
 </head>
 <body>
 	<div id="container">
 		<div class="main_contents">
 			<!-- 본문영역 -->
 			<form action="addMember.do" method="post">
-			<input type="hidden" name="m_type" value="<%=request.getParameter("m_type")%>">
 			<div class="contents_inner">
 				<div class="xans-element- xans-member xans-member-join ">
 
@@ -28,16 +28,20 @@
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>
 									<td><input id="m_id" name="m_id" type="text"
-										height="30px" /> <a href="#none" title="새창 열기"
-										onclick="checkIdLayer('/member/check_id.html')"
-										class="i5a_btn1">ID-Check</a> <br>(영문소문자/숫자, 4~16자)</td>
+										height="30px" /> <a id="m_idcheck"  title="새창 열기" style="cursor: pointer;"
+										class="i5a_btn1">ID-Check</a> <br>(영문소문자/숫자, 4~16자)
+										<br><font id="idcheck" size="2" color="green"></font>
+										</td>
+										
 								</tr>
 								<tr>
 									<th scope="row" style="font-size: 18px;">PASSWORD <img
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>
 									<td><input id="m_pwd" name="m_pwd" fmaxlength="16"
-										value="" type="password" /> <br /> (영문 대소문자/숫자 4자~16자)</td>
+										value="" type="password" /> <br /> (영문 대소문자/숫자 4자~16자)
+										
+									</td>
 								</tr>
 								<tr>
 									<th scope="row" style="font-size: 18px;">PASSWORD CONFIRM
@@ -49,7 +53,9 @@
 										name="user_passwd_confirm" fw-filter="isFill&isMatch[passwd]"
 										fw-label="비밀번호 확인" fw-msg="비밀번호가 일치하지 않습니다."
 										autocomplete="off" maxlength="16" 0="disabled" value=""
-										type="password" /></td>
+										type="password" />
+										<br><p id=errorMsg style="color: red"></p>
+										</td>
 								</tr>
 
 								<tr>
@@ -68,7 +74,7 @@
 									<th scope="row" style="font-size: 18px;">휴대전화 <img
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>
-									<td><select id="mobile1" name="m_tel"
+									<td><select id="m_tel" name="m_tel"
 										fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N"
 										fw-msg="">
 											<option value="010">010</option>
@@ -450,7 +456,7 @@
 
 					<br>
 					<span class="btnArea center smp-btn-reg">
-						<input type="submit" value="submit"/>
+						<input id="joinButton" type="submit" value="submit"/>
 					</span>
 
 				</div>
@@ -458,7 +464,7 @@
 			</div>
 
 		</div>
-		<%@ include file="commons/footer.jsp"%>
+		<%@ include file="../commons/footer.jsp"%>
 </body>
 
 </html>

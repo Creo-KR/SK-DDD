@@ -11,8 +11,22 @@ public class MemberVO {
 	private Integer m_type;
 	private Integer m_active;
 	
-	public MemberVO() {}
-
+	public MemberVO() {
+		
+	}
+	
+	public MemberVO(String m_id, String m_pwd, String m_name, String m_email, String m_tel,
+			Integer m_type, Integer m_active) {
+		super();
+		this.m_id = m_id;
+		this.m_pwd = m_pwd;
+		this.m_name = m_name;
+		this.m_email = m_email;
+		this.m_tel = m_tel;
+		this.m_type = m_type;
+		this.m_active = m_active;
+	}
+	
 	public MemberVO(Integer m_no, String m_id, String m_pwd, String m_name, String m_email, String m_tel,
 			Integer m_type, Integer m_active) {
 		super();
