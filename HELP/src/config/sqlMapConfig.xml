@@ -6,5 +6,6 @@
 		<typeAlias alias="MemberVO" type="help.vo.MemberVO" />
 		<typeAlias alias="ChatVO" type="help.vo.ChatVO" />
 		<typeAlias alias="ChatroomVO" type="help.vo.ChatroomVO" />
-	</typeAliases>
+		<typeAlias alias="GosuVO" type="help.vo.GosuVO"/>
+	</typeAliases>		
 </configuration>

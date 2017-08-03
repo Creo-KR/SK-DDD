@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import help.dao.MemberDAO;
+import help.vo.GosuVO;
 import help.vo.MemberVO;
 
 @Service
@@ -20,6 +21,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int idCheck(String m_id) {
 		return dao.idCheck(m_id);
+	}
+
+	@Override
+	public void addGosu(GosuVO vo) {
+		dao.addGosu(vo);
 	}
 
 }

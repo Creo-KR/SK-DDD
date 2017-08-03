@@ -8,7 +8,15 @@
 		m_no_seq.NEXTVAL, #{m_id}, #{m_pwd}, #{m_name}, #{m_email}, #{m_tel}, #{m_type}, #{m_active}
 	)
 	</insert>
-
+	
+	<insert id="addGosu" parameterType="GosuVO">
+	INSERT INTO gosu(
+		g_no, g_intro, c_no
+	) VALUES (
+		#{g_no}, #{g_intro}, #{c_no}
+	)	
+	</insert>
+	
 	<select id="idCheck" parameterType="String" resultType="int">
 		SELECT count(*) FROM member WHERE m_id = #{m_id}
 	</select>

@@ -17,11 +17,11 @@
 			<div class="l-box">
 				<div id="de-select">
 					<div class="select-box-l box-1">
-						<h3>일반신고 접수</h3>
-						<p>불법TM을 신고하여 주시기 바랍니다.</p>
+						<h3>일반 회원 가입</h3>
+						<p>고수를 통하여 도움을 얻는 목적으로 회원 가입 하는 페이지</p>
 						<div class="select-box-s">
-							<h4>불법TM신고</h4>
-							<p>영업점의 불법행위를 증빙할 수 있는 자료를 첨부하시어 신고 접수하시면 조사에 도움이 됩니다.</p>
+							<h4>일반 회원의 권한</h4>
+							<p>견적서를 작성하고 고수들을 통해 원하는 분야의 답변을 얻을 수 있습니다. 자세한 내용은 고객센터를 통하여 문의 하시기 바랍니다.</p>
 							<div class="btn-box">
 								<a href="join.help?m_type=0" class="btn-green">신고하기</a>
 							</div>
@@ -46,7 +46,7 @@
 								</tr>
 							</table>
 							<div class="btn-box">
-								<a href="${pageContext.request.contextPath}/join.jsp?m_type=1" class="btn-blue">신고하기</a>
+								<a href="join.help?m_type=1" class="btn-blue">신고하기</a>
 							</div>
 						</div>
 					</div>
