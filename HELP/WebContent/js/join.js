@@ -18,7 +18,7 @@ $(function(){
 		
 		$("#m_idcheck").click(function(){
 			$.ajax({
-				url : "idCheckAction.do",
+				url : "idCheckAction.help",
 				type : "post",
 				data : $("#m_id").serialize(),
 				success : function(data){

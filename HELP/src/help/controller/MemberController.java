@@ -19,12 +19,12 @@ public class MemberController {
 	
 	int ch_m_type;
 	
-	@RequestMapping("joinChoice.do")
+	@RequestMapping("joinChoice.help")
 	public String moveJoin() {
 		return "pages/joinChoice";
 	}
 	
-	@RequestMapping(value="join.do", method=RequestMethod.GET)
+	@RequestMapping(value="join.help", method=RequestMethod.GET)
 	public String join(Model model, @RequestParam String m_type) {
 		System.out.println(service);
 		System.out.println(m_type);
@@ -32,7 +32,7 @@ public class MemberController {
 		//model.addAttribute("m_type", ch_m_type);
 		return "pages/join";
 	}
-	@RequestMapping(value="addMember.do", method=RequestMethod.POST)
+	@RequestMapping(value="addMember.help", method=RequestMethod.POST)
 	public String addMember(
 			MemberVO member, Model model, @RequestParam String m_email2,
 			@RequestParam String m_tel2, @RequestParam String m_tel3
@@ -48,7 +48,7 @@ public class MemberController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="idCheckAction.do", method=RequestMethod.POST)
+	@RequestMapping(value="idCheckAction.help", method=RequestMethod.POST)
 	public Integer idCheck(@RequestParam String m_id){
 		System.out.println("들어옴?");
 		System.out.println(m_id);
