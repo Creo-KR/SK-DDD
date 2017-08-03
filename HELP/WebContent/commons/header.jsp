@@ -63,7 +63,7 @@
 					href="#">연장</a></span><a href="#" onclick="logout(); return false;">LOGOUT</a>
 			</div>
 
-			<a href="/eng/" target="_blank" title="새창으로 열기" class="eng">ENGLISH</a>
+			<a href="joinChoice.help" target="_blank" title="새창으로 열기" class="eng">SIGN UP</a>
 			<a
 				href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
 				class="site">SITEMAP</a>
@@ -213,7 +213,7 @@
 			<ul>
 
 
-				<li><a href="#" onclick="return false;"> 정보공개 </a>
+				<li><a href="#" onclick="return false;"> SOOMGO </a>
 
 					<div class="submenu" style="display: none;">
 						<div class="submenu_inner open">
@@ -227,7 +227,7 @@
 
 								<li><a
 									href="/kor/subpage/contents.asp?cn=NUW0DXA8&ln=0RMYQRKK&sb=586TZXLE&tb=6DQ6YAF"
-									target="_self" title="">정보공개제도 안내</a></li>
+									target="_self" title=""> Search</a></li>
 
 
 								<li><a

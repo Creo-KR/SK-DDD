@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chatMapper">
+	<insert id="addChatroom" parameterType="ChatroomVO">
+	INSERT INTO chatroom
+	VALUES (
+		cr_no_seq.NEXTVAL, #{cr_user1}, #{cr_user2}, sysdate, 1, 1
+	)
+	</insert>
+	
+	<select id="getChatroomListByUsers" parameterType="ChatroomVO" resultType="ChatroomVO">
+	SELECT * FROM chatroom
+	WHERE (cr_user1 = #{cr_user1} AND cr_active1 = 1)
+	   OR (cr_user2 = #{cr_user1} AND cr_active2 = 1)
+	ORDER BY cr_lastdate desc
+	</select>
+	
+	<select id="getChatroomByUsers" parameterType="ChatroomVO" resultType="ChatroomVO">
+	SELECT * FROM chatroom
+	WHERE cr_user1 = #{cr_user1} AND cr_active1 = 1
+	  AND cr_user2 = #{cr_user2} AND cr_active2 = 1
+	</select>
+	
+	<update id="updateChatroomDate" parameterType="ChatroomVO">
+	UPDATE chatroom
+	SET cr_lastdate = sysdate
+	WHERE cr_no = #{cr_no}
+	</update>
+	
+	<update id="leaveChatroomUser1" parameterType="ChatroomVO">
+	UPDATE chatroom
+	SET cr_active1 = 0
+	WHERE cr_no = #{cr_no}
+	</update>
+	
+	<update id="leaveChatroomUser2" parameterType="ChatroomVO">
+	UPDATE chatroom
+	SET cr_active2 = 0
+	WHERE cr_no = #{cr_no}
+	</update>
+	
+	<insert id="sendChat" parameterType="ChatVO">
+	INSERT INTO chat
+	VALUES (
+		ch_no_seq.NEXTVAL, #{ch_sender}, #{ch_receiver}, sysdate, #{ch_text}, 1
+	)
+	</insert>
+</mapper>
