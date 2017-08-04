@@ -71,7 +71,7 @@
 			</div>
 			</c:if>
 
-			<a href="joinChoice.help" target="_blank" title="새창으로 열기" class="eng">SIGN UP</a>
+			<a href="joinChoice.help"  class="eng">SIGN UP</a>
 			<a
 				href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
 				class="site">SITEMAP</a>
