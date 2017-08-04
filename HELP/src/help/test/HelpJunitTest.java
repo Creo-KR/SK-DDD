@@ -30,9 +30,9 @@ public class HelpJunitTest {
 	@Test
 	@Ignore
 	public void addMember() {
-		MemberVO member = new MemberVO("prohibit174", "1234", "김동욱", "prohibit174@nate.com", "01022611085", 0, 0);
+		//MemberVO member = new MemberVO("prohibit174", "1234", "김동욱", "prohibit174@nate.com", "01022611085", 0, 0);
 
-		session.insert("memberMapper.addMember", member);
+		//session.insert("memberMapper.addMember", member);
 	}
 
 	@Test
