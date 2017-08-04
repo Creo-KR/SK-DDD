@@ -19,9 +19,9 @@ public class RequestController {
 	
 	//int ch_m_type;
 	
-	@RequestMapping("Request.help")
+	@RequestMapping("request.help")
 	public String moveJoin() {
-		return "pages/Request";
+		return "pages/request";
 	}
 	
 //	@RequestMapping(value="addRequest.help", method=RequestMethod.POST)

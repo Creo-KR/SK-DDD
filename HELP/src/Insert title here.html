@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0028)http://localhost:8087/HELP/# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<title>Insert title here</title>
+
+
+	
+	
+
+
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/common.css">
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/board.css">
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/layout.css">
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/contents.css">
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/main.css">
+<link rel="stylesheet" type="text/css" href="./Insert title here_files/print-preview.css" media="screen">
+
+
+<script src="./Insert title here_files/sptier0.js.다운로드"></script>
+<script src="./Insert title here_files/sptier0-ajax.js.다운로드"></script>
+<script src="./Insert title here_files/sptier0-window.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/jquery-1.8.3.min.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/jquery.easing.1.3.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/m_design.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/jquery.jplayer.min.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/TweenMax.min.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/common.js.다운로드"></script>
+<script type="text/javascript" src="./Insert title here_files/jquery.print-preview.js.다운로드"></script>
+
+<!-- header start -->
+
+<!--로딩 영역-->
+</head><body><div class="loader" style="display: none;" id="loding01"></div>
+<div class="loading_txt" style="display: none" id="load_txt">처리중입니다.</div>
+<div class="shadow2" id="loding02" style="display: none;">가림영역</div>
+<!--로딩 영역-->
+
+
+<div id="header" class="">
+	<!--  class="gnbover" -->
+	<div class="shadow">가림영역</div>
+	<div id="header_inner">
+		<a href="http://localhost:8087/HELP"><h1>H.E.L.P.</h1></a>
+		<!--search start-->
+
+		<div id="util">
+		
+			<div class="certify" id="idlogin">
+				<!-- <a
+					href="/kor/subpage/contents.asp?cn=LD7FXK7U&ln=9FHOE4DJ&sb=1X0P5VNL&tb=RIP5DYR&req_code="
+					class="log">LOGIN</a> -->
+					<a href="http://localhost:8087/HELP/loginForm.help">LOGIN</a>
+			</div>
+			
+
+			
+
+			<a href="http://localhost:8087/HELP/joinChoice.help" class="eng">SIGN UP</a>
+			<a href="http://localhost:8087/kor/subpage/contents.asp?cn=6O5VSISW&amp;ln=P4CEDQYK&amp;sb=5MSNIAR0&amp;tb=59Q7R5X#sitemap" class="site">SITEMAP</a>
+			<div class="search_area">
+				<form action="http://localhost:8087/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ" name="contactfrm" id="contactfrm" method="post">
+					<input type="text" id="searchtext" name="stxt" onkeyup="topsearchSb(event);" maxlength="10" title="검색어 입력"> <a href="http://localhost:8087/HELP/#" onclick="sbsb(); return false;">search</a>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//<![CDATA[
+
+			function countdown(elementName, minutes, seconds) {
+				var element, endTime, hours, mins, msLeft, time;
+
+				function twoDigits(n) {
+					return (n <= 9 ? "0" + n : n);
+				}
+
+				function updateTimer() {
+					msLeft = endTime - (+new Date);
+					if (msLeft < 1000) {
+						if (confirm("통합인증을 연장하시겠습니까?") == true) {
+							document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=renew';
+							return false;
+						} else {
+							document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=logout';
+							return false;
+						}
+					} else {
+						time = new Date(msLeft);
+						hours = time.getUTCHours();
+						mins = time.getUTCMinutes();
+						element.innerHTML = (hours ? hours + ':'
+								+ twoDigits(mins) : mins)
+								+ ':' + twoDigits(time.getUTCSeconds());
+						setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
+					}
+				}
+
+				element = document.getElementById(elementName);
+				endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
+				updateTimer();
+			}
+
+			function logout() {
+				if (confirm("로그아웃을 하시겠습니까?") == true) {
+					//document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=logout';
+					location.href="/HELP/logout.help";
+					return false;
+				}
+			}
+
+			function renew() {
+				if (confirm("통합인증을 연장하시겠습니까?") == true) {
+					document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=renew';
+					return false;
+				}
+			}
+
+			//#####문자체크
+			function char_chk(str, chk) {
+				for (i = 0; i < str.length; i++) {
+					c = str.charAt(i);
+					if (c == chk) {
+						return false;
+					}
+				}
+			}
+
+			function topsearchSb(evt) {
+				var m_Sp = /[$\\@\\#%\^\&\*\(\)\[\]\+\_\{\}\`\~\=\|\<\>]/;
+				var m_val = $("form[name=contactfrm]").find("input[name=stxt]")
+						.val();
+				var strLen = m_val.length;
+				var m_char = m_val.charAt((strLen) - 1);
+
+				if (m_char.search(m_Sp) != -1) {
+					alert("특수문자는 사용할수없습니다.");
+					$("form[name=contactfrm]").find("input[name=stxt]").val("");
+					$("form[name=contactfrm]").find("input[name=stxt]").focus();
+					return false;
+				}
+
+				if (char_chk($("form[name=contactfrm]")
+						.find("input[name=stxt]").val(), "'") == false) {
+					alert("\n검색어는 '을 포함할 수 없습니다.");
+					$("form[name=contactfrm]").find("input[name=stxt]").val("");
+					$("form[name=contactfrm]").find("input[name=stxt]").focus();
+					return;
+				}
+
+				var keyCode = evt.which ? evt.which : event.keyCode;
+				if (keyCode == 13) {
+
+					sbsb();
+
+				}
+			}
+
+			function sbsb() {
+				var m_Sp = /[$\\@\\#%\^\&\*\(\)\[\]\+\_\{\}\`\~\=\|\<\>]/;
+				var m_val = $("form[name=contactfrm]").find("input[name=stxt]")
+						.val();
+				var strLen = m_val.length;
+				var m_char = m_val.charAt((strLen) - 1);
+
+				if (m_char.search(m_Sp) != -1) {
+					alert("특수문자는 사용할수없습니다.");
+					$("form[name=contactfrm]").find("input[name=stxt]").val("");
+					$("form[name=contactfrm]").find("input[name=stxt]").focus();
+					return false;
+				}
+
+				if (char_chk($("form[name=contactfrm]")
+						.find("input[name=stxt]").val(), "'") == false) {
+					alert("\n검색어는 '을 포함할 수 없습니다.");
+					$("form[name=contactfrm]").find("input[name=stxt]").val("");
+					$("form[name=contactfrm]").find("input[name=stxt]").focus();
+					return;
+				}
+
+				if ($("form[name=contactfrm]").find("input[name=stxt]").val()
+						.split(" ").join("") == "") {
+					alert("검색어를 입력해주세요.");
+					$("form[name=contactfrm]").find("input[name=stxt]").val("");
+					$("form[name=contactfrm]").find("input[name=stxt]").focus();
+					return false;
+				}
+				$("form[name=contactfrm]").submit();
+			}
+			//]]>
+		</script>
+
+		<iframe name="check_ifm" id="check_ifm" style="display: none" title="blind" src="./Insert title here_files/saved_resource.html"></iframe>
+		<!--search end-->
+
+		<!--top_menu start-->
+
+
+		<div id="gnb">
+			<ul>
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> SOOMGO </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner open">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=GDIKDUPG&amp;ln=0QVMFJEJ&amp;sb=QC0RV9RA&amp;tb=4P5MJRG">정보공개책임관</a>
+
+								</li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=NUW0DXA8&amp;ln=0RMYQRKK&amp;sb=586TZXLE&amp;tb=6DQ6YAF" target="_self" title=""> Search</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=VTW780ZD&amp;ln=MM0Y482B&amp;sb=BENK49KO&amp;tb=2M77KF6">정보공개청구</a>
+
+								</li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=6MKYPITT&amp;ln=3BHSUG7D&amp;sb=0Y22DEE5&amp;tb=XMFQDUF" target="_self" title="">공공데이터 개방</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=T92EL42S&amp;ln=FD72SGUN&amp;sb=PE20RI8D&amp;tb=AFFIS5P" target="_self" title="">사업실명제</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=9VET0S7R&amp;ln=0MM9U6U2&amp;sb=TZH6XZ0F&amp;tb=VTR7OOJ" class="quick01">발전용어검색</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=BEP7U83O&amp;ln=QM0XE00M&amp;sb=TQ5IZPX9&amp;tb=4GM4DAT" class="quick02">질문과 답변</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 고객센터 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner custom">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=55GXSZ3W&amp;ln=EHWNUQKN&amp;sb=G32QE25U&amp;tb=WOEGHP8" target="_self" title="">EWP에 바란다</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=J1S3XTS6&amp;ln=3V7EOZJM&amp;sb=WTUJKS57&amp;tb=AY73906" target="_self" title="">고객 제안방</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=V6V25JGP&amp;ln=TBXZM2LI&amp;sb=J0UTZYGS&amp;tb=6DP9QZA">공지사항</a>
+
+								</li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=BEP7U83O&amp;ln=QM0XE00M&amp;sb=TQ5IZPX9&amp;tb=4GM4DAT">질문과
+										답변</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=7JT6ZMHV&amp;ln=CKP4UFB0&amp;sb=HJ9H37ZE&amp;tb=VSY60WA" target="_self" title="">개인정보권리행사</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=NEICQMQC&amp;ln=OT7VUPRY&amp;sb=XGT2K0V1&amp;tb=ONMEKGV" target="_self" title="">발전소 견학 및 출입</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=T8412GVY&amp;ln=WIC0UJWJ&amp;sb=7URTR9SA&amp;tb=PN4BMYF" target="_self" title="">본사시설물</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=431WPVKZ&amp;ln=1VPHMH0C&amp;sb=AGFDAYNT&amp;tb=9H87AWM" target="_self" title="">본사 웨딩홀</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=8MXS7N74&amp;ln=0TC5U7VV&amp;sb=8JNAST1Q&amp;tb=75UKJ6W" class="quick07">발전사업</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=PV57U5FA&amp;ln=7GW2H80R&amp;sb=W6P6YQ1J&amp;tb=YDPC6GD" class="quick08">건설현황</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 기업지원센터 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner support">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=0CLFOCYG&amp;ln=VBMXU9FP&amp;sb=P5L0WLIV&amp;tb=8TDCBM6" target="_self" title="">입찰정보</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=ARKRXUOJ&amp;ln=M90ZY6YD&amp;sb=7VO1453D&amp;tb=ZULXSIR" target="_self" title="">수의계약 체결현황</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=SJFKC4C5&amp;ln=K7W7KDCE&amp;sb=82CETL6R&amp;tb=ZKB3BTX">EWP
+										SRM</a></li>
+
+
+								<li><a href="https://together.ewp.co.kr/main/main.asp" target="_blank" title="">중소기업동반성장센터</a></li>
+
+
+								<li><a href="http://cafe.naver.com/biofuelcommunity" target="_blank" title="">바이오매스 커뮤니티</a></li>
+
+
+								<li><a href="https://ewp.co.kr/kor/consolidation/login.asp" target="_blank" title="">연결결산 지원센터</a></li>
+
+
+								<li><a href="https://one-click.ewp.co.kr:9043/WebContent/jsp/main" target="_blank" title="">신재생에너지</a></li>
+
+
+								<li><a href="https://together.ewp.co.kr/subpage/contents.asp?cd_cn=0S64&amp;cd_tp=7IX1&amp;cd_ln=3ITG&amp;cd_fl=7J92&amp;cd_sb=5A0Q&amp;cd_mu=JCTZ&amp;cd_tb=8NQP&amp;cd_te=UBY&amp;cd_ta=sub&amp;cd_ya=&amp;cd_mn=&amp;cd_dy=" target="_blank" title="">연구개발</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=PNMJLOMH&amp;ln=RII0E5YO&amp;sb=S97HUTHX&amp;tb=UH3X76Z" class="quick03">하도급 승인</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=9UCFV062&amp;ln=6NUHGNIP&amp;sb=BKLC6YPJ&amp;tb=0SPKW6P" class="quick04">사전입찰안내</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 경영공시 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner business">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=CPNX41QJ&amp;ln=WZ97HU3O&amp;sb=WUMOXJK3&amp;tb=8IIFL4I">경영공시
+										목록</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=FH7IIE2C&amp;ln=LZ6O77EJ&amp;sb=YPYY92EF&amp;tb=L9HNGZP" target="_self" title="">경영현황</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=H5PGB2TT&amp;ln=HMADBHVB&amp;sb=E7YDM16R&amp;tb=C16QT6D" target="_self" title="">기관운영</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=2AMQHPG5&amp;ln=6Y3GIJSD&amp;sb=GY14DYZL&amp;tb=7AV0K1L" target="_self" title="">주요 재무정보</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=O1MY7EVB&amp;ln=8V269MH7&amp;sb=EO43UDA4&amp;tb=V1DFNRB" target="_self" title="">대내외평가</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=L7BGXEBU&amp;ln=HKOF7GW8&amp;sb=TE3R3SFJ&amp;tb=OBLKXTI" target="_self" title="">사업소 경영공시</a></li>
+
+
+								<li><a href="http://alio.go.kr/popReportTerm.do?apbaId=C0066&amp;reportFormRootNo=63701" target="_blank" title="">복리후생 8대 항목</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=YSJPGY6M&amp;ln=58P9ZBWP&amp;sb=6XK708O9&amp;tb=TXPJ8GZ" target="_self" title="">기타</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=4WCV3O3I&amp;ln=MEB3M1RP&amp;sb=LBKU935H&amp;tb=IY80D5J" class="quick05">자체감사결과</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=4K7LZYE8&amp;ln=MM2NIT5M&amp;sb=6BFLZU38&amp;tb=3L3X3LA" class="quick06">규정</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 지속가능경영 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner manage">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=7Y82307Z&amp;ln=H479Q0ZU&amp;sb=29S0B9SD&amp;tb=9SHT9I9" target="_self" title="">환경경영</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=A9L57I6K&amp;ln=PJR9KVEJ&amp;sb=VEMPKCZ6&amp;tb=AH6P0CP" target="_self" title="">윤리경영</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=NKPRJ3P6&amp;ln=JV8B3DPE&amp;sb=D6APQE41&amp;tb=EN4HQVT" target="_self" title="">사회공헌</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=WY31ITLE&amp;ln=EF25C832&amp;sb=R7RNO7P6&amp;tb=5XPIAAG" target="_self" title="">보고서</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=VPMVKWP1&amp;ln=414G0GR3&amp;sb=6P19F73Y&amp;tb=O5GTMNC" class="quick09">윤리경영소식</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=NKPRJ3P6&amp;ln=JV8B3DPE&amp;sb=D6APQE41&amp;tb=EN4HQVT" class="quick10">사회봉사단소개</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 사이버홍보실 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner advertise">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=8B073MG0&amp;ln=51SG246L&amp;sb=4F3LZV1D&amp;tb=W7ADTHM" target="_self" title="">동서뉴스</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=NQNNRKQR&amp;ln=3E3ESGTP&amp;sb=609EK2IH&amp;tb=FYV5XRV&amp;taborder=1" target="_self" title="">영상자료</a></li>
+
+
+								<li><a href="https://www.facebook.com/ewp.powerian" target="_blank" title="">SNS(facebook)</a></li>
+
+
+								<li><a href="https://twitter.com/withewp" target="_blank" title="">SNS(Twitter)</a></li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=8B073MG0&amp;ln=51SG246L&amp;sb=4F3LZV1D&amp;tb=W7ADTHM" class="quick11">보도자료</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=FQJ8DWGM&amp;ln=OI6V418Y&amp;sb=J9E8EQ8B&amp;tb=EIYOXWX" class="quick12">홍보영상</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+
+				<li><a href="http://localhost:8087/HELP/#" onclick="return false;"> 회사소개 </a>
+
+					<div class="submenu" style="display: none;">
+						<div class="submenu_inner company">
+							<ul>
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=JZ75USU3&amp;ln=I2CS5QSE&amp;sb=R55YFXSD&amp;tb=2CWMVPO" target="_self" title="">EWP</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=QI4QVD44&amp;ln=MUKHSJFF&amp;sb=QFTC1QEF&amp;tb=5LHNGZS" target="_self" title="">CEO</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=29NSVRHH&amp;ln=96TUDRT4&amp;sb=0A0BAFTI&amp;tb=YIU6UWU" target="_self" title="">비전 2030</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=NIW143HF&amp;ln=B1AGK6JX&amp;sb=JQP9GY95&amp;tb=ZF5BG2C" target="_self" title="">채용정보</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=8A6EDBXT&amp;ln=F6H5V7JP&amp;sb=W29U15RE&amp;tb=ES8E515" target="_self" title="">이사회</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=8MXS7N74&amp;ln=0TC5U7VV&amp;sb=8JNAST1Q&amp;tb=75UKJ6W" target="_self" title="">사업소개</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=SUKWUW3S&amp;ln=O8V3IUZ9&amp;sb=8DHV0B2W&amp;tb=54ECV9G">연간업무계획</a>
+
+								</li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=1314FD2O&amp;ln=OO69QUWU&amp;sb=UJ2MZMM2&amp;tb=2ZWNPNL" target="_self" title="">발전소소개</a></li>
+
+
+								<li><a href="http://localhost:8087/kor/subpage/contents.asp?cn=GZU8G6VJ&amp;ln=S06AIY9K&amp;sb=XFYKIWYE&amp;tb=3W8IJUR">찾아오시는길</a>
+
+								</li>
+
+
+							</ul>
+							<div class="sub_quick">
+								<a href="http://localhost:8087/kor/subpage/contents.asp?cn=8WF9WA4U&amp;ln=1XB8Q9IE&amp;sb=R3BAUE4W&amp;tb=SP5RQGK" class="quick13">채용공고</a> <a href="http://localhost:8087/kor/subpage/contents.asp?cn=CCNYV7XQ&amp;ln=79XPB922&amp;sb=AC55EJ9V&amp;tb=1JWK3XF" class="quick14">경영방침</a>
+							</div>
+						</div>
+
+					</div></li>
+
+
+
+
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			//gnb메뉴 show
+			$('#gnb > ul > li').hover(function() {
+				$('#header').toggleClass('gnbover');
+				$(this).children('.submenu').toggle();
+				$(this).find('.submenu_inner').stop().fadeToggle(300);
+				$(this).children('a').toggleClass('active');
+			})
+
+			/* $('#gnb > ul > li > a').focus(function(){
+					$('#header').addClass('gnbover');
+					$(this).parent().children('.submenu').toggle();
+					$(this).parent().find('.submenu_inner').stop().fadeToggle(300);
+
+			}) */
+		</script>
+		<!--top_menu end-->
+
+
+	</div>
+</div>
+
+<script>
+	$(function() {
+
+		$('.print').printPreview(".contents_inner", "1");
+
+		// Add keybinding (not recommended for production use)
+		$(document).bind('keydown', function(e) {
+			var code = (e.keyCode ? e.keyCode : e.which);
+		});
+	});
+
+	function lodingbar() {
+		document.getElementById('loding01').style.display = "block";
+		document.getElementById('loding02').style.display = "block";
+		//document.getElementById('load_txt').style.display = "block";
+	}
+</script>
+<!--//header end -->
+
+<!-- //header -->
+<div class="dark_window"></div>
+
+
+
+	<div id="container">
+
+		<div class="main_contents">
+			<!-- 본문영역 -->
+			
+			<div>
+			
+
+
+
+
+<meta name="description" content="Slide Down Box Menu with jQuery and CSS3">
+<meta name="keywords" content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails">
+<link rel="shortcut icon" href="http://localhost:8087/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./Insert title here_files/style.css" type="text/css" media="screen">
+<style>
+body {
+	font-family: Arial;
+}
+
+span.reference {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	font-size: 12px;
+}
+
+span.reference a {
+	color: #aaa;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #000;
+	margin-right: 30px;
+}
+
+span.reference a:hover {
+	color: #ddd;
+}
+
+ul.sdt_menu {
+	/* 			margin-top:50px; */
+	
+}
+
+h1.title {
+	text-indent: -9000px;
+	background: transparent url(title.png) no-repeat top left;
+	width: 633px;
+	height: 69px;
+}
+
+input[type=text]:focus {
+	border: 3px solid #555;
+}
+
+input[type=text] {
+	border-radius: 20px;
+	width: 60%;
+	height: 60px;
+	font-size: 25px;
+	background-image: url('searchicon.png');
+}
+
+button {
+	border-radius: 20px;
+	background: #555;
+	color: #fff;
+	border: none;
+	position: relative;
+	height: 60px;
+	font-size: 1.6em;
+	padding: 0 2em;
+	cursor: pointer;
+	transition: 800ms ease all;
+	outline: none;
+}
+
+button:hover {
+	background: #fff;
+	color: #555;
+}
+
+button:before, button:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	width: 0;
+	background: #555;
+	transition: 400ms ease all;
+}
+
+button:after {
+	right: inherit;
+	top: inherit;
+	left: 0;
+	bottom: 0;
+}
+
+button:hover:before, button:hover:after {
+	width: 100%;
+	transition: 800ms ease all;
+}
+
+#title_left {
+	margin-left: 5%
+}
+</style>
+<title>Insert title here</title>
+
+
+
+
+	<div class="content">
+
+		<!-- 검색 창 form Start-->
+		<div id="search_form" style="margin-left: 20%">
+			<input id="search" type="text" placeholder="    검색어를 입력하세요">
+			<button>Search</button>
+		</div>
+		<!-- 검색 창 form End-->
+
+		<!-- Category Box Start -->
+		<div id="categoryBox"></div>
+		<!-- Category Box End -->
+
+		<div id="title_left">
+			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
+			<ul id="sdt_menu" class="sdt_menu">
+				<li><a href="http://localhost:8087/HELP/#"> <img src="./Insert title here_files/2.jpg" alt=""> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">카테고리 1</span> <span class="sdt_descr">Get
+								to know me</span>
+					</span>
+				</a></li>
+				<li><a href="http://localhost:8087/HELP/#"> <img src="./Insert title here_files/1.jpg" alt=""> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">카테고리 2</span> <span class="sdt_descr">My
+								work</span>
+					</span>
+				</a></li>
+
+				<li><a href="http://localhost:8087/HELP/#"> <img src="./Insert title here_files/3.jpg" alt=""> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">카테고리 3</span> <span class="sdt_descr">Where
+								ideas get born</span>
+					</span>
+				</a></li>
+				<li><a href="http://localhost:8087/HELP/#"> <img src="./Insert title here_files/4.jpg" alt="" style="overflow: hidden; width: 0px; display: block; height: 0px; left: 85px;"> <span class="sdt_active" style="overflow: hidden; height: 0px; display: block;"></span> <span class="sdt_wrap" style="top: 25px;"> <span class="sdt_link">카테고리 4</span> <span class="sdt_descr">I
+								like to photograph</span>
+					</span>
+				</a></li>
+				<li><a href="http://localhost:8087/HELP/#"> <img src="./Insert title here_files/5.jpg" alt="" style="overflow: hidden; width: 0px; display: block; height: 0px; left: 85px;"> <span class="sdt_active" style="overflow: hidden; height: 0px; display: block;"></span> <span class="sdt_wrap" style="top: 25px;"> <span class="sdt_link">카테고리 5</span> <span class="sdt_descr">I
+								write about design</span>
+					</span>
+				</a></li>
+
+			</ul>
+		</div>
+	</div>
+
+
+	<div>
+		<span class="reference"> <a href="http://tympanus.net/codrops/2010/07/16/slide-down-box-menu/">back
+				to the Codrops Tutorial</a> <a href="http://www.flickr.com/photos/arcticpuppy/sets/72157622090180990/">Images
+				by tibchris</a>
+		</span>
+	</div>
+
+	<!-- The JavaScript -->
+	<script type="text/javascript" src="./Insert title here_files/jquery.min.js.다운로드"></script>
+	<script type="text/javascript" src="./Insert title here_files/jquery.easing.1.3.js.다운로드"></script>
+	<script type="text/javascript">
+		$(function() {
+			/**
+			 * for each menu element, on mouseenter,
+			 * we enlarge the image, and show both sdt_active span and
+			 * sdt_wrap span. If the element has a sub menu (sdt_box),
+			 * then we slide it - if the element is the last one in the menu
+			 * we slide it to the left, otherwise to the right
+			 */
+			$('#sdt_menu > li')
+					.bind(
+							'mouseenter',
+							function() {
+								var $elem = $(this);
+								$elem
+										.find('img')
+										.stop(true)
+										.animate({
+											'width' : '170px',
+											'height' : '170px',
+											'left' : '0px'
+										}, 400, 'easeOutBack')
+										.andSelf()
+										.find('.sdt_wrap')
+										.stop(true)
+										.animate({
+											'top' : '140px'
+										}, 500, 'easeOutBack')
+										.andSelf()
+										.find('.sdt_active')
+										.stop(true)
+										.animate(
+												{
+													'height' : '170px'
+												},
+												300,
+												function() {
+													var $sub_menu = $elem
+															.find('.sdt_box');
+													if ($sub_menu.length) {
+														var left = '170px';
+														if ($elem.parent()
+																.children().length == $elem
+																.index() + 1)
+															left = '-170px';
+														$sub_menu
+																.show()
+																.animate(
+																		{
+																			'left' : left
+																		}, 200);
+													}
+												});
+							}).bind(
+							'mouseleave',
+							function() {
+								var $elem = $(this);
+								var $sub_menu = $elem.find('.sdt_box');
+								if ($sub_menu.length)
+									$sub_menu.hide().css('left', '0px');
+
+								$elem.find('.sdt_active').stop(true).animate({
+									'height' : '0px'
+								}, 300).andSelf().find('img').stop(true)
+										.animate({
+											'width' : '0px',
+											'height' : '0px',
+											'left' : '85px'
+										}, 400).andSelf().find('.sdt_wrap')
+										.stop(true).animate({
+											'top' : '25px'
+										}, 500);
+							});
+		});
+	</script>
+
+
+
+
+	<a href="http://localhost:8087/HELP/">견적서 등록</a>
+
+
+
+
+
+
+
+		</div>
+	</div>
+	
+	
+
+<div id="footer">
+    <div class="foot_inner">
+      <div class="link">
+        <ul>
+          <li><a href="https://ewp.co.kr/kor/subpage/contents.asp?cn=C1F25NZK&amp;ln=KWUETZ9F&amp;sb=Z1X9L4T4&amp;tb=VWBY53W">개인정보처리방침</a></li>
+          <li><a href="https://ewp.co.kr/kor/subpage/contents.asp?cn=GZU8G6VJ&amp;ln=S06AIY9K&amp;sb=XFYKIWYE&amp;tb=3W8IJUR">찾아오시는 길</a></li>
+		 
+		</ul>
+      </div>
+	  
+	  <div class="square">
+		<a href="https://square.ewp.co.kr/" target="_blank">동서인광장</a>
+	  </div>
+	  
+
+      <div class="info">
+        <h1>한국동서발전</h1>
+        <address>
+        <p>울산광역시 중구 종가로 395 우)44543</p>
+        <span>TEL : 070-5000-1000 (주간), FAX : 070-5000-1299</span> <span>당직실 : 070-5000-1098, 1099 (야간 및 공휴일)</span> <span class="copyright">COPYRIGHT ⓒ 2016 KOREA EAST-WEST POWER CO.,LTD (EWP). ALL RIGHTS RESERVED.</span>
+        </address>
+        <div class="foot_sns"> 
+		<a href="http://wa.or.kr/waMark/status.asp" target="_blank" class="accessibility">웹접근성 인증마크</a>
+			<a href="https://twitter.com/withewp" target="_blank" class="tweet">트위터</a><a href="https://www.facebook.com/ewp.powerian" target="_blank" class="face">페이스북</a> 
+			
+		</div>
+      </div>
+    </div>
+  </div>
+
+</div></body></html>

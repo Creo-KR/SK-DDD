@@ -4,25 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name= viewport content= width=device-width initial-scale=1.0>
 <title>Insert title here</title>
+<style type="text/css">
+#body{
+	height:600px;
+}
 
+</style>
 <%@ include file="commons/header.jsp"%>
 </head>
 <body>
+
 	<div id="container">
 
 		<div class="main_contents">
 			<!-- 본문영역 -->
-			<div class="dark_window"></div>
-			<div>
+			
+			<div id="body">
 			<%@ include file="commons/body.jsp"%>
-	
-			</div>
+<%-- 		<jsp:include page="commons/body.jsp" flush="true"/> --%>
 
 
 		</div>
 	</div>
-	
+
 	<%@ include file="commons/footer.jsp"%>
+
 </body>
 </html>
