@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import help.vo.ChatVO;
 import help.vo.ChatroomVO;
 
 @Repository
@@ -19,7 +20,7 @@ public class ChatDAOImpl implements ChatDAO {
 	}
 
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo) {
-		return session.selectList("chatMapper.getChatroomListByUsers", vo);
+		return session.selectList("chatMapper.getChatroomListByUser", vo);
 	}
 
 	public ChatroomVO getChatroomByUsers(ChatroomVO vo) {
@@ -35,5 +36,17 @@ public class ChatDAOImpl implements ChatDAO {
 			session.update("chatMapper.leaveChatroomUser1", vo);
 		else if (user == 2)
 			session.update("chatMapper.leaveChatroomUser2", vo);
+	}
+	
+	public void sendChat(ChatVO vo) {
+		System.out.println(session.insert("chatMapper.sendChat", vo));
+	}
+
+	public List<ChatVO> getChatByChatroom(ChatroomVO vo) {
+		return session.selectList("chatMapper.getChatByChatroom", vo);
+	}
+
+	public void checkChat(ChatVO vo) {
+		session.update("chatMapper.checkChat", vo);
 	}
 }

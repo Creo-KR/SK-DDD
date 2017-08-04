@@ -11,9 +11,13 @@ public class MemberVO {
 	private Integer m_type;
 	private Integer m_active;
 	private String m_intro;
-	
+
 	public MemberVO() {
-		
+
+	}
+
+	public MemberVO(Integer m_no) {
+		this.m_no = m_no;
 	}
 
 	public MemberVO(Integer m_no, String m_id, String m_pwd, String m_name, String m_email, String m_tel,
@@ -101,7 +105,11 @@ public class MemberVO {
 	public void setM_intro(String m_intro) {
 		this.m_intro = m_intro;
 	}
-	
-	
-	
+
+	public String toString() {
+		return "MemberVO [m_no=" + m_no + ", m_id=" + m_id + ", m_pwd=" + m_pwd + ", m_name=" + m_name + ", m_email="
+				+ m_email + ", m_tel=" + m_tel + ", m_type=" + m_type + ", m_active=" + m_active + ", m_intro="
+				+ m_intro + "]";
+	}
+
 }
