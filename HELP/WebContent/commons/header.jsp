@@ -50,30 +50,26 @@
 	<!--  class="gnbover" -->
 	<div class="shadow">가림영역</div>
 	<div id="header_inner">
-		<h1><a href="/HELP">H.E.L.P.</a></h1>
+		<a href="/HELP"><h1>H.E.L.P.</h1></a>
 		<!--search start-->
 
 		<div id="util">
 		<c:if test="${sessionScope.COUNT != 1}">
 			<div class="certify" id="idlogin">
-				<!-- <a
-					href="/kor/subpage/contents.asp?cn=LD7FXK7U&ln=9FHOE4DJ&sb=1X0P5VNL&tb=RIP5DYR&req_code="
-					class="log">LOGIN</a> -->
 					<a href="loginForm.help">LOGIN</a>
 			</div>
+			<a href="joinChoice.help" class="eng">SIGN UP</a>
 			</c:if>
 
 			<c:if test="${sessionScope.COUNT eq 1}">
-			<a>${sessionScope.UNAME}님 어서오세요!</a>
-			<div class="certify logon" id="idlogout">
-				<!-- <a href="#" onclick="logout(); return false;">LOGOUT</a> -->
+			<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
+			<a href="#" class="eng" style="float: left;">MY PAGE</a>
+			<div class="certify logon" id="idlogout" style="width: 80px">
 				<a href="#" onclick="logout(); return false;">LOGOUT</a>
 			</div>
 			</c:if>
 
-			<a href="joinChoice.help"  class="eng">SIGN UP</a>
-			<a
-				href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
+			<a href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
 				class="site">SITEMAP</a>
 			<div class="search_area">
 				<form
@@ -537,7 +533,7 @@
 
 
 
-				<li><a href="#" onclick="return false;"> 회사소개 </a>
+				<li>
 
 					<div class="submenu" style="display: none;">
 						<div class="submenu_inner company">

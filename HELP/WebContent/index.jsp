@@ -13,7 +13,6 @@
 
 		<div class="main_contents">
 			<!-- 본문영역 -->
-			<div class="dark_window"></div>
 			<div>
 			<%@ include file="commons/body.jsp"%>
 	
