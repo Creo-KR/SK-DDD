@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+/******* 추가 *******/
+/* 인포박스 변형 */
+#container .contents .infoBox.alt_eco dl { padding-left:120px; background:url(/kor/images/content/eco_bg_box.png) no-repeat 0 50%; height:105px; box-sizing:border-box;}
+#container .contents .infoBox.alt_eco dd { letter-spacing:-0.5px; padding-top:2px; }
+
+#container .contents .infoBox.alt_mom  {margin-top:0px; margin-bottom:50px; position:relative; }
+#container .contents .infoBox.alt_mom dl {padding-left:120px; background:url(/kor/images/content/mom_bg_box.png) no-repeat 0 50%; height:105px; box-sizing:border-box;}
+#container .contents .infoBox.alt_mom dl dt {font-weight:400; font-size:26px; color:#26446e; padding-top:5px; line-height:30px;}
+#container .contents .infoBox.alt_mom dl dt span {font-weight:300; font-size:18px; color:#206fb2; padding-left:20px; background:url(/kor/images/common/board_head_th_line.gif) no-repeat 10px 10px;}
+#container .contents .infoBox.alt_mom dl dd {font-size:18px; color:#555; width:85%; padding-bottom:2px;}
+#container .contents .infoBox.alt_mom dl dd.alt { font-size:14px; width:auto; }
+#container .contents .infoBox.alt_mom select {margin-right:3px; padding:5px; height:35px; border:1px solid #d8d8d8; font-size:14px; vertical-align:middle; box-sizing:border-box; text-align:left; width:100px; }
+
+#container .contents .infoBox.alt_ipn dl { padding-left:120px; background:url(/kor/images/content/ipn_box.png) no-repeat 0 50%; height:105px; box-sizing:border-box;}
+#container .contents .infoBox.alt_ipn dl dt {font-weight:400; font-size:26px; color:#26446e; padding-top:10px; line-height:30px;}
+#container .contents .infoBox.alt_ipn dd { letter-spacing:-0.5px; padding-top:2px; }
+/* 인포박스 변형 */
+/* table type 추가*/
+.TB_trans {margin-bottom:20px;border-top:2px #384c57 solid; /*border-bottom:1px #394c67 solid;*/ clear:both;}
+.TB_trans th {padding:11px 8px;font-size:18px;color:#394c67;text-align:center; background:#f5f5f5 url(/kor/images/common/table_b_th_bg.gif) repeat-y 100% 0; border-bottom:1px solid #c8cacc; width:20%; }
+.TB_trans th:last-child {border:none;}
+.TB_trans td {padding:15px 8px 12px 13px;border-right:1px #d5d5d5 solid; border-bottom:1px #d5d5d5 solid;color:#555;text-align:left;}
+.TB_trans td:last-child {border-right:none;}
+.TB_trans td a:hover {text-decoration:underline; color:#165888;}
+.TB_trans tr:last-child td { border-bottom:1px #394c67 solid;}
+.TB_trans tr:last-child th { border-bottom:1px #394c67 solid;}
+/* table type 추가 */
+/******* 추가 *******/
+
+/******* 관심메뉴 *******/
+.interest_wrap { position:fixed; right:0; top:360px; z-index:100000; }
+.interest_menu_close { cursor:pointer; width:56px; }
+.interest_menu_close a { display:block; }
+.interest_menu_close .inst_top {background:#224a83 url(/kor/images/content/interest_icon.png) no-repeat 50% 50%; height:48px; }
+.interest_menu_close a .inst_top span { display:none; } 
+.interest_menu_close .inst_mid { line-height:110%; font-size:15px; text-align:center; padding:22px 0; background:#313131; color:#fff; }
+
+.interest_menu_open { min-width:155px; }
+.interest_menu_open .inst_top { background:#224a83 url(/kor/images/content/interest_icon.png) no-repeat 15px 50%; font-size:17px; color:#fff; padding:15px; padding-left:50px; position:relative; }
+.interest_menu_open .inst_top a { display:block; background:url(/kor/images/content/itr_l.gif) 50% 50% no-repeat; width:25px; position:absolute; top:17px; right:10px; }
+.interest_menu_open .inst_top a span { text-indent:-99999px; display:block; }
+.interest_menu_open .inst_addmenu { padding:10px 15px; background:#84a8d5; color:#333; }
+.interest_menu_open .inst_addmenu label { margin-left:5px; }
+.interest_menu_open .inst_menulist { padding:15px; background:#e0e0e0; }
+.interest_menu_open .inst_menulist ul li { margin-top:8px; position:relative; }
+.interest_menu_open .inst_menulist ul li:first-child { margin-top:0px; }
+.interest_menu_open .inst_menulist ul li a { font-size:13px; color:#555; width:120px; display:block; padding-right:30px; line-height:18px; }
+.interest_menu_open .inst_menulist ul li a:hover { text-decoration:underline; }
+.interest_menu_open .inst_menulist ul li a.alt { width:15px; height:15px; display:block; background:url(/kor/images/content/itr_x.gif) 100% 50% no-repeat; text-indent:-999999px; position:absolute; top:2px; right:0; }
+.interest_menu_open .inst_bot { text-align:center; background:#313131; }
+.interest_menu_open .inst_bot a { color:#fff; font-size:13px; display:block; padding:10px 0; padding-bottom:15px; }
+
+
+
+/******* 통합검색 *******/
+.integ_search .search_word_box { border:1px solid #c8cacc; /*overflow-x:hidden; overflow-y:scroll; height:150px;*/ width:100%; text-align:left; box-sizing:border-box; padding:20px; padding-left:10px; }
+.search_word_box .sb_word { display:inline-block; line-height:30px; margin-left:10px; color:#333; }
+.search_word_box .sb_word b { padding-left:2px; color:#206fb2; }
+.search_word_box .sb_word i { padding-left:10px; color:#b9b9b9; }
+.search_board_list { margin-top:50px; }
+.search_board_list .sbl_top  { margin-bottom:15px; float:left; width:100%; }
+.search_board_list .sbl_top strong { font-size:18px; letter-spacing:-0.5px; float:left; position:relative; top:3px; }
+.search_board_list .sbl_top .boardBtn { padding-top:5px; padding-bottom:5px; float:right; }
+
+/******* 기업지원센터_EWP SRM *******/
+.srm_index .srm_info {width:100%; padding:35px 45px; box-sizing:border-box; background:#344c68 url(/kor/images/content/srm_top_img.png) no-repeat 95% 100%; border-radius:20px; overflow:hidden; margin-bottom:30px;}
+.srm_index .srm_info dl dt {font-size:32px; font-weight:400; color:#fff;}
+.srm_index .srm_info dl dd {font-size:17px; color:#fff;}
+.srm_index > dl {border:1px solid #c8cacc; border-radius:20px; overflow:hidden; box-sizing:border-box; margin:0 20px 30px 0; width:320px; height:285px; float:left;}
+.srm_index > dl:nth-child(3n+1) {margin-right:0;}
+.srm_index > dl > dt {background:#6c7780; font-size:15px; font-weight:400; color:#fff; padding:10px 15px; margin-bottom:15px; text-align:center;}
+.srm_index > dl > dt.alt { letter-spacing:-0.7px; font-size:14.5px; }
+.srm_index > dl > dd {display:inline-block; padding:0 10px 0 20px;  float:left; width:100%; box-sizing:border-box; font-size:13px; letter-spacing:-0.02em;}
+.srm_index > dl > dd.pl01 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm01.png) no-repeat 50% 50%; text-indent:-55555px;}
+.srm_index > dl > dd.pl02 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm02.png) no-repeat 50% 50%; text-indent:-55555px;}
+.srm_index > dl > dd.pl03 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm03.png) no-repeat 50% 50%; text-indent:-55555px;}
+.srm_index > dl > dd.pl04 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm04.png) no-repeat 50% 50%; text-indent:-55555px;}
+.srm_index > dl > dd.pl05 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm05.png) no-repeat 50% 50%; text-indent:-55555px;}
+.srm_index > dl > dd.pl06 {display:block; height:100px; padding:0; background:url(/kor/images/content/srm06.png) no-repeat 50% 50%; text-indent:-55555px;}
+
+.srm_index > dl > dd.half {width:50%;}
+.srm_index > dl > dd.txt {background:none; padding:0 10px; text-align:center; }
+.srm_index > dl > dd a {display:inline-block; padding:3px 25px 3px 0; color:#555;}
+.srm_index > dl > dd a:hover {text-decoration:underline;}
+.srm_index > dl > dd a.nw {display:block; width:70%; border:1px solid #a5a5a5; border-radius:5px; overflow:hidden; margin:0 auto; text-align:center; color:#333; padding:3px 0; margin-top:20px;}
+
+/******* 공공데이터 목록 *******/
+.public_data .public_data_info {width:100%; padding:35px 45px; box-sizing:border-box; background:#008a57 url(/kor/images/content/pdt_top_img.png) no-repeat 95% 100%; border-radius:20px; overflow:hidden; margin-bottom:30px;}
+.public_data .public_data_info dl dt {font-size:32px; font-weight:400; color:#fff;}
+.public_data .public_data_info dl dd {font-size:17px; color:#fff;}
+.public_data > dl {border:1px solid #c8cacc; border-radius:20px; overflow:hidden; box-sizing:border-box; margin:0 10px 30px 0; width:192px; height:285px; float:left;}
+.public_data > dl:nth-child(5n+1) {margin-right:0;}
+.public_data > dl > dt {background:#6c7780; font-size:15px; font-weight:400; color:#fff; padding:10px 15px; margin-bottom:15px; text-align:center;}
+.public_data > dl > dt.alt { letter-spacing:-0.7px; font-size:14.5px; }
+.public_data > dl > dd {display:inline-block; padding:0 10px 0 20px;  float:left; width:100%; box-sizing:border-box; font-size:13px; letter-spacing:-0.02em;}
+.public_data > dl > dd.pl01 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt01.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl02 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt02.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl03 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt03.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl04 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt04.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl05 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt05.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl06 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt06.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl07 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt07.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl08 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt08.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl09 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt09.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl10 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt10.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl11 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt11.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl12 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt12.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl13 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt13.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl14 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt14.png) no-repeat 50% 50%; text-indent:-55555px;}
+.public_data > dl > dd.pl15 {display:block; height:100px; padding:0; background:url(/kor/images/content/pdt15.png) no-repeat 50% 50%; text-indent:-55555px;}
+
+.public_data > dl > dd.half {width:50%;}
+.public_data > dl > dd.txt {background:none; padding:0 10px; text-align:center; }
+.public_data > dl > dd a {display:inline-block; padding:3px 25px 3px 0; color:#555;}
+.public_data > dl > dd a:hover {text-decoration:underline;}
+.public_data > dl > dd a.nw {display:block; width:70%; border:1px solid #a5a5a5; border-radius:5px; overflow:hidden; margin:0 auto; text-align:center; color:#333; padding:3px 0; margin-top:20px;}
+
+@media only screen and (max-width:960px) {
+/******* 추가 *******/
+/* 인포박스 변형 */
+#container .contents .infoBox.alt_mom {padding:15px 3.5%; background:#f5f5f5 url(/kor/images/common/info_bg_box.png) no-repeat 155% -5px;}
+#container .contents .infoBox.alt_mom dl {padding-left:120px; background:url(/kor/images/common/info_bg_title.png) no-repeat 0 0;}
+#container .contents .infoBox.alt_mom dl dt {font-size:22px; color:#26446e; padding-top:0;}
+#container .contents .infoBox.alt_mom dl dt span {font-size:15px; background-position:10px 5px;}
+#container .contents .infoBox.alt_mom dl dd {font-size:14px; color:#555; width:85%; letter-spacing:-0.5px;}
+
+#container .contents .infoBox.alt_ipn dl dt {font-size:22px; color:#26446e; padding-top:5px;}
+#container .contents .infoBox.alt_ipn dd {font-size:14px; color:#555; width:85%; letter-spacing:-0.5px;}
+/* 인포박스 변형 */
+/******* 추가 *******/
+
+/******* 관심메뉴 *******/
+.interest_wrap { display:none; }
+
+/******* 기업지원센터_EWP SRM *******/
+.srm_index .srm_info  { background:#344c68 url(/kor/images/content/srm_top_img.png) no-repeat 50% 100%; padding-bottom:170px;}
+.srm_index .srm_info dl dt { text-align:center;}
+.srm_index .srm_info dl dd { text-align:center;}
+.srm_index > dl {margin:0 0 30px 0; width:100%; height:auto; padding-bottom:20px;}
+.srm_index > dl > dd {padding:0 10px 0 30px; }
+.srm_index > dl > dd.pl01 {width:100%; height:100px;}
+.srm_index > dl > dd.pl02 {width:100%; height:100px;}
+.srm_index > dl > dd.pl03 {width:100%; height:100px;}
+.srm_index > dl > dd.pl04 {width:100%; height:100px;}
+.srm_index > dl > dd.pl05 {width:100%; height:100px;}
+.srm_index > dl > dd.pl06 {width:100%; height:100px;}
+.srm_index > dl > dd.txt {width:100%; text-align:center;}
+.srm_index > dl > dd a.nw { width:50%; }
+
+/******* 공공데이터 목록 *******/
+.public_data .public_data_info  { background:#344c68 url(/kor/images/content/srm_top_img.png) no-repeat 50% 100%; padding-bottom:170px;}
+.public_data .public_data_info dl dt { text-align:center;}
+.public_data .public_data_info dl dd { text-align:center;}
+.public_data > dl {margin:0 0 30px 0; width:100%; height:auto; padding-bottom:20px;}
+.public_data > dl > dd {padding:0 10px 0 30px; }
+.public_data > dl > dd.pl01 {width:100%; height:100px;}
+.public_data > dl > dd.pl02 {width:100%; height:100px;}
+.public_data > dl > dd.pl03 {width:100%; height:100px;}
+.public_data > dl > dd.pl04 {width:100%; height:100px;}
+.public_data > dl > dd.pl05 {width:100%; height:100px;}
+.public_data > dl > dd.pl06 {width:100%; height:100px;}
+.public_data > dl > dd.txt {width:100%; text-align:center;}
+.public_data > dl > dd a.nw { width:50%; }
+
+}
+
+@media only screen and (max-width:768px) {}
+
+@media only screen and (max-width:667px) {
+/******* 추가 *******/
+/* 인포박스 변형 */
+#container .contents .infoBox.alt_mom {padding:15px 3.5%; background:#f5f5f5;}
+#container .contents .infoBox.alt_mom dl {padding-left:120px; background:url(/kor/images/common/info_bg_title.png) no-repeat 0 50%;}
+#container .contents .infoBox.alt_mom dl dt {font-size:20px; color:#26446e; padding-top:0px;}
+#container .contents .infoBox.alt_mom dl dt span {font-size:13px;}
+#container .contents .infoBox.alt_mom dl dd {font-size:14px; color:#555; width:85%;}
+
+#container .contents .infoBox.alt_ipn dl dt {font-size:20px; color:#26446e; padding-top:0px; letter-spacing:-1px; }
+#container .contents .infoBox.alt_ipn dd {font-size:14px; color:#555; width:85%;}
+/* 인포박스 변형 */
+/* table type 추가*/
+.TB_trans { display:block; width:100%; }
+.TB_trans tbody { width:100%; display:block; }
+.TB_trans tr { width:100%; display:block; }
+.TB_trans th { background:none; background-color:#f5f5f5; width:100%; display:block; }
+.TB_trans td { display:block; padding-right:15px; font-size:13px; letter-spacing:-0.5px; }
+/* table type 추가 */
+/******* 추가 *******/
+}
+
+@media only screen and (max-width:568px) {
+/******* 기업지원센터_EWP SRM *******/
+.srm_index .srm_info {padding:25px; padding-bottom:170px;}
+.srm_index .srm_info dl dt {font-size:25px;}
+.srm_index .srm_info dl dd {font-size:15px;}
+
+/******* 공공데이터 목록 *******/
+.public_data .public_data_info {padding:25px; padding-bottom:170px;}
+.public_data .public_data_info dl dt {font-size:25px;}
+.public_data .public_data_info dl dd {font-size:15px;}
+}
+
+@media only screen and (max-width:480px) {
+/******* 추가 *******/
+/* 인포박스 변형 */
+#container .contents .infoBox.alt_eco dl {padding-left:1%; background:none; height:auto;}
+
+#container .contents .infoBox.alt_mom {padding:15px 3.5%; background:#f5f5f5; margin-bottom:30px;}
+#container .contents .infoBox.alt_mom dl {padding-left:1%; background:none; height:auto;}
+#container .contents .infoBox.alt_mom dl dt {font-size:18px; color:#26446e; padding-top:1%;}
+#container .contents .infoBox.alt_mom dl dt span {display:block; padding:0; background:none;}
+#container .contents .infoBox.alt_mom dl dd {font-size:13px; color:#555; width:95%; padding-bottom:1%;}
+
+#container .contents .infoBox.alt_ipn dl {padding-left:1%; background:none; height:auto;}
+/* 인포박스 변형 */
+/******* 추가 *******/
+
+/******* 기업지원센터_EWP SRM *******/
+.srm_index .srm_info dl dt {font-size:21px;}
+.srm_index .srm_info dl dd {font-size:14px;}
+.srm_index > dl > dd { width:100%; }
+.srm_index > dl > dd.none {display:none}
+
+/******* 공공데이터 목록 *******/
+.public_data .public_data_info dl dt {font-size:21px;}
+.public_data .public_data_info dl dd {font-size:14px;}
+.public_data > dl > dd { width:100%; }
+.public_data > dl > dd.none {display:none}
+}
+
+@media only screen and (max-width:360px) {}
+
+@media only screen and (max-width:320px) {}
+
+
