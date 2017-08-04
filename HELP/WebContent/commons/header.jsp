@@ -17,7 +17,9 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/print-preview.css"
 	media="screen" />
-
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/sample.css"
+	media="screen" />
 
 <script src='/sptier0/sptier0.js'></script>
 <script src='/sptier0/sptier0-ajax.js'></script>
