@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import help.dao.ChatDAO;
 import help.dao.MemberDAO;
+import help.vo.ChatVO;
 import help.vo.ChatroomVO;
 import help.vo.MemberVO;
 
@@ -30,22 +31,22 @@ public class HelpJunitTest {
 	@Test
 	@Ignore
 	public void addMember() {
-		MemberVO member = new MemberVO("prohibit174", "1234", "김동욱", "prohibit174@nate.com", "01022611085", 0, 0);
+		//MemberVO member = new MemberVO("prohibit174", "1234", "김동욱", "prohibit174@nate.com", "01022611085", 0, 0);
 
-		session.insert("memberMapper.addMember", member);
+		//session.insert("memberMapper.addMember", member);
 	}
 
 	@Test
 	@Ignore
 	public void addChatroom() {
-		chatDAO.addChatroom(new ChatroomVO(0, 1, 5, null, 1, 1));
+		chatDAO.addChatroom(new ChatroomVO(0, 1, 22, null, 1, 1));
 	}
 
 	@Test
-	@Ignore
 	public void findChatroomlist() {
-		List<ChatroomVO> list = chatDAO.getChatroomListByUser(new ChatroomVO(0, 1, 5, null, 1, 1));
-		System.out.println(list.size());
+		List<ChatroomVO> list = chatDAO.getChatroomListByUser(new ChatroomVO(0, new MemberVO(1), null, null, 1, 1));
+		for(ChatroomVO v : list)
+			System.out.println(v);
 	}
 
 	@Test
@@ -61,8 +62,14 @@ public class HelpJunitTest {
 	}
 
 	@Test
+	@Ignore
 	public void leaveChatroom() {
 		chatDAO.leaveChatroom(new ChatroomVO(4, 1, 5, null, 1, 1), 2);
+	}
+	
+	@Test @Ignore
+	public void sendChat() {
+		chatDAO.sendChat(new ChatVO(0, new MemberVO(1), new MemberVO(14), null, "TEST3", 0, new ChatroomVO(21)));
 	}
 
 }
