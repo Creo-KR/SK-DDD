@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.requestMapper">
+	<resultMap id="RequestVOResultMap" type="RequestVO">
+	<!-- 숫자인 경우, javaType="Integer" jdbcType="NUMERIC" -->
+	<id property="r_no" column="r_no" javaType="Integer" jdbcType="NUMBER"/>
+	<result property="category.c_no" column="c_no" javaType="CategoryVO" jdbcType="NUMBER"/>
+	<result property="r_title" column="r_title" javaType="String" jdbcType="VARCHAR"/>
+	<result property="r_content" column="r_content" javaType="String" jdbcType="CLOB"/>
+	<result property="r_active" column="r_active" javaType="Integer" jdbcType="NUMBER"/>
+	<result property="r_date" column="r_date" javaType="String" jdbcType="DATE"/>
+	</resultMap>
+</mapper>
