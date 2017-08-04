@@ -6,50 +6,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%@ include file="../commons/header.jsp"%>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/join.css" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/join.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Dark Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, SonyErricsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps -->
+<!-- Style --> <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginstyle.css" type="text/css" media="all" />
 </head>
+<script type="text/javascript">
+$(document).ready(function() {
+	var a = '${CHECK}';
+	if(a == "CHECK"){
+		alert("아이디 또는 비밀번호가 틀렸습니다. 다시 입력해 주세요.");
+	}
+});
+</script>
 <body>
-	<div id="container">
+<div id="container">
 		<div class="main_contents">
-			<!-- 본문영역 -->
-			<form action="loginProc.help" method="post">
-			<div class="contents_inner">
-				<div class="xans-element- xans-member xans-member-join ">
-
-
-					<h3 style="font-size: 30px; font-weight: bold;">Login</h3>
-					<div class="boardWrite">
-						<table border="1" summary="">
-							<tbody>
-								<tr>
-									<th scope="row" style="font-size: 18px;">ID</th>
-									<td><input id="m_id" name="m_id" type="text"
-										height="30px" /> <br>
-										</td>
-										
-								</tr>
-								<tr>
-									<th scope="row" style="font-size: 18px;">PASSWORD</th>
-									<td><input id="m_pwd" name="m_pwd" maxlength="16"
-										value="" type="password" /> <br />
-										
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<br>
-					<span class="btnArea center smp-btn-reg">
-						<a><button id="loginButton" type="submit" style="cursor: pointer;">Login</button></a>
-					</span>
-				</div>
-				
-				</div>
-			</form>
-			</div>
-		</div>
+<h1>LOGIN</h1>
+     <div class="contact-form">
+	 <div class="signin">
+     <form action="loginProc.help" method="post">
+	      <p>UserID</p>
+	      <input type="text" id="m_id" name="m_id" class="user" value="Enter Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Here';}" />
+		  <p>Password <a href="#">Forgot your password?</a></p>
+		  <input type="password" id="m_pwd" name="m_pwd" class="pass" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
+          <input type="submit" id="loginButton" value="Login" />
+	 </form>
+	 </div>
+	 </div>
+	 </div>
+	 </div>
 	<%@ include file="../commons/footer.jsp"%>
 </body>
 

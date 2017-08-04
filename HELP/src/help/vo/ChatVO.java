@@ -4,18 +4,18 @@ import java.sql.Date;
 
 public class ChatVO {
 	private Integer ch_no;
-	private Integer ch_sender;
-	private Integer ch_receiver;
+	private MemberVO ch_sender;
+	private MemberVO ch_receiver;
 	private Date ch_date;
 	private String ch_text;
 	private Integer ch_check;
-	private Integer cr_no;
+	private ChatroomVO cr_no;
 
 	public ChatVO() {
 	}
 
-	public ChatVO(Integer ch_no, Integer ch_sender, Integer ch_receiver, Date ch_date, String ch_text, Integer ch_check,
-			Integer cr_no) {
+	public ChatVO(Integer ch_no, MemberVO ch_sender, MemberVO ch_receiver, Date ch_date, String ch_text, Integer ch_check,
+			ChatroomVO cr_no) {
 		this.ch_no = ch_no;
 		this.ch_sender = ch_sender;
 		this.ch_receiver = ch_receiver;
@@ -33,19 +33,19 @@ public class ChatVO {
 		this.ch_no = ch_no;
 	}
 
-	public Integer getCh_sender() {
+	public MemberVO getCh_sender() {
 		return ch_sender;
 	}
 
-	public void setCh_sender(Integer ch_sender) {
+	public void setCh_sender(MemberVO ch_sender) {
 		this.ch_sender = ch_sender;
 	}
 
-	public Integer getCh_receiver() {
+	public MemberVO getCh_receiver() {
 		return ch_receiver;
 	}
 
-	public void setCh_receiver(Integer ch_receiver) {
+	public void setCh_receiver(MemberVO ch_receiver) {
 		this.ch_receiver = ch_receiver;
 	}
 
@@ -73,11 +73,11 @@ public class ChatVO {
 		this.ch_check = ch_check;
 	}
 
-	public Integer getCr_no() {
+	public ChatroomVO getCr_no() {
 		return cr_no;
 	}
 
-	public void setCr_no(Integer cr_no) {
+	public void setCr_no(ChatroomVO cr_no) {
 		this.cr_no = cr_no;
 	}
 

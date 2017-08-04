@@ -62,7 +62,7 @@ public class MemberController {
 				System.out.println(i);
 				
 				CategoryVO c = new CategoryVO(Integer.parseInt(i));
-				GosuVO g = new GosuVO(g_no, g_intro, c);
+				GosuVO g = new GosuVO(g_no , c);
 				service.addGosu(g);
 				System.out.println("오니");
 			}

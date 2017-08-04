@@ -6,4 +6,6 @@ public interface LoginService {
 
 	public int loginCheck(MemberVO vo);
 
+	public MemberVO memberSearch(String id);
+
 }

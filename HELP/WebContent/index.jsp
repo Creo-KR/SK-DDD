@@ -22,6 +22,7 @@
 			<!-- 본문영역 -->
 			
 			<div id="body">
+			<div>
 			<%@ include file="commons/body.jsp"%>
 <%-- 		<jsp:include page="commons/body.jsp" flush="true"/> --%>
 

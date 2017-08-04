@@ -4,21 +4,50 @@
 	<insert id="addChatroom" parameterType="ChatroomVO">
 	INSERT INTO chatroom
 	VALUES (
-		cr_no_seq.NEXTVAL, #{cr_user1}, #{cr_user2}, sysdate, 1, 1
+		cr_no_seq.NEXTVAL, #{cr_user1.m_no}, #{cr_user2.m_no}, sysdate, 1, 1
 	)
 	</insert>
 	
-	<select id="getChatroomListByUsers" parameterType="ChatroomVO" resultType="ChatroomVO">
-	SELECT * FROM chatroom
-	WHERE (cr_user1 = #{cr_user1} AND cr_active1 = 1)
-	   OR (cr_user2 = #{cr_user1} AND cr_active2 = 1)
+	<resultMap type="MemberVO" id="MemberVO">
+		<id property="m_no" column="m_no"/>
+		<result property="m_id" column="m_id"/>
+		<result property="m_name" column="m_name"/>
+	</resultMap>
+	
+	<resultMap type="ChatroomVO" id="ChatroomVO">
+		<id property="cr_no" column="cr_no"/>
+		<result property="cr_lastdate" column="cr_lastdate"/>
+		<result property="cr_active1" column="cr_active1"/>
+		<result property="cr_active2" column="cr_active2"/>
+		<association property="lastMessage" column="ch_text" javaType="String" select="getLastMessageByChatroom" />
+		<collection property="cr_user1" columnPrefix="user_" resultMap="MemberVO"/>
+		<collection property="cr_user2" columnPrefix="user2_" resultMap="MemberVO"/>
+	</resultMap>
+	
+	<select id="getChatroomListByUser" parameterType="ChatroomVO" resultMap="ChatroomVO">
+	SELECT cr_no,
+	       cr_user1 user_m_no, m.m_id user_m_id, m.m_name user_m_name,
+	       cr_user2 user2_m_no, m2.m_id user2_m_id, m2.m_name user2_m_name,
+	       cr_lastdate, cr_active1, cr_active2
+	FROM chatroom cr, member m, member m2
+	WHERE ((cr_user1 = #{cr_user1.m_no} AND cr_active1 = 1)
+	   OR (cr_user2 = #{cr_user1.m_no} AND cr_active2 = 1))
+	  AND cr_user1 = m.m_no AND cr_user2 = m2.m_no
 	ORDER BY cr_lastdate desc
+	</select>
+	
+	<select id="getLastMessageByChatroom" resultType="String">
+	SELECT * FROM (
+		SELECT ch_text FROM chat
+		WHERE cr_no = 21
+		ORDER BY ch_date DESC
+	) WHERE ROWNUM = 1
 	</select>
 	
 	<select id="getChatroomByUsers" parameterType="ChatroomVO" resultType="ChatroomVO">
 	SELECT * FROM chatroom
-	WHERE cr_user1 = #{cr_user1} AND cr_active1 = 1
-	  AND cr_user2 = #{cr_user2} AND cr_active2 = 1
+	WHERE cr_user1 = #{cr_user1.m_no} AND cr_active1 = 1
+	  AND cr_user2 = #{cr_user2.m_no} AND cr_active2 = 1
 	</select>
 	
 	<update id="updateChatroomDate" parameterType="ChatroomVO">
@@ -42,7 +71,18 @@
 	<insert id="sendChat" parameterType="ChatVO">
 	INSERT INTO chat
 	VALUES (
-		ch_no_seq.NEXTVAL, #{ch_sender}, #{ch_receiver}, sysdate, #{ch_text}, 1
+		ch_no_seq.NEXTVAL, #{ch_sender.m_no}, #{ch_receiver.m_no}, sysdate, #{ch_text}, 0, #{cr_no.cr_no}
 	)
 	</insert>
+	
+	<select id="getChatByChatroom" parameterType="ChatroomVO" resultType="ChatVO">
+	SELECT * FROM CHAT
+	WHERE cr_no = #{cr_no}
+	</select>
+	
+	<update id="checkChat" parameterType="ChatVO">
+	UPDATE chat
+	SET ch_check = 1
+	WHERE ch_no = #{ch_no}
+	</update>
 </mapper>
