@@ -15,7 +15,7 @@
 			<!-- 본문영역 -->
 			<!-- <div class="dark_window"></div> -->
 			<div>
-				<%@ include file="../commons/body.jsp"%>
+				<%@ include file="../commons/category_menu.jsp"%>
 				<div class="contents">
 					<!-- 본문영역 -->
 					<!--ㅡmove menu 시작-->

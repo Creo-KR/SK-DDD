@@ -127,7 +127,7 @@ button:hover:before, button:hover:after {
 <body>
 
 
-	<div class="content">
+	<div class="content" style="height:300px">
 
 		<!-- 검색 창 form Start-->
 		<div id="search_form" style="margin-left: 20%">
@@ -142,68 +142,51 @@ button:hover:before, button:hover:after {
 		<div id="categoryBox">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
-				<li><a href="#"> <img src="images/2.jpg" alt="" /> <span
+				<li><a href="/HELP/category1List.jsp"> <img src="images/2.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 1</span> <span class="sdt_descr">Get
 								to know me</span>
 					</span>
 				</a></li>
-				<li><a href="#"> <img src="images/1.jpg" alt="" /> <span
+				<li><a href="/HELP/category2List.jsp"> <img src="images/1.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 2</span> <span class="sdt_descr">My
 								work</span>
 					</span>
 				</a></li>
 
-				<li><a href="#"> <img src="images/3.jpg" alt="" /> <span
+				<li><a href="/HELP/category3List.jsp"> <img src="images/3.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 3</span> <span class="sdt_descr">Where
 								ideas get born</span>
 					</span>
 				</a></li>
-				<li><a href="#"> <img src="images/4.jpg" alt="" /> <span
+				<li><a href="/HELP/category4List.jsp"> <img src="images/4.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 4</span> <span class="sdt_descr">I
 								like to photograph</span>
 					</span>
 				</a></li>
-				<li><a href="#"> <img src="images/5.jpg" alt="" /> <span
+				<li><a href="/HELP/category5List.jsp"> <img src="images/5.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 5</span> <span class="sdt_descr">I
 								write about design</span>
 					</span>
 				</a></li>
+				<li><div id="add_request" >
+	
+				<button onclick="request_go()">
+				견적서 등록
+				</button>
+
+
+				</div></li>
 
 			</ul>
 		</div>
 	</div>
 	<!-- Category Box End -->
 	
-	
-	<!-- list 내용 Start-->
-	
-	<!-- list 내용 End-->
-	
-	
-	
-	
-	
-	
-	<!-- 견적서 등록 Start-->
-	
-	
-	
-	<div id="add_request" >
-	
-		<button onclick="request_go()">
-		견적서 등록
-		</button>
-
-
-	</div>
-	
-	<!-- 견적서 등록 End-->
-
 
 
 	<div>
