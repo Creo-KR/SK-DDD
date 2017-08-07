@@ -1,5 +1,7 @@
 package help.controller;
 
+import javax.servlet.ServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,32 @@ public class RequestController {
 	
 	@RequestMapping("request.help")
 	public String moveJoin() {
-		return "pages/request";
+		return "pages/requestForm";
+	}
+	
+	@RequestMapping(value="addRequest.help", method=RequestMethod.POST)
+	 public void addRequest(ServletRequest request) {
+			
+		  String categoryType = request.getParameter("categoryType");
+		  String title = request.getParameter("title");
+		  String[] question = request.getParameterValues("question");
+		  String[] answer = request.getParameterValues("answer");
+		  String question_answer;
+		  
+		  System.out.println(categoryType);
+		  System.out.println(title);
+		  
+		  for (String ques : question) {
+			System.out.println(ques);
+			
+		}
+		  for (String ans : answer) {
+				System.out.println(ans);
+				
+			}
+		
+		  
+
 	}
 	
 //	@RequestMapping(value="addRequest.help", method=RequestMethod.POST)
