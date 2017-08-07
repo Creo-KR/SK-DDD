@@ -9,12 +9,13 @@
 			if(e.srcElement.id == "chatroom") {
 				var cr = e.srcElement;
 				var no = cr.childNodes[1].innerText;
-				var rcv = cr.childNodes[2].innerText;
-				sessionStorage.setItem("ss_cr_no",cr.childNodes[1].innerText);
-				sessionStorage.setItem("ss_cr_sender",sessionStorage.getItem("UNO"));
-				sessionStorage.setItem("ss_cr_receiver",rcv);
+				var rcv = cr.childNodes[3].innerText;
 				var room = window.parent.document.getElementById('chat_room_list_frame');
-				room.src="../viewChatroom.help?cr_no="+no;
+				room.src="../viewChatroom.help?cr_no="+no+"&cr_receiver="+rcv;
+				var title = window.parent.document.getElementById('chat_room_titleBar_name');
+				title.innerText = cr.childNodes[4].textContent;
+				var display = window.parent.document.getElementById('chat_room');
+				display.style.display = "";
 			}
 		};
 </script>
@@ -25,7 +26,7 @@
 		<div id="chatroom"
 		style="position: relative; border: solid 1px gray; width: 229px; height: 60px; top: 0px; left: 2px; margin-bottom: 1px;">
 		<div style="display: none;">${chatroom.cr_no}</div>
-		<div style="display: none;"><c:if test="${chatroom.cr_user1 == sessionScope.UNO}" >${chatroom.cr_user2}</c:if><c:if test="${chatroom.cr_user2 == sessionScope.UNO}" >${chatroom.cr_user1}</c:if></div>
+		<div style="display: none;"><c:if test="${chatroom.cr_user1.m_no == UNO}" >${chatroom.cr_user2.m_no}</c:if><c:if test="${chatroom.cr_user2.m_no == UNO}" >${chatroom.cr_user1.m_no}</c:if></div>
 		[] ${chatroom.cr_user1.m_name} / ${chatroom.cr_user2.m_name} ${chatroom.cr_lastdate} <br> ${chatroom.lastMessage }</div>
 	</c:forEach>
 </body>

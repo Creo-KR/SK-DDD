@@ -92,6 +92,7 @@
 	FROM chat ch, member m, member m2 
 	WHERE cr_no = #{cr_no}
 	  AND ch_sender = m.m_no AND ch_receiver = m2.m_no
+	ORDER BY ch_date DESC
 	</select>
 	
 	<update id="checkChat" parameterType="ChatVO">

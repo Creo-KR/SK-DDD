@@ -10,14 +10,23 @@
 	}
 
 	function sendChat() {
+		var chat_text = document.getElementById('chat_text');
+		if(chat_text.value == "" || chat_text.value == null) {
+			return;
+		}
+		
 		$.ajax({
 			url : "../sendChat.help",
 			data : $('#chat_room_input_frm').serialize(),
 			type : "post",
 			success : function sendHandler(data) {
-				alert('t');
 				var frame = document.getElementById('chat_room_list_frame');
 				frame.contentWindow.location.reload();
+				var frame2 = document.getElementById('chat_list_frame');
+				frame2.contentWindow.location.reload();
+				chat_text.value="";
+
+				
 			}
 		});
 	}
@@ -44,15 +53,15 @@
 			</div>
 		</div>
 
-		<iframe src="../chatroomList.help"
+		<iframe id="chat_list_frame" src="../chatroomList.help"
 			style="border: 0px; width: 250px; height: 460px;"></iframe>
 	</div>
 
 	<div id="chat_room"
-		style=" background-clip: padding-box; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); box-shadow: inset 2px 0 2px -2px #b2b9c9; font-size: 12px; position: fixed; line-height: 16px; right: 264px; bottom: 50px; width: 250px; height: 500px;">
+		style="display:none; background-clip: padding-box; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); box-shadow: inset 2px 0 2px -2px #b2b9c9; font-size: 12px; position: fixed; line-height: 16px; right: 264px; bottom: 50px; width: 250px; height: 500px;">
 		<div id="chat_room_titleBar"
 			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_room_titleBar_name">허진우</div>
+			<div id="chat_room_titleBar_name"></div>
 			<div id="chat_room_titleBar_btn"
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
@@ -73,8 +82,11 @@
 
 		<div id="chat_room_input"
 			style="position: relative; border: solid 1px gray; width: 244px; height: 32px; bottom: -3px; left: 2px;">
-			<form id="chat_room_input_frm">
-			<input type="text" name="text"
+			<form id="chat_room_input_frm" onsubmit="sendChat(); return false;">
+			<input type="hidden" name="sender" value="${ss_cr_sender}" />
+			<input type="hidden" name="receiver" value="${ss_cr_receiver}" />
+			<input type="hidden" name="no" value="${ss_cr_no}" />
+			<input type="text" name="text" id="chat_text" autocomplete=off
 				style="position: relative; width: 208px; height: 28px; padding: 0px; top: -12px;" /><img style="width: 32px; height: 32px; padding: 0px;" onclick="sendChat();"></form>
 		</div>
 	</div>
