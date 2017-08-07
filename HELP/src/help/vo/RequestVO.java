@@ -2,7 +2,8 @@ package help.vo;
 
 public class RequestVO {
 	private Integer r_no;
-	private CategoryVO category;
+	private Integer c_no;
+	private Integer r_writer;
 	private String r_title;
 	private String r_content;
 	private Integer r_active;
@@ -10,17 +11,6 @@ public class RequestVO {
 	
 	public RequestVO() {
 		
-	}
-
-	public RequestVO(Integer r_no, CategoryVO category, String r_title, String r_content, Integer r_active,
-			String r_date) {
-		super();
-		this.r_no = r_no;
-		this.category = category;
-		this.r_title = r_title;
-		this.r_content = r_content;
-		this.r_active = r_active;
-		this.r_date = r_date;
 	}
 
 	public Integer getR_no() {
@@ -31,10 +21,22 @@ public class RequestVO {
 		this.r_no = r_no;
 	}
 
-	public CategoryVO getCategory() {
-		return category;
+	public Integer getC_no() {
+		return c_no;
 	}
-	
+
+	public void setC_no(Integer c_no) {
+		this.c_no = c_no;
+	}
+
+	public Integer getR_writer() {
+		return r_writer;
+	}
+
+	public void setR_writer(Integer r_writer) {
+		this.r_writer = r_writer;
+	}
+
 	public String getR_title() {
 		return r_title;
 	}
@@ -59,20 +61,17 @@ public class RequestVO {
 		this.r_active = r_active;
 	}
 
-	public String getDate() {
+	public String getR_date() {
 		return r_date;
 	}
 
-	public void setDate(String r_date) {
+	public void setR_date(String r_date) {
 		this.r_date = r_date;
 	}
 
 	@Override
 	public String toString() {
-		return "RequestVO [r_no=" + r_no + ", category=" + category + ", r_title=" + r_title + ", r_content="
-				+ r_content + ", r_active=" + r_active + ", date=" + r_date + "]";
+		return "RequestVO [r_no=" + r_no + ", c_no=" + c_no + ", r_writer=" + r_writer + ", r_title=" + r_title
+				+ ", r_content=" + r_content + ", r_active=" + r_active + ", r_date=" + r_date + "]";
 	}
-
-	
-	
 }
