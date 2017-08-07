@@ -16,5 +16,10 @@ public class LoginDAOImpl implements LoginDAO {
 	public int loginCheck(MemberVO vo) {
 		return session.selectOne("loginMapper.loginCheck", vo);
 	}
+	
+	@Override
+	public MemberVO memberSearch(String id) {
+		return session.selectOne("loginMapper.memberSearch", id);
+	}
 
 }
