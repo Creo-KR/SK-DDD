@@ -21,10 +21,14 @@ public class LoginController {
 
 	// 로그인폼 요청
 	@RequestMapping("loginForm.help")
-	public ModelAndView loginForm(ModelAndView mv, HttpServletRequest req) {
+	public ModelAndView loginForm(ModelAndView mv, HttpServletRequest req, HttpSession session) {
 		String check = req.getParameter("CHECK");
-		mv.addObject("CHECK", check);
-		mv.setViewName("pages/loginForm");
+		if (session.getAttribute("UNO") != null) {
+			mv.setViewName("index");
+		} else {
+			mv.addObject("CHECK", check);
+			mv.setViewName("pages/loginForm");
+		}
 		return mv;
 	}
 
@@ -38,7 +42,9 @@ public class LoginController {
 			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("COUNT", cnt);
-			mv.setViewName("index");
+			// mv.setViewName("index");
+			rv.setUrl("loginForm.help");
+			mv.setView(rv);
 		} else {
 			rv.addStaticAttribute("CHECK", "CHECK");
 			rv.setUrl("loginForm.help");
@@ -51,8 +57,12 @@ public class LoginController {
 	@RequestMapping("logout.help")
 	public ModelAndView logout(ModelAndView mv, HttpSession session) {
 		if (session.getAttribute("UNAME") != null) {
+			session.removeAttribute("UNO");
+			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");
 			session.removeAttribute("COUNT");
+			mv.setViewName("index");
+		} else {
 			mv.setViewName("index");
 		}
 		return mv;
