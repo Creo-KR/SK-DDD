@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>메인</h1>
-	<a href="getAllRequestsByCategory.do?m_no=2">고수</a>
+	<a href="getAllRequestsByCategory.help?m_no=38">고수</a>
 	<a href="requestAdd.jsp">일반</a>
 </body>
 </html>

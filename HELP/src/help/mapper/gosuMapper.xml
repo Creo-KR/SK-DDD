@@ -4,5 +4,4 @@
 	<select id="getMyAllCategoryNo" parameterType="Integer" resultType="Integer">
 		select c_no from gosu where g_no=#{value}
 	</select>
-
 </mapper>
