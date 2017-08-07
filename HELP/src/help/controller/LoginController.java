@@ -36,7 +36,7 @@ public class LoginController {
 
 	// 로그인체크
 	@RequestMapping("loginProc.help")
-	public ModelAndView loginProc(ModelAndView mv, @ModelAttribute MemberVO vo, HttpSession session, RedirectView rv) {
+	public ModelAndView loginProc(ModelAndView mv, @ModelAttribute MemberVO vo, HttpSession session) {
 		int cnt = service.loginCheck(vo);
 		if (cnt == 1) {
 			MemberVO memVO = service.memberSearch(vo.getM_id());
@@ -44,14 +44,10 @@ public class LoginController {
 			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("COUNT", cnt);
-			// mv.setViewName("index");
-			rv.setUrl("loginForm.help");
-			mv.setView(rv);
-		} else {
-			rv.addStaticAttribute("CHECK", "CHECK");
-			rv.setUrl("loginForm.help");
-			mv.setView(rv);
+			//rv.setUrl("loginForm.help");
+			//mv.setView(rv);
 		}
+		mv.setViewName("index");
 		return mv;
 	}
 

@@ -18,7 +18,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		PrintWriter out = response.getWriter();
 		if (session.getAttribute("UNO") != null) {
 			String dest = (String) session.getAttribute("dest");
-			dest = dest.replaceAll("/HELP/", "");
+			request.getSession().setAttribute("dest", request.getContextPath()+"/");
 			out.println("<script>");
 			out.println("location.href='"+dest+"';");
 			out.println("</script>");
