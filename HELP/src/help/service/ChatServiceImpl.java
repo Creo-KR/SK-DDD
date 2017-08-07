@@ -6,17 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import help.dao.ChatDAO;
+import help.vo.ChatVO;
 import help.vo.ChatroomVO;
 
 @Service
 public class ChatServiceImpl implements ChatService {
-	
+
 	@Autowired
 	ChatDAO dao;
 
-	@Override
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo) {
-		return dao.getChatroomListByUser(vo);
+		List<ChatroomVO> list = dao.getChatroomListByUser(vo);
+		for (ChatroomVO v : list) {
+			v.setLastMessage(dao.getLastMessageByChatroom(v.getCr_no()));
+		}
+		return list;
+	}
+	
+	public void addChatroom(ChatroomVO vo) {
+		dao.addChatroom(vo);
+	}
+	
+	public List<ChatVO> getChatByChatroom(ChatroomVO vo) {
+		return dao.getChatByChatroom(vo);
+	}
+	
+	public void sendChat(ChatVO vo) {
+		dao.sendChat(vo);
+		
 	}
 
 }

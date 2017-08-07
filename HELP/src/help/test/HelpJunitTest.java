@@ -45,8 +45,10 @@ public class HelpJunitTest {
 	@Test
 	public void findChatroomlist() {
 		List<ChatroomVO> list = chatDAO.getChatroomListByUser(new ChatroomVO(0, new MemberVO(1), null, null, 1, 1));
-		for(ChatroomVO v : list)
+		for(ChatroomVO v : list) {
+			v.setLastMessage(chatDAO.getLastMessageByChatroom(v.getCr_no()));
 			System.out.println(v);
+		}
 	}
 
 	@Test

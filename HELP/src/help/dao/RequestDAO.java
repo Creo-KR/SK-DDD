@@ -1,19 +1,18 @@
 package help.dao;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 import help.vo.RequestVO;
 
-public class RequestDAO {
-	@Autowired
-	SqlSession session;
 
-	public RequestVO getRequestByRequestor(String requestorId) {
-		return null;
-	}
-
-	public RequestVO getRequestByGosu(Integer cNo) {
-		return null;
-	}
+public interface RequestDAO {
+	public int insertRequest(RequestVO req);
+	
+	public int removeRequest(Integer r_no);
+	
+	public List<RequestVO> getAllRequestsByWriter(Integer r_writer);
+	
+	public List<RequestVO> getAllRequestsByCategory(Integer c_no);
+	
+	public RequestVO getRequestDetail(Integer r_no);
 }
