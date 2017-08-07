@@ -1,6 +1,5 @@
 package help.vo;
 
-
 public class CategoryVO {
 	private Integer c_no;
 	private String c_name;
@@ -33,6 +32,4 @@ public class CategoryVO {
 	public void setC_name(String c_name) {
 		this.c_name = c_name;
 	}
-	
-	
 }
