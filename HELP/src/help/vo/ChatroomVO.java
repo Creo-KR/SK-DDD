@@ -30,17 +30,6 @@ public class ChatroomVO {
 	}
 	
 
-	public ChatroomVO(Integer cr_no, MemberVO cr_user1, MemberVO cr_user2, Date cr_lastdate, Integer cr_active1,
-			Integer cr_active2, String lastMessage) {
-		this.cr_no = cr_no;
-		this.cr_user1 = cr_user1;
-		this.cr_user2 = cr_user2;
-		this.cr_lastdate = cr_lastdate;
-		this.cr_active1 = cr_active1;
-		this.cr_active2 = cr_active2;
-		this.lastMessage = lastMessage;
-	}
-
 	public Integer getCr_no() {
 		return cr_no;
 	}
