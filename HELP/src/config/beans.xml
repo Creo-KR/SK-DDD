@@ -49,6 +49,8 @@
 				<value>classpath:help/mapper/memberMapper.xml</value>
 				<value>classpath:help/mapper/chatMapper.xml</value>
 				<value>classpath:help/mapper/loginMapper.xml</value>
+				<value>classpath:help/mapper/requestMapper.xml</value>
+				<value>classpath:help/mapper/gosuMapper.xml</value>
 			</list>
 		</property>
 	</bean>

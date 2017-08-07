@@ -10,7 +10,7 @@
 <body>
 	<div>
 		<h1><요청서 등록 페이지></h1>
-		<form method="post" action="addRequest.do">
+		<form method="post" action="addRequest.help">
 			<table>
 				<tr>
 					<td>요청서 번호 :</td>

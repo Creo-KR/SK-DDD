@@ -27,9 +27,15 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 
 	@Override
-	public List<RequestVO> getAllRequestsByWriter(Integer r_writer) {
-		return session.selectList("requestMapper.getAllRequestsByWriter", r_writer);
+	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer) {
+		return session.selectList("requestMapper.getAllActiveRequestsByWriter", r_writer);
 	}
+	
+	@Override
+	public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer) {
+		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
+	}
+
 
 	@Override
 	public List<RequestVO> getAllRequestsByCategory(Integer c_no) {
@@ -41,4 +47,5 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.selectOne("requestMapper.getRequestDetail", r_no);
 	}
 
+	
 }

@@ -10,7 +10,9 @@ public interface RequestDAO {
 	
 	public int removeRequest(Integer r_no);
 	
-	public List<RequestVO> getAllRequestsByWriter(Integer r_writer);
+	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer);
+	
+	public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer);
 	
 	public List<RequestVO> getAllRequestsByCategory(Integer c_no);
 	
