@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1><요청서 목록></h1>
+	<h1><요청서 목록> - 대기중</h1>
 	<table>
 		<tr>
 			<th>요청서 번호</th>
@@ -17,9 +17,29 @@
 			<th>완료여부</th>
 			<th>날짜</th>
 		</tr>
-	<c:forEach var="request" items="${requestListKey}">
+	<c:forEach var="request" items="${requestKey.active}">
 	<tr>
-		<th><a href="getRequestDetail.do?r_no=${request.r_no}">${request.r_no}</a></th>
+		<th><a href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></th>
+		<th>${request.c_no}</th>
+		<th>${request.r_title}</th>
+		<th>${request.r_active}</th>
+		<th>${request.r_date}</th>
+	</tr>
+	</c:forEach>
+	</table>
+	<br>
+	<h1><요청서 목록> - 진행중</h1>
+	<table>
+		<tr>
+			<th>요청서 번호</th>
+			<th>카테고리 번호</th>
+			<th>제목</th>
+			<th>완료여부</th>
+			<th>날짜</th>
+		</tr>
+	<c:forEach var="request" items="${requestKey.inactive}">
+	<tr>
+		<th><a href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></th>
 		<th>${request.c_no}</th>
 		<th>${request.r_title}</th>
 		<th>${request.r_active}</th>

@@ -21,7 +21,7 @@
 		</tr>
 		<c:forEach var="request" items="${requestListKey}">
 			<tr>
-				<th><a href="getRequestDetail.do?r_no=${request.r_no}">${request.r_no}</a></th>
+				<th><a href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></th>
 				<th>${request.c_no}</th>
 				<th>${request.r_title}</th>
 				<th>${request.r_active}</th>

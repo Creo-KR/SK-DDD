@@ -1,7 +1,9 @@
 package help.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,21 +29,27 @@ public class RequestController {
 	@Autowired
 	GosuDAO gosuDAO;
 
-	@RequestMapping(value = "/addRequest.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/addRequest.help", method = RequestMethod.POST)
 	public String addRequest(@ModelAttribute RequestVO req) {
 		if (req != null) {
 			int cnt = reqDAO.insertRequest(req);
 			if (cnt == 1)
-				return "redirect:/getAllRequestsByWriter.do?r_writer=1";
+				return "redirect:/getAllRequestsByWriter.help?r_writer=27";
 		}
 		return "";
 	}
 	
-	@RequestMapping(value="/getAllRequestsByWriter.do", method=RequestMethod.GET)
+	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
 	public ModelAndView getAllRequestsByWriter(@RequestParam Integer r_writer) {
 		//★★★★ getRequestsByWriter의 파라미터인 r_writer에 값 고정되어 있음. 1은 임의의 r_writer임 
-		List<RequestVO> requestListValue = reqDAO.getAllRequestsByWriter(r_writer);
-		return new ModelAndView("myRequestList", "requestListKey", requestListValue);
+		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
+		List<RequestVO> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
+		
+		Map<String, List<RequestVO>> map = new HashMap<>();
+		map.put("active", activeRequestValues);
+		map.put("inactive", inactiveRequestValues);
+		
+		return new ModelAndView("myRequestList", "requestKey", map);
 	}
 	
 //	@RequestMapping(value="/getAllRequestByCategory.do", method=RequestMethod.GET)
@@ -56,7 +64,7 @@ public class RequestController {
 //		//return "";
 //	}
 	
-	@RequestMapping(value="/getAllRequestsByCategory.do", method=RequestMethod.GET)
+	@RequestMapping(value="/getAllRequestsByCategory.help", method=RequestMethod.GET)
 	public ModelAndView getAllRequestsByCategory(@RequestParam Integer m_no) {
 		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
 		//List<RequestVO> requestListValue = null;	//바보가 null로 초기화해놓고 addAll하니까 nullPointExceptions 난거잖아... 
@@ -71,7 +79,7 @@ public class RequestController {
 		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
 	}
 	
-	@RequestMapping(value="/getRequestDetail.do", method=RequestMethod.GET)
+	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
 	public ModelAndView getRequestDetail(@RequestParam Integer r_no) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
 		return new ModelAndView("requestDetail", "requestDetailKey", vo);

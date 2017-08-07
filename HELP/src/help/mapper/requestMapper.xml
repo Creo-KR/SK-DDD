@@ -19,19 +19,22 @@
 
 	<insert id="insertRequest" parameterType="RequestVO">
 		insert into request
-		values (#{r_no},#{c_no},#{r_writer},#{r_title},#{r_content},1,SYSDATE)
+		values (#{r_no},#{c_no},#{r_title},#{r_content},1,SYSDATE,#{r_writer})
 	</insert>
 	
-	<select id="getAllRequestsByWriter" parameterType="Integer" resultType="RequestVO">
-		select * from request where r_writer=#{value}
+	<select id="getAllActiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
+		select * from request where r_writer=#{value} and r_active=1
+	</select>
+	
+	<select id="getAllInactiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
+		select * from request where r_writer=#{value} and r_active=0
 	</select>
 	
 	<select id="getAllRequestsByCategory" parameterType="Integer" resultType="RequestVO">
-		select * from request where c_no=#{value}
+		select * from request where c_no=#{value} and r_active=1
 	</select>
 
 	<select id="getRequestDetail" parameterType="Integer" resultType="RequestVO">
 		select * from request where r_no=#{value}
 	</select>
-</mapper>
 </mapper>

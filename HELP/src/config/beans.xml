@@ -8,6 +8,25 @@
 
 	<mvc:annotation-driven />
 
+	<!-- <mvc:interceptors> <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor"> 
+		<property name="cacheSeconds" value="0" /> <property name="useExpiresHeader" 
+		value="true" /> <property name="useCacheControlHeader" value="true" /> <property 
+		name="useCacheControlNoStore" value="true" /> </bean> </mvc:interceptors> -->
+
+	<bean id="loginInterceptor" class="help.interceptor.LoginInterceptor" />
+	<bean id="authInterceptor" class="help.interceptor.AuthInterceptor" />
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/loginProc.help" />
+			<ref bean="loginInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/joinChoice.help" />
+			<ref bean="authInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<context:component-scan base-package="help" />
 
 	<bean id="viewResolver"
@@ -30,6 +49,8 @@
 				<value>classpath:help/mapper/memberMapper.xml</value>
 				<value>classpath:help/mapper/chatMapper.xml</value>
 				<value>classpath:help/mapper/loginMapper.xml</value>
+				<value>classpath:help/mapper/requestMapper.xml</value>
+				<value>classpath:help/mapper/gosuMapper.xml</value>
 			</list>
 		</property>
 	</bean>
