@@ -12,4 +12,6 @@ public interface ChatService {
 	public void addChatroom(ChatroomVO vo);
 	
 	public List<ChatVO> getChatByChatroom(ChatroomVO vo);
+	
+	public void sendChat(ChatVO vo);
 }
