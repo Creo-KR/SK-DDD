@@ -19,9 +19,18 @@
 		<result property="cr_lastdate" column="cr_lastdate"/>
 		<result property="cr_active1" column="cr_active1"/>
 		<result property="cr_active2" column="cr_active2"/>
-		<association property="lastMessage" column="ch_text" javaType="String" select="getLastMessageByChatroom" />
+		<!-- <association property="lastMessage" column="ch_text" javaType="String" select="getLastMessageByChatroom" /> -->
 		<collection property="cr_user1" columnPrefix="user_" resultMap="MemberVO"/>
 		<collection property="cr_user2" columnPrefix="user2_" resultMap="MemberVO"/>
+	</resultMap>
+	
+	<resultMap type="ChatVO" id="ChatVO">
+		<id property="ch_no" column="ch_no"/>
+		<result property="ch_date" column="ch_date"/>
+		<result property="ch_text" column="ch_text"/>
+		<result property="ch_check" column="ch_check"/>
+		<collection property="ch_sender" columnPrefix="sender_" resultMap="MemberVO"/>
+		<collection property="ch_receiver" columnPrefix="receiver_" resultMap="MemberVO"/>
 	</resultMap>
 	
 	<select id="getChatroomListByUser" parameterType="ChatroomVO" resultMap="ChatroomVO">
@@ -36,7 +45,7 @@
 	ORDER BY cr_lastdate desc
 	</select>
 	
-	<select id="getLastMessageByChatroom" resultType="String">
+	<select id="getLastMessageByChatroom" parameterType="Integer" resultType="String">
 	SELECT * FROM (
 		SELECT ch_text FROM chat
 		WHERE cr_no = #{cr_no}
@@ -75,9 +84,14 @@
 	)
 	</insert>
 	
-	<select id="getChatByChatroom" parameterType="ChatroomVO" resultType="ChatVO">
-	SELECT * FROM CHAT
+	<select id="getChatByChatroom" parameterType="ChatroomVO" resultMap="ChatVO">
+	SELECT ch_no,
+	 	   ch_sender sender_m_no, m.m_id sender_m_id, m.m_name sender_m_name,
+	       ch_receiver receiver_m_no, m2.m_id receiver_m_id, m2.m_name receiver_m_name,
+	       ch_date, ch_text, ch_check
+	FROM chat ch, member m, member m2 
 	WHERE cr_no = #{cr_no}
+	  AND ch_sender = m.m_no AND ch_receiver = m2.m_no
 	</select>
 	
 	<update id="checkChat" parameterType="ChatVO">

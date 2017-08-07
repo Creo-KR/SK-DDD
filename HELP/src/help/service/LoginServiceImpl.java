@@ -16,5 +16,10 @@ public class LoginServiceImpl implements LoginService{
 	public int loginCheck(MemberVO vo) {
 		return dao.loginCheck(vo);
 	}
+	
+	@Override
+	public MemberVO memberSearch(String id) {
+		return dao.memberSearch(id);
+	}
 
 }
