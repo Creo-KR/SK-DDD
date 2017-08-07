@@ -64,7 +64,7 @@ public class ChatController {
 			list = service.getChatByChatroom(new ChatroomVO(cr_no));
 		} else {
 			System.out.println("비로그인");
-			list = service.getChatByChatroom(new ChatroomVO(21));
+			list = service.getChatByChatroom(new ChatroomVO(cr_no));
 		}
 
 		mv.addObject("chat_list", list);
@@ -73,14 +73,24 @@ public class ChatController {
 	}
 
 	@RequestMapping(value = "sendChat.help", method = RequestMethod.POST)
-	public void sendChat(HttpSession session, @RequestParam Integer cr_no, RedirectView rv, HttpServletResponse response) {
-		System.out.println(cr_no);
+	public void sendChat(HttpSession session, @RequestParam String ch_text, RedirectView rv,
+			HttpServletResponse response) {
+		
+		Integer cr_no = (Integer) session.getAttribute("ss_cr_no");
+		Integer ch_sender = (Integer) session.getAttribute("ss_cr_sender");
+		Integer ch_receiver = (Integer) session.getAttribute("ss_cr_receiver");
+		service.sendChat(new ChatVO(0, new MemberVO(ch_sender), new MemberVO(ch_receiver), null, ch_text, 0, new ChatroomVO(cr_no)));
+		
 		try {
-			response.getWriter().print(cr_no);
+			response.getWriter().print(ch_text);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping(value = "joinChatroom.help", method = RequestMethod.POST)
+	public void joinChatroom() {
+		
 	}
 
 }
