@@ -49,4 +49,8 @@ public class ChatDAOImpl implements ChatDAO {
 	public void checkChat(ChatVO vo) {
 		session.update("chatMapper.checkChat", vo);
 	}
+	
+	public String getLastMessageByChatroom(Integer cr_no) {
+		return session.selectOne("chatMapper.getLastMessageByChatroom", cr_no);
+	}
 }
