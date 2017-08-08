@@ -49,7 +49,6 @@ public class MemberController {
 			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=true) List<String> c_no,
 			@RequestParam String g_intro
 			) {
-		System.out.println("come?");
 		String phoneNumber = member.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = member.getM_email() + "@"  + m_email2;
 		member.setM_tel(phoneNumber);
@@ -61,12 +60,9 @@ public class MemberController {
 			
 			int g_no = service.getMember(member.getM_id());
 			for(String i : c_no) {
-				System.out.println(i);
-				
 				CategoryVO c = new CategoryVO(Integer.parseInt(i));
 				GosuVO g = new GosuVO(g_no , c);
 				service.addGosu(g);
-				System.out.println("오니");
 			}
 		} else {
 			service.addMember(member);

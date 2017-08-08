@@ -74,7 +74,6 @@ public class RequestController {
 			requestListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
 			
 		}
-		System.out.println(requestListValue);
 		
 		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
 	}

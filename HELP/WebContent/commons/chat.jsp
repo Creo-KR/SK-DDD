@@ -3,9 +3,20 @@
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script>
+	document.onload = function() {
+		alert("T");
+		if(sessionStorage.getItem("chat_list") == "close") {
+			divClose("chat_list");
+		}
+		if(sessionStorage.getItem("chat_room") == "close") {
+			divClose("chat_room");
+		}
+	}
+	
 	function divClose(id) {
 		var div = document.getElementById(id);
-		div.style.display = 'none';
+		div.style.display = "none";
+		sessionStorage.setItem(id,"close");
 	}
 
 	function sendChat() {
@@ -15,7 +26,7 @@
 		}
 		
 		$.ajax({
-			url : "../sendChat.help",
+			url : "sendChat.help",
 			data : $('#chat_room_input_frm').serialize(),
 			type : "post",
 			success : function sendHandler(data) {
@@ -42,7 +53,7 @@
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
 					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="../images/close.png"
+					src="/images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_list');">
 			</div>
@@ -61,7 +72,7 @@
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
 					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="../images/close.png"
+					src="/images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_room');">
 			</div>
