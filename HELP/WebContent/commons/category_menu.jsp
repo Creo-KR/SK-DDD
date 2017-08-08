@@ -125,7 +125,7 @@ button:hover:before, button:hover:after {
 <body>
 
 
-	<div class="content" style="height:300px">
+	<div class="content" style="height:350px">
 
 		<!-- 검색 창 form Start-->
 		<div id="search_form" style="margin-left: 20%">
@@ -140,41 +140,36 @@ button:hover:before, button:hover:after {
 		<div id="categoryBox" style="margin-left: 20%">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
-				<li><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/2.jpg" alt="" /> <span
+				<li><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">카테고리 1</span> <span class="sdt_descr">Get
-								to know me</span>
+							class="sdt_link">피아노</span> <span class="sdt_descr">Learn the piano</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category2List.jsp"> <img src="${pageContext.request.contextPath}/images/1.jpg" alt="" /> <span
+				<li><a href="/HELP/category2List.jsp"> <img src="${pageContext.request.contextPath}/images/move.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">카테고리 2</span> <span class="sdt_descr">My
-								work</span>
+							class="sdt_link">이사</span> <span class="sdt_descr">Move house</span>
 					</span>
 				</a></li>
 
-				<li><a href="/HELP/category3List.jsp"> <img src="${pageContext.request.contextPath}/images/3.jpg" alt="" /> <span
+				<li><a href="/HELP/category3List.jsp"> <img src="${pageContext.request.contextPath}/images/webDevelop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">카테고리 3</span> <span class="sdt_descr">Where
-								ideas get born</span>
+							class="sdt_link">웹 개발</span> <span class="sdt_descr">Do web development</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category4List.jsp"> <img src="${pageContext.request.contextPath}/images/4.jpg" alt="" /> <span
+				<li><a href="/HELP/category4List.jsp"> <img src="${pageContext.request.contextPath}/images/potoshop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">카테고리 4</span> <span class="sdt_descr">I
-								like to photograph</span>
+							class="sdt_link">포토샵</span> <span class="sdt_descr">Learn Photoshop</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category5List.jsp"> <img src="${pageContext.request.contextPath}/images/5.jpg" alt="" /> <span
+				<li><a href="/HELP/category5List.jsp"> <img src="${pageContext.request.contextPath}/images/wedding.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">카테고리 5</span> <span class="sdt_descr">I
-								write about design</span>
+							class="sdt_link">결혼</span> <span class="sdt_descr">Prepare for marriage</span>
 					</span>
 				</a></li>
 				<li><div id="add_request" >
 	
 				<button onclick="request_go()">
-				견적서 등록
+				요청서 등록
 				</button>
 
 

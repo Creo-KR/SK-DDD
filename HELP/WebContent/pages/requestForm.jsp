@@ -86,11 +86,11 @@ label.control-label {
             <div class='col-md-2'>
               <select name="categoryType" id="categoryType" class='form-control' id='kinds'>
                 <option value="">카테고리 선택</option>              
-                <option value="category1">카테고리1</option>
-                <option value="category2">카테고리2</option>
-                <option value="category3">카테고리3</option>
-                <option value="category4">카테고리4</option>
-                <option value="category5">카테고리5</option>
+                <option value="1">피아노</option>
+                <option value="2">이사</option>
+                <option value="3">웹개발</option>
+                <option value="4">포토샵</option>
+                <option value="5">결혼</option>
               </select>
             </div>
           </div>
@@ -130,9 +130,8 @@ label.control-label {
          
          
          
-         if(type=="category1"){
+         if(type==1){
             $.ajax({
-            	
                 url: 'pages/requestFormCategory1.html',
                 type: 'get',
                 success: function(data){
@@ -147,7 +146,7 @@ label.control-label {
                     $('#content').html(errorMsg);
                   }
             });
-         }else if(type=="category2"){
+         }else if(type==2){
              $.ajax({
              	
                  url: 'pages/requestFormCategory2.html',
@@ -164,7 +163,7 @@ label.control-label {
                      $('#content').html(errorMsg);
                    }
              });
-          }else if(type=="category3"){
+          }else if(type==3){
               $.ajax({
               	
                   url: 'pages/requestFormCategory3.html',
@@ -181,7 +180,7 @@ label.control-label {
                       $('#content').html(errorMsg);
                     }
               });
-           }else if(type=="category4"){
+           }else if(type==4){
                $.ajax({
                	
                    url: 'pages/requestFormCategory4.html',
@@ -198,7 +197,7 @@ label.control-label {
                        $('#content').html(errorMsg);
                      }
                });
-            }else if(type=="category5"){
+            }else if(type==5){
                 $.ajax({
                 	
                     url: 'pages/requestFormCategory5.html',

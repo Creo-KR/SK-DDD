@@ -27,7 +27,7 @@
 			<ref bean="loginInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
-			<mvc:mapping path="/joinChoice.help" />
+			<mvc:mapping path="/" />
 			<ref bean="authInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

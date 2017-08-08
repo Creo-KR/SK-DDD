@@ -12,6 +12,8 @@ public class RequestVO {
 	public RequestVO() {
 		
 	}
+	
+	
 
 	public Integer getR_no() {
 		return r_no;
