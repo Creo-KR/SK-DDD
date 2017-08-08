@@ -39,21 +39,21 @@
 	}
 	
 	setInterval(function() {
-		$.ajax({
-			url : "chatRefreshCount.help",
-			data : {UNO:${UNO}},
-			type : "post",
-			success: function(response) { 
-		    	if(response >= 1) {
-		    		var frame = document.getElementById('chat_room_list_frame');
-					frame.contentWindow.location.reload();
-					var frame2 = document.getElementById('chat_list_frame');
-					frame2.contentWindow.location.reload();
-		    	} else{
-		    		
-		    	}
-		    }
-		});
+		if(sessionStorage.getItem("chat_list") == "open") {
+			$.ajax({
+				url : "chatRefreshCount.help",
+				data : {UNO:${UNO}},
+				type : "post",
+				success: function(response) { 
+			    	if(response >= 1) {
+			    		var frame = document.getElementById('chat_list_frame');
+						frame.contentWindow.location.reload();
+			    	} else{
+			    		
+			    	}
+			    }
+			});
+		}
 	}, 5000);
 
 </script>

@@ -16,4 +16,6 @@ public interface ChatService {
 	public void sendChat(ChatVO vo);
 	
 	public int chatRefreshCount(int ch_receiver);
+	
+	public void checkChat(ChatVO vo);
 }

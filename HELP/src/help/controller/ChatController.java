@@ -96,5 +96,16 @@ public class ChatController {
 		}
 		return 0;
 	}
+	
+	@RequestMapping(value = "checkChat.help", method = RequestMethod.POST)
+	public void checkChat(HttpSession session, @RequestParam Integer ch_no,
+			HttpServletResponse response) {
+		service.checkChat(new ChatVO(ch_no));
+		try {
+			response.getWriter().print(1);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

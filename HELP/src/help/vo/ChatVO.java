@@ -14,8 +14,12 @@ public class ChatVO {
 	public ChatVO() {
 	}
 
-	public ChatVO(Integer ch_no, MemberVO ch_sender, MemberVO ch_receiver, Date ch_date, String ch_text, Integer ch_check,
-			ChatroomVO cr_no) {
+	public ChatVO(Integer ch_no) {
+		this.ch_no = ch_no;
+	}
+
+	public ChatVO(Integer ch_no, MemberVO ch_sender, MemberVO ch_receiver, Date ch_date, String ch_text,
+			Integer ch_check, ChatroomVO cr_no) {
 		this.ch_no = ch_no;
 		this.ch_sender = ch_sender;
 		this.ch_receiver = ch_receiver;
