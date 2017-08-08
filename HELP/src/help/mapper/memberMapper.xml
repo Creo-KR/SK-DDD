@@ -21,6 +21,10 @@
 		SELECT count(*) FROM member WHERE m_id = #{m_id}
 	</select>
 	
+	<select id="getMemberByNo" parameterType="Integer" resultType="MemberVO">
+		SELECT * FROM member WHERE m_no = #{m_no}
+	</select>
+	
 	<select id="getMember" parameterType="String" resultType="int">
 		SELECT m_no FROM member WHERE m_id = #{m_id}
 	</select>

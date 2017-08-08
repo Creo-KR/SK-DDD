@@ -18,9 +18,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		PrintWriter out = response.getWriter();
 		if (session.getAttribute("UNO") != null) {
 			String dest = (String) session.getAttribute("dest");
-			request.getSession().setAttribute("dest", request.getContextPath()+"/");
+			dest = dest == null ? request.getContextPath() + "/" : dest;
+			request.getSession().setAttribute("dest", request.getContextPath() + "/");
 			out.println("<script>");
-			out.println("location.href='"+dest+"';");
+			out.println("location.href='" + dest + "';");
 			out.println("</script>");
 			out.close();
 		} else {
@@ -31,18 +32,4 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			out.close();
 		}
 	}
-	
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
-		return true;
-	}
-	
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-			throws Exception {
-	}
-	
-	public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
-	}
-
 }

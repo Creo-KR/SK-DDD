@@ -21,7 +21,6 @@ public class ChatDAOImpl implements ChatDAO {
 
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo) {
 		vo.setLastMessage(session.selectOne("chatMapper.getLastMessageByChatroom", vo));
-		System.out.println(vo.getLastMessage());
 		return session.selectList("chatMapper.getChatroomListByUser", vo);
 				
 	}
@@ -42,7 +41,7 @@ public class ChatDAOImpl implements ChatDAO {
 	}
 	
 	public void sendChat(ChatVO vo) {
-		System.out.println(session.insert("chatMapper.sendChat", vo));
+		session.insert("chatMapper.sendChat", vo);
 	}
 
 	public List<ChatVO> getChatByChatroom(ChatroomVO vo) {
@@ -55,5 +54,15 @@ public class ChatDAOImpl implements ChatDAO {
 	
 	public String getLastMessageByChatroom(Integer cr_no) {
 		return session.selectOne("chatMapper.getLastMessageByChatroom", cr_no);
+	}
+	
+	@Override
+	public int chatRefreshCount(int ch_receiver) {
+		return session.selectOne("chatMapper.chatRefreshCount", ch_receiver);
+	}
+	
+	@Override
+	public int chatroomRefresh(ChatVO vo) {
+		return session.selectOne("chatMapper.chatroomRefresh", vo);
 	}
 }

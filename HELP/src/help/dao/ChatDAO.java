@@ -25,5 +25,8 @@ public interface ChatDAO {
 	
 	public String getLastMessageByChatroom(Integer cr_no);
 	
+	public int chatRefreshCount(int ch_receiver);
+	
+	public int chatroomRefresh(ChatVO vo);
 
 }

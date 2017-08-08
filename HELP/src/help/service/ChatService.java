@@ -14,4 +14,10 @@ public interface ChatService {
 	public List<ChatVO> getChatByChatroom(ChatroomVO vo);
 	
 	public void sendChat(ChatVO vo);
+	
+	public int chatRefreshCount(int ch_receiver);
+	
+	public void checkChat(ChatVO vo);
+	
+	public int chatroomRefresh(ChatVO vo);
 }

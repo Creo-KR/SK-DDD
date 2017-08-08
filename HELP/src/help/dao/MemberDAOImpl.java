@@ -27,6 +27,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public void addGosu(GosuVO vo) {
 		session.insert("memberMapper.addGosu", vo);
 	}
+	
+	@Override
+	public MemberVO getMemberByNo(Integer m_no) {
+		return session.selectOne("memberMapper.getMemberByNo", m_no);
+	}
 
 	@Override
 	public int getMember(String m_id) {

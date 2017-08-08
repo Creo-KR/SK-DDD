@@ -8,7 +8,7 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:interceptors>
+<!-- 	<mvc:interceptors>
 		<bean id="webContentInterceptor"
 			class="org.springframework.web.servlet.mvc.WebContentInterceptor">
 			<property name="cacheSeconds" value="0" />
@@ -16,7 +16,7 @@
 			<property name="useCacheControlHeader" value="true" />
 			<property name="useCacheControlNoStore" value="true" />
 		</bean>
-	</mvc:interceptors>
+	</mvc:interceptors> -->
 
 	<bean id="loginInterceptor" class="help.interceptor.LoginInterceptor" />
 	<bean id="authInterceptor" class="help.interceptor.AuthInterceptor" />

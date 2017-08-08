@@ -33,7 +33,21 @@ public class ChatServiceImpl implements ChatService {
 	
 	public void sendChat(ChatVO vo) {
 		dao.sendChat(vo);
-		
+	}
+	
+	@Override
+	public int chatRefreshCount(int ch_receiver) {
+		return dao.chatRefreshCount(ch_receiver);
+	}
+	
+	@Override
+	public void checkChat(ChatVO vo) {
+		dao.checkChat(vo);
+	}
+	
+	@Override
+	public int chatroomRefresh(ChatVO vo) {
+		return dao.chatroomRefresh(vo);
 	}
 
 }

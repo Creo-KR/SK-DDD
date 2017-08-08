@@ -27,6 +27,11 @@ public class MemberServiceImpl implements MemberService {
 	public void addGosu(GosuVO vo) {
 		dao.addGosu(vo);
 	}
+	
+	@Override
+	public MemberVO getMemberByNo(Integer m_no) {
+		return dao.getMemberByNo(m_no);
+	}
 
 	@Override
 	public int getMember(String m_id) {

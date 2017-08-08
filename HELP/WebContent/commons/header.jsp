@@ -9,11 +9,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/board.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/layout.css" />
+	href="${pageContext.request.contextPath}/css/layout.css?ver=1" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/contents.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/main.css?ver=1" />
+	href="${pageContext.request.contextPath}/css/main.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/vendor.min.css" />	
 <link rel="stylesheet" type="text/css"
@@ -76,8 +76,8 @@
 			</div>
 			</c:if>
 
-			<a href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
-				class="site">SITEMAP</a>
+			<a onclick="divOpen('chat_list')"
+				class="site">CHAT</a>
 			<div class="search_area">
 				<form
 					action="/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ"
@@ -256,3 +256,4 @@
 
 <!-- //header -->
 <div class="dark_window"></div>
+<%@ include file="chat.jsp" %>
