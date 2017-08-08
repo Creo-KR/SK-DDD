@@ -57,7 +57,7 @@
 								</dl>
 							</div>
 							<dl>
-								<dt>계약이행실적증명 발급시스템</dt>
+								<dt>나의 거래 목록 조회하기</dt>
 								<dd class="pl01 none">계약이행실적증명 발급시스템</dd>
 								<dd class="txt">계약을 모두 이행한 사실을 증명할 수 있는 서류를 발급받으실 수 있습니다.</dd>
 								<dd class="txt">
@@ -66,7 +66,7 @@
 								</dd>
 							</dl>
 							<dl>
-								<dt>공급자관리시스템</dt>
+								<dt>개인 정보 수정</dt>
 								<dd class="pl02 none">공급자관리시스템</dd>
 								<dd class="txt">한국동서발전 외부 파트너인 공급자와 관계를 개선하기 위한 시스템입니다.</dd>
 								<dd class="txt">
@@ -75,7 +75,7 @@
 								</dd>
 							</dl>
 							<dl>
-								<dt class="alt">정비적격업체관리시스템(시험성적서 QR코드 발행)</dt>
+								<dt class="alt">비밀번호 변경</dt>
 								<dd class="pl03 none">정비적격업체관리시스템(시험성적서 QR코드 발행)</dd>
 								<dd class="txt">정비적격업체로 선정된 기업을 관리 및 시험 성적 QR코드 발행이 가능합니다.</dd>
 								<dd class="txt">
