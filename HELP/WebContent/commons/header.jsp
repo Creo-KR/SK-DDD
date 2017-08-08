@@ -15,6 +15,8 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css?ver=1" />
 <link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/vendor.min.css" />	
+<link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/print-preview.css"
 	media="screen" />
 <link rel="stylesheet" type="text/css"

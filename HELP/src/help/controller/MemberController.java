@@ -83,6 +83,7 @@ public class MemberController {
 	}
 
 	
+	//마이페이지 일반회원인지 고수인지 구분
 	@RequestMapping(value="mypageDivision.help", method=RequestMethod.GET)
 	public String mypageDivision(String m_id, HttpSession session) {
 		m_id = (String) session.getAttribute("UNAME");
