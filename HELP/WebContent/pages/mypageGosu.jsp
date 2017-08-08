@@ -62,16 +62,16 @@
 								<dd class="txt">계약을 모두 이행한 사실을 증명할 수 있는 서류를 발급받으실 수 있습니다.</dd>
 								<dd class="txt">
 									<a href="https://ewpsrm.ewp.co.kr:8443/cert/midex_login.jsp"
-										target="_blank" class="nw">자세히 보기</a>
+										target="_blank" class="nw">이동 하기</a>
 								</dd>
 							</dl>
 							<dl>
 								<dt>개인 정보 수정</dt>
-								<dd class="pl02 none">공급자관리시스템</dd>
-								<dd class="txt">한국동서발전 외부 파트너인 공급자와 관계를 개선하기 위한 시스템입니다.</dd>
+								<dd class="pl02 none">기존의 정보를 수정할 수 있습니다.</dd>
+								<dd class="txt">세부적인 내용들의 대하여 수정할 수 있는 페이지 입니다.</dd>
 								<dd class="txt">
-									<a href="https://easyu.kospo.co.kr/easyuUser/user/login"
-										target="_blank" class="nw">자세히 보기</a>
+									<a href="pwdCheck.help"
+										class="nw">이동 하기</a>
 								</dd>
 							</dl>
 							<dl>

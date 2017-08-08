@@ -34,13 +34,23 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int getMember(String m_id) {
+	public MemberVO getMember(String m_id) {
 		return dao.getMember(m_id);
 	}
 
 	@Override
 	public int mypageDivision(String m_id) {
 		return dao.mypageDivision(m_id);
+	}
+
+	@Override
+	public int pwdCheck(MemberVO vo) {
+		return dao.pwdCheck(vo);
+	}
+
+	@Override
+	public void updateMember(MemberVO vo) {
+		 dao.updateMember(vo);
 	}
 
 
