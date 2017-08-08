@@ -12,7 +12,6 @@
 	</div>
 	<script>
 	if(${chat.ch_check} == 0 && ${chat.ch_receiver.m_no} == ${UNO}) {
-		alert("이거 안읽음 " + ${chat.ch_no});
 		$.ajax({
 			url : "checkChat.help",
 			data : {ch_no:${chat.ch_no}},

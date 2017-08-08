@@ -107,13 +107,18 @@ public class ChatController {
 	}
 
 	@RequestMapping("chatroomRefresh.help")
-	@ResponseBody
-	public int chatRoomRefresh(HttpSession session) {
-		if (session.getAttribute("UNO") != null && session.getAttribute("cr_no") != null) {
-			return service.chatroomRefresh(new ChatVO(0, null, new MemberVO((Integer) session.getAttribute("UNO")),
-					null, null, 0, new ChatroomVO((Integer) session.getAttribute("cr_no"))));
+	public void chatRoomRefresh(HttpSession session, HttpServletResponse response) {
+		try {
+			int r = 0;
+			if (session.getAttribute("UNO") != null && session.getAttribute("ss_cr_no") != null) {
+				r = service.chatroomRefresh(new ChatVO(0, null, new MemberVO((Integer) session.getAttribute("UNO")),
+						null, null, 0, new ChatroomVO((Integer) session.getAttribute("ss_cr_no"))));
+
+			}
+			response.getWriter().print(r);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return 0;
 	}
 
 }
