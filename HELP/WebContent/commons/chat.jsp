@@ -100,7 +100,7 @@
 			<div id="chat_room_titleBar_btn"
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					style="width: 32px; height: 32px; padding: 0px;"><img
+					src="images/leave.png" style="width: 32px; height: 32px; padding: 0px;"><img
 					src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_room');">
