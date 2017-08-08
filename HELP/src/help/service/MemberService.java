@@ -12,4 +12,5 @@ public interface MemberService {
 	public int mypageDivision(String m_id);
 	public int pwdCheck(MemberVO vo);
 	public void updateMember(MemberVO vo);
+	public void deleteGosu(GosuVO vo);
 }

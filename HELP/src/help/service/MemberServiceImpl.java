@@ -53,6 +53,11 @@ public class MemberServiceImpl implements MemberService {
 		 dao.updateMember(vo);
 	}
 
+	@Override
+	public void deleteGosu(GosuVO vo) {
+		dao.deleteGosu(vo);
+	}
+
 
 
 

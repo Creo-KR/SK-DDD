@@ -132,9 +132,9 @@ public class MemberController {
 	//일반과 고수 업데이트 register controller
 	@RequestMapping(value="updateMypageReg.help", method=RequestMethod.POST)
 	public String updateMypageReg(MemberVO vo, HttpSession session, @RequestParam String m_tel2, @RequestParam String m_tel3
-			,@RequestParam String m_email2) 
+			,@RequestParam String m_email2, @RequestParam List<String> c_no) 
 	{
-		
+		System.out.println("커몬");
 		String phoneNumber = vo.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = vo.getM_email() + "@"  + m_email2;
 		vo.setM_id((String) session.getAttribute("UID"));
@@ -147,6 +147,16 @@ public class MemberController {
 			return "pages/mypage";
 		} else {
 			service.updateMember(vo);
+			
+			for(String i : c_no) {
+				System.out.println(i);
+				
+				CategoryVO c = new CategoryVO(Integer.parseInt(i));
+				GosuVO g = new GosuVO(member , c);
+				System.out.println(member.toString());
+				service.deleteGosu(g);
+				service.addGosu(g);
+			}
 			return "pages/mypage";
 		}
 	}
