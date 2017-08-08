@@ -28,6 +28,8 @@
 
 	<select id="selectCompletedRequest" parameterType="Integer"
 		resultMap="request_trade_Map">
-
+		select t_no, t_requester, t_respondent, t_enddate, r.r_no, c_no, r_title, r_date
+		from trade t, request r
+		where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL;
 	</select>
 </mapper>
