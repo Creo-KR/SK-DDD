@@ -40,7 +40,7 @@
 	
 	setInterval(function() {
 		$.ajax({
-			url : "../chatRefreshCount.help",
+			url : "chatRefreshCount.help",
 			data : {UNO:${UNO}},
 			type : "post",
 			success: function(response) { 
