@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="help.mapper.RequestTradeMapper">
+	<resultMap id="request_trade_Map" type="help.vo.TradeVO">
+		<id property="t_no" column="t_no" javaType="Integer" jdbcType="NUMERIC"></id>
+		<result property="t_requester" column="t_requester" javaType="Integer"
+			jdbcType="NUMERIC"></result>
+		<result property="t_respondent" column="t_respondent" javaType="Integer"
+			jdbcType="NUMERIC"></result>
+		<result property="t_enddate" column="t_enddate" javaType="String"
+			jdbcType="DATE"></result>
+		<result property="req.r_no" column="r_no" javaType="Integer"
+			jdbcType="NUMERIC"></result>
+		<result property="req.c_no" column="c_no" javaType="Integer"
+			jdbcType="NUMERIC"></result>
+		<result property="req.r_title" column="r_title" javaType="String"
+			jdbcType="VARCHAR"></result>
+		<result property="req.r_date" column="r_date" javaType="String"
+			jdbcType="DATE"></result>
+	</resultMap>
+
+	<select id="selectInProgressRequest" parameterType="Integer"
+		resultMap="request_trade_Map">
+		select t_no, t_requester, t_respondent, t_enddate, r.r_no, c_no, r_title, r_date
+		from trade t, request r
+		where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL;
+	</select>
+
+	<select id="selectCompletedRequest" parameterType="Integer"
+		resultMap="request_trade_Map">
+
+	</select>
+</mapper>
