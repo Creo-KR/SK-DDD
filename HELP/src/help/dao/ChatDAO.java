@@ -23,5 +23,7 @@ public interface ChatDAO {
 	
 	public void checkChat(ChatVO vo);
 	
+	public String getLastMessageByChatroom(Integer cr_no);
+	
 
 }

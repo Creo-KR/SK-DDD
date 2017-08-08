@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.requestMapper">
+<mapper namespace="requestMapper">
 	<resultMap id="RequestVOResultMap" type="RequestVO">
-	<!-- 숫자인 경우, javaType="Integer" jdbcType="NUMERIC" -->
-	<id property="r_no" column="r_no" javaType="Integer" jdbcType="NUMBER"/>
-	<result property="category.c_no" column="c_no" javaType="CategoryVO" jdbcType="NUMBER"/>
-	<result property="r_title" column="r_title" javaType="String" jdbcType="VARCHAR"/>
-	<result property="r_content" column="r_content" javaType="String" jdbcType="CLOB"/>
-	<result property="r_active" column="r_active" javaType="Integer" jdbcType="NUMBER"/>
-	<result property="r_date" column="r_date" javaType="String" jdbcType="DATE"/>
+		<!-- 숫자인 경우, javaType="Integer" jdbcType="NUMERIC" -->
+		<id property="r_no" column="r_no" javaType="Integer" 
+			jdbcType="NUMERIC" />
+		<result property="c_no" column="c_no" javaType="Integer"
+			jdbcType="NUMERIC" />
+		<result property="r_title" column="r_title" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="r_content" column="r_content" javaType="String"
+			jdbcType="CLOB" />
+		<result property="r_active" column="r_active" javaType="Integer"
+			jdbcType="NUMERIC" />
+		<result property="r_date" column="r_date" javaType="String"
+			jdbcType="DATE" />
 	</resultMap>
+
+	<insert id="insertRequest" parameterType="RequestVO">
+		insert into request
+		values (#{r_no},#{c_no},#{r_title},#{r_content},1,SYSDATE,#{r_writer})
+	</insert>
+	
+	<select id="getAllActiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
+		select * from request where r_writer=#{value} and r_active=1
+	</select>
+	
+	<select id="getAllInactiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
+		select * from request where r_writer=#{value} and r_active=0
+	</select>
+	
+	<select id="getAllRequestsByCategory" parameterType="Integer" resultType="RequestVO">
+		select * from request where c_no=#{value} and r_active=1
+	</select>
+
+	<select id="getRequestDetail" parameterType="Integer" resultType="RequestVO">
+		select * from request where r_no=#{value}
+	</select>
 </mapper>
