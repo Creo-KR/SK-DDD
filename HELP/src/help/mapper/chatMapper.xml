@@ -100,4 +100,9 @@
 	SET ch_check = 1
 	WHERE ch_no = #{ch_no}
 	</update>
+	
+	<select id="chatRefreshCount" parameterType="Integer" resultType="Integer">
+		select COUNT(*) AS CNT from chat 
+		where ch_receiver = #{ch_receiver} and ch_check = 0
+	</select>
 </mapper>
