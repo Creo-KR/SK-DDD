@@ -55,4 +55,9 @@ public class ChatDAOImpl implements ChatDAO {
 	public String getLastMessageByChatroom(Integer cr_no) {
 		return session.selectOne("chatMapper.getLastMessageByChatroom", cr_no);
 	}
+	
+	@Override
+	public int chatRefreshCount(int ch_receiver) {
+		return session.selectOne("chatMapper.chatRefreshCount", ch_receiver);
+	}
 }
