@@ -44,4 +44,10 @@
 		WHERE m_id=#{m_id}
 	</update>
 
+	<delete id="deleteGosu" parameterType="GosuVO">
+		DELETE  FROM gosu
+		WHERE g_no=#{g_no.m_no}
+	</delete>
+	
+
 </mapper>

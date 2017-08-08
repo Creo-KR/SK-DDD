@@ -85,6 +85,18 @@
 									</select></span></td>
 								</tr>
 								<tr>
+									<th scope="row" style="font-size: 18px;">고수 카테고리 <img
+										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
+										alt="필수" /></th>
+									<td>
+										<input type="checkbox" name="c_no" value="1"> 피아노
+										<input type="checkbox" name="c_no" value="2"> 이사
+										<input type="checkbox" name="c_no" value="3"> 웹 개발
+										<input type="checkbox" name="c_no" value="4"> 포토샵
+										<input type="checkbox" name="c_no" value="5"> 결혼
+									</td>
+								</tr>
+								<tr>
 									<th scope="row" style="font-size: 18px;">소개 입력 <img
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>

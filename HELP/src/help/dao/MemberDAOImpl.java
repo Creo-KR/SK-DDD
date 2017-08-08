@@ -53,4 +53,9 @@ public class MemberDAOImpl implements MemberDAO {
 		session.update("memberMapper.updateMember", vo);
 	}
 
+	@Override
+	public void deleteGosu(GosuVO vo) {
+		session.delete("memberMapper.deleteGosu", vo);
+	}
+
 }
