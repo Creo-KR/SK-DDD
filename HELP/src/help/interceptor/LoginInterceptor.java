@@ -32,18 +32,4 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			out.close();
 		}
 	}
-
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
-		return true;
-	}
-
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-			throws Exception {
-	}
-
-	public void afterConcurrentHandlingStarted(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
-	}
-
 }

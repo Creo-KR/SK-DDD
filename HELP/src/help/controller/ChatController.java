@@ -29,8 +29,9 @@ public class ChatController {
 	public ModelAndView getChatroomListByUser(ModelAndView mv, HttpSession session) {
 		List<ChatroomVO> list = null;
 		Integer cr_user1 = (Integer) session.getAttribute("UNO");
-		list = service.getChatroomListByUser(new ChatroomVO(0, new MemberVO(cr_user1), null, null, 0, 0));
-
+		if (cr_user1 != null) {
+			list = service.getChatroomListByUser(new ChatroomVO(0, new MemberVO(cr_user1), null, null, 0, 0));
+		}
 		mv.addObject("chatroom_list", list);
 		mv.setViewName("commons/chat_list");
 		return mv;
