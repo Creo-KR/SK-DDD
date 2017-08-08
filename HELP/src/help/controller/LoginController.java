@@ -5,8 +5,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -20,7 +22,7 @@ public class LoginController {
 	LoginService service;
 
 	// 로그인폼 요청
-	@RequestMapping("loginForm.help")
+	@RequestMapping(value = "loginForm.help", method = RequestMethod.GET)
 	public ModelAndView loginForm(ModelAndView mv, HttpServletRequest req, HttpSession session) {
 		String check = req.getParameter("CHECK");
 		if (session.getAttribute("UNO") != null) {
@@ -34,7 +36,7 @@ public class LoginController {
 
 	// 로그인체크
 	@RequestMapping("loginProc.help")
-	public ModelAndView loginProc(ModelAndView mv, @ModelAttribute MemberVO vo, HttpSession session, RedirectView rv) {
+	public ModelAndView loginProc(ModelAndView mv, @ModelAttribute MemberVO vo, HttpSession session) {
 		int cnt = service.loginCheck(vo);
 		if (cnt == 1) {
 			MemberVO memVO = service.memberSearch(vo.getM_id());
@@ -42,14 +44,10 @@ public class LoginController {
 			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("COUNT", cnt);
-			// mv.setViewName("index");
-			rv.setUrl("loginForm.help");
-			mv.setView(rv);
-		} else {
-			rv.addStaticAttribute("CHECK", "CHECK");
-			rv.setUrl("loginForm.help");
-			mv.setView(rv);
+			//rv.setUrl("loginForm.help");
+			//mv.setView(rv);
 		}
+		mv.setViewName("index");
 		return mv;
 	}
 
