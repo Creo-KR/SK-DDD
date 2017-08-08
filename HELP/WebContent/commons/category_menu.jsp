@@ -137,7 +137,7 @@ button:hover:before, button:hover:after {
 		<!-- Category Box Start -->
 
 
-		<div id="categoryBox">
+		<div id="categoryBox" style="margin-left: 20%">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
 				<li><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/2.jpg" alt="" /> <span

@@ -20,9 +20,9 @@
 
 		<div class="main_contents">
 			<!-- 본문영역 -->
-
+			<div>
 			<%@ include file="commons/category_menu.jsp"%>
-
+			</div>
 
 		</div>
 	</div>

@@ -31,7 +31,10 @@ public class LoginController {
 			session.setAttribute("COUNT", cnt);
 			session.setAttribute("UNAME", vo.getM_id());
 			mv.setViewName("index");
+			//rv.setUrl("loginForm.help");
+			//mv.setView(rv);
 		}
+		mv.setViewName("index");
 		return mv;
 	}
 
