@@ -57,9 +57,6 @@
 			if(sessionStorage.getItem("chat_room") == "open") {
 				$.ajax({
 					url : "chatroomRefresh.help",
-					data : {UNO : "${UNO}" ,
-							cr_no : "${ss_cr_no}"
-							},
 					type : "post",
 					success: function(response) { 
 				    	if(response >= 1) {

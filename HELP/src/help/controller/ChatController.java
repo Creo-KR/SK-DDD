@@ -108,10 +108,10 @@ public class ChatController {
 
 	@RequestMapping("chatroomRefresh.help")
 	@ResponseBody
-	public int chatRoomRefresh(HttpServletRequest req) {
-		if (req.getParameter("UNO") != null && req.getParameter("cr_no") != null) {
-			return service.chatroomRefresh(new ChatVO(0, null, new MemberVO(Integer.parseInt(req.getParameter("UNO"))),
-					null, null, 0, new ChatroomVO(Integer.parseInt(req.getParameter("cr_no")))));
+	public int chatRoomRefresh(HttpSession session) {
+		if (session.getAttribute("UNO") != null && session.getAttribute("cr_no") != null) {
+			return service.chatroomRefresh(new ChatVO(0, null, new MemberVO((Integer) session.getAttribute("UNO")),
+					null, null, 0, new ChatroomVO((Integer) session.getAttribute("cr_no"))));
 		}
 		return 0;
 	}
