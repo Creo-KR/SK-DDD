@@ -90,7 +90,6 @@ public class MemberController {
 	@RequestMapping(value="mypageDivision.help", method=RequestMethod.GET)
 	public String mypageDivision(HttpSession session) {
 		String m_id = (String) session.getAttribute("UID");
-		System.out.println(m_id);
 		int m_type = service.mypageDivision(m_id);
 		if(m_type == 0) {
 			return "pages/mypage";

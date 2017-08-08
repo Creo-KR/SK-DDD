@@ -39,7 +39,6 @@ public class LoginController {
 		if (cnt == 1) {
 			MemberVO memVO = service.memberSearch(vo.getM_id());
 			session.setAttribute("UNO", memVO.getM_no());
-			System.out.println(memVO.getM_id());
 			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("COUNT", cnt);
