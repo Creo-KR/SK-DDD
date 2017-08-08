@@ -9,11 +9,11 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/board.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/layout.css" />
+	href="${pageContext.request.contextPath}/css/layout.css?ver=1" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/contents.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/main.css?ver=1" />
+	href="${pageContext.request.contextPath}/css/main.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/vendor.min.css" />	
 <link rel="stylesheet" type="text/css"
@@ -256,3 +256,4 @@
 
 <!-- //header -->
 <div class="dark_window"></div>
+<%@ include file="chat.jsp" %>

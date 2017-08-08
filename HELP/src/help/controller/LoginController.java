@@ -28,6 +28,9 @@ public class LoginController {
 	public ModelAndView loginProc(ModelAndView mv, @ModelAttribute MemberVO vo, HttpSession session) {
 		int cnt = service.loginCheck(vo);
 		if (cnt == 1) {
+			MemberVO memVO = service.memberSearch(vo.getM_id());
+			session.setAttribute("UNO", memVO.getM_no());
+			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("COUNT", cnt);
 			session.setAttribute("UNAME", vo.getM_id());
 			mv.setViewName("index");
