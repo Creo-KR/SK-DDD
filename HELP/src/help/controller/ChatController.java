@@ -53,7 +53,7 @@ public class ChatController {
 	@RequestMapping(value = "viewChatroom.help")
 	public ModelAndView viewChatroom(ModelAndView mv, HttpSession session, HttpServletResponse response,
 			@RequestParam Integer cr_no, @RequestParam Integer cr_receiver) {
-		if (cr_no != null) {
+		if (cr_no != null && cr_receiver != null) {
 			session.setAttribute("ss_cr_no", cr_no);
 			session.setAttribute("ss_cr_receiver", member.getMemberByNo(cr_receiver));
 			List<ChatVO> list = null;
@@ -109,7 +109,7 @@ public class ChatController {
 	@RequestMapping("chatroomRefresh.help")
 	@ResponseBody
 	public int chatRoomRefresh(HttpServletRequest req) {
-		if (req.getParameter("UNO") != null) {
+		if (req.getParameter("UNO") != null && req.getParameter("cr_no") != null) {
 			return service.chatroomRefresh(new ChatVO(0, null, new MemberVO(Integer.parseInt(req.getParameter("UNO"))),
 					null, null, 0, new ChatroomVO(Integer.parseInt(req.getParameter("cr_no")))));
 		}
