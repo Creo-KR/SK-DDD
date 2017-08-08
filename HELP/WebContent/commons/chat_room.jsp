@@ -11,7 +11,7 @@
 		${chat.ch_no} - ${chat.ch_sender.m_name} : ${chat.ch_text} / ${chat.ch_date }
 	</div>
 	<script>
-	if(${chat.ch_check} == 0) {
+	if(${chat.ch_check} == 0 && ${chat.ch_receiver.m_no} == ${UNO}) {
 		alert("이거 안읽음 " + ${chat.ch_no});
 		$.ajax({
 			url : "checkChat.help",
