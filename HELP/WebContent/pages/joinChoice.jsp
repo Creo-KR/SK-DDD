@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="container">
-		<div class="main_contents">
+		<div class="main_contents"   style="margin-left: 15%;">
 			<div id="sub-contents">
 			<div class="l-box">
 				<div id="de-select">
@@ -27,15 +27,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="select-box-l box-2">
-						<h3>포상신고 접수</h3>
+					<div class="select-box-l box-2" style="height: 435px;">
+						<h3>고수 회원 가입</h3>
 						<p>
-						<br>※ 불법TM신고센터 참여 사업자에 한하여 시행하고 있습니다.<br />
-							<a href="about">* 신고센터 참여사업자 확인</a>
+						<br>고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
+							<a href="about">작성된 견적서 조회</a>
 						</p>
-						<div class="select-box-s">
+						<div class="select-box-s" style="width: 430px;">
 							<h4>무선서비스(이동통신) 사업자</h4>
-							<table class="table-1">
+							<table class="table-12" style="width: 300px;">
 								<tr>
 									<th>MNO</th>
 									<td>SKT, KT, LG U+</td>

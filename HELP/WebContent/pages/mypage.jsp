@@ -70,8 +70,8 @@
 								<dd class="pl02 none">기존의 정보를 수정할 수 있습니다.</dd>
 								<dd class="txt">세부적인 내용들의 대하여 수정할 수 있는 페이지 입니다.</dd>
 								<dd class="txt">
-									<a href="updateMypage.help"
-										target="_blank" class="nw">이동 하기</a>
+									<a href="pwdCheck.help"
+										class="nw">이동 하기</a>
 								</dd>
 							</dl>
 							<dl>

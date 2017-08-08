@@ -29,13 +29,23 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public int getMember(String m_id) {
-		return session.selectOne("memberMapper.getMember", m_id);
+	public MemberVO getMember(String m_id) {
+		 return session.selectOne("memberMapper.getMember", m_id);
 	}
 
 	@Override
 	public int mypageDivision(String m_id) {
 		return session.selectOne("memberMapper.mypageDivision", m_id);
+	}
+
+	@Override
+	public int pwdCheck(MemberVO vo) {
+		return session.selectOne("memberMapper.pwdCheck", vo);
+	}
+
+	@Override
+	public void updateMember(MemberVO vo) {
+		session.update("memberMapper.updateMember", vo);
 	}
 
 }

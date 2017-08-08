@@ -1,5 +1,8 @@
 package help.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -46,8 +49,7 @@ public class MemberController {
 	@RequestMapping(value="addMember.help", method=RequestMethod.POST)
 	public String addMember(
 			MemberVO member, Model model, @RequestParam String m_email2,
-			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=true) List<String> c_no,
-			@RequestParam String g_intro
+			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=true) List<String> c_no
 			) {
 		System.out.println("come?");
 		String phoneNumber = member.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
@@ -59,12 +61,13 @@ public class MemberController {
 		if(ch_m_type == 1) {
 			service.addMember(member);
 			
-			int g_no = service.getMember(member.getM_id());
+			MemberVO memberResult = service.getMember(member.getM_id());
+			System.out.println(memberResult.getM_no());
 			for(String i : c_no) {
 				System.out.println(i);
 				
 				CategoryVO c = new CategoryVO(Integer.parseInt(i));
-				GosuVO g = new GosuVO(g_no , c);
+				GosuVO g = new GosuVO(memberResult , c);
 				service.addGosu(g);
 				System.out.println("오니");
 			}
@@ -95,10 +98,55 @@ public class MemberController {
 		}
 	}
 	
-	//개인 정보 수정 (일반 회원)
-	@RequestMapping("updateMypage.help")
-	public String updateMypage() {
+	@RequestMapping("pwdCheck.help")
+	public String pwdCheck() {
+		return "pages/pwdCheck";
+	}
+	
+	//개인 정보 수정하기 위해 비밀번호 입력하여 DB 체크하는 Controller
+	@RequestMapping(value="updateMypage.help", method=RequestMethod.POST)
+	public String updateMypage(MemberVO vo, HttpSession session, Model model) {
+		PrintWriter out = null;
+		vo.setM_id((String) session.getAttribute("UNAME"));
+		System.out.println(vo.getM_id());
+		System.out.println(vo.getM_pwd());
+		int count = service.pwdCheck(vo);
+		MemberVO member = service.getMember(vo.getM_id());
+		if(count >= 1) {
+			if(service.mypageDivision(vo.getM_id()) == 0) {
+				
+				model.addAttribute("member", member);
+				return "pages/updateMypageNormal";
+			}else {
+				model.addAttribute("member", member);
+				return "pages/updateMypageGosu";
+			}
+		} else {
+			//DB 정보와 일치 하지 않는 경우 제자리로 돌아옴.
+			return "pages/pwdCheck";
+		}
 		
-		return null;
+	}
+	
+	//일반과 고수 업데이트 register controller
+	@RequestMapping(value="updateMypageReg.help", method=RequestMethod.POST)
+	public String updateMypageReg(MemberVO vo, HttpSession session, @RequestParam String m_tel2, @RequestParam String m_tel3
+			,@RequestParam String m_email2) 
+	{
+		
+		String phoneNumber = vo.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
+		String email = vo.getM_email() + "@"  + m_email2;
+		vo.setM_id((String) session.getAttribute("UNAME"));
+		vo.setM_tel(phoneNumber);
+		vo.setM_email(email);
+		MemberVO member = service.getMember(vo.getM_id());
+		if(member.getM_type() == 0) {
+			vo.setM_intro("");
+			service.updateMember(vo);
+			return "pages/mypage";
+		} else {
+			service.updateMember(vo);
+			return "pages/mypage";
+		}
 	}
 }
