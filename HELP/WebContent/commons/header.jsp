@@ -15,13 +15,20 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css" />
 <link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/vendor.min.css" />	
+<link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/print-preview.css"
 	media="screen" />
-
-
-<script src='/sptier0/sptier0.js'></script>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/sample.css"
+	media="screen" />
+<!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"
+	media="screen" />
+	
+<!-- <script src='/sptier0/sptier0.js'></script>
 <script src='/sptier0/sptier0-ajax.js'></script>
-<script src='/sptier0/sptier0-window.js'></script>
+<script src='/sptier0/sptier0-window.js'></script> -->
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript"
@@ -63,7 +70,7 @@
 
 			<c:if test="${sessionScope.COUNT eq 1}">
 			<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
-			<a href="#" class="eng" style="float: left;">MY PAGE</a>
+			<a href="mypageDivision.help" class="eng" style="float: left;">MY PAGE</a>
 			<div class="certify logon" id="idlogout" style="width: 80px">
 				<a href="#" onclick="logout(); return false;">LOGOUT</a>
 			</div>
@@ -241,6 +248,10 @@
 		//document.getElementById('load_txt').style.display = "block";
 	}
 </script>
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
+	
 <!--//header end -->
 
 <!-- //header -->

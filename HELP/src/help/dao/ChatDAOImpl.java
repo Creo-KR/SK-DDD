@@ -20,7 +20,10 @@ public class ChatDAOImpl implements ChatDAO {
 	}
 
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo) {
+		vo.setLastMessage(session.selectOne("chatMapper.getLastMessageByChatroom", vo));
+		System.out.println(vo.getLastMessage());
 		return session.selectList("chatMapper.getChatroomListByUser", vo);
+				
 	}
 
 	public ChatroomVO getChatroomByUsers(ChatroomVO vo) {
