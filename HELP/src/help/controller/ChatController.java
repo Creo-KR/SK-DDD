@@ -47,12 +47,16 @@ public class ChatController {
 	@RequestMapping(value = "viewChatroom.help")
 	public ModelAndView viewChatroom(ModelAndView mv, HttpSession session, HttpServletResponse response,
 			@RequestParam Integer cr_no, @RequestParam Integer cr_receiver) {
-		session.setAttribute("ss_cr_no", cr_no);
-		session.setAttribute("ss_cr_receiver", cr_receiver);
-		List<ChatVO> list = null;
-		list = service.getChatByChatroom(new ChatroomVO(cr_no));
-		mv.addObject("chat_list", list);
-		mv.setViewName("commons/chat_room");
+		if (cr_no != null) {
+			session.setAttribute("ss_cr_no", cr_no);
+			session.setAttribute("ss_cr_receiver", cr_receiver);
+			List<ChatVO> list = null;
+			list = service.getChatByChatroom(new ChatroomVO(cr_no));
+			mv.addObject("chat_list", list);
+			mv.setViewName("commons/chat_room");
+		} else {
+			mv.setViewName("commons/blank");
+		}
 		return mv;
 	}
 

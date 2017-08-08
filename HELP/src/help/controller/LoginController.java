@@ -1,12 +1,16 @@
 package help.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import help.service.LoginService;
 import help.vo.MemberVO;
@@ -18,9 +22,16 @@ public class LoginController {
 	LoginService service;
 
 	// 로그인폼 요청
-	@RequestMapping("loginForm.help")
-	public String loginForm() {
-		return "pages/loginForm";
+	@RequestMapping(value = "loginForm.help", method = RequestMethod.GET)
+	public ModelAndView loginForm(ModelAndView mv, HttpServletRequest req, HttpSession session) {
+		String check = req.getParameter("CHECK");
+		if (session.getAttribute("UNO") != null) {
+			mv.setViewName("index");
+		} else {
+			mv.addObject("CHECK", check);
+			mv.setViewName("pages/loginForm");
+		}
+		return mv;
 	}
 
 	// 로그인체크
@@ -31,9 +42,8 @@ public class LoginController {
 			MemberVO memVO = service.memberSearch(vo.getM_id());
 			session.setAttribute("UNO", memVO.getM_no());
 			session.setAttribute("UID", memVO.getM_id());
+			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("COUNT", cnt);
-			session.setAttribute("UNAME", vo.getM_id());
-			mv.setViewName("index");
 			//rv.setUrl("loginForm.help");
 			//mv.setView(rv);
 		}
@@ -44,9 +54,13 @@ public class LoginController {
 	// 로그아웃
 	@RequestMapping("logout.help")
 	public ModelAndView logout(ModelAndView mv, HttpSession session) {
-		if (session.getAttribute("UNAME") != null) {
+		if (session.getAttribute("UNO") != null) {
+			session.removeAttribute("UNO");
+			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");
 			session.removeAttribute("COUNT");
+			mv.setViewName("index");
+		} else {
 			mv.setViewName("index");
 		}
 		return mv;

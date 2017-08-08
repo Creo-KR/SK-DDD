@@ -16,7 +16,7 @@
 				title.innerText = cr.childNodes[4].textContent;
 				var display = window.parent.document.getElementById('chat_room');
 				display.style.display = "";
-				sessionStorage.setItem(id,"open");
+				sessionStorage.setItem("chat_room","open");
 			}
 		};
 </script>
