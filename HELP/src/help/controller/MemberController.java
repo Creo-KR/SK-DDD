@@ -94,4 +94,11 @@ public class MemberController {
 			return "pages/mypageGosu";
 		}
 	}
+	
+	//개인 정보 수정 (일반 회원)
+	@RequestMapping("updateMypage.help")
+	public String updateMypage() {
+		
+		return null;
+	}
 }
