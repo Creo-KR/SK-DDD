@@ -76,8 +76,8 @@
 			</div>
 			</c:if>
 
-			<a href="/kor/subpage/contents.asp?cn=6O5VSISW&ln=P4CEDQYK&sb=5MSNIAR0&tb=59Q7R5X#sitemap"
-				class="site">SITEMAP</a>
+			<a onclick="divOpen('chat_list')"
+				class="site">CHAT</a>
 			<div class="search_area">
 				<form
 					action="/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ"

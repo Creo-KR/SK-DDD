@@ -88,8 +88,9 @@ public class MemberController {
 	
 	//마이페이지 일반회원인지 고수인지 구분
 	@RequestMapping(value="mypageDivision.help", method=RequestMethod.GET)
-	public String mypageDivision(String m_id, HttpSession session) {
-		m_id = (String) session.getAttribute("UNAME");
+	public String mypageDivision(HttpSession session) {
+		String m_id = (String) session.getAttribute("UID");
+		System.out.println(m_id);
 		int m_type = service.mypageDivision(m_id);
 		if(m_type == 0) {
 			return "pages/mypage";
@@ -107,7 +108,7 @@ public class MemberController {
 	@RequestMapping(value="updateMypage.help", method=RequestMethod.POST)
 	public String updateMypage(MemberVO vo, HttpSession session, Model model) {
 		PrintWriter out = null;
-		vo.setM_id((String) session.getAttribute("UNAME"));
+		vo.setM_id((String) session.getAttribute("UID"));
 		System.out.println(vo.getM_id());
 		System.out.println(vo.getM_pwd());
 		int count = service.pwdCheck(vo);
@@ -136,7 +137,7 @@ public class MemberController {
 		
 		String phoneNumber = vo.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = vo.getM_email() + "@"  + m_email2;
-		vo.setM_id((String) session.getAttribute("UNAME"));
+		vo.setM_id((String) session.getAttribute("UID"));
 		vo.setM_tel(phoneNumber);
 		vo.setM_email(email);
 		MemberVO member = service.getMember(vo.getM_id());
