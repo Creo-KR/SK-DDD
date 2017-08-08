@@ -5,10 +5,15 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 
+<script type="text/javascript">
+var title = window.parent.document.getElementById('chat_room_titleBar_name');
+title.innerText = ${ss_cr_receiver.m_name};
+</script>
+	
 <c:forEach var="chat" items="${chat_list}">
 	<div
 		style="position: relative; border: solid 1px gray; width: 229px; height: 60px; top: 0px; left: 2px; margin-bottom: 1px;">
-		${chat.ch_no} - ${chat.ch_sender.m_name} : ${chat.ch_text} / ${chat.ch_date }
+		${chat.ch_no} - ${chat.ch_sender.m_name} : ${chat.ch_text} / ${chat.ch_date }<c:if test="${chat.ch_check == 0}">= 안읽음</c:if> 
 	</div>
 	<script>
 	if(${chat.ch_check} == 0 && ${chat.ch_receiver.m_no} == ${UNO}) {

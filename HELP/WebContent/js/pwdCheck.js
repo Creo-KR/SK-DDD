@@ -52,7 +52,6 @@ $(function(){
             	alert("비밀번호를 확인해주세요.");
             	return false;
             } else{
-            	alert("회원 가입 되었습니다.");
             }
         });    
 
