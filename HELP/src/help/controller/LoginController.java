@@ -52,7 +52,7 @@ public class LoginController {
 	// 로그아웃
 	@RequestMapping("logout.help")
 	public ModelAndView logout(ModelAndView mv, HttpSession session) {
-		if (session.getAttribute("UNAME") != null) {
+		if (session.getAttribute("UNO") != null) {
 			session.removeAttribute("UNO");
 			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");

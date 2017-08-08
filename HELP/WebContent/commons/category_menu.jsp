@@ -8,9 +8,7 @@
 	content="Slide Down Box Menu with jQuery and CSS3" />
 <meta name="keywords"
 	content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
-<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="css/style.css" type="text/css"
-	media="screen" />
+
 <style>
 body {
 	font-family: Arial;
@@ -139,35 +137,35 @@ button:hover:before, button:hover:after {
 		<!-- Category Box Start -->
 
 
-		<div id="categoryBox">
+		<div id="categoryBox" style="margin-left: 20%">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
-				<li><a href="/HELP/category1List.jsp"> <img src="images/2.jpg" alt="" /> <span
+				<li><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/2.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 1</span> <span class="sdt_descr">Get
 								to know me</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category2List.jsp"> <img src="images/1.jpg" alt="" /> <span
+				<li><a href="/HELP/category2List.jsp"> <img src="${pageContext.request.contextPath}/images/1.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 2</span> <span class="sdt_descr">My
 								work</span>
 					</span>
 				</a></li>
 
-				<li><a href="/HELP/category3List.jsp"> <img src="images/3.jpg" alt="" /> <span
+				<li><a href="/HELP/category3List.jsp"> <img src="${pageContext.request.contextPath}/images/3.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 3</span> <span class="sdt_descr">Where
 								ideas get born</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category4List.jsp"> <img src="images/4.jpg" alt="" /> <span
+				<li><a href="/HELP/category4List.jsp"> <img src="${pageContext.request.contextPath}/images/4.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 4</span> <span class="sdt_descr">I
 								like to photograph</span>
 					</span>
 				</a></li>
-				<li><a href="/HELP/category5List.jsp"> <img src="images/5.jpg" alt="" /> <span
+				<li><a href="/HELP/category5List.jsp"> <img src="${pageContext.request.contextPath}/images/5.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">카테고리 5</span> <span class="sdt_descr">I
 								write about design</span>
@@ -200,10 +198,7 @@ button:hover:before, button:hover:after {
 
 
 	<!-- The JavaScript -->
-	<script type="text/javascript"
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 	
 		var request_go =function(){
 			window.location="request.help";

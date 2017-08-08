@@ -11,11 +11,12 @@
 				var no = cr.childNodes[1].innerText;
 				var rcv = cr.childNodes[3].innerText;
 				var room = window.parent.document.getElementById('chat_room_list_frame');
-				room.src="../viewChatroom.help?cr_no="+no+"&cr_receiver="+rcv;
+				room.src="viewChatroom.help?cr_no="+no+"&cr_receiver="+rcv;
 				var title = window.parent.document.getElementById('chat_room_titleBar_name');
 				title.innerText = cr.childNodes[4].textContent;
 				var display = window.parent.document.getElementById('chat_room');
 				display.style.display = "";
+				sessionStorage.setItem("chat_room","open");
 			}
 		};
 </script>

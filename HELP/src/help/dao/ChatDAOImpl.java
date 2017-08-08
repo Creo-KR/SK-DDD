@@ -20,7 +20,9 @@ public class ChatDAOImpl implements ChatDAO {
 	}
 
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo) {
+		vo.setLastMessage(session.selectOne("chatMapper.getLastMessageByChatroom", vo));
 		return session.selectList("chatMapper.getChatroomListByUser", vo);
+				
 	}
 
 	public ChatroomVO getChatroomByUsers(ChatroomVO vo) {
@@ -39,7 +41,7 @@ public class ChatDAOImpl implements ChatDAO {
 	}
 	
 	public void sendChat(ChatVO vo) {
-		System.out.println(session.insert("chatMapper.sendChat", vo));
+		session.insert("chatMapper.sendChat", vo);
 	}
 
 	public List<ChatVO> getChatByChatroom(ChatroomVO vo) {
