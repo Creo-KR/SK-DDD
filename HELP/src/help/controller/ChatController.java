@@ -27,7 +27,7 @@ public class ChatController {
 
 	@Autowired
 	ChatService service;
-	
+
 	@Autowired
 	MemberService member;
 
@@ -73,8 +73,7 @@ public class ChatController {
 		Integer ch_sender = (Integer) session.getAttribute("UNO");
 		MemberVO ch_receiver = (MemberVO) session.getAttribute("ss_cr_receiver");
 
-		service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0,
-				new ChatroomVO(cr_no)));
+		service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0, new ChatroomVO(cr_no)));
 
 		try {
 			response.getWriter().print(text);
@@ -87,25 +86,34 @@ public class ChatController {
 	public void joinChatroom() {
 
 	}
-	
+
 	@RequestMapping("chatRefreshCount.help")
 	@ResponseBody
 	public int chatRefreshCount(HttpServletRequest req) {
-		if(req.getParameter("UNO") != null) {
+		if (req.getParameter("UNO") != null) {
 			return service.chatRefreshCount(Integer.parseInt(req.getParameter("UNO")));
 		}
 		return 0;
 	}
-	
+
 	@RequestMapping(value = "checkChat.help", method = RequestMethod.POST)
-	public void checkChat(HttpSession session, @RequestParam Integer ch_no,
-			HttpServletResponse response) {
+	public void checkChat(HttpSession session, @RequestParam Integer ch_no, HttpServletResponse response) {
 		service.checkChat(new ChatVO(ch_no));
 		try {
 			response.getWriter().print(1);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@RequestMapping("chatroomRefresh.help")
+	@ResponseBody
+	public int chatRoomRefresh(HttpServletRequest req) {
+		if (req.getParameter("UNO") != null) {
+			return service.chatroomRefresh(new ChatVO(0, null, new MemberVO(Integer.parseInt(req.getParameter("UNO"))),
+					null, null, 0, new ChatroomVO(Integer.parseInt(req.getParameter("cr_no")))));
+		}
+		return 0;
 	}
 
 }

@@ -18,4 +18,6 @@ public interface ChatService {
 	public int chatRefreshCount(int ch_receiver);
 	
 	public void checkChat(ChatVO vo);
+	
+	public int chatroomRefresh(ChatVO vo);
 }

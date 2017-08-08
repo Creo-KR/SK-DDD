@@ -27,5 +27,6 @@ public interface ChatDAO {
 	
 	public int chatRefreshCount(int ch_receiver);
 	
+	public int chatroomRefresh(ChatVO vo);
 
 }

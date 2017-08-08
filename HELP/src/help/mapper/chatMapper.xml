@@ -105,4 +105,10 @@
 		select COUNT(*) AS CNT from chat 
 		where ch_receiver = #{ch_receiver} and ch_check = 0
 	</select>
+	
+	<!-- 체크가 0이면서 리시버가 나고 채팅방 번호가 맞는 개수 -->
+	<select id="chatroomRefresh" parameterType="ChatVO" resultType="Integer">
+		select COUNT(*) AS CNT from chat 
+		where ch_receiver = #{ch_receiver.m_no} and ch_check = 0 and cr_no = #{cr_no.cr_no}
+	</select>
 </mapper>

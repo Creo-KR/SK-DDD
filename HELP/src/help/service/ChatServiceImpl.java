@@ -44,5 +44,10 @@ public class ChatServiceImpl implements ChatService {
 	public void checkChat(ChatVO vo) {
 		dao.checkChat(vo);
 	}
+	
+	@Override
+	public int chatroomRefresh(ChatVO vo) {
+		return dao.chatroomRefresh(vo);
+	}
 
 }

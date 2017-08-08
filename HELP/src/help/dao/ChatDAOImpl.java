@@ -60,4 +60,9 @@ public class ChatDAOImpl implements ChatDAO {
 	public int chatRefreshCount(int ch_receiver) {
 		return session.selectOne("chatMapper.chatRefreshCount", ch_receiver);
 	}
+	
+	@Override
+	public int chatroomRefresh(ChatVO vo) {
+		return session.selectOne("chatMapper.chatroomRefresh", vo);
+	}
 }
