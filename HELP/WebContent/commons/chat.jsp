@@ -37,6 +37,23 @@
 	function joinChatroom() {
 		
 	}
+
+	function leaveChatroom() {
+		var conf = confirm("${ss_cr_receiver.m_name}님과의 대화방에서 나가시겠습니까? (대화내용이 지워집니다)");
+		if(conf) {
+			$.ajax({
+				url : "leaveChatroom.help",
+				type : "post",
+				success : function sendHandler(data) {
+					var frame = document.getElementById('chat_room_list_frame');
+					frame.contentWindow.location.reload();
+					var frame2 = document.getElementById('chat_list_frame');
+					frame2.contentWindow.location.reload();
+					chat_text.value = "";
+				}
+			});
+		}
+	}
 	
 	setInterval(function() {
 		if(${UNO} != null) {
@@ -96,11 +113,13 @@
 		style="display: none; background-clip: padding-box; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); box-shadow: inset 2px 0 2px -2px #b2b9c9; font-size: 12px; position: fixed; line-height: 16px; right: 264px; bottom: 50px; width: 250px; height: 500px;">
 		<div id="chat_room_titleBar"
 			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_room_titleBar_name"></div>
+			<div id="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
 			<div id="chat_room_titleBar_btn"
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					src="images/leave.png" style="width: 32px; height: 32px; padding: 0px;"><img
+					src="images/leave.png"
+					style="width: 32px; height: 32px; padding: 0px;"
+					onclick="javascript:leaveChatroom();"><img
 					src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_room');">
