@@ -33,4 +33,9 @@ public class MemberDAOImpl implements MemberDAO {
 		return session.selectOne("memberMapper.getMember", m_id);
 	}
 
+	@Override
+	public int mypageDivision(String m_id) {
+		return session.selectOne("memberMapper.mypageDivision", m_id);
+	}
+
 }

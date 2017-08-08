@@ -2,6 +2,8 @@ package help.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -78,5 +80,17 @@ public class MemberController {
 	public Integer idCheck(@RequestParam String m_id){
 		int result = service.idCheck(m_id);
 		return result;
+	}
+
+	
+	@RequestMapping(value="mypageDivision.help", method=RequestMethod.GET)
+	public String mypageDivision(String m_id, HttpSession session) {
+		m_id = (String) session.getAttribute("UNAME");
+		int m_type = service.mypageDivision(m_id);
+		if(m_type == 0) {
+			return "pages/mypage";
+		} else {
+			return "pages/mypageGosu";
+		}
 	}
 }

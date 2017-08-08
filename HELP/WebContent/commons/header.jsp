@@ -68,7 +68,7 @@
 
 			<c:if test="${sessionScope.COUNT eq 1}">
 			<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
-			<a href="#" class="eng" style="float: left;">MY PAGE</a>
+			<a href="mypageDivision.help" class="eng" style="float: left;">MY PAGE</a>
 			<div class="certify logon" id="idlogout" style="width: 80px">
 				<a href="#" onclick="logout(); return false;">LOGOUT</a>
 			</div>

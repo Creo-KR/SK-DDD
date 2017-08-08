@@ -21,7 +21,7 @@
 					<!--ㅡmove menu 시작-->
 
 					<div id="move_menu">
-						<h4 style="font-weight: bold;">My Page(일반)</h4>
+						<h4 style="font-weight: bold;">My Page(고수)</h4>
 					</div>
 
 					<!--move menu 끝-->

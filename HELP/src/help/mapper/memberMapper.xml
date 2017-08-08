@@ -25,4 +25,8 @@
 		SELECT m_no FROM member WHERE m_id = #{m_id}
 	</select>
 	
+	<select id="mypageDivision" parameterType="String" resultType="int">
+		SELECT m_type FROM member WHERE m_id=#{m_id}
+	</select>
+	
 </mapper>

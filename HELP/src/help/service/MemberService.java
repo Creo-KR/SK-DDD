@@ -8,4 +8,5 @@ public interface MemberService {
 	public int idCheck(String m_id);
 	public void addGosu(GosuVO vo);
 	public int getMember(String m_id);
+	public int mypageDivision(String m_id);
 }

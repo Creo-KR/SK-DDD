@@ -33,6 +33,11 @@ public class MemberServiceImpl implements MemberService {
 		return dao.getMember(m_id);
 	}
 
+	@Override
+	public int mypageDivision(String m_id) {
+		return dao.mypageDivision(m_id);
+	}
+
 
 
 
