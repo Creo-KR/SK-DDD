@@ -8,3 +8,8 @@
 		${chat.ch_no} - ${chat.ch_sender.m_name} : ${chat.ch_text} / ${chat.ch_date }
 	</div>
 </c:forEach>
+
+<script>
+	var title = window.parent.document.getElementById('chat_room_titleBar_name');
+	title.innerText = ${ss_cr_receiver.m_name};
+</script>

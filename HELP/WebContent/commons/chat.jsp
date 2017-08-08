@@ -6,6 +6,7 @@
 	function divOpen(id) {
 		var div = document.getElementById(id);
 		div.style.display = "";
+		sessionStorage.setItem(id, "open");
 	}
 
 	function divClose(id) {
@@ -45,7 +46,7 @@
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
 					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="/images/close.png"
+					src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_list');">
 			</div>
@@ -64,7 +65,7 @@
 				style="position: relative; top: -15px; left: 149px;">
 				<img style="width: 32px; height: 32px; padding: 0px;"><img
 					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="/images/close.png"
+					src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
 					onclick="javascript:divClose('chat_room');">
 			</div>
@@ -73,7 +74,7 @@
 		<div id="chat_room_list"
 			style="position: relative; border: solid 1px gray; width: 244px; height: 420px; top: 0px; left: 2px;">
 			<iframe id="chat_room_list_frame"
-				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver}"
+				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}"
 				style="border: 0px; width: 244px; height: 420px;"></iframe>
 		</div>
 
@@ -83,7 +84,7 @@
 			style="position: relative; border: solid 1px gray; width: 244px; height: 32px; bottom: -3px; left: 2px;">
 			<form id="chat_room_input_frm" onsubmit="sendChat(); return false;">
 				<input type="hidden" name="sender" value="${ss_cr_sender}" /> <input
-					type="hidden" name="receiver" value="${ss_cr_receiver}" /> <input
+					type="hidden" name="receiver" value="${ss_cr_receiver.m_no}" /> <input
 					type="hidden" name="no" value="${ss_cr_no}" /> <input type="text"
 					name="text" id="chat_text" autocomplete=off
 					style="position: relative; width: 208px; height: 28px; padding: 0px; top: -12px;" /><img

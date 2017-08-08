@@ -55,6 +55,8 @@ public class LoginController {
 	@RequestMapping("logout.help")
 	public ModelAndView logout(ModelAndView mv, HttpSession session) {
 		if (session.getAttribute("UNO") != null) {
+			session.removeAttribute("ss_cr_no");
+			session.removeAttribute("ss_cr_receiver");
 			session.removeAttribute("UNO");
 			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");

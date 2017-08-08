@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import help.service.ChatService;
+import help.service.MemberService;
 import help.vo.ChatVO;
 import help.vo.ChatroomVO;
 import help.vo.MemberVO;
@@ -24,6 +25,9 @@ public class ChatController {
 
 	@Autowired
 	ChatService service;
+	
+	@Autowired
+	MemberService member;
 
 	@RequestMapping("chatroomList.help")
 	public ModelAndView getChatroomListByUser(ModelAndView mv, HttpSession session) {
@@ -49,7 +53,7 @@ public class ChatController {
 			@RequestParam Integer cr_no, @RequestParam Integer cr_receiver) {
 		if (cr_no != null) {
 			session.setAttribute("ss_cr_no", cr_no);
-			session.setAttribute("ss_cr_receiver", cr_receiver);
+			session.setAttribute("ss_cr_receiver", member.getMemberByNo(cr_receiver));
 			List<ChatVO> list = null;
 			list = service.getChatByChatroom(new ChatroomVO(cr_no));
 			mv.addObject("chat_list", list);
@@ -65,9 +69,9 @@ public class ChatController {
 			HttpServletResponse response) {
 		Integer cr_no = (Integer) session.getAttribute("ss_cr_no");
 		Integer ch_sender = (Integer) session.getAttribute("UNO");
-		Integer ch_receiver = (Integer) session.getAttribute("ss_cr_receiver");
+		MemberVO ch_receiver = (MemberVO) session.getAttribute("ss_cr_receiver");
 
-		service.sendChat(new ChatVO(0, new MemberVO(ch_sender), new MemberVO(ch_receiver), null, text, 0,
+		service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0,
 				new ChatroomVO(cr_no)));
 
 		try {
