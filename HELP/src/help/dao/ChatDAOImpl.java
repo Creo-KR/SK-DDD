@@ -24,6 +24,10 @@ public class ChatDAOImpl implements ChatDAO {
 		return session.selectList("chatMapper.getChatroomListByUser", vo);
 				
 	}
+	
+	public ChatroomVO getChatroomByNo(ChatroomVO vo) {
+		return session.selectOne("chatMapper.getChatroomByNo", vo);
+	}
 
 	public ChatroomVO getChatroomByUsers(ChatroomVO vo) {
 		return session.selectOne("chatMapper.getChatroomByUsers", vo);

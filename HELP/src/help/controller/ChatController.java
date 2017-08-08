@@ -121,4 +121,17 @@ public class ChatController {
 		}
 	}
 
+	@RequestMapping(value = "leaveChatroom.help", method = RequestMethod.POST)
+	public void leaveChat(HttpSession session, HttpServletResponse response) {
+		service.leaveChat(new ChatroomVO((Integer) session.getAttribute("ss_cr_no")),
+				new MemberVO((Integer) session.getAttribute("UNO")));
+		session.removeAttribute("ss_cr_no");
+		session.removeAttribute("ss_cr_receiver");
+		try {
+			response.getWriter().print(1);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

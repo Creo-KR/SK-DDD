@@ -7,7 +7,7 @@
 
 <script type="text/javascript">
 var title = window.parent.document.getElementById('chat_room_titleBar_name');
-title.innerText = ${ss_cr_receiver.m_name};
+title.innerText = "${ss_cr_receiver.m_name}"; 
 </script>
 	
 <c:forEach var="chat" items="${chat_list}">

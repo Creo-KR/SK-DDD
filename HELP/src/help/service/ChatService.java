@@ -4,6 +4,7 @@ import java.util.List;
 
 import help.vo.ChatVO;
 import help.vo.ChatroomVO;
+import help.vo.MemberVO;
 
 public interface ChatService {
 	
@@ -20,4 +21,6 @@ public interface ChatService {
 	public void checkChat(ChatVO vo);
 	
 	public int chatroomRefresh(ChatVO vo);
+	
+	public void leaveChat(ChatroomVO vo, MemberVO user);
 }

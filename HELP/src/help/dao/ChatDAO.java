@@ -11,6 +11,8 @@ public interface ChatDAO {
 
 	public List<ChatroomVO> getChatroomListByUser(ChatroomVO vo);
 
+	public ChatroomVO getChatroomByNo(ChatroomVO vo);
+	
 	public ChatroomVO getChatroomByUsers(ChatroomVO vo);
 
 	public void updateChatroomDate(ChatroomVO vo);

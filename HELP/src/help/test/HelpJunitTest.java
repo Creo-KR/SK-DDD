@@ -37,12 +37,11 @@ public class HelpJunitTest {
 	}
 
 	@Test
-	@Ignore
 	public void addChatroom() {
-		chatDAO.addChatroom(new ChatroomVO(0, 1, 22, null, 1, 1));
+		chatDAO.addChatroom(new ChatroomVO(0, new MemberVO(1), new MemberVO(14), null, 1, 1));
 	}
 
-	@Test
+	@Test @Ignore
 	public void findChatroomlist() {
 		List<ChatroomVO> list = chatDAO.getChatroomListByUser(new ChatroomVO(0, new MemberVO(1), null, null, 1, 1));
 		for(ChatroomVO v : list) {

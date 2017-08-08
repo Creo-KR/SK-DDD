@@ -46,8 +46,8 @@
 				type : "post",
 				success : function sendHandler(data) {
 					var frame = document.getElementById('chat_room_list_frame');
-					frame.contentWindow.location.reload();
 					var frame2 = document.getElementById('chat_list_frame');
+					frame.src="commons/blank.jsp";
 					frame2.contentWindow.location.reload();
 					chat_text.value = "";
 				}

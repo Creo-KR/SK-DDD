@@ -53,6 +53,16 @@
 	) WHERE ROWNUM = 1
 	</select>
 	
+	<select id="getChatroomByNo" parameterType="ChatroomVO" resultMap="ChatroomVO">
+	SELECT cr_no,
+	       cr_user1 user_m_no, m.m_id user_m_id, m.m_name user_m_name,
+	       cr_user2 user2_m_no, m2.m_id user2_m_id, m2.m_name user2_m_name,
+	       cr_lastdate, cr_active1, cr_active2
+	FROM chatroom cr, member m, member m2
+	WHERE cr_no = #{cr_no}
+	  AND cr_user1 = m.m_no AND cr_user2 = m2.m_no
+	</select>
+	
 	<select id="getChatroomByUsers" parameterType="ChatroomVO" resultType="ChatroomVO">
 	SELECT * FROM chatroom
 	WHERE cr_user1 = #{cr_user1.m_no} AND cr_active1 = 1
