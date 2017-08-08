@@ -347,7 +347,7 @@ tr.bb_line td {border-bottom:1px solid #333 !important;}
 .view_popup2 a.close {display:block; width:25px; height:25px; width:60px; height:57px; background:#394c67 url(/kor/images/common/pop_close.png) no-repeat 50% 50%; position:absolute; top:0; right:0; text-indent:-55555px;}
 
 /* 푸터영역 */
-#footer{ width:100%; background:#212121 url(/kor/images/common/footer_bg.jpg) repeat-x 0 0; padding:0 0 25px 0; clear:both; position:relative; z-index:77777; /*overflow:hidden;*/  min-height:150px;}
+#footer{ width:100%; background:#212121 url(/kor/images/common/footer_bg.jpg) repeat-x 0 0; padding:0 0 25px 0; clear:both; position:relative; z-index:7777; /*overflow:hidden;*/  min-height:150px;}
 #footer .foot_inner {width:1000px; margin:0 auto; position:relative;}
 #footer .foot_inner .site_link dl {background:#002f47; width:220px; height:480px; position:absolute; top:-480px; z-index:88988; padding:5px 25px; box-sizing:border-box; display:none;}
 #footer .foot_inner .site_link dl dt {font-size:15px; font-weight:400; color:#fff; margin:20px 0 5px 0;}
