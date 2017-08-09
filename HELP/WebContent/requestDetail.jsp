@@ -100,7 +100,22 @@
 				</tr>
 				<tr>
 					<th>카테고리 :</th>
-					<td class="ty2">${requestDetailKey.c_no}</td>
+					<c:if test="${requestDetailKey.c_no == 1}">
+						<td class="ty2" data-title="Name">피아노</td>
+					</c:if>
+					<c:if test="${requestDetailKey.c_no == 2}">
+						<td class="ty2" data-title="Name">이사</td>
+					</c:if>
+					<c:if test="${requestDetailKey.c_no == 3}">
+						<td class="ty2" data-title="Name">웹 개발</td>
+					</c:if>
+					<c:if test="${requestDetailKey.c_no == 4}">
+						<td class="ty2" data-title="Name">포토 샵</td>
+					</c:if>
+					<c:if test="${requestDetailKey.c_no == 5}">
+						<td class="ty2" data-title="Name">결혼</td>
+					</c:if>
+
 				</tr>
 				<tr>
 					<th>제목 :</th>
@@ -108,19 +123,23 @@
 				</tr>
 				<tr>
 					<th>내용 :</th>
-					<td class="ty2" >
-					<c:forEach var="content" items="${contentSplit}">
-						<table style="border-style: hidden;">
-							<tr>
-								<td>${content}</td>
-							</tr>
-						</table>
-					</c:forEach>
-					</td>
+					<td class="ty2"><c:forEach var="content"
+							items="${contentSplit}">
+							<table style="border-style: hidden;">
+								<tr>
+									<td>${content}</td>
+								</tr>
+							</table>
+						</c:forEach></td>
 				</tr>
 				<tr>
 					<th>완료여부</th>
-					<td class="ty2">${requestDetailKey.r_active}</td>
+					<c:if test="${requestDetailKey.r_active == 1}">
+						<td class="ty2">대기중</td>
+					</c:if>
+					<c:if test="${requestDetailKey.r_active == 0}">
+						<td class="ty2">진행중</td>
+					</c:if>
 				</tr>
 				<tr>
 					<th>날짜</th>
@@ -128,6 +147,26 @@
 				</tr>
 			</table>
 		</div>
+
+		<div style="width: 100%; text-align: center">
+			<c:if test="${sessionType==1}">
+				<button onclick="chat_go()"
+					style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+					신청하기</button>
+			</c:if>
+		</div>
+
+
+		<script>
+		
+			var chat_go = function() {
+				window.location = "  ";
+			}
+		</script>
+
+
+
+
 
 
 	</div>

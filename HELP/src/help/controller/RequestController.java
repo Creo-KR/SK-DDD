@@ -129,15 +129,16 @@ public class RequestController {
 		
 		String contentSplit[] = content.split("@!@");
 		
-		System.out.println(content);
+		//System.out.println(content);
 		
-		for(int i=0; i<contentSplit.length; i++) {
-			System.out.println("contentSplit["+"] >>" + contentSplit[i]);
-		}
-		
-		System.out.println(session.getAttribute("UTYPE"));
+//		for(int i=0; i<contentSplit.length; i++) {
+//			System.out.println("contentSplit["+"] >>" + contentSplit[i]);
+//		}
+//		
+
 		
 		model.addAttribute("contentSplit",contentSplit);
+		model.addAttribute("sessionType",session.getAttribute("UTYPE"));
 		
 		
 		
