@@ -67,21 +67,21 @@
 		<div id="util">
 			<c:if test="${sessionScope.COUNT != 1}">
 				<div class="certify" id="idlogin">
-					<a href="loginForm.help">LOGIN</a>
+					<a href="loginForm.help" style="font-family: 'Cooper Black'; font-size: 18px;">LOGIN</a>
 				</div>
-				<a href="joinChoice.help" class="eng">SIGN UP</a>
+				<a href="joinChoice.help" class="eng" style="font-family: 'Cooper Black'; font-size: 18px;">SIGN UP</a>
 			</c:if>
 
 			<c:if test="${sessionScope.COUNT eq 1}">
-				<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
-				<a href="mypageDivision.help" class="eng" style="float: left;">MY
+				<a style="float: left; font-family: 'Cooper Black'; font-size: 18px;" >${sessionScope.UNAME}님 어서오세요!</a>
+				<a href="mypageDivision.help" class="eng" style="float: left; font-family: 'Cooper Black'; font-size: 18px;">MY
 					PAGE</a>
 				<div class="certify logon" id="idlogout" style="width: 80px">
-					<a href="#" onclick="logout(); return false;">LOGOUT</a>
+					<a href="#" onclick="logout(); return false;" style="font-family: 'Cooper Black'; font-size: 18px;">LOGOUT</a>
 				</div>
 			</c:if>
 
-			<a onclick="divOpen('chat_list')" class="site">CHAT</a>
+					<a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
 			<div class="search_area">
 				<form
 					action="/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ"

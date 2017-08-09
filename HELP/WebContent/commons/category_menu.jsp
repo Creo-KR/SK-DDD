@@ -173,30 +173,30 @@ button:hover:before, button:hover:after {
 		<div id="categoryBox" style="margin-left: 20%;">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
-				<li style=" border: 1px solid #555;"><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
+				<li style=""><a href="/HELP/category1List.jsp" style="background: darkgray;"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">피아노</span> <span class="sdt_descr">Learn the piano</span>
+							class="sdt_link" style="font-weight: bold;">피아노</span> <span class="sdt_descr">Learn the piano</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category2List.jsp"> <img src="${pageContext.request.contextPath}/images/move.jpg" alt="" /> <span
+				<li style=""><a href="/HELP/category2List.jsp" style="background: darkgray;"> <img src="${pageContext.request.contextPath}/images/move.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">이사</span> <span class="sdt_descr">Move house</span>
+							class="sdt_link" style="font-weight: bold;">이사</span> <span class="sdt_descr">Move house</span>
 					</span>
 				</a></li>
 
-				<li style=" border: 1px solid #555;"><a href="/HELP/category3List.jsp"> <img src="${pageContext.request.contextPath}/images/webDevelop.jpg" alt="" /> <span
+				<li style=""><a href="/HELP/category3List.jsp" style="background: darkgray;"> <img src="${pageContext.request.contextPath}/images/webDevelop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">웹 개발</span> <span class="sdt_descr">Do web development</span>
+							class="sdt_link" style="font-weight: bold;">웹 개발</span> <span class="sdt_descr">Do web development</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category4List.jsp"> <img src="${pageContext.request.contextPath}/images/potoshop.jpg" alt="" /> <span
+				<li style=""><a href="/HELP/category4List.jsp" style="background: darkgray;"> <img src="${pageContext.request.contextPath}/images/potoshop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">포토샵</span> <span class="sdt_descr">Learn Photoshop</span>
+							class="sdt_link" style="font-weight: bold;">포토샵</span> <span class="sdt_descr">Learn Photoshop</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category5List.jsp"> <img src="${pageContext.request.contextPath}/images/wedding.jpg" alt="" /> <span
+				<li style=""><a href="/HELP/category5List.jsp" style="background: darkgray;"> <img src="${pageContext.request.contextPath}/images/wedding.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
-							class="sdt_link">결혼</span> <span class="sdt_descr">Prepare for marriage</span>
+							class="sdt_link" style="font-weight: bold;">결혼</span> <span class="sdt_descr">Prepare for marriage</span>
 					</span>
 				</a></li>
 				<li><div id="add_request" >
