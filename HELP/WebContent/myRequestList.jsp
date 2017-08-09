@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://s.codepen.io/assets/libs/modernizr.js"
 	type="text/javascript"></script>
@@ -11,11 +12,12 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
 </head>
+<%-- <%@ include file="commons/header.jsp"%> --%>
 <body>
-	<div>
-<%-- 		<%@ include file="commons/header.jsp"%> --%>
-	</div>
-	<div>
+
+
+
+	<div style="margin-top: 100px">
 		<div id="demo">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -38,7 +40,22 @@
 							<tr>
 								<td data-title="ID"><a
 									href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></td>
-								<td data-title="Name">${request.c_no}</td>
+
+								<c:if test="${request.c_no == 1}">
+									<td data-title="Name">피아노</td>
+								</c:if>
+								<c:if test="${request.c_no == 2}">
+									<td data-title="Name">이사</td>
+								</c:if>
+								<c:if test="${request.c_no == 3}">
+									<td data-title="Name">웹 개발</td>
+								</c:if>
+								<c:if test="${request.c_no == 4}">
+									<td data-title="Name">포토 샵</td>
+								</c:if>
+								<c:if test="${request.c_no == 5}">
+									<td data-title="Name">결혼</td>
+								</c:if>
 								<td data-title="Link">${request.r_title}</td>
 								<c:if test="${request.r_active ==1 }">
 									<td data-title="Status">대기중</td>
@@ -72,7 +89,21 @@
 						<tbody>
 							<tr>
 								<td><a href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></td>
-								<td>${request.c_no}</td>
+								<c:if test="${request.c_no == 1}">
+									<td data-title="Name">피아노</td>
+								</c:if>
+								<c:if test="${request.c_no == 2}">
+									<td data-title="Name">이사</td>
+								</c:if>
+								<c:if test="${request.c_no == 3}">
+									<td data-title="Name">웹 개발</td>
+								</c:if>
+								<c:if test="${request.c_no == 4}">
+									<td data-title="Name">포토 샵</td>
+								</c:if>
+								<c:if test="${request.c_no == 5}">
+									<td data-title="Name">결혼</td>
+								</c:if>
 								<td>${request.r_title}</td>
 								<c:if test="${request.r_active ==0 }">
 									<td>진행중</td>

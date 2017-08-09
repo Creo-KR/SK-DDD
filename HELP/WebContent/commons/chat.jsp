@@ -32,8 +32,9 @@
 			data : $('#chat_room_input_frm').serialize(),
 			type : "post",
 			success : function sendHandler(data) {
+				var split = data.split(',');
 				var frame = document.getElementById('chat_room_list_frame');
-				frame.contentWindow.location.reload();
+				frame.src="viewChatroom.help?cr_no="+split[0]+"&cr_receiver="+split[1];
 				var frame2 = document.getElementById('chat_list_frame');
 				frame2.contentWindow.location.reload();
 				chat_text.value = "";
@@ -41,8 +42,9 @@
 		});
 	}
 
-	function joinChatroom() {
-		document.getElementById('chat_room_list_frame').src='joinChatroom.help?cr_receiver=2';
+	function joinChatroom(id) {
+		divOpen("chat_room");
+		document.getElementById('chat_room_list_frame').src='joinChatroom.help?cr_receiver='+id;
 	}
 
 	function leaveChatroom() {

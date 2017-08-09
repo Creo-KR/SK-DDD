@@ -71,24 +71,12 @@
 				</div>
 				<a href="joinChoice.help" class="eng" style="font-family: 'Cooper Black'; font-size: 18px;">SIGN UP</a>
 			</c:if>
-
 			<c:if test="${sessionScope.COUNT eq 1}">
 				<a style="float: left; font-family: 'Cooper Black'; font-size: 18px;" >${sessionScope.UNAME}님 어서오세요!</a>
 				<a href="mypageDivision.help" class="eng" style="float: left; font-family: 'Cooper Black'; font-size: 18px;">MY
 					PAGE</a>
 					<a href="#" onclick="logout(); return false;" style="font-family: 'Cooper Black'; font-size: 18px;">LOGOUT</a>
-			</c:if>
-
-					<a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
-			<div class="search_area">
-				<form
-					action="/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ"
-					name="contactfrm" id="contactfrm" method="post">
-					<input type="text" id="searchtext" name="stxt"
-						onkeyup="topsearchSb(event);" maxlength="10" title="검색어 입력" /> <a
-						href="#" onclick="sbsb(); return false;"  >SEARCH</a>
-				</form>
-			</div>
+			</c:if><a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
 		</div>
 
 		<script type='text/javascript'>

@@ -180,12 +180,22 @@ button {
 	outline: none;
 }
 
-button:hover {
+.hidden-xs, #bbb {
+	background: #555;
+	color: #fff;
+	border: none;
+	position: relative;
+	cursor: pointer;
+	transition: 800ms ease all;
+	outline: none;
+}
+
+button:hover, .hidden-xs:hover, #bbb:hover{
 	background: #fff;
 	color: #555;
 }
 
-button:before, button:after {
+button:before, button:after, .hidden-xs:before, .hidden-xs:after, #bbb:before, #bbb:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -196,14 +206,14 @@ button:before, button:after {
 	transition: 400ms ease all;
 }
 
-button:after {
+button:after, .hidden-xs:after, #bbb:after {
 	right: inherit;
 	top: inherit;
 	left: 0;
 	bottom: 0;
 }
 
-button:hover:before, button:hover:after {
+button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hover:after, #bbb:hover:before, #bbb:hover:after {
 	width: 100%;
 	transition: 800ms ease all;
 }
@@ -235,15 +245,16 @@ button:hover:before, button:hover:after {
 	<div id="mainCarousel" class="hero-container hero01">
 		<div class="container">
 			<div class="text-wrap">
-				<h1 class="with-headline-btn" style="font-size: 35px;">H.E.L.P가 딱! 맞는 고수를 소개해 드려요</h1>
+				<h1 class="with-headline-btn" style="font-size: 30px;">H.E.L.P가 딱! 맞는 고수를 소개해 드려요</h1>
 				<form class="service-search form-group-lg">
 					<div id="id_input_group_wrap" class="input-group">
 						<input type="text" class="form-control search-keyword"
 							placeholder="어떤 전문가를 찾으세요?" name="q" autocomplete="off" id="search">
 						<span class="input-group-btn">
-							<button class="btn btn-primary btn-md" type="submit" style="background-color: #555; border-color: #555;">
-								<i class="fa fa-search visible-xs" aria-hidden="true" class=""></i>
-								<span class="hidden-xs">고수찾기</span>
+							<button id="bbb" class="btn btn-primary btn-md" type="submit" style="background-color: #555; border-color: #555;">
+							고수찾기
+								<!-- <i class="fa fa-search visible-xs" aria-hidden="true" class=""></i> -->
+								<!-- <span class="hidden-xs">고수찾기</span> -->
 							</button>
 						</span>
 					</div>
@@ -289,28 +300,28 @@ button:hover:before, button:hover:after {
 		<div id="categoryBox" style="margin-left: 20%;">
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
-				<li style=" border: 1px solid #555;"><a href="/HELP/category1List.jsp"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
+				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=1"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">피아노</span> <span class="sdt_descr">Learn the piano</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category2List.jsp"> <img src="${pageContext.request.contextPath}/images/move.jpg" alt="" /> <span
+				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=2"> <img src="${pageContext.request.contextPath}/images/move.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">이사</span> <span class="sdt_descr">Move house</span>
 					</span>
 				</a></li>
 
-				<li style=" border: 1px solid #555;"><a href="/HELP/category3List.jsp"> <img src="${pageContext.request.contextPath}/images/webDevelop.jpg" alt="" /> <span
+				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=3"> <img src="${pageContext.request.contextPath}/images/webDevelop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">웹 개발</span> <span class="sdt_descr">Do web development</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category4List.jsp"> <img src="${pageContext.request.contextPath}/images/potoshop.jpg" alt="" /> <span
+				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=4"> <img src="${pageContext.request.contextPath}/images/potoshop.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">포토샵</span> <span class="sdt_descr">Learn Photoshop</span>
 					</span>
 				</a></li>
-				<li style=" border: 1px solid #555;"><a href="/HELP/category5List.jsp"> <img src="${pageContext.request.contextPath}/images/wedding.jpg" alt="" /> <span
+				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=5"> <img src="${pageContext.request.contextPath}/images/wedding.jpg" alt="" /> <span
 						class="sdt_active"></span> <span class="sdt_wrap"> <span
 							class="sdt_link">결혼</span> <span class="sdt_descr">Prepare for marriage</span>
 					</span>
@@ -329,7 +340,7 @@ button:hover:before, button:hover:after {
 	</div>
 	<!-- Category Box End -->
 	
-
+ 
 
 	<div>
 		<span class="reference"> <a
