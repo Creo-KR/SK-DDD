@@ -41,6 +41,7 @@ public class LoginController {
 			session.setAttribute("UNO", memVO.getM_no());
 			session.setAttribute("UID", memVO.getM_id());
 			session.setAttribute("UNAME", memVO.getM_name());
+			session.setAttribute("UTYPE", memVO.getM_type());
 			session.setAttribute("COUNT", cnt);
 			//rv.setUrl("loginForm.help");
 			//mv.setView(rv);
