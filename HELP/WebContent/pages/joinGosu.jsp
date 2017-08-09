@@ -19,7 +19,8 @@
 				<div class="xans-element- xans-member xans-member-join ">
 
 
-					<h3 style="font-size: 30px; font-weight: bold;">Information</h3>
+					<h3 style="font-size: 30px; font-weight: bold; font-family: 'Cooper Black';">INFORMATION</h3>
+					<br><br>
 					<div class="boardWrite">
 						<table border="1" summary="">
 							<tbody>

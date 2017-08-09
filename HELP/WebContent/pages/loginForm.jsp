@@ -24,7 +24,7 @@ $(document).ready(function() {
 <body>
 <div id="container">
 		<div class="main_contents">
-<h1>LOGIN</h1>
+<h1 style="font-weight: bold; color: #555; font-family: 'Cooper Black';">LOGIN</h1>
      <div class="contact-form">
 	 <div class="signin">
      <form action="loginProc.help" method="post">
@@ -38,6 +38,7 @@ $(document).ready(function() {
 	 </div>
 	 </div>
 	 </div>
+	 <br><br><br><br>
 	<%@ include file="../commons/footer.jsp"%>
 </body>
 

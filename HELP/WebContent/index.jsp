@@ -93,7 +93,7 @@
         }
         #clip .clip-bg-04 {
             background-image: url('https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/clip_img_04.png');
-            height: 322px;
+            height: 659px;
         }
         #clip .clip-bg-05 {
             background-image: url('https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/clip_img_05.png');
@@ -122,16 +122,16 @@
 
 	<div id="container">
 
-		<div class="main_contents">
+		<div class="main_contents" style="padding: 150px 0px;">
 			<!-- 본문영역 -->
 			<div>
-			<%@ include file="commons/category_menu.jsp"%>
+			<%@ include file="commons/category_menu2.jsp"%>
 			</div>
 			    <div id="clip" class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 style="">수 천명의 고수들이 숨고를 통해 무료로 새로운 고객들을 만나고 있어요</h2>
+                    <img alt="" src="${pageContext.request.contextPath}/images/text.png" width="100%" height="80">
                     <br>
                 </div>
             </div>

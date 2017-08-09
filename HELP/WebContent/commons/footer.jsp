@@ -11,22 +11,22 @@
 		</ul>
       </div>
 	  
-	  <div class="square">
+	  <!-- <div class="square">
 		<a href="https://square.ewp.co.kr/" target="_blank">동서인광장</a>
-	  </div>
+	  </div> -->
 	  
 
       <div class="info">
-        <h1>한국동서발전</h1>
+        <h1>H. E. L. P</h1>
         <address>
-        <p>울산광역시 중구 종가로 395 우)44543</p>
-        <span>TEL : 070-5000-1000 (주간), FAX : 070-5000-1299</span> <span>당직실 : 070-5000-1098, 1099 (야간 및 공휴일)</span> <span class="copyright">COPYRIGHT ⓒ 2016 KOREA EAST-WEST POWER CO.,LTD (EWP). ALL RIGHTS RESERVED.</span>
+        <p>히든특별시 살고있구 포털로 1길30 우)12345</p>
+        <span>TEL : 070-1234-5678 (주간), FAX : 070-1234-5555</span> <span>당직실 : 070-1234-6666, 7777 (야간 및 공휴일)</span> <span class="copyright">COPYRIGHT ⓒ 2017 HIDDEN EXPERT LIVING IN PORTAL CO.,LTD (EWP). ALL RIGHTS RESERVED.</span>
         </address>
-        <div class="foot_sns"> 
+        <!-- <div class="foot_sns"> 
 		<a href="http://wa.or.kr/waMark/status.asp" target="_blank" class="accessibility">웹접근성 인증마크</a>
 			<a href="https://twitter.com/withewp" target="_blank" class="tweet">트위터</a><a href="https://www.facebook.com/ewp.powerian" target="_blank" class="face">페이스북</a> 
 			
-		</div>
+		</div> -->
       </div>
     </div>
   </div>

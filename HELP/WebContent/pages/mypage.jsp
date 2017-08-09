@@ -21,7 +21,7 @@
 					<!--ㅡmove menu 시작-->
 
 					<div id="move_menu">
-						<h4 style="font-weight: bold;">My Page(일반)</h4>
+						<h4 style="font-weight: bold; font-family: 'Cooper Black', '나눔고딕 ExtraBold'">MY PAGE(일반)</h4>
 					</div>
 
 					<!--move menu 끝-->
@@ -62,7 +62,7 @@
 								<dd class="txt">계약을 모두 이행한 사실을 증명할 수 있는 서류를 발급받으실 수 있습니다.</dd>
 								<dd class="txt">
 									<a href="https://ewpsrm.ewp.co.kr:8443/cert/midex_login.jsp"
-										target="_blank" class="nw">이동 하기</a>
+										class="nw">이동 하기</a>
 								</dd>
 							</dl>
 							<dl>

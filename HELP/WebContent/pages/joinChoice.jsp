@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%@ include file="../commons/header.jsp"%>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css?ver=5" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/join.css" />
 </head>
@@ -23,7 +23,7 @@
 							<h4>일반 회원의 권한</h4>
 							<p>견적서를 작성하고 고수들을 통해 원하는 분야의 답변을 얻을 수 있습니다. 자세한 내용은 고객센터를 통하여 문의 하시기 바랍니다.</p>
 							<div class="btn-box">
-								<a href="join.help?m_type=0" class="btn-green">신고하기</a>
+								<a href="join.help?m_type=0" class="btn-green">가입하기</a>
 							</div>
 						</div>
 					</div>
@@ -34,19 +34,23 @@
 							<a href="about">작성된 견적서 조회</a>
 						</p>
 						<div class="select-box-s" style="width: 430px;">
-							<h4>무선서비스(이동통신) 사업자</h4>
+							<h4>카테고리 종류</h4>
 							<table class="table-12" style="width: 300px;">
 								<tr>
-									<th>MNO</th>
-									<td>SKT, KT, LG U+</td>
+									<th>생활</th>
+									<td>이사, 피아노</td>
 								</tr>
 								<tr>
-									<th>MVNO<span>(알뜰폰)</span></th>
-									<td>CJ헬로모바일, KCT, 미디어로그, KT M 모바일, 티브로드_모바일</td>
+									<th>프로젝트</th>
+									<td>웹 개발, 포토샵, 결혼</td>
+								</tr>
+								<tr>
+									<th>기타</th>
+									<td>이 외에도 다양한 카테고리가 있습니다</td>
 								</tr>
 							</table>
 							<div class="btn-box">
-								<a href="join.help?m_type=1" class="btn-blue">신고하기</a>
+								<a href="join.help?m_type=1" class="btn-blue">가입하기</a>
 							</div>
 						</div>
 					</div>

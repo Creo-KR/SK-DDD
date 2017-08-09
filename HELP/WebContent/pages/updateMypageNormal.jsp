@@ -8,7 +8,7 @@
 <%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/join.css" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/join.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/updateMypageNormal.js"></script>
 </head>
 <body>
 	<div id="container">
