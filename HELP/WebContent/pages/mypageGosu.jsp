@@ -21,7 +21,7 @@
 					<!--ㅡmove menu 시작-->
 
 					<div id="move_menu">
-						<h4 style="font-weight: bold;">My Page(고수)</h4>
+						<h4 style="font-weight: bold; font-family: 'Cooper Black','나눔고딕 ExtraBold';">MY PAGE(고수)</h4>
 					</div>
 
 					<!--move menu 끝-->

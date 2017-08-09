@@ -72,7 +72,6 @@ input[type=text] {
 	font-size: 25px;
 	background-image: url('searchicon.png');
 }
-
 /* #add_request { */
 /* display: inline-block; */
 /* 	outline: none; */
