@@ -120,7 +120,6 @@ public class RequestController {
 		// for(int i=0; i<contentSplit.length; i++) {
 		// System.out.println("contentSplit["+"] >>" + contentSplit[i]);
 		// }
-		//
 
 		model.addAttribute("contentSplit", contentSplit);
 		model.addAttribute("sessionType", session.getAttribute("UTYPE"));
