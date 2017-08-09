@@ -84,7 +84,7 @@ public class ChatController {
 		MemberVO ch_receiver = (MemberVO) session.getAttribute("ss_cr_receiver");
 		String receiver = (String) session.getAttribute("ss_receiver");
 
-		if (!receiver.equals("out"))
+		if (receiver == null || !receiver.equals("out"))
 			service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0, new ChatroomVO(cr_no)));
 
 		try {

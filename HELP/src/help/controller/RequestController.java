@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,36 +37,37 @@ public class RequestController {
 		return "pages/requestForm";
 	}
 
-//	@RequestMapping(value = "addRequest.help", method = RequestMethod.POST)
-//	public String addRequest(ServletRequest request) {
-//		RequestVO requestvo = new RequestVO();
-//
-//		String categoryType = request.getParameter("categoryType");
-//		String title = request.getParameter("title");
-//		String[] question = request.getParameterValues("question");
-//		String[] answer = request.getParameterValues("answer");
-//		String question_answer = "";
-//
-//
-//		for (int i = 0; i < question.length; i++) {
-//			question_answer = question_answer + question[i] + answer[i] + "\n";
-//		}
-//		// System.out.println(question_answer);
-//
-//		requestvo.setR_title(title);
-//		requestvo.setC_no(Integer.parseInt(categoryType));
-//		requestvo.setR_content(question_answer);
-//		if (requestvo != null) {
-//			int cnt = reqDAO.insertRequest(requestvo);
-//			if (cnt == 1) {
-//				return "redirect:/getAllRequestsByWriter.help?r_writer=27";
-//			}
-//		}
-//		return "";
-//
-//	}
+	@RequestMapping(value = "addRequest.help", method = RequestMethod.POST)
+	public String addRequest(HttpSession session, ServletRequest request) {
+		RequestVO requestvo = new RequestVO();
 
-	
+		String categoryType = request.getParameter("categoryType");
+		String title = request.getParameter("title");
+		String[] question = request.getParameterValues("question");
+		String[] answer = request.getParameterValues("answer");
+		String question_answer = "";
+
+
+		for (int i = 0; i < question.length; i++) {
+			question_answer = question_answer + question[i] + answer[i] + "\n";
+		}
+		// System.out.println(question_answer);
+
+		requestvo.setR_title(title);
+		requestvo.setC_no(Integer.parseInt(categoryType));
+		requestvo.setR_content(question_answer);
+		requestvo.setR_writer((Integer) session.getAttribute("UNO"));
+		if (requestvo != null) {
+			int cnt = reqDAO.insertRequest(requestvo);
+			if (cnt == 1) {
+				return "redirect:/getAllRequestsByWriter.help?r_writer=27";
+			}
+		}
+		return "";
+
+	}
+
+	/*
 	   @RequestMapping(value = "/addRequest.help", method = RequestMethod.POST)
 	   public String addRequest(@ModelAttribute RequestVO req) {
 	      if (req != null) {
@@ -74,11 +76,13 @@ public class RequestController {
 	            return "redirect:/getAllRequestsByWriter.help?r_writer=27";
 	      }
 	      return "";
-	   }
+	   }*/
 	   
 	
 	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
-	public ModelAndView getAllRequestsByWriter(@RequestParam Integer r_writer) {
+	public ModelAndView getAllRequestsByWriter(HttpSession session) {
+		Integer r_writer = (Integer) session.getAttribute("UNO");
+		
 		//★★★★ getRequestsByWriter의 파라미터인 r_writer에 값 고정되어 있음. 1은 임의의 r_writer임 
 		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
 		List<RequestVO> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
