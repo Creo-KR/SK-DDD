@@ -24,4 +24,14 @@ public class TradeDAOImpl implements TradeDAO {
 		return session.selectList("tradeMapper.selectCompletedTrade", r_no);
 	}
 
+	@Override
+	public List<TradeVO> getInProgressTradeByGosu(Integer m_no) {
+		return session.selectList("tradeMapper.selectInProgressTradeByGosu", m_no);
+	}
+
+	@Override
+	public List<TradeVO> getCompletedTradeByGosu(Integer m_no) {
+		return session.selectList("tradeMapper.selectCompletedTradeByGosu", m_no);
+	}
+
 }

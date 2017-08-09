@@ -41,6 +41,15 @@ public class RequestController {
 	public String moveJoin() {
 		return "pages/requestForm";
 	}
+	
+	@RequestMapping("redirectByUtype.help")
+	public String redirectByUtype(HttpSession session) {
+		Integer memberType = (Integer) session.getAttribute("UTYPE");
+		if (memberType == 0)
+			return "redirect:/getAllRequestsByWriter.help";
+		else
+			return "redirect:/getAllRequestsByCategory.help";
+	}
 
 	@RequestMapping(value = "addRequest.help", method = RequestMethod.POST)
 	   public String addRequest(HttpSession session, ServletRequest request) {
@@ -95,17 +104,41 @@ public class RequestController {
 		return "myRequestList3";
 	}
 	
+//	@RequestMapping(value="/getAllRequestsByCategory.help", method=RequestMethod.GET)
+//	public ModelAndView getAllRequestsByCategory(HttpSession session) {
+//		Integer m_no = (Integer) session.getAttribute("UNO");
+//		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
+//		List<RequestVO> requestListValue = new ArrayList<RequestVO>();
+//		
+//		for (Integer cno : cnoList) {
+//			requestListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
+//		}
+//		
+//		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
+//	}
+	
 	@RequestMapping(value="/getAllRequestsByCategory.help", method=RequestMethod.GET)
-	public ModelAndView getAllRequestsByCategory(@RequestParam Integer m_no) {
+	public String getAllRequestsByCategory(Model model, HttpSession session) {
+		Integer m_no = (Integer) session.getAttribute("UNO");
 		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
-		List<RequestVO> requestListValue = new ArrayList<RequestVO>();
+		List<RequestVO> waitingListValue = new ArrayList<RequestVO>();
 		
 		for (Integer cno : cnoList) {
-			requestListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
-			
+			waitingListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
 		}
 		
-		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
+		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
+		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+
+		inProgressTradeValues.addAll(tradeDAO.getInProgressTradeByGosu(m_no));
+		completedTradeValues.addAll(tradeDAO.getCompletedTradeByGosu(m_no));
+		
+		model.addAttribute("waitingListKey", waitingListValue);
+		model.addAttribute("inProgressListKey", inProgressTradeValues);
+		model.addAttribute("completedListKey", completedTradeValues);
+		
+		
+		return "myRequestList4";
 	}
 	
 	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
