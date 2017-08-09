@@ -8,8 +8,23 @@
 	content="Slide Down Box Menu with jQuery and CSS3" />
 <meta name="keywords"
 	content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
+<meta charset="utf-8">
+<!-- jQuery ui style sheet -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- jQuery ui library -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
 
 <style>
+span.sdt_wrap:hover span.sdt_link{
+	
+	color: white;
+}
+
 body {
 	font-family: Arial;
 }
@@ -121,6 +136,23 @@ button:hover:before, button:hover:after {
 }
 </style>
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		var searchKeywords = [
+				"이사", "이사 견적서", "이사고수", "포장 이사", "대형 이사",
+				"피아노", "피아노 견적서", "피아니스트",
+				"웹 개발", "웹 견적서", "웹 프로그래밍", "웹 개발자",
+				"결혼", "결혼 사회자", "결혼식", "결혼 견적서",
+				"포토샵", "포토샵 견적서", "포토그래퍼"
+		];
+		
+			$("#search").autocomplete({
+				source: searchKeywords,
+			    matchContains: false,
+			    selectFirst: false
+			});
+		});
+</script>
 </head>
 <body>
 
@@ -130,7 +162,7 @@ button:hover:before, button:hover:after {
 		<!-- 검색 창 form Start-->
 		<div id="search_form" style="margin-left: 20%">
 			<input id="search" type="text" placeholder="    검색어를 입력하세요">
-			<button>Search</button>
+			<button style="font-weight: bold;">Search</button>
 		</div>
 		<!-- 검색 창 form End-->
 
@@ -168,7 +200,7 @@ button:hover:before, button:hover:after {
 				</a></li>
 				<li><div id="add_request" >
 	
-				<button onclick="request_go()">
+				<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px">
 				요청서 등록
 				</button>
 

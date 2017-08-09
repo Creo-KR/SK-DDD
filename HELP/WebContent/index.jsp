@@ -131,7 +131,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2 style="">수 천명의 고수들이 숨고를 통해 무료로 새로운 고객들을 만나고 있어요</h2>
+                    <img alt="" src="${pageContext.request.contextPath}/images/text.png" width="100%" height="80">
                     <br>
                 </div>
             </div>
