@@ -20,6 +20,7 @@
 		if(${ss_receiver == 'out'}) {
 			alert("상대방이 대화방을 나갔습니다.");
 			chat_text.value = "";
+			return;
 		}
 		
 		if (chat_text.value == "" || chat_text.value == null) {
