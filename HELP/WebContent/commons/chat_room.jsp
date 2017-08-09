@@ -9,7 +9,12 @@
 var title = window.parent.document.getElementById('chat_room_titleBar_name');
 title.innerText = "${ss_cr_receiver.m_name}"; 
 </script>
-	
+<c:if test="${ss_receiver == 'out'}">
+	<div
+		style="position: relative; border: solid 1px gray; width: 229px; height: 60px; top: 0px; left: 2px; margin-bottom: 1px;">상대방이 대화방에서 나갔습니다.
+	</div>
+</c:if>
+
 <c:forEach var="chat" items="${chat_list}">
 	<div
 		style="position: relative; border: solid 1px gray; width: 229px; height: 60px; top: 0px; left: 2px; margin-bottom: 1px;">

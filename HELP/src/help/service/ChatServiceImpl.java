@@ -60,5 +60,10 @@ public class ChatServiceImpl implements ChatService {
 			dao.leaveChatroom(room, 2);
 		}
 	}
+	
+	@Override
+	public ChatroomVO getChatroomByNo(Integer no) {
+		return dao.getChatroomByNo(new ChatroomVO(no));
+	}
 
 }

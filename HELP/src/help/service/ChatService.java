@@ -23,4 +23,6 @@ public interface ChatService {
 	public int chatroomRefresh(ChatVO vo);
 	
 	public void leaveChat(ChatroomVO vo, MemberVO user);
+	
+	public ChatroomVO getChatroomByNo(Integer no);
 }

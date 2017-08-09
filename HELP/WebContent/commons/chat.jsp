@@ -16,6 +16,12 @@
 
 	function sendChat() {
 		var chat_text = document.getElementById('chat_text');
+
+		if(${ss_receiver == 'out'}) {
+			alert("상대방이 대화방을 나갔습니다.");
+			chat_text.value = "";
+		}
+		
 		if (chat_text.value == "" || chat_text.value == null) {
 			return;
 		}
@@ -39,7 +45,8 @@
 	}
 
 	function leaveChatroom() {
-		var conf = confirm("${ss_cr_receiver.m_name}님과의 대화방에서 나가시겠습니까? (대화내용이 지워집니다)");
+		var roomname = document.getElementById("chat_room_titleBar_name");
+		var conf = confirm(roomname.innerText+"님과의 대화방에서 나가시겠습니까? (대화내용이 지워집니다)");
 		if(conf) {
 			$.ajax({
 				url : "leaveChatroom.help",

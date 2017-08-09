@@ -38,7 +38,7 @@ public class HelpJunitTest {
 
 	@Test
 	public void addChatroom() {
-		chatDAO.addChatroom(new ChatroomVO(0, new MemberVO(1), new MemberVO(14), null, 1, 1));
+		chatDAO.addChatroom(new ChatroomVO(0, new MemberVO(1), new MemberVO(2), null, 1, 1));
 	}
 
 	@Test @Ignore
