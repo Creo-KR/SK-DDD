@@ -163,7 +163,7 @@ button:hover:before, button:hover:after {
 		<!-- 검색 창 form Start-->
 		<div id="search_form" style="margin-left: 20%">
 			<input id="search" type="text" placeholder="    검색어를 입력하세요">
-			<button style="font-weight: bold;">Search</button>
+			<button style="font-weight: bold; font-family: 'Cooper Black';">SEARCH</button>
 		</div>
 		<!-- 검색 창 form End-->
 
@@ -201,8 +201,8 @@ button:hover:before, button:hover:after {
 				</a></li>
 				<li><div id="add_request" >
 	
-				<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-				요청서 등록
+				<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px; font-family: 'Cooper Black', '뫼비우스 Bold';">
+				견적서 등록
 				</button>
 
 

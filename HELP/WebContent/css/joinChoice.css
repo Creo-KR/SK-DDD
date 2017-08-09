@@ -452,11 +452,11 @@ a.iphone:visited {color:#fff;}
 }
 
 /*서브 공통*/
-a.btn-blue {display:inline-block; color:#fff; font-size:14pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:12px 20px; margin:0 auto; background:#0070bd; border-radius:0.8em; cursor:pointer;}
-a.btn-blue:hover {color: #fff; background: #075286;}
+a.btn-blue {display:inline-block; color:#fff; font-size:14pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:12px 20px; margin:0 auto; background:#555; border-radius:0.8em; cursor:pointer;}
+a.btn-blue:hover {color: #fff; background: darkgray;}
 a.btn-blue:focus {color: #fff; background: #075286;}
-a.btn-green {display:inline-block; color:#fff; font-size:14pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:12px 20px; margin:0 auto; background:#75a113; border-radius:0.8em; cursor:pointer;}
-a.btn-green:hover {color: #fff; background: #5d820c;}
+a.btn-green {display:inline-block; color:#fff; font-size:14pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:12px 20px; margin:0 auto; background:#555; border-radius:0.8em; cursor:pointer;}
+a.btn-green:hover {color: #fff; background: darkgray;}
 a.btn-green:focus {color: #fff; background: #5d820c;}
 a.btn-gray {display:inline-block; color:#fff; font-size:14pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:12px 20px; margin:0 auto; background:#999; border-radius:0.8em; cursor:pointer;}
 a.btn-gray:hover {color: #fff; background: #666;}

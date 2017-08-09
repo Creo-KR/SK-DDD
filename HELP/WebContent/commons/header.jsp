@@ -76,9 +76,7 @@
 				<a style="float: left; font-family: 'Cooper Black'; font-size: 18px;" >${sessionScope.UNAME}님 어서오세요!</a>
 				<a href="mypageDivision.help" class="eng" style="float: left; font-family: 'Cooper Black'; font-size: 18px;">MY
 					PAGE</a>
-				<div class="certify logon" id="idlogout" style="width: 80px">
 					<a href="#" onclick="logout(); return false;" style="font-family: 'Cooper Black'; font-size: 18px;">LOGOUT</a>
-				</div>
 			</c:if>
 
 					<a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
@@ -88,7 +86,7 @@
 					name="contactfrm" id="contactfrm" method="post">
 					<input type="text" id="searchtext" name="stxt"
 						onkeyup="topsearchSb(event);" maxlength="10" title="검색어 입력" /> <a
-						href="#" onclick="sbsb(); return false;">search</a>
+						href="#" onclick="sbsb(); return false;"  >SEARCH</a>
 				</form>
 			</div>
 		</div>
