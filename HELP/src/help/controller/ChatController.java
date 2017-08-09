@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import help.service.ChatService;
 import help.service.MemberService;
@@ -40,13 +39,6 @@ public class ChatController {
 		}
 		mv.addObject("chatroom_list", list);
 		mv.setViewName("commons/chat_list");
-		return mv;
-	}
-
-	@RequestMapping(value = "addChatroom.help", method = RequestMethod.POST)
-	public ModelAndView addChatroom(ModelAndView mv, HttpSession session, @RequestParam Integer receiver) {
-		Integer cr_user1 = (Integer) session.getAttribute("UNO");
-		mv.setViewName("index");
 		return mv;
 	}
 
@@ -77,12 +69,18 @@ public class ChatController {
 	}
 
 	@RequestMapping(value = "sendChat.help", method = RequestMethod.POST)
-	public void sendChat(HttpSession session, @RequestParam String text, RedirectView rv,
-			HttpServletResponse response) {
+	public void sendChat(HttpSession session, @RequestParam String text, HttpServletResponse response) {
 		Integer cr_no = (Integer) session.getAttribute("ss_cr_no");
 		Integer ch_sender = (Integer) session.getAttribute("UNO");
 		MemberVO ch_receiver = (MemberVO) session.getAttribute("ss_cr_receiver");
 		String receiver = (String) session.getAttribute("ss_receiver");
+
+		if (cr_no == null) {
+			ChatroomVO chatroom = new ChatroomVO(0, new MemberVO(ch_sender), ch_receiver, null, 1, 1);
+			service.addChatroom(chatroom);
+			cr_no = chatroom.getCr_no();
+			session.setAttribute("ss_cr_no", cr_no);
+		}
 
 		if (receiver == null || !receiver.equals("out"))
 			service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0, new ChatroomVO(cr_no)));
@@ -94,9 +92,14 @@ public class ChatController {
 		}
 	}
 
-	@RequestMapping(value = "joinChatroom.help", method = RequestMethod.POST)
-	public void joinChatroom() {
-
+	@RequestMapping(value = "joinChatroom.help")
+	public ModelAndView joinChatroom(ModelAndView mv, HttpSession session, HttpServletResponse response,
+			@RequestParam Integer cr_receiver) {
+		session.removeAttribute("ss_cr_no");
+		session.removeAttribute("ss_receiver");
+		session.setAttribute("ss_cr_receiver", member.getMemberByNo(cr_receiver));
+		mv.setViewName("commons/chat_room");
+		return mv;
 	}
 
 	@RequestMapping("chatRefreshCount.help")
