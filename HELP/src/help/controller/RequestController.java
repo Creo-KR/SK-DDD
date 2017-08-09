@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,16 +30,52 @@ public class RequestController {
 	
 	@Autowired
 	GosuDAO gosuDAO;
-
-	@RequestMapping(value = "/addRequest.help", method = RequestMethod.POST)
-	public String addRequest(@ModelAttribute RequestVO req) {
-		if (req != null) {
-			int cnt = reqDAO.insertRequest(req);
-			if (cnt == 1)
-				return "redirect:/getAllRequestsByWriter.help?r_writer=27";
-		}
-		return "";
+	
+	@RequestMapping("request.help")
+	public String moveJoin() {
+		return "pages/requestForm";
 	}
+
+//	@RequestMapping(value = "addRequest.help", method = RequestMethod.POST)
+//	public String addRequest(ServletRequest request) {
+//		RequestVO requestvo = new RequestVO();
+//
+//		String categoryType = request.getParameter("categoryType");
+//		String title = request.getParameter("title");
+//		String[] question = request.getParameterValues("question");
+//		String[] answer = request.getParameterValues("answer");
+//		String question_answer = "";
+//
+//
+//		for (int i = 0; i < question.length; i++) {
+//			question_answer = question_answer + question[i] + answer[i] + "\n";
+//		}
+//		// System.out.println(question_answer);
+//
+//		requestvo.setR_title(title);
+//		requestvo.setC_no(Integer.parseInt(categoryType));
+//		requestvo.setR_content(question_answer);
+//		if (requestvo != null) {
+//			int cnt = reqDAO.insertRequest(requestvo);
+//			if (cnt == 1) {
+//				return "redirect:/getAllRequestsByWriter.help?r_writer=27";
+//			}
+//		}
+//		return "";
+//
+//	}
+
+	
+	   @RequestMapping(value = "/addRequest.help", method = RequestMethod.POST)
+	   public String addRequest(@ModelAttribute RequestVO req) {
+	      if (req != null) {
+	         int cnt = reqDAO.insertRequest(req);
+	         if (cnt == 1)
+	            return "redirect:/getAllRequestsByWriter.help?r_writer=27";
+	      }
+	      return "";
+	   }
+	   
 	
 	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
 	public ModelAndView getAllRequestsByWriter(@RequestParam Integer r_writer) {

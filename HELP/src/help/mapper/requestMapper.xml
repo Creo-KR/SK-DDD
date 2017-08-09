@@ -19,6 +19,7 @@
 	<insert id="insertRequest" parameterType="RequestVO">
 		insert into request
 		values (R_NO_SEQ.NEXTVAL,#{c_no},#{r_title},#{r_content},1,SYSDATE,#{r_writer})
+		<!-- values (R_NO_SEQ.NEXTVAL,#{c_no},#{r_title},#{r_content},1,SYSDATE,27) -->
 	</insert>
 
 	<select id="getAllActiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
