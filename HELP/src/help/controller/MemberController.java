@@ -1,7 +1,5 @@
 package help.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -51,7 +49,6 @@ public class MemberController {
 			MemberVO member, Model model, @RequestParam String m_email2,
 			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=true) List<String> c_no
 			) {
-		System.out.println("come?");
 		String phoneNumber = member.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = member.getM_email() + "@"  + m_email2;
 		member.setM_tel(phoneNumber);
@@ -62,14 +59,12 @@ public class MemberController {
 			service.addMember(member);
 			
 			MemberVO memberResult = service.getMember(member.getM_id());
-			System.out.println(memberResult.getM_no());
 			for(String i : c_no) {
 				System.out.println(i);
 				
 				CategoryVO c = new CategoryVO(Integer.parseInt(i));
 				GosuVO g = new GosuVO(memberResult , c);
 				service.addGosu(g);
-				System.out.println("오니");
 			}
 		} else {
 			service.addMember(member);
@@ -108,8 +103,6 @@ public class MemberController {
 	public String updateMypage(MemberVO vo, HttpSession session, Model model) {
 		PrintWriter out = null;
 		vo.setM_id((String) session.getAttribute("UID"));
-		System.out.println(vo.getM_id());
-		System.out.println(vo.getM_pwd());
 		int count = service.pwdCheck(vo);
 		MemberVO member = service.getMember(vo.getM_id());
 		if(count >= 1) {
@@ -131,9 +124,8 @@ public class MemberController {
 	//일반과 고수 업데이트 register controller
 	@RequestMapping(value="updateMypageReg.help", method=RequestMethod.POST)
 	public String updateMypageReg(MemberVO vo, HttpSession session, @RequestParam String m_tel2, @RequestParam String m_tel3
-			,@RequestParam String m_email2, @RequestParam List<String> c_no) 
+			,@RequestParam String m_email2, @RequestParam(required=false) List<String> c_no) 
 	{
-		System.out.println("커몬");
 		String phoneNumber = vo.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = vo.getM_email() + "@"  + m_email2;
 		vo.setM_id((String) session.getAttribute("UID"));
@@ -147,13 +139,13 @@ public class MemberController {
 		} else {
 			service.updateMember(vo);
 			
+			GosuVO g = new GosuVO(member , null);
+			service.deleteGosu(g);
+			
 			for(String i : c_no) {
-				System.out.println(i);
-				
 				CategoryVO c = new CategoryVO(Integer.parseInt(i));
-				GosuVO g = new GosuVO(member , c);
-				System.out.println(member.toString());
-				service.deleteGosu(g);
+				g.setC_no(c);
+				
 				service.addGosu(g);
 			}
 			return "pages/mypage";
