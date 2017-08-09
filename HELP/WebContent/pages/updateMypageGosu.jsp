@@ -8,7 +8,7 @@
 <%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/join.css" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/join.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/updateMypageGosu.js"></script>
 </head>
 <body>
 	<div id="container">
@@ -30,7 +30,7 @@
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" />
 									</th>
-									<td><span id="nameContents">기존 이름 : <input id="m_name"
+									<td><span id="nameContents">기존 이름 : <input id=""
 											fw-filter="isFill&isMax[30]" fw-label="이름"
 											fw-msg="" class="ec-member-name" placeholder=""
 											maxlength="30" value="${member.m_name }" disabled="disabled" type="text" />
