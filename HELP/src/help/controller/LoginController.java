@@ -60,6 +60,7 @@ public class LoginController {
 			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");
 			session.removeAttribute("COUNT");
+			session.removeAttribute("UTYPE");
 			mv.setViewName("index");
 		} else {
 			mv.setViewName("index");
