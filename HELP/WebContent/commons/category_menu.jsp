@@ -8,6 +8,16 @@
 	content="Slide Down Box Menu with jQuery and CSS3" />
 <meta name="keywords"
 	content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
+<meta charset="utf-8">
+<!-- jQuery ui style sheet -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- jQuery ui library -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
 
 <style>
 body {
@@ -121,6 +131,23 @@ button:hover:before, button:hover:after {
 }
 </style>
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		var searchKeywords = [
+				"이사", "이사 견적서", "이사고수", "포장 이사", "대형 이사",
+				"피아노", "피아노 견적서", "피아니스트",
+				"웹 개발", "웹 견적서", "웹 프로그래밍", "웹 개발자",
+				"결혼", "결혼 사회자", "결혼식", "결혼 견적서",
+				"포토샵", "포토샵 견적서", "포토그래퍼"
+		];
+		
+			$("#search").autocomplete({
+				source: searchKeywords,
+			    matchContains: false,
+			    selectFirst: false
+			});
+		});
+</script>
 </head>
 <body>
 

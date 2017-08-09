@@ -15,17 +15,19 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/main.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/vendor.min.css" />	
+	href="${pageContext.request.contextPath}/css/vendor.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/print-preview.css"
 	media="screen" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/sample.css"
-	media="screen" />
+	href="${pageContext.request.contextPath}/css/sample.css" media="screen" />
 <!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/style.css" type="text/css"
 	media="screen" />
-	
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/jquery.autocomplete.css" type="text/css"
+	media="screen" />
 <!-- <script src='/sptier0/sptier0.js'></script>
 <script src='/sptier0/sptier0-ajax.js'></script>
 <script src='/sptier0/sptier0-window.js'></script> -->
@@ -43,6 +45,8 @@
 	src="${pageContext.request.contextPath}/js/common.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.print-preview.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/jquery.autocomplete.js"></script>
 
 <!-- header start -->
 
@@ -57,27 +61,27 @@
 	<!--  class="gnbover" -->
 	<div class="shadow">가림영역</div>
 	<div id="header_inner">
-		<a href="/HELP"><h1>H.E.L.P.</h1></a>
+		<a href="/HELP"><img src="${pageContext.request.contextPath}/images/help.png" width="250px" height="110px" style="margin-top: 20px"/></a>
 		<!--search start-->
 
 		<div id="util">
-		<c:if test="${sessionScope.COUNT != 1}">
-			<div class="certify" id="idlogin">
+			<c:if test="${sessionScope.COUNT != 1}">
+				<div class="certify" id="idlogin">
 					<a href="loginForm.help">LOGIN</a>
-			</div>
-			<a href="joinChoice.help" class="eng">SIGN UP</a>
+				</div>
+				<a href="joinChoice.help" class="eng">SIGN UP</a>
 			</c:if>
 
 			<c:if test="${sessionScope.COUNT eq 1}">
-			<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
-			<a href="mypageDivision.help" class="eng" style="float: left;">MY PAGE</a>
-			<div class="certify logon" id="idlogout" style="width: 80px">
-				<a href="#" onclick="logout(); return false;">LOGOUT</a>
-			</div>
+				<a style="float: left;">${sessionScope.UNAME}님 어서오세요!</a>
+				<a href="mypageDivision.help" class="eng" style="float: left;">MY
+					PAGE</a>
+				<div class="certify logon" id="idlogout" style="width: 80px">
+					<a href="#" onclick="logout(); return false;">LOGOUT</a>
+				</div>
 			</c:if>
 
-			<a onclick="divOpen('chat_list')"
-				class="site">CHAT</a>
+			<a onclick="divOpen('chat_list')" class="site">CHAT</a>
 			<div class="search_area">
 				<form
 					action="/kor/subpage/contents.asp?cn=5AQWDUQC&amp;ln=2JHTTETB&amp;sb=61ZTM0KX&amp;tb=O24R5WZ"
@@ -90,15 +94,20 @@
 		</div>
 
 		<script type='text/javascript'>
-			//<![CDATA[
-
+		//<![CDATA[
+		
 			function countdown(elementName, minutes, seconds) {
-				var element, endTime, hours, mins, msLeft, time;
-
+				var element,
+					endTime,
+					hours,
+					mins,
+					msLeft,
+					time;
+		
 				function twoDigits(n) {
 					return (n <= 9 ? "0" + n : n);
 				}
-
+		
 				function updateTimer() {
 					msLeft = endTime - (+new Date);
 					if (msLeft < 1000) {
@@ -114,32 +123,32 @@
 						hours = time.getUTCHours();
 						mins = time.getUTCMinutes();
 						element.innerHTML = (hours ? hours + ':'
-								+ twoDigits(mins) : mins)
-								+ ':' + twoDigits(time.getUTCSeconds());
+						+ twoDigits(mins) : mins)
+						+ ':' + twoDigits(time.getUTCSeconds());
 						setTimeout(updateTimer, time.getUTCMilliseconds() + 500);
 					}
 				}
-
+		
 				element = document.getElementById(elementName);
 				endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
 				updateTimer();
 			}
-
+		
 			function logout() {
 				if (confirm("로그아웃을 하시겠습니까?") == true) {
 					//document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=logout';
-					location.href="${pageContext.request.contextPath}/logout.help";
+					location.href = "${pageContext.request.contextPath}/logout.help";
 					return false;
 				}
 			}
-
+		
 			function renew() {
 				if (confirm("통합인증을 연장하시겠습니까?") == true) {
 					document.getElementById('check_ifm').src = '/certification/session_chk.asp?check_type=renew';
 					return false;
 				}
 			}
-
+		
 			//#####문자체크
 			function char_chk(str, chk) {
 				for (i = 0; i < str.length; i++) {
@@ -149,21 +158,21 @@
 					}
 				}
 			}
-
+		
 			function topsearchSb(evt) {
 				var m_Sp = /[$\\@\\\#%\^\&\*\(\)\[\]\+\_\{\}\`\~\=\|\<\>]/;
 				var m_val = $("form[name=contactfrm]").find("input[name=stxt]")
-						.val();
+					.val();
 				var strLen = m_val.length;
 				var m_char = m_val.charAt((strLen) - 1);
-
+		
 				if (m_char.search(m_Sp) != -1) {
 					alert("특수문자는 사용할수없습니다.");
 					$("form[name=contactfrm]").find("input[name=stxt]").val("");
 					$("form[name=contactfrm]").find("input[name=stxt]").focus();
 					return false;
 				}
-
+		
 				if (char_chk($("form[name=contactfrm]")
 						.find("input[name=stxt]").val(), "'") == false) {
 					alert("\n검색어는 '을 포함할 수 없습니다.");
@@ -171,15 +180,15 @@
 					$("form[name=contactfrm]").find("input[name=stxt]").focus();
 					return;
 				}
-
+		
 				var keyCode = evt.which ? evt.which : event.keyCode;
 				if (keyCode == 13) {
-
+		
 					sbsb();
-
+		
 				}
 			}
-
+		
 		
 			//]]>
 		</script>
@@ -191,44 +200,45 @@
 		<!--top_menu start-->
 
 
-	
-
-					</div></li>
-
-
-
-
-
-
-
-
-
-
-
-
-			</ul>
-		</div>
-
-		<script type='text/javascript'>
-			//gnb메뉴 show
-			$('#gnb > ul > li').hover(function() {
-				$('#header').toggleClass('gnbover');
-				$(this).children('.submenu').toggle();
-				$(this).find('.submenu_inner').stop().fadeToggle(300);
-				$(this).children('a').toggleClass('active');
-			})
-
-			/* $('#gnb > ul > li > a').focus(function(){
-					$('#header').addClass('gnbover');
-					$(this).parent().children('.submenu').toggle();
-					$(this).parent().find('.submenu_inner').stop().fadeToggle(300);
-
-			}) */
-		</script>
-		<!--top_menu end-->
 
 
 	</div>
+	</li>
+
+
+
+
+
+
+
+
+
+
+
+
+	</ul>
+</div>
+
+<script type='text/javascript'>
+	//gnb메뉴 show
+	$('#gnb > ul > li').hover(function() {
+		$('#header').toggleClass('gnbover');
+		$(this).children('.submenu').toggle();
+		$(this).find('.submenu_inner').stop().fadeToggle(300);
+		$(this).children('a').toggleClass('active');
+	})
+
+	/* $('#gnb > ul > li > a').focus(function(){
+			$('#header').addClass('gnbover');
+			$(this).parent().children('.submenu').toggle();
+			$(this).parent().find('.submenu_inner').stop().fadeToggle(300);
+
+	}) */
+</script>
+<!--top_menu end-->
+
+
+</div>
 </div>
 
 <script>
@@ -245,15 +255,16 @@
 	function lodingbar() {
 		document.getElementById('loding01').style.display = "block";
 		document.getElementById('loding02').style.display = "block";
-		//document.getElementById('load_txt').style.display = "block";
+	//document.getElementById('load_txt').style.display = "block";
 	}
 </script>
-	<script type="text/javascript"
-		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
-	
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
+
 <!--//header end -->
 
 <!-- //header -->
 <div class="dark_window"></div>
-<%@ include file="chat.jsp" %>
+<%@ include file="chat.jsp"%>
