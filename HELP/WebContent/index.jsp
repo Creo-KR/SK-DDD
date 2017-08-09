@@ -93,7 +93,7 @@
         }
         #clip .clip-bg-04 {
             background-image: url('https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/clip_img_04.png');
-            height: 322px;
+            height: 659px;
         }
         #clip .clip-bg-05 {
             background-image: url('https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/clip_img_05.png');
