@@ -11,7 +11,6 @@ import help.vo.RequestVO;
 
 @Repository
 public class RequestDAOImpl implements RequestDAO {
-
 	@Resource
 	SqlSession session;
 	
@@ -32,9 +31,19 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 	
 	@Override
-	public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer) {
+	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer) {
 		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
 	}
+	
+//	@Override
+//	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer) {
+//		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
+//	}
+	
+//	@Override
+//	public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer) {
+//		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
+//	}
 
 
 	@Override
@@ -46,6 +55,7 @@ public class RequestDAOImpl implements RequestDAO {
 	public RequestVO getRequestDetail(Integer r_no) {
 		return session.selectOne("requestMapper.getRequestDetail", r_no);
 	}
+
 
 	
 }
