@@ -42,7 +42,7 @@ h1 {
 }
 
 .signin input[type="text"] {
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
     background: #74797C url('../images/1.png') no-repeat 405px 8px;
     font-size: 14px;
@@ -54,7 +54,7 @@ h1 {
 	outline: none;
 }
 .signin input[type="password"] {
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
     background: #74797C url('../images/2.png') no-repeat 405px 8px;
     font-size: 14px;
@@ -140,66 +140,66 @@ form {
 
 @media (max-width:1920px) {
     .signin input[type="text"] {
-        width: 93%;
+        width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 520px 8px;
 	}
 	.signin  input[type="password"] {
-        width: 93%;
+        width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 520px 8px;
 	}
 }
 
 @media (max-width:1680px) {
     .signin input[type="text"] {
-        width: 91.5%;
+        width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 450px 9px;
     }
 	.signin input[type="password"] {
-		width: 91.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 450px 9px;
 	}
 }
 
 @media (max-width:1600px) {
     .signin input[type="text"] {
-		width: 91%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 390px 9px;
 	}
 	.signin input[type="password"] {
-		width: 91%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 390px 9px;
 	}
 }
 
 @media (max-width:1440px) {
     .signin input[type="text"] {
-		width: 90%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
-		width: 90%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 350px 9px;
 	}
 }
 
 @media (max-width:1366px) {
     .signin input[type="text"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 330px 9px;
 	}
 }
 
 @media (max-width:1280px) {
 	.signin input[type="text"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 300px 9px;
 	}
 }
@@ -209,11 +209,11 @@ form {
 	    width: 40%;
 	}
     .signin input[type="text"] {
-		width: 89%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 320px 9px;
 	}
 }
@@ -223,11 +223,11 @@ form {
 	    width: 45%;
 	}
     .signin input[type="text"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 350px 9px;
 	}
 }
@@ -237,12 +237,12 @@ form {
 	    width: 45%;
 	}
     .signin input[type="text"] {
-		width: 89.5%;
-		background: #74797C url('../images/1.png') no-repeat 350px 9px;
+		width: 100%;
+		background: #74797C url('../images/1.png') no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89.5%;
-		background: #74797C url('../images/2.png') no-repeat 350px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 330px 9px;
 	}
 }
 
@@ -251,11 +251,11 @@ form {
 	    width: 50%;
 	}
 	.signin input[type="text"] {
-		width: 90%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 360px 9px;
 	}
 	.signin input[type="password"] {
-		width: 90%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 360px 9px;
 	}
 }
@@ -265,11 +265,11 @@ form {
 	    width: 50%;
 	}
 	.signin input[type="text"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 350px 9px;
 	}
 }
@@ -279,11 +279,11 @@ form {
 	    width: 50%;
 	}
 	.signin input[type="text"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/1.png') no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 330px 9px;
 	}
 }
@@ -293,11 +293,11 @@ form {
 	    width: 50%;
 	}
 	.signin input[type="text"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 310px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 310px 9px;
 	}
 }
@@ -307,11 +307,11 @@ form {
 	    width: 55%;
 	}
 	.signin input[type="text"] {
-		width: 89%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 320px 9px;
 	}
 }
@@ -321,11 +321,11 @@ form {
         width: 55%;
     }
 	.signin input[type="text"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 320px 9px;
 	}
 }
@@ -335,11 +335,11 @@ form {
         width: 60%;
     }
 	.signin input[type="text"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 320px 9px;
 	}
 }
@@ -349,12 +349,12 @@ form {
 	    width: 65%;
 	}
 	.signin input[type="text"] {
-		width: 89%;
-		background: #74797B url('../images/1.png') no-repeat 330px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 310px 9px;
 	}
 	.signin input[type="password"] {
-		width: 89%;
-		background: #74797C url('../images/2.png') no-repeat 330px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 310px 9px;
 	}
 }
 
@@ -363,12 +363,12 @@ form {
         width: 65%;
     }
 	.signin input[type="text"] {
-		width: 88%;
-		background: #74797B url('../images/1.png') no-repeat 310px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88%;
-		background: #74797C url('../images/2.png') no-repeat 310px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 300px 9px;
 	}
 }
 
@@ -384,11 +384,11 @@ form {
 		margin-top: 35px;
 	}
 	.signin input[type="text"] {
-		width: 88%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 290px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 290px 9px;
 	}
 	.footer p {
@@ -401,11 +401,11 @@ form {
         width: 70%;
     }
     .signin input[type="text"] {
-		width: 88%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 305px 9px;
 	}
 	.signin input[type="password"] {
-		width: 88%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 305px 9px;
 	}
 }
@@ -415,11 +415,11 @@ form {
         width: 70%;
     }
 	.signin input[type="text"] {
-		width: 87.5%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
-		width: 87.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 300px 9px;
 	}
 }
@@ -429,11 +429,11 @@ form {
 	    width: 75%;
 	}
 	.signin input[type="text"] {
-		width: 87.5%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
-		width: 87.5%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 300px 9px;
 	}
 }
@@ -443,12 +443,12 @@ form {
         width: 70%;
     }
 	.signin input[type="text"] {
-		width: 86%;
-		background: #74797B url('../images/1.png') no-repeat 260px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 220px 9px;
 	}
 	.signin input[type="password"] {
-		width: 86%;
-		background: #74797C url('../images/2.png') no-repeat 260px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 220px 9px;
 	}
 }
 
@@ -457,12 +457,12 @@ form {
         width: 80%;
     }
 	.signin input[type="text"] {
-		width: 86%;
-		background: #74797B url('../images/1.png') no-repeat 260px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 240px 9px;
 	}
 	.signin input[type="password"] {
-		width: 86%;
-		background: #74797C url('../images/2.png') no-repeat 260px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 240px 9px;
 	}
 }
 
@@ -471,12 +471,12 @@ form {
 	    width: 90%;
 	}
 	.signin input[type="password"] {
-		width: 85%;
-		background: #74797C url('../images/2.png') no-repeat 240px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 230px 9px;
 	}
 	.signin input[type="text"] {
-		width: 85%;
-		background: #74797B url('../images/1.png') no-repeat 240px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 230px 9px;
 	}
 	.footer p {
 		margin-top: -30px;
@@ -495,11 +495,11 @@ form {
 		margin-top: 35px;
 	}
 	.signin input[type="text"] {
-		width: 84%;
+		width: 100%;
 		background: #74797B url('../images/1.png') no-repeat 200px 9px;
 	}
 	.signin input[type="password"] {
-		width: 84%;
+		width: 100%;
 		background: #74797C url('../images/2.png') no-repeat 200px 9px;
 	}
 	label {
@@ -549,12 +549,12 @@ form {
 	    margin-top: 35px;
 	}
 	.signin input[type="text"] {
-		width: 83%;
-		background: #74797C url('../images/1.png') no-repeat 210px 9px;
+		width: 100%;
+		background: #74797C url('../images/1.png') no-repeat 170px 9px;
 	}
 	.signin input[type="password"] {
-		width: 83%;
-		background: #74797C url('../images/2.png') no-repeat 210px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 170px 9px;
 	}
 }
 	
@@ -570,12 +570,12 @@ form {
 	    margin-top: 30px;
 	}		
 	.signin input[type="text"] {
-		width: 80%;
-		background: #74797B url('../images/1.png') no-repeat 180px 9px;
+		width: 100%;
+		background: #74797B url('../images/1.png') no-repeat 120px 9px;
 	}
 	.signin input[type="password"] {
-		width: 80%;
-		background: #74797C url('../images/2.png') no-repeat 180px 9px;
+		width: 100%;
+		background: #74797C url('../images/2.png') no-repeat 120px 9px;
 	}
 	form p {
 	    font-size: 14px;
@@ -607,14 +607,14 @@ form {
 	    margin-top: 30px;
 	}
 	.signin input[type="text"] {
-		width: 72%;
+		width: 100%;
 		margin-bottom: 10px;
-		background: #74797B url('../images/1.png') no-repeat 130px 9px;
+		background: #74797B url('../images/1.png') no-repeat 90px 9px;
 	}
 	.signin input[type="password"] {
-		width: 72%;
+		width: 100%;
 		margin-bottom: 10px;
-		background: #74797C url('../images/2.png') no-repeat 129px 9px;
+		background: #74797C url('../images/2.png') no-repeat 90px 9px;
 	}
 	form p {
 	    font-size: 12px;
