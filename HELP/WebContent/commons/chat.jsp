@@ -42,7 +42,7 @@
 	}
 
 	function joinChatroom() {
-		
+		document.getElementById('chat_room_list_frame').src='joinChatroom.help?cr_receiver=2';
 	}
 
 	function leaveChatroom() {
