@@ -49,7 +49,7 @@ public class RequestController {
 
 
 		for (int i = 0; i < question.length; i++) {
-			question_answer = question_answer + question[i] + answer[i] + "\n";
+			question_answer = question_answer + question[i] + "@!@"+ answer[i] + "@!@";
 		}
 		// System.out.println(question_answer);
 
@@ -120,9 +120,27 @@ public class RequestController {
 		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
 	}
 	
+	
+	
 	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
-	public ModelAndView getRequestDetail(@RequestParam Integer r_no) {
+	public ModelAndView getRequestDetail(Model model, @RequestParam Integer r_no, HttpSession session) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
+		String content = vo.getR_content();
+		
+		String contentSplit[] = content.split("@!@");
+		
+		System.out.println(content);
+		
+		for(int i=0; i<contentSplit.length; i++) {
+			System.out.println("contentSplit["+"] >>" + contentSplit[i]);
+		}
+		
+		System.out.println(session.getAttribute("UTYPE"));
+		
+		model.addAttribute("contentSplit",contentSplit);
+		
+		
+		
 		return new ModelAndView("requestDetail", "requestDetailKey", vo);
 	}
 }
