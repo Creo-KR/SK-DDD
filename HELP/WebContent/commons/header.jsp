@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/board.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/layout.css?ver=1" />
+	href="${pageContext.request.contextPath}/css/layout.css?ver=2" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/contents.css" />
 <link rel="stylesheet" type="text/css"
@@ -23,7 +23,7 @@
 	href="${pageContext.request.contextPath}/css/sample.css" media="screen" />
 <!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/style.css" type="text/css"
+	href="${pageContext.request.contextPath}/css/style.css?ver=2" type="text/css"
 	media="screen" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/jquery.autocomplete.css" type="text/css"
@@ -185,24 +185,8 @@
 
 		<!--top_menu start-->
 
-
-
-
 	</div>
-	</li>
 
-
-
-
-
-
-
-
-
-
-
-
-	</ul>
 </div>
 
 <script type='text/javascript'>
@@ -223,9 +207,6 @@
 </script>
 <!--top_menu end-->
 
-
-</div>
-</div>
 
 <script>
 	$(function() {

@@ -11,10 +11,11 @@
 <body>
 	<div id="container">
 
-		<div class="main_contents">
+		<div class="main_contents" style="padding: 130px 0px 0px;">
 			<!-- 본문영역 -->
 			<!-- <div class="dark_window"></div> -->
 			<div>
+				<%-- <%@ include file="../commons/category_menu.jsp"%> --%>
 				<div class="contents">
 					<!-- 본문영역 -->
 					<!--ㅡmove menu 시작-->
@@ -126,7 +127,7 @@
 
 					</div>
 				</div>
-				</section>
+				
 
 				<div class="topBtn">
 					<!-- <a href="#">top</a> -->
