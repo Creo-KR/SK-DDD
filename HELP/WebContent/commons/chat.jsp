@@ -98,20 +98,15 @@
 	}, 5000);
 	
 </script>
-<div id="chat" style="position: absolute;; z-index: 8888;">
-	<div id="chat_list"
-		style="display: none; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); position: fixed; right: 10px; bottom: 50px; line-height: 16px; font-size: 12px;">
+<div id="chat" class="chat">
+	<div id="chat_list" class="chat_window">
 
-		<div id="chat_list_titleBar"
-			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_list_titleBar_name">채팅</div>
-			<div id="chat_list_titleBar_btn"
-				style="position: relative; top: -15px; left: 149px;">
-				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="images/close.png"
+		<div id="chat_list_titleBar" class="chat_room_titleBar">
+			<div id="chat_list_titleBar_name" class="chat_room_titleBar_name">채팅</div>
+			<div id="chat_list_titleBar_btn" class="chat_window_titleBar_btn">
+				<img src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="javascript:divClose('chat_list');">
+					onclick="divClose('chat_list');">
 			</div>
 		</div>
 
@@ -119,47 +114,35 @@
 			style="border: 0px; width: 250px; height: 460px;"></iframe>
 	</div>
 
-	<div id="chat_room"
-		style="display: none; background-clip: padding-box; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); box-shadow: inset 2px 0 2px -2px #b2b9c9; font-size: 12px; position: fixed; line-height: 16px; right: 264px; bottom: 50px; width: 250px; height: 500px;">
-		<div id="chat_room_titleBar"
-			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
-			<div id="chat_room_titleBar_btn"
-				style="position: relative; top: -15px; left: 149px;">
-				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					src="images/leave.png"
-					style="width: 32px; height: 32px; padding: 0px;"
+	<div id="chat_room" class="chat_room">
+		<div id="chat_room_titleBar" class="chat_room_titleBar">
+			<div id="chat_room_titleBar_name" class="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
+			<div id="chat_room_titleBar_btn" class="chat_room_titleBar_btn">
+				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img src="images/leave.png"
 					onclick="javascript:leaveChatroom();"><img
-					src="images/close.png"
-					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="javascript:divClose('chat_room');">
+					src="images/close.png" onclick="javascript:divClose('chat_room');">
 			</div>
 		</div>
 
-		<div id="chat_room_list"
-			style="position: relative; border: solid 1px gray; width: 244px; height: 420px; top: 0px; left: 2px;">
-			<iframe id="chat_room_list_frame"
-				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}"
-				style="border: 0px; width: 244px; height: 420px;"></iframe>
+		<div id="chat_room_list">
+			<iframe id="chat_room_list_frame" class="chat_room_list_frame"
+				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}""></iframe>
 		</div>
 
 
 
-		<div id="chat_room_input"
-			style="position: relative; border: solid 1px gray; width: 244px; height: 32px; bottom: -3px; left: 2px;">
+		<div id="chat_room_input" class="chat_room_input">
 			<form id="chat_room_input_frm" onsubmit="sendChat(); return false;">
 				<input type="hidden" name="sender" value="${ss_cr_sender}" /> <input
 					type="hidden" name="receiver" value="${ss_cr_receiver.m_no}" /> <input
 					type="hidden" name="no" value="${ss_cr_no}" /> <input type="text"
-					name="text" id="chat_text" autocomplete=off
-					style="position: relative; width: 208px; height: 28px; padding: 0px; top: -12px;" /><img
-					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="sendChat();">
+					name="text" class="chat_text" id="chat_text" autocomplete=off
+					placeholder="이곳에 메세지를 적어주세요." /> <input class="chat_send"
+					type="button" onclick="sendChat();" value="보내기">
 			</form>
 		</div>
 	</div>
 </div>
-
 <script>
 	if (sessionStorage.getItem("chat_list") == "open") {
 		divOpen("chat_list");

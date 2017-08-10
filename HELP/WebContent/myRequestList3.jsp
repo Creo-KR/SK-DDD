@@ -18,7 +18,33 @@
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 
+				<h1>
+					<요청서 목록> - 고용 대기중
+				</h1>
+				<table id="table" class="table table-hover table-mc-light-blue">
+					<thead>
+						<tr>
+							<th>요청서 번호</th>
+							<th>카테고리 번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+							<th>상태</th>
+						</tr>
+					</thead>
 
+					<c:forEach var="waitingHire" items="${waitingHireListKey}">
+						<tbody>
+							<tr>
+								<td><a href="getRequestDetail.help?r_no=${waitingHire.r_no}&flag=0">${waitingHire.r_no}</a></td>
+								<td>${waitingHire.c_no}</td>
+								<td>${waitingHire.r_title}</td>
+								<td>${waitingHire.r_date}</td>
+								<td>고용 대기중</td>
+							</tr>
+						</tbody>
+					</c:forEach>
+				</table>
+				
 				<h1>
 					<요청서 목록> - 대기중 
 				</h1>
@@ -36,7 +62,7 @@
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
-									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=0">${waiting.r_no}</a></td>
+									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=3">${waiting.r_no}</a></td>
 								<td data-title="Name">${waiting.c_no}</td>
 								<td data-title="Link">${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
@@ -48,6 +74,8 @@
 					</c:forEach>
 				</table>
 				<br>
+				
+
 
 				<h1>
 					<요청서 목록> - 진행중 
@@ -78,7 +106,6 @@
 					</c:forEach>
 				</table>
 
-
 				<h1>
 					<요청서 목록> - 완료
 				</h1>
@@ -107,8 +134,6 @@
 						</tbody>
 					</c:forEach>
 				</table>
-
-
 			</div>
 
 

@@ -21,7 +21,11 @@
 	media="screen" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/sample.css" media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/chat.css?ver=1" />
+	
 <!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/style.css?ver=2" type="text/css"
 	media="screen" />
@@ -76,7 +80,7 @@
 				<a href="mypageDivision.help" class="eng" style="float: left; font-family: 'Cooper Black'; font-size: 18px;">MY
 					PAGE</a>
 					<a href="#" onclick="logout(); return false;" style="font-family: 'Cooper Black'; font-size: 18px;">LOGOUT</a>
-			</c:if><a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
+			</c:if><a href="#" onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
 		</div>
 
 		<script type='text/javascript'>
@@ -233,5 +237,4 @@
 <!--//header end -->
 
 <!-- //header -->
-<div class="dark_window"></div>
 <%@ include file="chat.jsp"%>

@@ -1,12 +1,12 @@
 package help.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class ChatroomVO {
 	private Integer cr_no;
 	private MemberVO cr_user1;
 	private MemberVO cr_user2;
-	private Date cr_lastdate;
+	private String cr_lastdate;
 	private Integer cr_active1;
 	private Integer cr_active2;
 
@@ -19,7 +19,7 @@ public class ChatroomVO {
 		this.cr_no = cr_no;
 	}
 
-	public ChatroomVO(Integer cr_no, MemberVO cr_user1, MemberVO cr_user2, Date cr_lastdate, Integer cr_active1,
+	public ChatroomVO(Integer cr_no, MemberVO cr_user1, MemberVO cr_user2, String cr_lastdate, Integer cr_active1,
 			Integer cr_active2) {
 		this.cr_no = cr_no;
 		this.cr_user1 = cr_user1;
@@ -54,11 +54,11 @@ public class ChatroomVO {
 		this.cr_user2 = cr_user2;
 	}
 
-	public Date getCr_lastdate() {
+	public String getCr_lastdate() {
 		return cr_lastdate;
 	}
 
-	public void setCr_lastdate(Date cr_lastdate) {
+	public void setCr_lastdate(String cr_lastdate) {
 		this.cr_lastdate = cr_lastdate;
 	}
 

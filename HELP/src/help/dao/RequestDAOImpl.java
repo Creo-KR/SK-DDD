@@ -37,17 +37,6 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
 	}
 	
-//	@Override
-//	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer) {
-//		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
-//	}
-	
-//	@Override
-//	public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer) {
-//		return session.selectList("requestMapper.getAllInactiveRequestsByWriter", r_writer);
-//	}
-
-
 	@Override
 	public List<RequestVO> getAllRequestsByCategory(Integer c_no) {
 		return session.selectList("requestMapper.getAllRequestsByCategory", c_no);
@@ -66,6 +55,11 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public List<RequestVO> pageReqList(HashMap<String, Object> map) {
 		return session.selectList("requestMapper.pageReqList", map);
+	}
+
+	@Override
+	public List<RequestVO> getRequestWaitingHire(Integer r_writer) {
+		return session.selectList("requestMapper.getRequestWaitingHire", r_writer);
 	}
 	
 	@Override
