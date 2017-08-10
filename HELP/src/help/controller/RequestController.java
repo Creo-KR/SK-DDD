@@ -45,9 +45,10 @@ public class RequestController {
 	@RequestMapping("redirectByUtype.help")
 	public String redirectByUtype(HttpSession session) {
 		Integer memberType = (Integer) session.getAttribute("UTYPE");
+		System.out.println(">>memberType : " + memberType);
 		if (memberType == 0)
 			return "redirect:/getAllRequestsByWriter.help";
-		else
+		else 
 			return "redirect:/getAllRequestsByCategory.help";
 	}
 
@@ -61,11 +62,9 @@ public class RequestController {
 	      String[] answer = request.getParameterValues("answer");
 	      String question_answer = "";
 
-
 	      for (int i = 0; i < question.length; i++) {
 	         question_answer = question_answer + question[i] + answer[i] + "\n";
 	      }
-	      // System.out.println(question_answer);
 
 	      requestvo.setR_title(title);
 	      requestvo.setC_no(Integer.parseInt(categoryType));
@@ -93,8 +92,6 @@ public class RequestController {
 		for (Integer rno : inactiveRequestValues) {
 			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
 			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
-			System.out.println(">>inProgressTradeValues : " + inProgressTradeValues);
-			System.out.println(">>completedTradeValues : " + completedTradeValues);
 		}
 		
 		model.addAttribute("waitingListKey", activeRequestValues);
@@ -120,6 +117,7 @@ public class RequestController {
 	@RequestMapping(value="/getAllRequestsByCategory.help", method=RequestMethod.GET)
 	public String getAllRequestsByCategory(Model model, HttpSession session) {
 		Integer m_no = (Integer) session.getAttribute("UNO");
+		
 		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
 		List<RequestVO> waitingListValue = new ArrayList<RequestVO>();
 		
@@ -136,7 +134,6 @@ public class RequestController {
 		model.addAttribute("waitingListKey", waitingListValue);
 		model.addAttribute("inProgressListKey", inProgressTradeValues);
 		model.addAttribute("completedListKey", completedTradeValues);
-		
 		
 		return "myRequestList4";
 	}

@@ -34,13 +34,13 @@
       resultMap="TradeVO">
       select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
-      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL
+      where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NULL
    </select>
    
    <select id="getCompletedTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
       select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
-      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
+      where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
 </mapper>

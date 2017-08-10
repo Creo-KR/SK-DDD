@@ -25,7 +25,7 @@
 	<select id="getAllActiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
 		select r_no, c_no, r_title, r_content, r_active, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
 		from request
-		where r_writer = #{r_writer}
+		where r_writer = #{r_writer} and r_active = 1
 		<!-- select * from request where r_writer=#{value} and r_active=1 -->
 	</select>
 	
