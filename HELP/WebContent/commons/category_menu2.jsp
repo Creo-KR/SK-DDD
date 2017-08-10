@@ -231,6 +231,17 @@ button:hover:before, button:hover:after {
 			});
 		});
 </script>
+<style>
+.input-group-btn button#findGosu:hover{
+	border-color: darkgray;
+	background-color: darkgray;
+}
+
+.input-group-btn button#findGosu{
+	border-color: #555;
+	background-color: #555;
+}
+</style>
 <body class="">
 	<div id="mainCarousel" class="hero-container hero01">
 		<div class="container">
@@ -241,7 +252,7 @@ button:hover:before, button:hover:after {
 						<input type="text" class="form-control search-keyword"
 							placeholder="어떤 전문가를 찾으세요?" name="q" autocomplete="off" id="search">
 						<span class="input-group-btn">
-							<button class="btn btn-primary btn-md" type="submit" style="background-color: #555; border-color: #555;">
+							<button class="btn btn-primary btn-md" id="findGosu" type="submit">
 								<i class="fa fa-search visible-xs" aria-hidden="true" class=""></i>
 								<span class="hidden-xs">고수찾기</span>
 							</button>
