@@ -154,10 +154,19 @@ public class RequestController {
 //	      
 //	   }
 //	   
-//	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-//	   public String hireGosu() {
-//	      
-//	   }
+	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+	   public String hireGosu() {
+		   TradeVO tradevo = new TradeVO();
+//		   tradevo.setT_no(t_no); //트레이드 번호
+//		   tradevo.setT_requester(t_requester);
+//		   tradevo.setT_respondent(t_respondent);
+//		   tradevo.setT_enddate(t_enddate);
+//		   tradevo.setReq(req);
+		   
+	      return "";
+	      
+	      
+	   }
 //	   
 //	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
 //	   public String completeRequest() {
