@@ -1,26 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<style>
-.chat_room_list {
-	clear: both;
-	float: left;
-	padding: 6px 10px 7px;
-	border-radius: 10px 10px 10px 10px;
-	background: rgba(255, 255, 255, 0.2);
-	margin: 4px 0;
-	font-size: 11px;
-	line-height: 1.4;
-	position: relative;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	box-sizing: border-box;
-	color: rgba(255, 255, 255, 0.8);
-	width: 229px;
-	left: 5px;
-}
-</style>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/chat.css" />
 
 <script type="text/javascript">
 	document.onclick = function(e) {
