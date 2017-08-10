@@ -144,11 +144,28 @@ public class RequestController {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
 		
 		model.addAttribute("flag",flag);
+		model.addAttribute("requestDetailKey", vo);
+		System.out.println();
 		model.addAttribute("requestDetailKey",vo);
 		
 		return "requestDetail";
 	}
 	
+	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+	public String applyForRequest(@RequestParam Integer r_no) {
+		
+		return "myRequestList3";
+	}
+	
+//	@RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+//	public String hireGosu() {
+//		
+//	}
+//	
+//	@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
+//	public String completeRequest() {
+//		
+//	}
 //	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
 //	   public String applyForRequest() {
 //	      

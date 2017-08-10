@@ -1,12 +1,11 @@
 package help.vo;
 
-import java.sql.Date;
 
 public class ChatVO {
 	private Integer ch_no;
 	private MemberVO ch_sender;
 	private MemberVO ch_receiver;
-	private Date ch_date;
+	private String ch_date;
 	private String ch_text;
 	private Integer ch_check;
 	private ChatroomVO cr_no;
@@ -18,7 +17,7 @@ public class ChatVO {
 		this.ch_no = ch_no;
 	}
 
-	public ChatVO(Integer ch_no, MemberVO ch_sender, MemberVO ch_receiver, Date ch_date, String ch_text,
+	public ChatVO(Integer ch_no, MemberVO ch_sender, MemberVO ch_receiver, String ch_date, String ch_text,
 			Integer ch_check, ChatroomVO cr_no) {
 		this.ch_no = ch_no;
 		this.ch_sender = ch_sender;
@@ -53,11 +52,11 @@ public class ChatVO {
 		this.ch_receiver = ch_receiver;
 	}
 
-	public Date getCh_date() {
+	public String getCh_date() {
 		return ch_date;
 	}
 
-	public void setCh_date(Date ch_date) {
+	public void setCh_date(String ch_date) {
 		this.ch_date = ch_date;
 	}
 

@@ -19,7 +19,7 @@
 	
 	<resultMap type="ChatVO" id="ChatVO">
 		<id property="ch_no" column="ch_no"/>
-		<result property="ch_date" column="ch_date"/>
+		<result property="ch_date" column="ch_date" />
 		<result property="ch_text" column="ch_text"/>
 		<result property="ch_check" column="ch_check"/>
 		<collection property="ch_sender" columnPrefix="sender_" resultMap="MemberVO"/>
@@ -40,7 +40,7 @@
 	SELECT cr_no,
 	       cr_user1 user_m_no, m.m_id user_m_id, m.m_name user_m_name,
 	       cr_user2 user2_m_no, m2.m_id user2_m_id, m2.m_name user2_m_name,
-	       cr_lastdate, cr_active1, cr_active2
+	       to_char(cr_lastdate, 'yyyy.mm.dd hh24:mi') cr_lastdate, cr_active1, cr_active2
 	FROM chatroom cr, member m, member m2
 	WHERE ((cr_user1 = #{cr_user1.m_no} AND cr_active1 = 1)
 	   OR (cr_user2 = #{cr_user1.m_no} AND cr_active2 = 1))
@@ -60,7 +60,7 @@
 	SELECT cr_no,
 	       cr_user1 user_m_no, m.m_id user_m_id, m.m_name user_m_name,
 	       cr_user2 user2_m_no, m2.m_id user2_m_id, m2.m_name user2_m_name,
-	       cr_lastdate, cr_active1, cr_active2
+	       to_char(cr_lastdate, 'yyyy.mm.dd hh24:mi') cr_lastdate, cr_active1, cr_active2
 	FROM chatroom cr, member m, member m2
 	WHERE cr_no = #{cr_no}
 	  AND cr_user1 = m.m_no AND cr_user2 = m2.m_no
@@ -101,7 +101,7 @@
 	SELECT ch_no,
 	 	   ch_sender sender_m_no, m.m_id sender_m_id, m.m_name sender_m_name,
 	       ch_receiver receiver_m_no, m2.m_id receiver_m_id, m2.m_name receiver_m_name,
-	       ch_date, ch_text, ch_check
+	       to_char(ch_date, 'yyyy.mm.dd hh24:mi') ch_date, ch_text, ch_check
 	FROM chat ch, member m, member m2 
 	WHERE cr_no = #{cr_no}
 	  AND ch_sender = m.m_no AND ch_receiver = m2.m_no

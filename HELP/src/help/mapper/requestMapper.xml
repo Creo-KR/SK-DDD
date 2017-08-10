@@ -68,4 +68,8 @@
         WHERE rnum BETWEEN ((#{page}-1) * 10 + 1) 
 		AND ((#{page}) * 10)
 	</select>
+	
+	<select id="getRequestWaitingHire" parameterTpye="">
+		
+	</select>
 </mapper>
