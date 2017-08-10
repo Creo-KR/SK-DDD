@@ -43,7 +43,9 @@
 
 	<select id="getAllRequestsByCategory" parameterType="Integer"
 		resultType="RequestVO">
-		select * from request where c_no=#{value} and r_active=1
+		<!-- select * from request where c_no=#{value} and r_active=1 -->
+		select * from request r, (select * from apply where g_no = #{value}) a
+		where r.r_no = a.r_no and r_active=1
 	</select>
 
 	<select id="getRequestDetail" parameterType="Integer"
@@ -68,4 +70,9 @@
         WHERE rnum BETWEEN ((#{page}-1) * 10 + 1) 
 		AND ((#{page}) * 10)
 	</select>
+	
+	<insert id="insertApply" parameterType="ApplyVO">
+		insert into apply
+		values (#{r_no}, #{m_no}, #{g_no})
+	</insert>
 </mapper>

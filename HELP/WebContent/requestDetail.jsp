@@ -6,7 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link
+		href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
+		rel="stylesheet" type="text/css">
 <style>
 /* 폰트설정 */
 .t3 {
@@ -84,9 +86,7 @@
 <%@ include file="commons/header.jsp"%>
 <body>
 
-	<link
-		href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
-		rel="stylesheet" type="text/css">
+	
 
 	<div id="container">
 		<div class="t3" style="margin-top: 200px; height: 500px">
@@ -215,8 +215,8 @@
 		<%@ include file="commons/footer.jsp"%>
 		<script>
 		
-			var chat_go = function() {
-				window.location = "applyForRequest.help";
+			var apply_go = function() {
+				window.location = "applyForRequest.help?rno=${requestDetailKey.r_no}&mno=${requestDetailKey.r_writer}&gno=${UNO}";
 			}
 			var hire_go = function() {
 				window.location = "hireGosu.help";

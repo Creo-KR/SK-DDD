@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import help.vo.ApplyVO;
 import help.vo.RequestVO;
 
 @Repository
@@ -65,6 +66,11 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public List<RequestVO> pageReqList(HashMap<String, Object> map) {
 		return session.selectList("requestMapper.pageReqList", map);
+	}
+	
+	@Override
+	public int insertApply(ApplyVO vo) {
+		return session.insert("requestMapper.insertApply", vo);
 	}
 	
 }

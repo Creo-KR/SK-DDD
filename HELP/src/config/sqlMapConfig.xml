@@ -10,5 +10,6 @@
 		<typeAlias alias="RequestVO" type="help.vo.RequestVO" />
 		<typeAlias alias="CategoryVO" type="help.vo.CategoryVO" />
 		<typeAlias alias="TradeVO" type="help.vo.TradeVO" />
+		<typeAlias alias="ApplyVO" type="help.vo.ApplyVO" />
 	</typeAliases>
 </configuration>

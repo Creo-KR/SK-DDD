@@ -3,6 +3,7 @@ package help.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import help.vo.ApplyVO;
 import help.vo.RequestVO;
 
 
@@ -24,4 +25,6 @@ public interface RequestDAO {
 	public Integer countRequest(Integer c_no);
 	
 	public List<RequestVO> pageReqList(HashMap<String, Object> map);
+	
+	public int insertApply(ApplyVO vo);
 }
