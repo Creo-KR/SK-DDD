@@ -15,11 +15,11 @@ public interface RequestDAO {
 	
 	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer);
 	
-	//public List<RequestVO> getAllInactiveRequestsByWriter(Integer r_writer);
-	
 	public List<RequestVO> getAllRequestsByCategory(Integer c_no);
 	
 	public RequestVO getRequestDetail(Integer r_no);
+	
+	public List<RequestVO> getRequestWaitingHire(Integer r_writer);
 	
 	public Integer countRequest(Integer c_no);
 	

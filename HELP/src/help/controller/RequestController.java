@@ -83,12 +83,12 @@ public class RequestController {
 	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
 	public String getAllRequestsByWriter(Model model, HttpSession session) {
 		Integer r_writer = (Integer) session.getAttribute("UNO");
+		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
+		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
 		
 		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
 		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
-		
-		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
-		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+		List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
 		
 		for (Integer rno : inactiveRequestValues) {
 			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
@@ -96,6 +96,7 @@ public class RequestController {
 		}
 		
 		model.addAttribute("waitingListKey", activeRequestValues);
+		model.addAttribute("waitingHireListKey", waitingHireValues);
 		model.addAttribute("inProgressListKey", inProgressTradeValues);
 		model.addAttribute("completedListKey", completedTradeValues);
 		
@@ -171,10 +172,19 @@ public class RequestController {
 //	      
 //	   }
 //	   
-//	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-//	   public String hireGosu() {
-//	      
-//	   }
+	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+	   public String hireGosu() {
+		   TradeVO tradevo = new TradeVO();
+//		   tradevo.setT_no(t_no); //트레이드 번호
+//		   tradevo.setT_requester(t_requester);
+//		   tradevo.setT_respondent(t_respondent);
+//		   tradevo.setT_enddate(t_enddate);
+//		   tradevo.setReq(req);
+		   
+	      return "";
+	      
+	      
+	   }
 //	   
 //	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
 //	   public String completeRequest() {

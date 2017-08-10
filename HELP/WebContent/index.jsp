@@ -149,6 +149,7 @@
 				<c:if test="${authority=='no'}">
 					<script>
 						alert('고수님의 분야가 아닙니다.');
+						window.location.href="${pageContext.request.contextPath}";
 					</script>
 				</c:if>
 			</div>
