@@ -146,5 +146,20 @@ public class RequestController {
 		
 		return new ModelAndView("requestDetail", "requestDetailKey", vo);
 	}
+	
+//	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+//	public String applyForRequest() {
+//		
+//	}
+//	
+//	@RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+//	public String hireGosu() {
+//		
+//	}
+//	
+//	@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
+//	public String completeRequest() {
+//		
+//	}
 }
 
