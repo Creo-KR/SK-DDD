@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import help.dao.ChatDAO;
 import help.dao.MemberDAO;
+import help.dao.TradeDAO;
 import help.vo.ChatVO;
 import help.vo.ChatroomVO;
 import help.vo.MemberVO;
@@ -28,49 +29,11 @@ public class HelpJunitTest {
 	@Autowired
 	ChatDAO chatDAO;
 
-	@Test
-	@Ignore
-	public void addMember() {
-		//MemberVO member = new MemberVO("prohibit174", "1234", "김동욱", "prohibit174@nate.com", "01022611085", 0, 0);
-
-		//session.insert("memberMapper.addMember", member);
-	}
-
-	@Test
-	public void addChatroom() {
-		chatDAO.addChatroom(new ChatroomVO(0, new MemberVO(1), new MemberVO(2), null, 1, 1));
-	}
-
-	@Test @Ignore
-	public void findChatroomlist() {
-		List<ChatroomVO> list = chatDAO.getChatroomListByUser(new ChatroomVO(0, new MemberVO(1), null, null, 1, 1));
-		for(ChatroomVO v : list) {
-			v.setLastMessage(chatDAO.getLastMessageByChatroom(v.getCr_no()));
-			System.out.println(v);
-		}
-	}
-
-	@Test
-	@Ignore
-	public void findChatroom() {
-		chatDAO.getChatroomByUsers(new ChatroomVO(0, 1, 5, null, 1, 1)).getCr_no();
-	}
-
-	@Test
-	@Ignore
-	public void updateChatroomDate() {
-		chatDAO.updateChatroomDate(new ChatroomVO(4, 1, 5, null, 1, 1));
-	}
-
-	@Test
-	@Ignore
-	public void leaveChatroom() {
-		chatDAO.leaveChatroom(new ChatroomVO(4, 1, 5, null, 1, 1), 2);
-	}
+	@Autowired
+	TradeDAO tradeDAO;
 	
-	@Test @Ignore
-	public void sendChat() {
-		chatDAO.sendChat(new ChatVO(0, new MemberVO(1), new MemberVO(14), null, "TEST3", 0, new ChatroomVO(21)));
+	@Test
+	public void test() {
+		System.out.println(session.selectList("tradeMapper.selectInProgressTrade", 31));
 	}
-
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tradeMapper">
+
+   <resultMap type="RequestVO" id="RequestVO">
+      <id property="r_no" column="r_no"/>
+      <result property="c_no" column="c_no"/>
+      <result property="r_title" column="r_title"/>
+      <result property="r_date" column="r_date"/>
+   </resultMap>
+   
+   <resultMap id="TradeVO" type="TradeVO">
+   	  <result property="t_requester" column="t_requester" />
+      <result property="t_respondent" column="t_respondent" />
+      <result property="t_enddate" column="t_enddate"  />
+      <collection property="req" resultMap="RequestVO" />
+   </resultMap>
+
+   <select id="selectInProgressTrade" parameterType="Integer"
+      resultMap="TradeVO">
+      select t_respondent, t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      from trade t, request r
+      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL
+   </select>
+
+   <select id="selectCompletedTrade" parameterType="Integer"
+      resultMap="TradeVO">
+      select t_respondent, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      from trade t, request r
+      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
+   </select>
+   
+   <select id="getInProgressTradeByGosu" parameterType="Integer"
+      resultMap="TradeVO">
+      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      from trade t, request r
+      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL
+   </select>
+   
+   <select id="getCompletedTradeByGosu" parameterType="Integer"
+      resultMap="TradeVO">
+      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      from trade t, request r
+      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
+   </select>
+</mapper>

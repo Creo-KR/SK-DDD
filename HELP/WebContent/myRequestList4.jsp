@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://s.codepen.io/assets/libs/modernizr.js"
 	type="text/javascript"></script>
@@ -12,12 +11,11 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
 </head>
-<%-- <%@ include file="commons/header.jsp"%> --%>
 <body>
-
-
-
-	<div style="margin-top: 100px">
+	<div>
+<%-- 		<%@ include file="commons/header.jsp"%> --%>
+	</div>
+	<div>
 		<div id="demo">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -35,41 +33,23 @@
 							<th>날짜</th>
 						</tr>
 					</thead>
-					<c:forEach var="request" items="${requestKey.active}">
+					<c:forEach var="waiting" items="${waitingListKey}">
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
-									href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></td>
-
-								<c:if test="${request.c_no == 1}">
-									<td data-title="Name">피아노</td>
-								</c:if>
-								<c:if test="${request.c_no == 2}">
-									<td data-title="Name">이사</td>
-								</c:if>
-								<c:if test="${request.c_no == 3}">
-									<td data-title="Name">웹 개발</td>
-								</c:if>
-								<c:if test="${request.c_no == 4}">
-									<td data-title="Name">포토 샵</td>
-								</c:if>
-								<c:if test="${request.c_no == 5}">
-									<td data-title="Name">결혼</td>
-								</c:if>
-								<td data-title="Link">${request.r_title}</td>
-								<c:if test="${request.r_active ==1 }">
+									href="getRequestDetail.help?r_no=${waiting.r_no}">${waiting.r_no}</a></td>
+								<td data-title="Name">${waiting.c_no}</td>
+								<td data-title="Link">${waiting.r_title}</td>
+								<c:if test="${waiting.r_active ==1 }">
 									<td data-title="Status">대기중</td>
 								</c:if>
-								<td data-title="Status">${request.r_date}</td>
+								<td data-title="Status">${waiting.r_date}</td>
 
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 				<br>
-
-
-
 
 				<h1>
 					<요청서 목록> - 진행중 
@@ -80,42 +60,55 @@
 							<th>요청서 번호</th>
 							<th>카테고리 번호</th>
 							<th>제목</th>
-							<th>완료여부</th>
-							<th>날짜</th>
+							<th>등록일</th>
+							<th>고수</th>
+							<th>완료날짜</th>
 						</tr>
 					</thead>
 
-					<c:forEach var="request" items="${requestKey.inactive}">
+					<c:forEach var="inProgress" items="${inProgressListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${request.r_no}">${request.r_no}</a></td>
-								<c:if test="${request.c_no == 1}">
-									<td data-title="Name">피아노</td>
-								</c:if>
-								<c:if test="${request.c_no == 2}">
-									<td data-title="Name">이사</td>
-								</c:if>
-								<c:if test="${request.c_no == 3}">
-									<td data-title="Name">웹 개발</td>
-								</c:if>
-								<c:if test="${request.c_no == 4}">
-									<td data-title="Name">포토 샵</td>
-								</c:if>
-								<c:if test="${request.c_no == 5}">
-									<td data-title="Name">결혼</td>
-								</c:if>
-								<td>${request.r_title}</td>
-								<c:if test="${request.r_active ==0 }">
-									<td>진행중</td>
-								</c:if>
-								<td>${request.r_date}</td>
+								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}">${inProgress.req.r_no}</a></td>
+								<td>${inProgress.req.c_no}</td>
+								<td>${inProgress.req.r_title}</td>
+								<td>${inProgress.req.r_date}</td>
+								<td>${inProgress.t_requester}</td>
+								<td>${inProgress.t_enddate}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 
 
+				<h1>
+					<요청서 목록> - 완료
+				</h1>
+				<table id="table" class="table table-hover table-mc-light-blue">
+					<thead>
+						<tr>
+							<th>요청서 번호</th>
+							<th>카테고리 번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+							<th>고수</th>
+							<th>완료날짜</th>
+						</tr>
+					</thead>
 
+					<c:forEach var="completed" items="${completedListKey}">
+						<tbody>
+							<tr>
+								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}">${completed.req.r_no}</a></td>
+								<td>${completed.req.c_no}</td>
+								<td>${completed.req.r_title}</td>
+								<td>${completed.req.r_date}</td>
+								<td>${completed.t_requester}</td>
+								<td>${completed.t_enddate}</td>
+							</tr>
+						</tbody>
+					</c:forEach>
+				</table>
 
 
 			</div>

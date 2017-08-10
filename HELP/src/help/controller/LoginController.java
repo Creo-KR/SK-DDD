@@ -43,6 +43,7 @@ public class LoginController {
 			session.setAttribute("UNAME", memVO.getM_name());
 			session.setAttribute("UTYPE", memVO.getM_type());
 			session.setAttribute("COUNT", cnt);
+			
 			//rv.setUrl("loginForm.help");
 			//mv.setView(rv);
 		}
@@ -60,6 +61,7 @@ public class LoginController {
 			session.removeAttribute("UID");
 			session.removeAttribute("UNAME");
 			session.removeAttribute("COUNT");
+			session.removeAttribute("UTYPE");
 			mv.setViewName("index");
 		} else {
 			mv.setViewName("index");
