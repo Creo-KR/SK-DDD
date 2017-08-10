@@ -1,6 +1,179 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<style>
+@charset "utf-8";
+
+.chat {
+	position: absolute;
+	z-index: 8888;
+}
+
+.chat_room {
+	/* display: none; */
+	width: 250px;
+	height: 500px;
+	overflow: hidden;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	background: rgb(88, 88, 88);
+	border-radius: 20px;
+	position: fixed;
+	right: 264px;
+	bottom: 50px;
+}
+
+.chat_window {
+	/* display: none; */
+	width: 250px;
+	height: 500px;
+	overflow: hidden;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	background: rgb(88, 88, 88);
+	border-radius: 20px;
+	position: fixed;
+	right: 10px;
+	bottom: 50px;
+}
+
+.chat_room_titleBar {
+	position: relative;
+	background: rgba(0, 0, 0, 0.2);
+	color: #fff;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 5px 0px 0px 15px;
+	font-size: 22px;
+	line-height: 22px;
+	font-weight: bold;
+}
+
+.chat_room_titleBar_name {
+	position: relative;
+	top: 10px;
+}
+
+.chat_room_titleBar_btn {
+	position: relative;
+	top: -15px;
+	left: 130px;
+}
+
+.chat_window_titleBar_btn {
+	position: relative;
+	top: -15px;
+	left: 194px;
+}
+
+.chat_room_titleBar_btn img {
+	width: 32px;
+	height: 32px;
+	padding: 0px;
+}
+
+.chat_window_titleBar_btn img {
+	width: 32px;
+	height: 32px;
+	padding: 0px;
+}
+
+.chat_room_list_frame {
+	border: 0px;
+	width: 244px;
+	height: 400px;
+	margin-bottom: 10px;
+}
+
+.chat_room_input {
+	background: rgba(0, 0, 0, 0.3);
+	padding: 7px;
+	position: relative;
+}
+
+.chat_room_input .chat_text {
+	background: none;
+	border: none;
+	outline: none !important;
+	resize: none;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 11px;
+	height: 17px;
+	margin: 0;
+	padding-right: 20px;
+	width: 200px;
+}
+
+.chat_room_input .chat_send {
+	position: absolute;
+	z-index: 1;
+	top: 5px;
+	right: 6px;
+	color: #fff;
+	border: none;
+	background: #248A52; font-size : 10px; text-transform : uppercase;
+	line-height : 1; padding : 6px 10px; border-radius : 10px; outline :
+	none !important; -webkit-transition : background .2s ease;
+	transition: background .2s ease;
+	top: 5px;
+	right: 6px;
+	color: #fff;
+	border: none;
+	background: #248A52;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+	right: 6px;
+	color: #fff;
+	border: none;
+	background: #248A52;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+	color: #fff;
+	border: none;
+	background: #248A52;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+	border: none;
+	background: #248A52;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+	background: #248A52;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 10px;
+	outline: none !important;
+	-webkit-transition: background .2s ease;
+}
+</style>
+
+
 <script>
 	function divOpen(id) {
 		var div = document.getElementById(id);
@@ -98,20 +271,15 @@
 	}, 5000);
 	
 </script>
-<div id="chat" style="position: absolute;; z-index: 8888;">
-	<div id="chat_list"
-		style="display: none; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); position: fixed; right: 10px; bottom: 50px; line-height: 16px; font-size: 12px;">
+<div id="chat" class="chat">
+	<div id="chat_list" class="chat_window">
 
-		<div id="chat_list_titleBar"
-			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_list_titleBar_name">채팅</div>
-			<div id="chat_list_titleBar_btn"
-				style="position: relative; top: -15px; left: 149px;">
-				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					style="width: 32px; height: 32px; padding: 0px;"><img
-					src="images/close.png"
+		<div id="chat_list_titleBar" class="chat_room_titleBar">
+			<div id="chat_list_titleBar_name" class="chat_room_titleBar_name">채팅</div>
+			<div id="chat_list_titleBar_btn" class="chat_window_titleBar_btn">
+				<img src="images/close.png"
 					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="javascript:divClose('chat_list');">
+					onclick="divClose('chat_list');">
 			</div>
 		</div>
 
@@ -119,47 +287,35 @@
 			style="border: 0px; width: 250px; height: 460px;"></iframe>
 	</div>
 
-	<div id="chat_room"
-		style="display: none; background-clip: padding-box; background-color: #e9ebee; border: 1px solid rgba(0, 0, 0, .4); box-shadow: inset 2px 0 2px -2px #b2b9c9; font-size: 12px; position: fixed; line-height: 16px; right: 264px; bottom: 50px; width: 250px; height: 500px;">
-		<div id="chat_room_titleBar"
-			style="position: relative; height: 36px; background-color: rgba(10, 10, 24, .2); margin: 2px 2px 2px 2px">
-			<div id="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
-			<div id="chat_room_titleBar_btn"
-				style="position: relative; top: -15px; left: 149px;">
-				<img style="width: 32px; height: 32px; padding: 0px;"><img
-					src="images/leave.png"
-					style="width: 32px; height: 32px; padding: 0px;"
+	<div id="chat_room" class="chat_room">
+		<div id="chat_room_titleBar" class="chat_room_titleBar">
+			<div id="chat_room_titleBar_name" class="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
+			<div id="chat_room_titleBar_btn" class="chat_room_titleBar_btn">
+				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img src="images/leave.png"
 					onclick="javascript:leaveChatroom();"><img
-					src="images/close.png"
-					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="javascript:divClose('chat_room');">
+					src="images/close.png" onclick="javascript:divClose('chat_room');">
 			</div>
 		</div>
 
-		<div id="chat_room_list"
-			style="position: relative; border: solid 1px gray; width: 244px; height: 420px; top: 0px; left: 2px;">
-			<iframe id="chat_room_list_frame"
-				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}"
-				style="border: 0px; width: 244px; height: 420px;"></iframe>
+		<div id="chat_room_list">
+			<iframe id="chat_room_list_frame" class="chat_room_list_frame"
+				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}""></iframe>
 		</div>
 
 
 
-		<div id="chat_room_input"
-			style="position: relative; border: solid 1px gray; width: 244px; height: 32px; bottom: -3px; left: 2px;">
+		<div id="chat_room_input" class="chat_room_input">
 			<form id="chat_room_input_frm" onsubmit="sendChat(); return false;">
 				<input type="hidden" name="sender" value="${ss_cr_sender}" /> <input
 					type="hidden" name="receiver" value="${ss_cr_receiver.m_no}" /> <input
 					type="hidden" name="no" value="${ss_cr_no}" /> <input type="text"
-					name="text" id="chat_text" autocomplete=off
-					style="position: relative; width: 208px; height: 28px; padding: 0px; top: -12px;" /><img
-					style="width: 32px; height: 32px; padding: 0px;"
-					onclick="sendChat();">
+					name="text" class="chat_text" id="chat_text" autocomplete=off
+					placeholder="이곳에 메세지를 적어주세요." /> <input class="chat_send"
+					type="button" onclick="sendChat();" value="보내기">
 			</form>
 		</div>
 	</div>
 </div>
-
 <script>
 	if (sessionStorage.getItem("chat_list") == "open") {
 		divOpen("chat_list");

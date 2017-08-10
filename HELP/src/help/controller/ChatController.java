@@ -87,7 +87,6 @@ public class ChatController {
 			service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0, new ChatroomVO(cr_no)));
 
 		try {
-			List<Integer> arr = new ArrayList<Integer>();
 			response.getWriter().print(cr_no+","+ch_receiver.getM_no());
 		} catch (IOException e) {
 			e.printStackTrace();
