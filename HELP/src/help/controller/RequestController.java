@@ -23,6 +23,7 @@ import help.dao.RequestDAO;
 import help.dao.TradeDAO;
 import help.service.MemberService;
 import help.vo.MemberVO;
+import help.vo.PageMaker;
 import help.vo.RequestVO;
 import help.vo.TradeVO;
 
@@ -161,5 +162,6 @@ public class RequestController {
 //	public String completeRequest() {
 //		
 //	}
+
 }
 

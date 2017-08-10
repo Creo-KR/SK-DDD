@@ -1,5 +1,6 @@
 package help.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import help.vo.RequestVO;
@@ -19,4 +20,8 @@ public interface RequestDAO {
 	public List<RequestVO> getAllRequestsByCategory(Integer c_no);
 	
 	public RequestVO getRequestDetail(Integer r_no);
+	
+	public Integer countRequest(Integer c_no);
+	
+	public List<RequestVO> pageReqList(HashMap<String, Object> map);
 }
