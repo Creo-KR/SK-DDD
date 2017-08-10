@@ -81,82 +81,102 @@
 </head>
 
 
-
+<%@ include file="commons/header.jsp"%>
 <body>
 
 	<link
 		href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
 		rel="stylesheet" type="text/css">
-	<div class="t3">
-		<h1>
-			<요청서 상세 페이지>
-		</h1>
 
-		<div class="tblWrap">
-			<table>
-				<tr>
-					<th style="width: 200px">요청서 번호 :</th>
-					<td class="ty2">${requestDetailKey.r_no}</td>
-				</tr>
-				<tr>
-					<th>카테고리 :</th>
-					<c:if test="${requestDetailKey.c_no == 1}">
-						<td class="ty2" data-title="Name">피아노</td>
-					</c:if>
-					<c:if test="${requestDetailKey.c_no == 2}">
-						<td class="ty2" data-title="Name">이사</td>
-					</c:if>
-					<c:if test="${requestDetailKey.c_no == 3}">
-						<td class="ty2" data-title="Name">웹 개발</td>
-					</c:if>
-					<c:if test="${requestDetailKey.c_no == 4}">
-						<td class="ty2" data-title="Name">포토 샵</td>
-					</c:if>
-					<c:if test="${requestDetailKey.c_no == 5}">
-						<td class="ty2" data-title="Name">결혼</td>
-					</c:if>
+	<div id="container">
+		<div class="t3" style="margin-top: 200px; height: 500px">
+			<h1>
+				<요청서 상세 페이지>
+			</h1>
 
-				</tr>
-				<tr>
-					<th>제목 :</th>
-					<td class="ty2">${requestDetailKey.r_title}</td>
-				</tr>
-				<tr>
-					<th>내용 :</th>
-					<td class="ty2"><c:forEach var="content"
-							items="${contentSplit}">
-							<table style="border-style: hidden;">
-								<tr>
-									<td>${content}</td>
-								</tr>
-							</table>
-						</c:forEach></td>
-				</tr>
-				<tr>
-					<th>완료여부</th>
-					<c:if test="${requestDetailKey.r_active == 1}">
-						<td class="ty2">대기중</td>
+			<div class="tblWrap">
+				<table>
+					<tr>
+						<th style="width: 200px">요청서 번호 :</th>
+						<td class="ty2">${requestDetailKey.r_no}</td>
+					</tr>
+					<tr>
+						<th>카테고리 :</th>
+						<c:if test="${requestDetailKey.c_no == 1}">
+							<td class="ty2" data-title="Name">피아노</td>
+						</c:if>
+						<c:if test="${requestDetailKey.c_no == 2}">
+							<td class="ty2" data-title="Name">이사</td>
+						</c:if>
+						<c:if test="${requestDetailKey.c_no == 3}">
+							<td class="ty2" data-title="Name">웹 개발</td>
+						</c:if>
+						<c:if test="${requestDetailKey.c_no == 4}">
+							<td class="ty2" data-title="Name">포토 샵</td>
+						</c:if>
+						<c:if test="${requestDetailKey.c_no == 5}">
+							<td class="ty2" data-title="Name">결혼</td>
+						</c:if>
+
+					</tr>
+					<tr>
+						<th>제목 :</th>
+						<td class="ty2">${requestDetailKey.r_title}</td>
+					</tr>
+					<tr>
+						<th>내용 :</th>
+						<td class="ty2"><c:forEach var="content"
+								items="${contentSplit}">
+								<table style="border-style: hidden;">
+									<tr>
+										<td>${content}</td>
+									</tr>
+								</table>
+							</c:forEach></td>
+					</tr>
+					<tr>
+						<th>완료여부</th>
+						<c:if test="${requestDetailKey.r_active == 1}">
+							<td class="ty2">대기중</td>
+						</c:if>
+						<c:if test="${requestDetailKey.r_active == 0}">
+							<td class="ty2">진행중</td>
+						</c:if>
+					</tr>
+					<tr>
+						<th>날짜</th>
+						<td class="ty2">${requestDetailKey.r_date}</td>
+					</tr>
+				</table>
+			</div>
+
+			<div style="width: 100%; text-align: center">
+				<!-- UTYPE(0=일반인, 1=사용자), flag(0=신청하기버튼) -->
+				<c:if test="${UTYPE==1}">
+					<c:if test="${flag==0}">
+					<button onclick="chat_go()"
+						style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+						신청하기</button>
 					</c:if>
-					<c:if test="${requestDetailKey.r_active == 0}">
-						<td class="ty2">진행중</td>
+				</c:if>
+
+				<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
+				<c:if test="${UTYPE==0}">
+					<c:if test="${flag==0}">
+						<button onclick="chat_go()"
+							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+							고용하기</button>
 					</c:if>
-				</tr>
-				<tr>
-					<th>날짜</th>
-					<td class="ty2">${requestDetailKey.r_date}</td>
-				</tr>
-			</table>
+					<c:if test="${flag==1}">
+						<button onclick="chat_go()"
+							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+							완료하기</button>
+					</c:if>
+				</c:if>
+			</div>
+
 		</div>
-
-		<div style="width: 100%; text-align: center">
-			<c:if test="${sessionType==1}">
-				<button onclick="chat_go()"
-					style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-					신청하기</button>
-			</c:if>
-		</div>
-
-
+		<%@ include file="commons/footer.jsp"%>
 		<script>
 		
 			var chat_go = function() {

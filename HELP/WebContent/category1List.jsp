@@ -12,12 +12,12 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
 </head>
-<%-- <%@ include file="commons/header.jsp"%> --%>
+<%@ include file="commons/header.jsp"%>
 <body>
 
 
-
-	<div style="margin-top: 100px">
+<div id="container" >
+	<div style="margin-top: 200px">
 		<div id="demo">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -133,6 +133,7 @@
 				</p>
 			</div>
 		</div>
+	</div>
 	</div>
 	<%@ include file="commons/footer.jsp"%>
 
