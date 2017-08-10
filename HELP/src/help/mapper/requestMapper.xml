@@ -25,7 +25,7 @@
 	<select id="getAllActiveRequestsByWriter" parameterType="Integer" resultType="RequestVO">
 		select r_no, c_no, r_title, r_content, r_active, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
 		from request
-		where r_writer = #{r_writer}
+		where r_writer = #{r_writer} and r_active = 1
 		<!-- select * from request where r_writer=#{value} and r_active=1 -->
 	</select>
 	
@@ -49,5 +49,23 @@
 	<select id="getRequestDetail" parameterType="Integer"
 		resultType="RequestVO">
 		select * from request where r_no=#{value}
+	</select>
+	
+	<select id="countRequest" parameterType="Integer" resultType="Integer">
+		SELECT count(*) FROM request
+		WHERE c_no=#{c_no}
+	</select>
+	
+	<select id="pageReqList" parameterType="hashmap" resultType="RequestVO">
+		SELECT * FROM (
+        	SELECT ROWNUM rnum, r.*
+			FROM (
+				SELECT * FROM request 
+				WHERE c_no=#{c_no} 
+				ORDER BY r_no
+				) r
+            )
+        WHERE rnum BETWEEN ((#{page}-1) * 10 + 1) 
+		AND ((#{page}) * 10)
 	</select>
 </mapper>

@@ -1,5 +1,6 @@
 package help.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -56,6 +57,14 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.selectOne("requestMapper.getRequestDetail", r_no);
 	}
 
+	@Override
+	public Integer countRequest(Integer c_no) {
+		return session.selectOne("requestMapper.countRequest", c_no);
+	}
 
+	@Override
+	public List<RequestVO> pageReqList(HashMap<String, Object> map) {
+		return session.selectList("requestMapper.pageReqList", map);
+	}
 	
 }

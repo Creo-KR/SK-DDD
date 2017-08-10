@@ -11,12 +11,11 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
 </head>
+<%@ include file="commons/header.jsp"%>
 <body>
-	<div>
-<%-- 		<%@ include file="commons/header.jsp"%> --%>
-	</div>
-	<div>
-		<div id="demo">
+
+	<div id="container">
+		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 
 
@@ -37,14 +36,13 @@
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
-									href="getRequestDetail.help?r_no=${waiting.r_no}">${waiting.r_no}</a></td>
+									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=0">${waiting.r_no}</a></td>
 								<td data-title="Name">${waiting.c_no}</td>
 								<td data-title="Link">${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
 									<td data-title="Status">대기중</td>
 								</c:if>
 								<td data-title="Status">${waiting.r_date}</td>
-
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -69,7 +67,7 @@
 					<c:forEach var="inProgress" items="${inProgressListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}">${inProgress.req.r_no}</a></td>
+								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}&flag=1">${inProgress.req.r_no}</a></td>
 								<td>${inProgress.req.c_no}</td>
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
@@ -99,7 +97,7 @@
 					<c:forEach var="completed" items="${completedListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}">${completed.req.r_no}</a></td>
+								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}&flag=2">${completed.req.r_no}</a></td>
 								<td>${completed.req.c_no}</td>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
