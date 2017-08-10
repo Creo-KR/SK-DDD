@@ -69,7 +69,7 @@
 		AND ((#{page}) * 10)
 	</select>
 	
-	<select id="getRequestWaitingHire" parameterTpye="">
+	<!-- <select id="getRequestWaitingHire" parameterTpye="">
 		
-	</select>
+	</select> -->
 </mapper>

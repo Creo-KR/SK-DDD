@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /*서브 공통*/
-#sub-contents h3       {color:#333; font-size:16pt; font-family:'nanumB'; latter-spacing:-0.5pt; padding-left:22px; background:url('../images/contents/sub-title-dot.png') 0 2px no-repeat;}
+#sub-contents h3       {color:#333; font-size:16pt; font-family:'nanumB'; latter-spacing:-0.5pt; padding-left:22px; background: 0 2px no-repeat;}
 #sub-contents h4       {color:#333; font-size:14pt; font-family:'nanumB';}
 #sub-contents p        {color:#333; font-size:12pt; font-family:'nanumM'; line-height:17pt;}
 #sub-contents textarea {color:#666; font-size:12pt; font-family:'nanumM'; line-height:17pt;}
@@ -14,15 +14,15 @@
 #de-select div.select-box-l h3 {color:#fff; padding:0; background:none; font-weight: bold;}
 #de-select div.select-box-l p {margin-top:12px; font-weight: bold;}
 #de-select div.select-box-l p a {color:#fff; font-size:11pt; font-weight: bold;}
-#de-select div.box-1 {background:rgb(113, 156, 113) url('../images/contents/de-select-bg-1.png') right top no-repeat; font-weight: bold;}
+#de-select div.box-1 {background:rgb(113, 156, 113)  right top no-repeat; font-weight: bold;}
 #de-select div.box-1 p {color:#fff;}
-#de-select div.box-2 {background:rgb(117, 148, 137) url('../images/contents/de-select-bg-2.png') right top no-repeat; font-weight: bold;}
+#de-select div.box-2 {background:rgb(117, 148, 137)  right top no-repeat; font-weight: bold;}
 #de-select div.box-2 p {color:#fff;}
 #de-select div.select-box-s {position:relative; padding:12px; margin-top:20px; vertical-align:top; background:#fff; border-radius:0.8em;}
 #de-select div.select-box-s p {color:#666;}
 #de-select div.select-box-s table {width:100%; margin-top:11px; border-top:1px solid #ccc;}
 #de-select div.select-box-s table th, #de-select div.select-box-s table td {color:#666; font-size:11pt; font-family:'nanumL'; line-height:14pt; padding-top:8px;}
-#de-select div.select-box-s table th {text-align:left; vertical-align:top; padding-left:8px; background:url('../images/contents/de-select-dot.png') 0 13px no-repeat;}
+#de-select div.select-box-s table th {text-align:left; vertical-align:top; padding-left:8px; background: 0 13px no-repeat;}
 #de-select div.select-box-s table th span {display:block; font-size:10pt;}
 #de-select div.select-box-s table.table-1 th {width:34%;}
 #de-select div.select-box-s table.table-2 th {width:44%;}
@@ -31,7 +31,7 @@
 /*신고하기 절차도*/
 #process div.process-box {display:block; padding:20px; margin-top:14px; border:1px solid #ccc;}
 #process div.process-box p {padding:6px 0;}
-/* #process div.process-box p {padding:6px 0 6px 30px; background:url('../images/contents/icon-caution.png') 0 0 no-repeat;} */
+/* #process div.process-box p {padding:6px 0 6px 30px; background: 0 0 no-repeat;} */
 #process div.process-box p span {display:block; margin-top:10px;}
 #process div.process-img img {width:100%;}
 #process p.process-img-text {font-size:10pt; text-align:center; margin-top:20px;}
@@ -50,22 +50,22 @@
 #radio-cable div.btn-box {text-align:center; margin-top:30px;}
 #radio-cable div.text-box-2   {display:block; padding:20px; margin-top:14px; background:#f7f7f7; border:1px solid #ccc;}
 #radio-cable ol li {padding:0 0 0 20px; margin-top:20px;}
-#radio-cable ol li.num-blue-1 {display: inline-block; background:url('../images/contents/num-blue-1.png') 0 3px no-repeat;}
-#radio-cable ol li.num-blue-2 {background:url('../images/contents/num-blue-2.png') 0 3px no-repeat;}
-#radio-cable ol li.num-blue-3 {background:url('../images/contents/num-blue-3.png') 0 3px no-repeat;}
-#radio-cable ol li.num-blue-4 {background:url('../images/contents/num-blue-4.png') 0 3px no-repeat;}
-#radio-cable ol li.num-blue-5 {background:url('../images/contents/num-blue-5.png') 0 3px no-repeat;}
-#radio-cable ol li.num-blue-6 {background:url('../images/contents/num-blue-6.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-1 {background:url('../images/contents/num-gray-1.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-2 {background:url('../images/contents/num-gray-2.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-3 {background:url('../images/contents/num-gray-3.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-4 {background:url('../images/contents/num-gray-4.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-5 {background:url('../images/contents/num-gray-5.png') 0 3px no-repeat;}
-#radio-cable ol li.num-gray-6 {background:url('../images/contents/num-gray-6.png') 0 3px no-repeat;}
-#radio-cable p.text-dot {padding:0 0 0 20px; margin-top:10px; background:url('../images/contents/text-point.png') 0 3px no-repeat;}
+#radio-cable ol li.num-blue-1 {display: inline-block; background: 0 3px no-repeat;}
+#radio-cable ol li.num-blue-2 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-blue-3 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-blue-4 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-blue-5 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-blue-6 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-1 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-2 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-3 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-4 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-5 {background: 0 3px no-repeat;}
+#radio-cable ol li.num-gray-6 {background: 0 3px no-repeat;}
+#radio-cable p.text-dot {padding:0 0 0 20px; margin-top:10px; background: 0 3px no-repeat;}
 #radio-cable ol li span, #radio-cable p span {display:block; color:#427da6; font-size:11pt;}
 #radio-cable ol li ol li {padding:0; margin-top:4px;}
-#radio-cable ul li {padding-left:12px; margin-top:16px; background:url('../images/contents/li-dot.png') 0 8px no-repeat;}
+#radio-cable ul li {padding-left:12px; margin-top:16px; background: 0 8px no-repeat;}
 #radio-cable ul li a {color:#42a0d3;} #radio-cable ul li a:hover {color:#0070bd;}
 #radio-cable p.cable-img-tit {margin-top:6px;}
 #radio-cable div.cable-img {margin-top:4px;}
@@ -87,7 +87,7 @@ div.guide-btn {position:absolute; top:170px; right:0;}
 #step-box div div, #step-box div div p, #step-box div div p span {display:block;}
 #step-box div div.step-on p, #step-box div div.step-on span {color:#0070bd; font-weight:bold;}
 #step-box div div p {text-align:center; margin-top:8px;}
-#step-box div.step-2, #step-box div.step-3 {background:url('../images/contents/icon-arr.png') no-repeat;}
+#step-box div.step-2, #step-box div.step-3 {background: no-repeat;}
 
 /*신고하기 폼*/
 #complaint table{ width: 100%; margin: 10px 0 0 0; border-top: solid 2px #ccc; border-bottom: solid 1px #ccc;}
@@ -115,7 +115,7 @@ a.iphone:visited {color:#fff;}
 #introduce div.con-01 {width:100%; height:100%; padding: 20px 0 0px 0; border: 1px solid #ccc;}
 #introduce div.con-01 p{color: #9d3f3f; padding: 10px 0;}
 #introduce div.iphone a{display: inline-block; width: 130px; color: #fff; padding: 5px; background: #999; border-radius: 4px;} /* 아이폰 버튼 */
-/* #introduce div.con-01 p{ color: #9d3f3f; padding: 10px 0 10px 30px; background: url('../images/contents/icon-caution.png') 0 5px no-repeat; } */
+/* #introduce div.con-01 p{ color: #9d3f3f; padding: 10px 0 10px 30px; background:  0 5px no-repeat; } */
 #introduce div.con-01 p.text{ display: inline-block; color: #666; padding: 0 0 0 0px; background: none;}
 #introduce div.con-02 {text-align: center; padding:20px 20px 20px 20px;}
 #introduce div.con-02 p.con-tit { display: block; color: #0164a8; font-size:16pt; font-family:'nanumB';}
@@ -142,7 +142,7 @@ a.iphone:visited {color:#fff;}
 #report div.con-01 ul li p { font-size: 12pt;  margin: 10px 0 30px 0;}
 #report div.con-01 ul li a { font-size: 12pt; color: #fff; font-family:"jGothicB"; padding: 10px 25px 10px 25px; background: #999; border-radius: 10px;}
 #report div.con-01 ul a:hover { background: #666;}
-#report div.con-01 p.text { color: #9d3f3f; font-size: 12pt; padding: 10px 0 10px 30px; background: url('../images/contents/icon-caution.png') 0 5px no-repeat; }
+#report div.con-01 p.text { color: #9d3f3f; font-size: 12pt; padding: 10px 0 10px 30px; background:  0 5px no-repeat; }
 #report div.con-02 p { display: block; color: #666; font-size: 12pt; padding: 0 0 10px 25px;}
 #report div.con-02 span { color: #666; margin: 5px 0 10px 0;}
 #report div.con-02 ul { width: 100%; border-top: solid 3px #ccc; border-bottom: solid 1px #ccc;}
@@ -170,7 +170,7 @@ a.iphone:visited {color:#fff;}
 #report3 div.con-01 div.img-01 {display: table-cell; width:100%; text-align:center;}
 #report3 div.con-01 div.flow { display: table-cell; margin:30px; }
 #report3 div.con-01 div.flow p{ display: inline-block; padding: 20px 20px 20px 0px}
-#report3 div.con-01 div.flow span { display: blcok; color: #fff; font-family:"jGothicB"; padding: 15px; background: url('../images/contents/number.png') 6px 10px no-repeat;}
+#report3 div.con-01 div.flow span { display: blcok; color: #fff; font-family:"jGothicB"; padding: 15px; background:  6px 10px no-repeat;}
 #report3 div.con-01 div.btn { display: table-cell; vertical-align: middle; }
 #report3 div.con-01 div.btn img { display: table-cell; background: #999; padding: 12px; border-radius: 6px; }
 #report3 div.con-01 div.btn img:hover { background: #42a0d3;}
@@ -188,7 +188,7 @@ a.iphone:visited {color:#fff;}
 #report3 div.phone-box ul li {float:left; margin-right:20px; vertical-align:top;}
 #report3 div.phone-box ul li img {border:1px solid #cdcdcd;}
 #report3 div.phone-box ul li p {padding:10px 0;}
-#report3 div.phone-box ul li p span {display: blcok; color: #fff; font-family:"jGothicB"; padding:15px; background: url('../images/contents/number.png') 6px 10px no-repeat;}
+#report3 div.phone-box ul li p span {display: blcok; color: #fff; font-family:"jGothicB"; padding:15px; background:  6px 10px no-repeat;}
 
 /*공지사항 moon */ 
 #notice div.list-box {min-height:620px;}
@@ -196,7 +196,7 @@ a.iphone:visited {color:#fff;}
 .srch select, .srch input { color:#333; font-size:9pt; margin:-1px 0 1px 5px; vertical-align:middle; }
 .srch input[type=button] {background: #474747; color: #fff; font-family:"jGothicM"; font-size:12pt;  margin-left: 5px; padding: 8px 18px 8px 18px; border: 0; border-radius: 8px; cursor:point;} 
 .srch input[type=button]:hover {background: #333;}
-.srch .keyword {widht: 20px; font-size:12pt; line-height:15px; margin-left:1px; padding:6px 3px 6px 10px; border:1px solid #b5b5b5; background: url('../images/contents/srch.png') 6px 5px  no-repeat;} 
+.srch .keyword {widht: 20px; font-size:12pt; line-height:15px; margin-left:1px; padding:6px 3px 6px 10px; border:1px solid #b5b5b5; background:  6px 5px  no-repeat;} 
 #notice div.list-box table { width: 100%; margin-bottom:20px; border-top: solid 2px #7fb9e0; }
 #notice div.list-box table th { color: #0362a4; font-family:'nanumL'; font-size:11pt; font-weight:normal; border-bottom: solid 1px #b2d4eb; padding: 16px 0; background: #e5f0f8; }
 #notice div.list-box table td { text-align: center; padding: 12px 0; border-bottom: solid 1px #ccc; }
@@ -222,13 +222,13 @@ a.iphone:visited {color:#fff;}
 
 #notice div.detail-btn a.btn-list {display:inline-block; color:#666; font-size:12pt; font-family:'nanumB'; letter-spacing:-0.1em; text-align:center; padding:8px 12px; margin:0 auto; background:#f7f7f7; border:1px solid #ccc; border-radius:0.4em;}
 #notice div.detail-btn a.btn-list:hover {color:#fff; background:#aaa; border:1px solid #999;}
-#notice div.detail-box table th.icon-q {background:url('../images/contents/icon-q.png') 10px 11px no-repeat;}
-#notice div.detail-box table td.icon-a {background:url('../images/contents/icon-a.png') 10px 14px no-repeat;}
+#notice div.detail-box table th.icon-q {background: 10px 11px no-repeat;}
+#notice div.detail-box table td.icon-a {background: 10px 14px no-repeat;}
 #notice div.detail-box ul {margin-top:20px; border-top:1px solid #ccc;}
 #notice div.detail-box ul li {padding:12px 0; border-bottom:1px solid #ccc;}
 #notice div.detail-box ul li span {font-size:11pt; padding-right:18px; margin-left:20px;}
-#notice div.detail-box ul li span.prev {background:url('../images/contents/list-prev.png') right 5px no-repeat;}
-#notice div.detail-box ul li span.next {background:url('../images/contents/list-next.png') right 5px no-repeat;}
+#notice div.detail-box ul li span.prev {background: right 5px no-repeat;}
+#notice div.detail-box ul li span.next {background: right 5px no-repeat;}
 #notice div.detail-box ul li a {color:#666; font-size:11pt; margin-left:20px;}
 #notice div.detail-box ul li a:hover {color:#0070bd;}
 
@@ -263,11 +263,11 @@ a.iphone:visited {color:#fff;}
   #radio-cable h3 span {display:block; margin-top:6px;}
   #radio-cable h3 br {display:block;}
   #radio-cable div.text-box-1 p  {text-align:center;}
-  #radio-cable div.text-box-1 p.icon-caution {padding:30px 0 0 0; background:url('../images/contents/icon-caution.png') 50% 0 no-repeat;}
-  #radio-cable div.text-box-2 h4 {text-align:center; padding:30px 0 0 0; background:url('../images/contents/radio-tit-bg.png') 50% 0 no-repeat;}
+  #radio-cable div.text-box-1 p.icon-caution {padding:30px 0 0 0; background: 50% 0 no-repeat;}
+  #radio-cable div.text-box-2 h4 {text-align:center; padding:30px 0 0 0; background: 50% 0 no-repeat;}
   #radio-cable ul li {margin-top:16px;}
   #radio-cable img.cable-img-web {display:none;}
-  #radio-cable p.apply-text {text-align:center; padding:30px 0 0 0; background:url('../images/contents/icon-caution.png') 50% 0 no-repeat;}
+  #radio-cable p.apply-text {text-align:center; padding:30px 0 0 0; background: 50% 0 no-repeat;}
   div.guide-btn a.none-mobile {display:none;}
   #agreement h3 {text-align:center; padding:0; background:none;}
   #agreement h4 {text-align:center;}
@@ -277,9 +277,9 @@ a.iphone:visited {color:#fff;}
   #step-box div.step-1 {width:30.00000000000000%;}
   #step-box div.step-2 {width:35.55555555555555%;}
   #step-box div.step-3 {width:34.44444444444444%;}
-  #step-box div.step-1 div.step-icon {background:url('../images/contents/icon-step-1.png') 50% 0 no-repeat;}
-  #step-box div.step-2 div.step-icon {margin-left:16px; background:url('../images/contents/icon-step-2.png') 50% 0 no-repeat;}
-  #step-box div.step-3 div.step-icon {background:url('../images/contents/icon-step-3.png') 50% 0 no-repeat;}
+  #step-box div.step-1 div.step-icon {background: 50% 0 no-repeat;}
+  #step-box div.step-2 div.step-icon {margin-left:16px; background: 50% 0 no-repeat;}
+  #step-box div.step-3 div.step-icon {background: 50% 0 no-repeat;}
   #step-box div.step-on {background-position-y:-150px !important;} 
   #step-box div.step-icon p {font-size:10pt; padding-top:66px;}
   #complaint div.text-box p {text-align:center;}
@@ -360,34 +360,34 @@ a.iphone:visited {color:#fff;}
   #de-select div.box-2 div.select-box-s {display:inline-block; width:48.33333333333333%;}
   #de-select div.box-2 div.l-margin {margin-left:3.33333333333333%;}  
   #de-select div.box-2 table th, #de-select div.box-2 table td {font-size:10pt; line-height:14pt;}
-  #radio-cable div.bg-radio {background:url('../images/contents/radio-text-bg-1.png') 20px bottom no-repeat;}
-  #radio-cable div.bg-cable {background:url('../images/contents/radio-text-bg-2.png') 20px bottom no-repeat;}
+  #radio-cable div.bg-radio {background: 20px bottom no-repeat;}
+  #radio-cable div.bg-cable {background: 20px bottom no-repeat;}
   #radio-cable div.text-box-1 p  {text-align:left; margin-left:140px;}
-  #radio-cable div.text-box-1 p.icon-caution {font-size:10pt; padding:3px 0 5px 30px; background:url('../images/contents/icon-caution.png') 0 0 no-repeat;}
-  #radio-cable h3 {color:#333; font-size:16pt; font-family:'mGothicB'; text-align:left; padding-left:22px; background:url('../images/contents/sub-title-dot.png') 0 2px no-repeat;}
+  #radio-cable div.text-box-1 p.icon-caution {font-size:10pt; padding:3px 0 5px 30px; background: 0 0 no-repeat;}
+  #radio-cable h3 {color:#333; font-size:16pt; font-family:'mGothicB'; text-align:left; padding-left:22px; background: 0 2px no-repeat;}
   #radio-cable h3 br, #radio-con div.btn-box a br {display:none;}
   #radio-cable h3 span {display:inline-block; margin-top:0;}
   #radio-cable div.text-box-1 p  {text-align:left;}
-  #radio-cable div.text-box-2 h4 {text-align:left; padding:6px 40px 6px 0; background:url('../images/contents/radio-tit-bg.png') 70px 0 no-repeat;}
+  #radio-cable div.text-box-2 h4 {text-align:left; padding:6px 40px 6px 0; background: 70px 0 no-repeat;}
   #radio-cable ol, #radio-cable ul, #radio-cable p.text-dot {margin-left:22px;}
   #radio-cable div.text-box-2 ol {margin-left:0;}
   #radio-cable ul li {margin-top:8px;}
   #radio-cable img.cable-img-web {display:block;}
   #radio-cable img.cable-img-mobile {display:none;}
-  #radio-cable p.apply-text {text-align:left; padding:3px 0 5px 30px; background:url('../images/contents/icon-caution.png') 0 0 no-repeat;}
+  #radio-cable p.apply-text {text-align:left; padding:3px 0 5px 30px; background: 0 0 no-repeat;}
   div.guide-btn a.none-mobile {display:block;}
-  #agreement h3 {color:#333; font-size:16pt; font-family:'mGothicB'; text-align:left; padding-left:22px; background:url('../images/contents/sub-title-dot.png') 0 2px no-repeat;}
+  #agreement h3 {color:#333; font-size:16pt; font-family:'mGothicB'; text-align:left; padding-left:22px; background: 0 2px no-repeat;}
   #agreement h4 {text-align:left;}
   #agreement textarea {font-size:12pt;}
   #agreement p {text-align:right;}
-  #step-box div.step-1 div.step-icon {background:url('../images/contents/icon-step-1.png') 20px top no-repeat;}
-  #step-box div.step-2 div.step-icon {background:url('../images/contents/icon-step-2.png') 50px top no-repeat;}
-  #step-box div.step-3 div.step-icon {background:url('../images/contents/icon-step-3.png') 50px top no-repeat;}
+  #step-box div.step-1 div.step-icon {background: 20px top no-repeat;}
+  #step-box div.step-2 div.step-icon {background: 50px top no-repeat;}
+  #step-box div.step-3 div.step-icon {background: 50px top no-repeat;}
   #step-box div.step-on {background-position-y:-150px !important;} 
   #step-box div.step-icon p {padding:10px 0 30px 50px; margin-left:30px;}
   #step-box div.step-icon p br {display:none;}
   #complaint {margin:0 auto;}
-  #complaint div.text-box {background:#f7f7f7 url('../images/contents/icon-security.png') 20px 50% no-repeat;}
+  #complaint div.text-box {background:#f7f7f7  20px 50% no-repeat;}
   #complaint div.text-box p {text-align:left; padding-left:90px;}
   #complaint h3 {font-size:14pt; text-align:left; latter-spacing:-0.5pt;}
   #complaint h3 br {display:none;}
@@ -405,7 +405,7 @@ a.iphone:visited {color:#fff;}
   #complaint-end h3 {font-size:20pt;}
   #privacy div.privacy-text table th, #privacy div.privacy-text table td {font-size:12pt;}
   /* moon */
-  #introduce div.con-01 { text-align: left; background: url('../images/contents/img01.png') 30px 20px no-repeat;}
+  #introduce div.con-01 { text-align: left; background:  30px 20px no-repeat;}
   #introduce div.con-01 h4 { padding: 0 0 5px 200px;}
   #introduce div.con-01 p { text-align: left;  margin: 0px 30px 0 200px; } 
   #introduce div.con-02 p {width:82%;}

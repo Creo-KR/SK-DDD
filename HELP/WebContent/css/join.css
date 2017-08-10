@@ -975,12 +975,6 @@ body.eMobilePopup {
 	display: block;
 }
 
-@font-face {
-	font-family: NanumGothic;
-	src: url(/web/upload/font/NanumGothic.eot);
-	src: local(¡Ø), url(/web/upload/font/NanumGothic.woff) format('woff')
-}
-
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
 	code, form, fieldset, legend, input, textarea, p, blockquote, th, td,
 	img {

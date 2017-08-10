@@ -5,13 +5,13 @@
  */
 @font-face {
 	font-family: FontAwesome;
-	src: url('/static/fonts/fontawesome-webfont.eot');
-	src: url('/static/fonts/fontawesome-webfont.eot')
+	src: ;
+	src: 
 		format("embedded-opentype"),
-		url('/static/fonts/fontawesome-webfont.woff2') format("woff2"),
-		url('/static/fonts/fontawesome-webfont.woff') format("woff"),
-		url('/static/fonts/fontawesome-webfont.ttf') format("truetype"),
-		url('/static/svg/fontawesome-webfont.svg') format("svg");
+		,
+		,
+		,
+		;
 	font-weight: 400;
 	font-style: normal
 }
@@ -3016,18 +3016,7 @@ to {
 }
 
 .slick-loading .slick-list {
-	background: #fff url('/static/img/bower/ajax-loader.gif') 50% no-repeat
-}
-
-@font-face {
-	font-family: slick;
-	font-weight: 400;
-	font-style: normal;
-	src: url('/static/fonts/slick.eot');
-	src: url('/static/fonts/slick.eot') format("embedded-opentype"),
-		url('/static/fonts/slick.woff') format("woff"),
-		url('/static/fonts/slick.ttf') format("truetype"),
-		url(fonts/slick.svg#slick) format("svg")
+	background: #fff  50% no-repeat
 }
 
 .slick-next, .slick-prev {
@@ -4347,20 +4336,6 @@ td, th {
 	.table-bordered td, .table-bordered th {
 		border: 1px solid #ddd !important
 	}
-}
-
-@font-face {
-	font-family: Glyphicons Halflings;
-	src: url('/static/fonts/glyphicons-halflings-regular.eot');
-	src: url('/static/fonts/glyphicons-halflings-regular.eot')
-		format("embedded-opentype"),
-		url('/static/fonts/glyphicons-halflings-regular.woff2')
-		format("woff2"),
-		url('/static/fonts/glyphicons-halflings-regular.woff') format("woff"),
-		url('/static/fonts/glyphicons-halflings-regular.ttf')
-		format("truetype"),
-		url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular)
-		format("svg")
 }
 
 .glyphicon {
@@ -12000,11 +11975,11 @@ select.bs-select-hidden, select.selectpicker {
 
 @font-face {
 	font-family: lg;
-	src: url('/static/fonts/lg.eot');
-	src: url('/static/fonts/lg.eot') format("embedded-opentype"),
-		url('/static/fonts/lg.woff') format("woff"),
-		url('/static/fonts/lg.ttf') format("truetype"),
-		url('/static/svg/lg.svg') format("svg");
+	src: ;
+	src: ,
+		,
+		,
+		;
 	font-weight: 400;
 	font-style: normal
 }
@@ -12392,17 +12367,17 @@ body:not (.lg-from-hash ) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-objec
 }
 
 .lg-outer .lg-has-vimeo .lg-video-play {
-	background: url('/static/img/bower/vimeo-play.png') no-repeat scroll 0 0
+	background:  no-repeat scroll 0 0
 		transparent
 }
 
 .lg-outer .lg-has-vimeo:hover .lg-video-play {
-	background: url('/static/img/bower/vimeo-play.png') no-repeat scroll 0
+	background:  no-repeat scroll 0
 		-58px transparent
 }
 
 .lg-outer .lg-has-html5 .lg-video-play {
-	background: transparent url('/static/img/bower/video-play.png')
+	background: transparent 
 		no-repeat scroll 0 0;
 	height: 64px;
 	margin-left: -32px;
@@ -12416,12 +12391,12 @@ body:not (.lg-from-hash ) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-objec
 }
 
 .lg-outer .lg-has-youtube .lg-video-play {
-	background: url('/static/img/bower/youtube-play.png') no-repeat scroll 0
+	background:  no-repeat scroll 0
 		0 transparent
 }
 
 .lg-outer .lg-has-youtube:hover .lg-video-play {
-	background: url('/static/img/bower/youtube-play.png') no-repeat scroll 0
+	background:  no-repeat scroll 0
 		-60px transparent
 }
 
@@ -12847,7 +12822,7 @@ body:not (.lg-from-hash ) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-objec
 }
 
 .lg-outer .lg-item {
-	background: url('/static/img/bower/loading.gif') no-repeat scroll 50%
+	background:  no-repeat scroll 50%
 		transparent;
 	display: none !important
 }
