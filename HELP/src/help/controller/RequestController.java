@@ -139,8 +139,10 @@ public class RequestController {
 	}
 	
 	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
-	public ModelAndView getRequestDetail(@RequestParam Integer r_no) {
+	public ModelAndView getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
+		
+		model.addAttribute("flag",flag);
 		
 		return new ModelAndView("requestDetail", "requestDetailKey", vo);
 	}
