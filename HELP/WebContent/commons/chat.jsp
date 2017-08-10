@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script>
 	function divOpen(id) {
-		if($(UNO != null)) {
+		if(${UNO != null}) {
 			var div = document.getElementById(id);
 			div.style.display = "block";
 			sessionStorage.setItem(id, "open");
