@@ -48,6 +48,4 @@
 		DELETE  FROM gosu
 		WHERE g_no=#{g_no.m_no}
 	</delete>
-	
-
 </mapper>
