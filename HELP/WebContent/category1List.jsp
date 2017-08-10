@@ -52,7 +52,7 @@
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
-									href="getRequestDetail.help?r_no=${category.r_no}">${category.r_no}</a></td>
+									href="getRequestDetail.help?r_no=${category.r_no}&flag=0">${category.r_no}</a></td>
 
 								<c:if test="${category.c_no == 1}">
 									<td data-title="Name">피아노</td>

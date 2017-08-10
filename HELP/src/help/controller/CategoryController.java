@@ -26,7 +26,7 @@ public class CategoryController {
 	GosuDAO gosuDAO;
 
 	 @RequestMapping(value = "getCategoryRequest.help", method = RequestMethod.GET)
-	   public ModelAndView moveJoin(@RequestParam Integer category, Model model, HttpSession session) {
+	   public String moveJoin(@RequestParam Integer category, Model model, HttpSession session) {
 	      List<RequestVO> categoryListValue = new ArrayList<RequestVO>();
 	      categoryListValue.addAll(reqDAO.getAllRequestsByCategory(category));
 	      
@@ -39,7 +39,8 @@ public class CategoryController {
 	      for(int i=0;i<gosuCategoryNum.size();i++) {
 	    	  if(category==gosuCategoryNum.get(i)) {
 	    		  model.addAttribute("categoryNum",category);
-	    	      return new ModelAndView("category1List", "categoryListKey", categoryListValue);
+	    		  model.addAttribute("categoryListKey",categoryListValue);
+	    	      return "category1List";
 	    	  }
 	    	  
 	    	  
@@ -47,7 +48,8 @@ public class CategoryController {
 	      
 	      //고수가 회원가입할때 입력한 카테고리가 아닐 경우 메인페이지로 이동되며 권한이 없음을 알림.
 	        String authority = "no";
-	      return new ModelAndView("index", "authority", authority);
+	        model.addAttribute("authority", authority);
+	      return "index";
 
 	   }
 

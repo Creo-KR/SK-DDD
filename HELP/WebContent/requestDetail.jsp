@@ -154,33 +154,75 @@
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=신청하기버튼) -->
 				<c:if test="${UTYPE==1}">
 					<c:if test="${flag==0}">
-					<button onclick="chat_go()"
-						style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-						신청하기</button>
+						<button onclick="apply_go()"
+							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+							신청하기</button>
 					</c:if>
 				</c:if>
 
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
 				<c:if test="${UTYPE==0}">
 					<c:if test="${flag==0}">
-						<button onclick="chat_go()"
+						<button onclick="hire_go()"
 							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
 							고용하기</button>
 					</c:if>
 					<c:if test="${flag==1}">
-						<button onclick="chat_go()"
+						<button onclick="complete_go()"
 							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
 							완료하기</button>
 					</c:if>
 				</c:if>
 			</div>
 
+
+
+		</div>
+
+
+		<div>
+			<c:if test="${UTYPE==0}">
+				<c:if test="${flag==0}">
+					<div style="width: 100%;height:100px;background-color:red">
+						
+						<div style="width:33%;background-color:blue;display:inline-block">
+						<table>
+							<tr>
+								<td style="width: 33%">이름</td>
+							</tr>
+							<tr>
+								<td>전화번호</td>
+							</tr>
+							<tr>
+								<td>이메일 주소</td>
+							</tr>
+							<tr>
+								<td>내용</td>
+							</tr>
+
+						</table>
+						</div>
+					
+						
+						
+					</div>
+					
+			
+				</c:if>
+			</c:if>
+
 		</div>
 		<%@ include file="commons/footer.jsp"%>
 		<script>
 		
 			var chat_go = function() {
-				window.location = "  ";
+				window.location = "applyForRequest.help";
+			}
+			var hire_go = function() {
+				window.location = "hireGosu.help";
+			}
+			var complete_go = function() {
+				window.location = "completeRequest.help";
 			}
 		</script>
 

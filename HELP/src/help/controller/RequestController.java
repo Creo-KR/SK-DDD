@@ -139,12 +139,28 @@ public class RequestController {
 	}
 	
 	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
-	public ModelAndView getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
+	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
 		
 		model.addAttribute("flag",flag);
+		model.addAttribute("requestDetailKey",vo);
 		
-		return new ModelAndView("requestDetail", "requestDetailKey", vo);
+		return "requestDetail";
 	}
+	
+//	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+//	   public String applyForRequest() {
+//	      
+//	   }
+//	   
+//	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+//	   public String hireGosu() {
+//	      
+//	   }
+//	   
+//	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
+//	   public String completeRequest() {
+//	      
+//	   }
 }
 
