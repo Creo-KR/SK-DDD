@@ -156,11 +156,11 @@ public class RequestController {
 		  reqDAO.insertApply(vo);
 		  return "redirect:/redirectByUtype.help";
 	   }
-	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
-	public String applyForRequest(@RequestParam Integer r_no) {
-		
-		return "myRequestList3";
-	}
+//	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+//	public String applyForRequest(@RequestParam Integer r_no) {
+//		
+//		return "myRequestList3";
+//	}
 	
 //	@RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
 //	public String hireGosu() {
