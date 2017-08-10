@@ -89,7 +89,7 @@
 		rel="stylesheet" type="text/css">
 
 	<div id="container">
-		<div class="t3" style="margin-top: 200px; height:500px">
+		<div class="t3" style="margin-top: 200px; height: 500px">
 			<h1>
 				<요청서 상세 페이지>
 			</h1>
@@ -153,17 +153,24 @@
 			<div style="width: 100%; text-align: center">
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=신청하기버튼) -->
 				<c:if test="${UTYPE==1}">
+					<c:if test="${flag==0}">
 					<button onclick="chat_go()"
 						style="font-weight: bold; margin-left: 15px; margin-top: 10px">
 						신청하기</button>
+					</c:if>
 				</c:if>
-				
+
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
 				<c:if test="${UTYPE==0}">
+					<c:if test="${flag==0}">
+						<button onclick="chat_go()"
+							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+							고용하기</button>
+					</c:if>
 					<c:if test="${flag==1}">
-					<button onclick="chat_go()"
-						style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-						완료하기 </button>
+						<button onclick="chat_go()"
+							style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+							완료하기</button>
 					</c:if>
 				</c:if>
 			</div>
