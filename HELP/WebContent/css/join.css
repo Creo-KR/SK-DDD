@@ -1479,7 +1479,7 @@ a:focus, input:focus, map:focus, embed:focus {
 	min-height: 800px;
 }
 
-#footer {
+/* #footer {
 	margin-top: 100px;
 	font-family: Arial, NanumGothic;
 	font-size: 11px;
@@ -1492,7 +1492,7 @@ a:focus, input:focus, map:focus, embed:focus {
 
 #footer a {
 	color: #999;
-}
+} */
 
 #boardArea {
 	overflow: hidden;

@@ -8,11 +8,11 @@
 <%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css?ver=5" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/join.css" />
+	href="${pageContext.request.contextPath}/css/join.css?ver=1" />
 </head>
 <body>
 	<div id="container">
-		<div class="main_contents"   style="margin-left: 15%;">
+		<div class="main_contents"   style="margin-left: 15%;padding: 255px 0px 50px;">
 			<div id="sub-contents">
 			<div class="l-box">
 				<div id="de-select">
@@ -29,8 +29,7 @@
 					</div>
 					<div class="select-box-l box-2" style="height: 435px;">
 						<h3>고수 회원 가입</h3>
-						<p>
-						<br>고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
+						<p>고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
 							<a href="about">작성된 견적서 조회</a>
 						</p>
 						<div class="select-box-s" style="width: 430px;">
@@ -60,6 +59,11 @@
 
 	</div>
 	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<%@ include file="../commons/footer.jsp"%>
 </body>
 </html>

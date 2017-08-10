@@ -8,7 +8,6 @@
 	content="Slide Down Box Menu with jQuery and CSS3" />
 <meta name="keywords"
 	content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails" />
-<meta charset="utf-8">
 <!-- jQuery ui style sheet -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <!-- jQuery library -->
@@ -161,7 +160,7 @@ button:hover:before, button:hover:after {
 
 		<!-- 검색 창 form Start-->
 		<div id="search_form" style="margin-left: 20%">
-			<input id="search" type="text" placeholder="    검색어를 입력하세요">
+			<!-- <input id="search" type="text" placeholder="    검색어를 입력하세요"> -->
 			<button style="font-weight: bold; font-family: 'Cooper Black';">SEARCH</button>
 		</div>
 		<!-- 검색 창 form End-->

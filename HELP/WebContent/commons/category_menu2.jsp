@@ -118,7 +118,6 @@
 }
 
 span.sdt_wrap:hover span.sdt_link{
-	
 	color: white;
 }
 
@@ -188,6 +187,9 @@ button {
 	cursor: pointer;
 	transition: 800ms ease all;
 	outline: none;
+	height: 46px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 button:hover, .hidden-xs:hover, #bbb:hover{
@@ -218,14 +220,14 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 	transition: 800ms ease all;
 }
 
-#categoryBox {
+/* #categoryBox {
 	margin-left: 10%
-}
+} */
 
 </style>
 </head>
 <script type="text/javascript">
-	$(function(){
+	$(document).ready(function() {
 		var searchKeywords = [
 				"이사", "이사 견적서", "이사고수", "포장 이사", "대형 이사",
 				"피아노", "피아노 견적서", "피아니스트",
@@ -241,6 +243,17 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 			});
 		});
 </script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>  -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script> 
+<script src="${pageContext.request.contextPath}/js/jquery.counterup.min.js"></script> 
+<script>
+    $(document).ready(function() {
+        $('.cnt').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+</script>
 <body class="">
 	<div id="mainCarousel" class="hero-container hero01">
 		<div class="container">
@@ -251,7 +264,7 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 						<input type="text" class="form-control search-keyword"
 							placeholder="어떤 전문가를 찾으세요?" name="q" autocomplete="off" id="search">
 						<span class="input-group-btn">
-							<button id="bbb" class="btn btn-primary btn-md" type="submit" style="background-color: #555; border-color: #555;">
+							<button id="bbb" class="btn btn-primary btn-md" type="submit">
 							고수찾기
 								<!-- <i class="fa fa-search visible-xs" aria-hidden="true" class=""></i> -->
 								<!-- <span class="hidden-xs">고수찾기</span> -->
@@ -266,26 +279,28 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 				<div class="category">
 					<div class="cname">누적 요청서</div>
 					<div>
-						<strong>60,045</strong> 개
+						<strong class="cnt">60,045</strong> 개
 					</div>
 				</div>
 				<div class="category">
 					<div class="cname">등록된 고수</div>
 					<div>
-						<strong>15,633</strong> 명
+						<strong class="cnt">15,633</strong> 명
 					</div>
 				</div>
 				<div class="category">
 					<div class="cname">견적서 도달률</div>
 					<div>
-						<strong>90.09</strong> %
+						<strong class="cnt">90.09</strong> %
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="content" style="height:350px">
+	<c:if test="${sessionScope.UTYPE == 1}">
+	<!-- <div class="content" style="height:200px;"> -->
+	<div class="content" style="height:200px; width: 0px; margin: auto;">
 
 		<!-- 검색 창 form Start-->
 		<!-- <div id="search_form" style="margin-left: 20%">
@@ -297,7 +312,8 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 		<!-- Category Box Start -->
 
 
-		<div id="categoryBox" style="margin-left: 20%;">
+		<div id="categoryBox" style="position:relative; width:100%; left:50%; margin-left:-435px;">
+		<!-- <div id="categoryBox"> -->
 			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
 			<ul id="sdt_menu" class="sdt_menu">
 				<li style=" border: 1px solid #555;"><a href="getCategoryRequest.help?category=1"> <img src="${pageContext.request.contextPath}/images/piano.jpg" alt="" /> <span
@@ -326,19 +342,22 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 							class="sdt_link">결혼</span> <span class="sdt_descr">Prepare for marriage</span>
 					</span>
 				</a></li>
-				<li><div id="add_request" >
-	
+				<!-- <li><div id="add_request" >
 				<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-				요청서 등록
+					요청서 등록
 				</button>
-
-
-				</div></li>
-
+				</div></li> -->
 			</ul>
 		</div>
 	</div>
+	</c:if>
 	<!-- Category Box End -->
+	
+	<c:if test="${sessionScope.UTYPE == 0}">
+	<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+					요청서 등록
+				</button>
+	</c:if>
 	
  
 
@@ -431,5 +450,64 @@ button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hov
 							});
 		});
 	</script>
+	<script>
+    var imgNo = 1;
+    var imgLength = 6;
+
+    function setNextBg() {
+        imgNo = imgNo + 1;
+        if (imgNo ==  imgLength) {
+            imgNo = 1;
+        }
+        $("#mainCarousel").removeClass("hero01 hero02 hero03 hero04 hero05 hero06").addClass("hero0" + imgNo);
+    }
+
+    function preloader() {
+        // counter
+        var i = 0;
+
+        // create object
+        imageObj = new Image();
+
+        // set image list
+        images = new Array();
+
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01.jpg';
+            images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02.jpg';
+            images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03.jpg';
+
+            images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04.jpg';
+            images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05.jpg';
+            images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06.jpg';
+
+        } else {
+            images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01_m.jpg';
+            images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02_m.jpg';
+            images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03_m.jpg';
+
+            images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04_m.jpg';
+            images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05_m.jpg';
+            images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06_m.jpg';
+        }
+
+        // start preloading
+        for (i = 0; i < 6; i++) {
+            imageObj.src = images[i];
+        }
+    }
+
+    $(function() {
+        setInterval(function () {
+            setNextBg();
+        }, 8000);
+
+        setTimeout(function () {
+            preloader();
+        }, 3000);
+    });
+
+</script>
 </body>
 </html>
