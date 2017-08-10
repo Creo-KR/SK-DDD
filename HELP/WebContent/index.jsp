@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name= viewport content= width=device-width initial-scale=1.0>
+<title>H.E.L.P</title>
 <meta name=viewport content=width=device-width initial-scale=1.0>
 <title>Insert title here</title>
 <style type="text/css">
@@ -140,7 +142,7 @@
 
 	<div id="container">
 
-		<div class="main_contents" style="padding: 150px 0px;">
+		<div class="main_contents" style="padding: 130px 0px 50px;">
 			<!-- 본문영역 -->
 			<div>
 				<%@ include file="commons/category_menu2.jsp"%>
@@ -243,22 +245,23 @@
 							</div>
 						</div>
 
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="signupnow">
-								<h4>고수로 가입하면 무료로 고객들의 요청서를 받아볼 수 있어요.</h4>
-								<a href="/pro">
-									<button class="btn btn-primary btn-lg">고수로 가입하기</button>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-sm-12">
+                    <div class="signupnow">
+                        <h4>
+                            고수로 가입하면 무료로 고객들의 요청서를 받아볼 수 있어요.
+                        </h4>
+                        <a href="/pro">
+                            <button class="btn btn-primary btn-lg">고수로 가입하기</button>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+</div>
 
 	<%@ include file="commons/footer.jsp"%>
 

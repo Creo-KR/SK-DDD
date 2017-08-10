@@ -43,7 +43,6 @@
 									<td data-title="Status">대기중</td>
 								</c:if>
 								<td data-title="Status">${waiting.r_date}</td>
-
 							</tr>
 						</tbody>
 					</c:forEach>

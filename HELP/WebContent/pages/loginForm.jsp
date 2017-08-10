@@ -30,7 +30,7 @@ $(document).ready(function() {
      <form action="loginProc.help" method="post">
 	      <p>UserID</p>
 	      <input type="text" id="m_id" name="m_id" class="user" value="Enter Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Here';}" />
-		  <p>Password <a href="#">Forgot your password?</a></p>
+		  <p>Password <!-- <a href="#">Forgot your password?</a> --></p>
 		  <input type="password" id="m_pwd" name="m_pwd" class="pass" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" />
           <input type="submit" id="loginButton" value="Login" />
 	 </form>

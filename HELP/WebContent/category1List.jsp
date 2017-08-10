@@ -11,6 +11,22 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
+<style type="text/css">
+  ul {
+        list-style: none;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+        left: 20%;
+    }
+    ul li {
+        float: left;
+        margin: 0px 20px;
+    }
+    ul a {text-decoration: none; color: black;}
+    ul a:hover {color: red;}
+</style>
 </head>
 <%@ include file="commons/header.jsp"%>
 <body>
@@ -48,41 +64,55 @@
 							<th>날짜</th>
 						</tr>
 					</thead>
-					<c:forEach var="category" items="${categoryListKey}">
+					<c:forEach var="reqList" items="${reqList}">
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
 									href="getRequestDetail.help?r_no=${category.r_no}&flag=0">${category.r_no}</a></td>
 
-								<c:if test="${category.c_no == 1}">
+								<c:if test="${reqList.c_no == 1}">
 									<td data-title="Name">피아노</td>
 								</c:if>
-								<c:if test="${category.c_no == 2}">
+								<c:if test="${reqList.c_no == 2}">
 									<td data-title="Name">이사</td>
 								</c:if>
-								<c:if test="${category.c_no == 3}">
+								<c:if test="${reqList.c_no == 3}">
 									<td data-title="Name">웹 개발</td>
 								</c:if>
-								<c:if test="${category.c_no == 4}">
+								<c:if test="${reqList.c_no == 4}">
 									<td data-title="Name">포토 샵</td>
 								</c:if>
-								<c:if test="${category.c_no == 5}">
+								<c:if test="${reqList.c_no == 5}">
 									<td data-title="Name">결혼</td>
 								</c:if>
-								<td data-title="Link">${category.r_title}</td>
-								<td data-title="Status">${category.r_date}</td>
+								<td data-title="Link">${reqList.r_title}</td>
+								<td data-title="Status">${reqList.r_date}</td>
 
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
-				<br>
-
-
 			</div>
 
-
-
+				<br>
+			<ul class="pageUL"> 
+				<c:if test="${pageMaker.prev }"> 
+					<li>
+						<a href='getCategoryRequest.help?category=${categoryNum}&page=${pageMaker.start -1}'>이전</a>
+					</li> 
+				</c:if> 
+				<c:forEach begin="${pageMaker.start }" end="${pageMaker.end}" var="idx"> 
+					<li class='<c:out value="${idx == pageMaker.page?'current':''}"/>'> 
+						<a href='getCategoryRequest.help?category=${categoryNum}&page=${idx}'>${idx}</a> 
+					</li> 
+				</c:forEach> 
+				
+				<c:if test="${pageMaker.next }"> 
+					<li>
+						<a href='getCategoryRequest.help?category=${categoryNum}&page=${pageMaker.end +1}'>다음</a>
+					</li> 
+				</c:if> 
+			</ul>
 
 
 			<!-- Table Constructor change table classes, you don't need it in your project -->
