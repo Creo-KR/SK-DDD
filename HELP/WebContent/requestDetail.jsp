@@ -178,9 +178,8 @@
       </div>
       <%@ include file="commons/footer.jsp"%>
       <script>
-      
          var chat_go = function() {
-            window.location = "applyForRequest.help";
+            window.location = "applyForRequest.help?r_no="${requestDetailKey.r_no};
          }
          var hire_go = function() {
             window.location = "hireGosu.help";
@@ -188,8 +187,6 @@
          var complete_go = function() {
             window.location = "completeRequest.help";
          }
-         
-         
       </script>
 
 

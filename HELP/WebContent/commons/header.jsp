@@ -252,5 +252,4 @@
 <!--//header end -->
 
 <!-- //header -->
-<div class="dark_window"></div>
 <%@ include file="chat.jsp"%>
