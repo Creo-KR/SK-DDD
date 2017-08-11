@@ -135,15 +135,6 @@
 							</c:forEach></td>
 					</tr>
 					<tr>
-						<th>완료여부</th>
-						<c:if test="${requestDetailKey.r_active == 1}">
-							<td class="ty2">대기중</td>
-						</c:if>
-						<c:if test="${requestDetailKey.r_active == 0}">
-							<td class="ty2">진행중</td>
-						</c:if>
-					</tr>
-					<tr>
 						<th>날짜</th>
 						<td class="ty2">${requestDetailKey.r_date}</td>
 					</tr>

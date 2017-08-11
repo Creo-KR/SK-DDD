@@ -92,4 +92,11 @@
 		from request r, apply a
 		where r.r_no = a.r_no and r_writer=#{value}
 	</select>
+	
+	<update id="updateRequestForInactive" parameterType="Integer">
+		  update request set r_active=0 where r_no=#{value}
+	
+	</update>
+	
+	
 </mapper>

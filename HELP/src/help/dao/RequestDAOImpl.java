@@ -67,4 +67,9 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.insert("requestMapper.insertApply", vo);
 	}
 	
+	@Override
+	public void updateRequestForInactive(Integer r_no) {
+		session.update("requestMapper.updateRequestForInactive", r_no);
+	}
+	
 }

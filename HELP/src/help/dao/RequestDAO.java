@@ -27,4 +27,6 @@ public interface RequestDAO {
 	public List<RequestVO> pageReqList(HashMap<String, Object> map);
 	
 	public int insertApply(ApplyVO vo);
+	
+	public void updateRequestForInactive(Integer r_no);
 }

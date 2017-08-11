@@ -171,6 +171,8 @@ public class RequestController {
 		  // tradevo.setT_enddate(t_enddate);
 		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
 		   tradeDAO.addTrade(tradevo);
+		   reqDAO.updateRequestForInactive(r_no);
+		   
 		   
 		   
 		   
