@@ -9,7 +9,7 @@
 	document.onclick = function(e) {
 		if (e.srcElement.id == "chatroom") {
 			viewChatroom(e.srcElement);
-		} else if (e.srcElement.parentElement.id == "chatroom") {
+		} else if (e.srcElement.parentElement != null && e.srcElement.parentElement.id == "chatroom") {
 			viewChatroom(e.srcElement.parentElement);
 		}
 	};

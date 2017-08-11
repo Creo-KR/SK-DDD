@@ -3,9 +3,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script>
 	function divOpen(id) {
-		var div = document.getElementById(id);
-		div.style.display = "";
-		sessionStorage.setItem(id, "open");
+		if(${UNO != null}) {
+			var div = document.getElementById(id);
+			div.style.display = "block";
+			sessionStorage.setItem(id, "open");
+		}
 	}
 
 	function divClose(id) {
@@ -66,11 +68,11 @@
 	}
 	
 	setInterval(function() {
-		if(${UNO} != null) {
+		if(${UNO != null}) {
 			if(sessionStorage.getItem("chat_list") == "open") {
 				$.ajax({
 					url : "chatRefreshCount.help",
-					data : {UNO:${UNO}},
+					data : {UNO:"${UNO}"},
 					type : "post",
 					success: function(response) { 
 				    	if(response >= 1) {
@@ -118,8 +120,8 @@
 		<div id="chat_room_titleBar" class="chat_room_titleBar">
 			<div id="chat_room_titleBar_name" class="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
 			<div id="chat_room_titleBar_btn" class="chat_room_titleBar_btn">
-				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img src="images/leave.png"
-					onclick="javascript:leaveChatroom();"><img
+				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img
+					src="images/leave.png" onclick="javascript:leaveChatroom();"><img
 					src="images/close.png" onclick="javascript:divClose('chat_room');">
 			</div>
 		</div>

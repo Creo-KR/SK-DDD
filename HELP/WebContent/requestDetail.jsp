@@ -6,7 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<link
+		href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
+		rel="stylesheet" type="text/css">
 <style>
 /* 폰트설정 */
 .t3 {
@@ -84,9 +86,7 @@
 <%@ include file="commons/header.jsp"%>
 <body>
 
-	<link
-		href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
-		rel="stylesheet" type="text/css">
+	
 
 	<div id="container">
 		<div class="t3" style="margin-top: 200px; height: 500px">
@@ -185,29 +185,6 @@
 	</div>
 
 	<div>
-		<c:if test="${UTYPE==0}">
-			<c:if test="${flag==0}">
-				<div style="width: 100%; height: 100px; background-color: red">
-
-					<div
-						style="width: 33%; background-color: blue; display: inline-block">
-						<table>
-							<tr>
-								<td style="width: 33%">이름</td>
-							</tr>
-							<tr>
-								<td>전화번호</td>
-							</tr>
-							<tr>
-								<td>이메일 주소</td>
-							</tr>
-							<tr>
-								<td>내용</td>
-							</tr>
-		</div>
-
-
-		<div>
 			<c:if test="${UTYPE==0}">
 				<c:if test="${flag==0}">
 					<div style="width: 100%; height: 200px; background-color: red">
@@ -247,24 +224,20 @@
 
 
 					</div>
-				</div>
+				
 
 
 				</c:if>
 			</c:if>
-		</c:if>
+
 	</div>
 	<%@ include file="commons/footer.jsp"%>
-	<script>
-			var chat_go = function() {
-
-		</div>
-		<%@ include file="commons/footer.jsp"%>
-		<script>
-			//신청하기 (고수 - 고수가 일반인의 요청서를 신청한다)
+	<script>	
+	//신청하기 (고수 - 고수가 일반인의 요청서를 신청한다)
 			var apply_go = function() {
-				window.location = "applyForRequest.help";
-			}
+				window.location = "applyForRequest.help?rno=${requestDetailKey.r_no}&mno=${requestDetailKey.r_writer}&gno=${UNO}";
+			
+	}
 			
 			//고용하기 (일반인 - 일반인이 고수를 고용한다)
 			var hire_go = function() {
@@ -276,6 +249,5 @@
 				window.location = "completeRequest.help";
 			}
 		</script>
-	</div>
 </body>
 </html>

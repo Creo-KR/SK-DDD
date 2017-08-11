@@ -6,7 +6,7 @@
 }
 
 .chat_room {
-	/* display: none; */
+	display: none;
 	width: 250px;
 	height: 500px;
 	overflow: hidden;
@@ -19,7 +19,7 @@
 }
 
 .chat_window {
-	/* display: none; */
+	display: none;
 	width: 250px;
 	height: 500px;
 	overflow: hidden;
@@ -68,10 +68,6 @@
 }
 
 .chat_room_titleBar_btn img:hover {
-	width: 32px;
-	height: 32px;
-	padding: 0px;
-	cursor: pointer;
 	background-color: rgba(244,244,244, 0.4);
 }
 
@@ -83,10 +79,6 @@
 }
 
 .chat_window_titleBar_btn img:hover {
-	width: 32px;
-	height: 32px;
-	padding: 0px;
-	cursor: pointer;
 	background-color: rgba(244,244,244, 0.4);
 }
 
@@ -271,19 +263,5 @@
 }
 
 .chat_room_list:hover{
-	clear: both;
-	float: left;
-	padding: 6px 10px 7px;
-	border-radius: 10px 10px 10px 10px;
 	background: rgba(100, 255, 100, 0.5);
-	margin: 4px 0;
-	font-size: 11px;
-	line-height: 1.4;
-	position: relative;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	box-sizing: border-box;
-	color: rgba(255, 255, 255, 0.8);
-	width: 229px;
-	left: 5px;
-	cursor: pointer;
 }

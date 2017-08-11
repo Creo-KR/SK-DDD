@@ -5,21 +5,11 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
-/*-- Fonts --*/
-@font-face{
-	font-family: 'Bangers';
-	src:url(../fonts/Bangers.ttf) format('truetype');
-}
-@font-face{
-	font-family: 'Oswald-Regular';
-	src:url(../fonts/Oswald-Regular.ttf) format('truetype');
-}
-/*-- Fonts --*/
 
 /*-- Index-Page-Styling --*/
 
 body {
-    background: url('../images/bg.png');
+    background: ;
 }
 h1 {
     text-align: center;
@@ -44,7 +34,7 @@ h1 {
 .signin input[type="text"] {
     width: 100%;
     margin-bottom: 20px;
-    background: #74797C url('../images/1.png') no-repeat 405px 8px;
+    background: #74797C  no-repeat 405px 8px;
     font-size: 14px;
     padding: 10px 35px 10px 10px;
     border: none;
@@ -56,7 +46,7 @@ h1 {
 .signin input[type="password"] {
     width: 100%;
     margin-bottom: 20px;
-    background: #74797C url('../images/2.png') no-repeat 405px 8px;
+    background: #74797C  no-repeat 405px 8px;
     font-size: 14px;
     padding: 10px 35px 10px 10px;
     border: none;
@@ -141,66 +131,66 @@ form {
 @media (max-width:1920px) {
     .signin input[type="text"] {
         width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 520px 8px;
+		background: #74797C  no-repeat 520px 8px;
 	}
 	.signin  input[type="password"] {
         width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 520px 8px;
+		background: #74797C  no-repeat 520px 8px;
 	}
 }
 
 @media (max-width:1680px) {
     .signin input[type="text"] {
         width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 450px 9px;
+		background: #74797C  no-repeat 450px 9px;
     }
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 450px 9px;
+		background: #74797C  no-repeat 450px 9px;
 	}
 }
 
 @media (max-width:1600px) {
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 390px 9px;
+		background: #74797C  no-repeat 390px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 390px 9px;
+		background: #74797C  no-repeat 390px 9px;
 	}
 }
 
 @media (max-width:1440px) {
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 }
 
 @media (max-width:1366px) {
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 }
 
 @media (max-width:1280px) {
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 300px 9px;
+		background: #74797C  no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 300px 9px;
+		background: #74797C  no-repeat 300px 9px;
 	}
 }
 
@@ -210,11 +200,11 @@ form {
 	}
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 320px 9px;
+		background: #74797C  no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 320px 9px;
+		background: #74797C  no-repeat 320px 9px;
 	}
 }
 
@@ -224,11 +214,11 @@ form {
 	}
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 }
 
@@ -238,11 +228,11 @@ form {
 	}
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 }
 
@@ -252,11 +242,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 360px 9px;
+		background: #74797C  no-repeat 360px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 360px 9px;
+		background: #74797C  no-repeat 360px 9px;
 	}
 }
 
@@ -266,11 +256,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 350px 9px;
+		background: #74797C  no-repeat 350px 9px;
 	}
 }
 
@@ -280,11 +270,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 330px 9px;
+		background: #74797C  no-repeat 330px 9px;
 	}
 }
 
@@ -294,11 +284,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 310px 9px;
+		background: #74797B  no-repeat 310px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 310px 9px;
+		background: #74797C  no-repeat 310px 9px;
 	}
 }
 
@@ -308,11 +298,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 320px 9px;
+		background: #74797B  no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 320px 9px;
+		background: #74797C  no-repeat 320px 9px;
 	}
 }
 
@@ -322,11 +312,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 320px 9px;
+		background: #74797B  no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 320px 9px;
+		background: #74797C  no-repeat 320px 9px;
 	}
 }
 
@@ -336,11 +326,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 320px 9px;
+		background: #74797B  no-repeat 320px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 320px 9px;
+		background: #74797C  no-repeat 320px 9px;
 	}
 }
 
@@ -350,11 +340,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 310px 9px;
+		background: #74797B  no-repeat 310px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 310px 9px;
+		background: #74797C  no-repeat 310px 9px;
 	}
 }
 
@@ -364,11 +354,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 300px 9px;
+		background: #74797B  no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 300px 9px;
+		background: #74797C  no-repeat 300px 9px;
 	}
 }
 
@@ -385,11 +375,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 290px 9px;
+		background: #74797B  no-repeat 290px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 290px 9px;
+		background: #74797C  no-repeat 290px 9px;
 	}
 	.footer p {
 		margin-top: -30px;
@@ -402,11 +392,11 @@ form {
     }
     .signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 305px 9px;
+		background: #74797B  no-repeat 305px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 305px 9px;
+		background: #74797C  no-repeat 305px 9px;
 	}
 }
 
@@ -416,11 +406,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 300px 9px;
+		background: #74797B  no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 300px 9px;
+		background: #74797C  no-repeat 300px 9px;
 	}
 }
 
@@ -430,11 +420,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 300px 9px;
+		background: #74797B  no-repeat 300px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 300px 9px;
+		background: #74797C  no-repeat 300px 9px;
 	}
 }
 
@@ -444,11 +434,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 220px 9px;
+		background: #74797B  no-repeat 220px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 220px 9px;
+		background: #74797C  no-repeat 220px 9px;
 	}
 }
 
@@ -458,11 +448,11 @@ form {
     }
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 240px 9px;
+		background: #74797B  no-repeat 240px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 240px 9px;
+		background: #74797C  no-repeat 240px 9px;
 	}
 }
 
@@ -472,11 +462,11 @@ form {
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 230px 9px;
+		background: #74797C  no-repeat 230px 9px;
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 230px 9px;
+		background: #74797B  no-repeat 230px 9px;
 	}
 	.footer p {
 		margin-top: -30px;
@@ -496,11 +486,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 200px 9px;
+		background: #74797B  no-repeat 200px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 200px 9px;
+		background: #74797C  no-repeat 200px 9px;
 	}
 	label {
 		font-size: 14px;
@@ -518,10 +508,10 @@ form {
 	    font-size: 35px;
 	}
 	.signin input[type="text"] {
-		background: #74797B url('../images/1.png') no-repeat 220px 9px;
+		background: #74797B  no-repeat 220px 9px;
 	}
 	.signin input[type="password"] {
-		background: #74797B url('../images/2.png') no-repeat 220px 9px;
+		background: #74797B  no-repeat 220px 9px;
 	}
 	form p {
 	    font-size: 12px;
@@ -550,11 +540,11 @@ form {
 	}
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797C url('../images/1.png') no-repeat 170px 9px;
+		background: #74797C  no-repeat 170px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 170px 9px;
+		background: #74797C  no-repeat 170px 9px;
 	}
 }
 	
@@ -571,11 +561,11 @@ form {
 	}		
 	.signin input[type="text"] {
 		width: 100%;
-		background: #74797B url('../images/1.png') no-repeat 120px 9px;
+		background: #74797B  no-repeat 120px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
-		background: #74797C url('../images/2.png') no-repeat 120px 9px;
+		background: #74797C  no-repeat 120px 9px;
 	}
 	form p {
 	    font-size: 14px;
@@ -609,12 +599,12 @@ form {
 	.signin input[type="text"] {
 		width: 100%;
 		margin-bottom: 10px;
-		background: #74797B url('../images/1.png') no-repeat 90px 9px;
+		background: #74797B  no-repeat 90px 9px;
 	}
 	.signin input[type="password"] {
 		width: 100%;
 		margin-bottom: 10px;
-		background: #74797C url('../images/2.png') no-repeat 90px 9px;
+		background: #74797C  no-repeat 90px 9px;
 	}
 	form p {
 	    font-size: 12px;

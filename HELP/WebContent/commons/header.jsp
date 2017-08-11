@@ -40,8 +40,6 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/m_design.js"></script>
-<script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/TweenMax.min.js"></script>
@@ -213,16 +211,6 @@
 
 
 <script>
-	$(function() {
-
-		$('.print').printPreview(".contents_inner", "1");
-
-		// Add keybinding (not recommended for production use)
-		$(document).bind('keydown', function(e) {
-			var code = (e.keyCode ? e.keyCode : e.which);
-		});
-	});
-
 	function lodingbar() {
 		document.getElementById('loding01').style.display = "block";
 		document.getElementById('loding02').style.display = "block";

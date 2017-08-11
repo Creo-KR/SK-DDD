@@ -3,19 +3,19 @@
 /*
 @font-face {
 	font-family:"NSL";
-	src:url('/kor/font/NotoSansKR-L.eot');
-	src:url('/kor/font/NotoSansKR-L.eot?#iefix') format('embedded-opentype'),
-	    url('/kor/font/NotoSansKR-L.woff2') format('woff2'),
-		url('/kor/font/NotoSansKR-L.woff') format('woff'),
-		url('/kor/font/NotoSansKR-L.otf') format('truetype');
+	src:;
+	src:,
+	    ,
+		,
+		;
 }
 @font-face {
 	font-family:"NSR";
-	src:url('/kor/font/NotoSansKR-R.eot');
-	src:url('/kor/font/NotoSansKR-R.eot?#iefix') format('embedded-opentype'),
-	    url('/kor/font/NotoSansKR-R.woff2') format('woff2'),
-		url('/kor/font/NotoSansKR-R.woff') format('woff'),
-		url('/kor/font/NotoSansKR-R.otf') format('truetype');
+	src:;
+	src:,
+	    ,
+		,
+		;
 }
 */
 
@@ -23,25 +23,25 @@
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 300;
-  src: url(/font/NotoSansKR-Light.woff2) format('woff2'),
-       url(/font/NotoSansKR-Light.woff) format('woff'),
-       url(/font/NotoSansKR-Light.otf) format('opentype');
+  src: ,
+       ,
+       ;
 }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 400;
-   src: url(/font/NotoSansKR-Regular.woff2) format('woff2'),
-        url(/font/NotoSansKR-Regular.woff) format('woff'),
-        url(/font/NotoSansKR-Regular.otf) format('opentype');
+   src: ,
+        ,
+        ;
  }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 500;
-   src: url(/font/NotoSansKR-Medium.woff2) format('woff2'),
-        url(/font/NotoSansKR-Medium.woff) format('woff'),
-        url(/font/NotoSansKR-Medium.otf) format('opentype');
+   src: ,
+        ,
+        ;
  }
 
 
@@ -83,13 +83,13 @@ strong{font-weight:600;}
 .bdnone {border:none !important;}
 .baseBtn {display:inline-block; padding:10px 20px; color:#fff; background:#777777; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
 .baseBtn:hover {background:#ff4f4e;}
-.moveBtn {display:inline-block; padding:10px 20px 10px 30px; color:#fff; background:#394c67 url(/kor/images/common/move_bullet.png) no-repeat 15px 16px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
-.moveBtn:hover {background:#ff4f4e url(/kor/images/common/move_bullet.png) no-repeat 15px 16px; color:#fff;}
-.downBtn {display:inline-block; padding:10px 20px 10px 35px; color:#fff; background:#394c67 url(/kor/images/common/down_bg.png) no-repeat 15px 13px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
-.downBtn.gray {display:inline-block; padding:10px 20px 10px 35px; color:#fff; background:#777 url(/kor/images/common/down_bg.png) no-repeat 15px 13px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
-.downBtn:hover {background:#ff4f4e url(/kor/images/common/down_bg.png) no-repeat 15px 13px; color:#fff;}
-.sendBtn {display:inline-block; background:#394c67  url(/kor/images/common/send_btn_icon.png) no-repeat 100% 0; padding:13px 100px 13px 20px; border:1px solid #28313d; color:#fff; box-sizing:border-box; font-size:15px; font-weight:400;}
-.placeBtn {display:inline-block; background:#fff  url(/kor/images/common/send_btn_icon.png) no-repeat 100% 0; padding:12px 80px 13px 20px; border:1px solid #28313d; color:#333; box-sizing:border-box; font-size:15px;}
+.moveBtn {display:inline-block; padding:10px 20px 10px 30px; color:#fff; background:#394c67  no-repeat 15px 16px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
+.moveBtn:hover {background:#ff4f4e  no-repeat 15px 16px; color:#fff;}
+.downBtn {display:inline-block; padding:10px 20px 10px 35px; color:#fff; background:#394c67  no-repeat 15px 13px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
+.downBtn.gray {display:inline-block; padding:10px 20px 10px 35px; color:#fff; background:#777  no-repeat 15px 13px; border-radius:8px; overflow:hidden; transition: all 0.3s ease-out; box-sizing:border-box;}
+.downBtn:hover {background:#ff4f4e  no-repeat 15px 13px; color:#fff;}
+.sendBtn {display:inline-block; background:#394c67   no-repeat 100% 0; padding:13px 100px 13px 20px; border:1px solid #28313d; color:#fff; box-sizing:border-box; font-size:15px; font-weight:400;}
+.placeBtn {display:inline-block; background:#fff   no-repeat 100% 0; padding:12px 80px 13px 20px; border:1px solid #28313d; color:#333; box-sizing:border-box; font-size:15px;}
 .btn_center {width:100%; text-align:center;}
 
 
