@@ -9,6 +9,8 @@ public class RequestVO {
 	private Integer r_active;
 	private String r_date;
 	
+	private Integer applyCnt;
+	
 	public RequestVO() {
 		
 	}
@@ -77,6 +79,16 @@ public class RequestVO {
 	public void setR_date(String r_date) {
 		this.r_date = r_date;
 	}
+
+	public Integer getApplyCnt() {
+		return applyCnt;
+	}
+
+
+	public void setApplyCnt(Integer applyCnt) {
+		this.applyCnt = applyCnt;
+	}
+
 
 	@Override
 	public String toString() {
