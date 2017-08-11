@@ -19,7 +19,7 @@
 			<div class="table-responsive-vertical shadow-z-1">
 
 				<h1>
-					<요청서 목록> - 고용 대기중
+					<요청서 목록> - 고용 대기중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -35,7 +35,8 @@
 					<c:forEach var="waitingHire" items="${waitingHireListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${waitingHire.r_no}&flag=0">${waitingHire.r_no}</a></td>
+								<td><a
+									href="getRequestDetail.help?r_no=${waitingHire.r_no}&flag=0">${waitingHire.r_no}</a></td>
 								<td>${waitingHire.c_no}</td>
 								<td>${waitingHire.r_title}</td>
 								<td>${waitingHire.r_date}</td>
@@ -44,7 +45,7 @@
 						</tbody>
 					</c:forEach>
 				</table>
-				
+
 				<h1>
 					<요청서 목록> - 대기중 
 				</h1>
@@ -72,9 +73,33 @@
 							</tr>
 						</tbody>
 					</c:forEach>
+					<tr>
+						<td>
+							<ul class="waintingPage">
+								<c:if test="${pageMake1r.prev }">
+									<li><a
+										href='getAllRequestsByCategory.help?page=${pageMaker1.start -1}'>이전</a>
+									</li>
+								</c:if>
+								<c:forEach begin="${pageMaker1.start }" end="${pageMaker1.end}"
+									var="idx">
+									<li
+										class='<c:out value="${idx == pageMaker1.page?'current':''}"/>'>
+										<a href='getAllRequestsByCategory.help?page=${idx}'>${idx}</a>
+									</li>
+								</c:forEach>
+
+								<c:if test="${pageMaker.next }">
+									<li><a
+										href='getAllRequestsByCategory.help?page=${pageMaker.end +1}'>다음</a>
+									</li>
+								</c:if>
+							</ul>
+						</td>
+					</tr>
 				</table>
 				<br>
-				
+
 
 
 				<h1>
@@ -95,7 +120,8 @@
 					<c:forEach var="inProgress" items="${inProgressListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}&flag=1">${inProgress.req.r_no}</a></td>
+								<td><a
+									href="getRequestDetail.help?r_no=${inProgress.req.r_no}&flag=1">${inProgress.req.r_no}</a></td>
 								<td>${inProgress.req.c_no}</td>
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
@@ -107,7 +133,7 @@
 				</table>
 
 				<h1>
-					<요청서 목록> - 완료
+					<요청서 목록> - 완료 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -124,7 +150,8 @@
 					<c:forEach var="completed" items="${completedListKey}">
 						<tbody>
 							<tr>
-								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}&flag=2">${completed.req.r_no}</a></td>
+								<td><a
+									href="getRequestDetail.help?r_no=${completed.req.r_no}&flag=2">${completed.req.r_no}</a></td>
 								<td>${completed.req.c_no}</td>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
