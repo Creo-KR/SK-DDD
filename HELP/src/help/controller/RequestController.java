@@ -19,6 +19,7 @@ import help.dao.GosuDAO;
 import help.dao.RequestDAO;
 import help.dao.TradeDAO;
 import help.vo.ApplyVO;
+import help.vo.MemberVO;
 import help.vo.PageMaker;
 import help.vo.RequestVO;
 import help.vo.TradeVO;
@@ -158,9 +159,10 @@ public class RequestController {
 	@RequestMapping(value="/getRequestDetail.help", method=RequestMethod.GET)
 	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
-		
+		List<MemberVO> list = reqDAO.getApplyMember(r_no);
 		model.addAttribute("flag",flag);
 		model.addAttribute("requestDetailKey", vo);
+		model.addAttribute("apply", list);
 		//model.addAttribute("requestDetailKey",vo);
 
 		return "requestDetail";

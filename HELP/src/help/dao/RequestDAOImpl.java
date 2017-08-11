@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import help.vo.ApplyVO;
+import help.vo.MemberVO;
 import help.vo.RequestVO;
 
 @Repository
@@ -75,6 +76,11 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public void updateRequestForInactive(Integer r_no) {
 		session.update("requestMapper.updateRequestForInactive", r_no);
+	}
+	
+	@Override
+	public List<MemberVO> getApplyMember(Integer r_no) {
+		return session.selectList("requestMapper.getApplyMember", r_no);
 	}
 	
 }
