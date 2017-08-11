@@ -113,11 +113,11 @@
 	</insert>
 
 	<select id="getRequestWaitingHire" parameterType="Integer" resultType="RequestVO">
-		select r.r_no,
+		select distinct r.r_no,
 		r.c_no, r.r_title, to_char(r_date,
 		'yyyy.mm.dd hh24:mi') r_date
 		from request r, apply a
-		where r.r_no = a.r_no and r_writer=#{value}
+		where r.r_no = a.r_no and r_writer=#{value} order by r_no
 	</select>
 	
 	<update id="updateRequestForInactive" parameterType="Integer">
@@ -129,7 +129,7 @@
 		select m.m_no, m.m_id, m.m_name, m.m_email, m.m_tel from (
         select * from request r, (select * from apply) a
 		where r.r_no = a.r_no and r.r_no = ${value} and r_active=1) b, member m
-        where b.g_no = m.m_no;
+        where b.g_no = m.m_no
 	</select>
 	
 </mapper>
