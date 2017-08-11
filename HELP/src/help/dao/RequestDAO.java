@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import help.vo.ApplyVO;
+import help.vo.MemberVO;
 import help.vo.RequestVO;
 
 
@@ -31,4 +32,8 @@ public interface RequestDAO {
 	public int insertApply(ApplyVO vo);
 	
 	public void updateRequestForInactive(Integer r_no);
+	
+	public int getAllActiveRequestsByWriterCount(Integer r_writer);
+	
+	public List<MemberVO> getApplyMember(Integer r_no);
 }

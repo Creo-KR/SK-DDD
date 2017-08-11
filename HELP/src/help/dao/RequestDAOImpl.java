@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import help.vo.ApplyVO;
+import help.vo.MemberVO;
 import help.vo.RequestVO;
 
 @Repository
@@ -76,6 +77,16 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public int getAllRequestsByCategoryCount(Integer g_no) {
 		return session.selectOne("requestMapper.getAllRequestsByCategoryCount", g_no);
+	}
+	
+	@Override
+	public List<MemberVO> getApplyMember(Integer r_no) {
+		return session.selectList("requestMapper.getApplyMember", r_no);
+	}
+
+	@Override
+	public int getAllActiveRequestsByWriterCount(Integer r_writer) {
+		return session.selectOne("requestMapper.getAllActiveRequestsByWriterCount", r_writer);
 	}
 	
 }

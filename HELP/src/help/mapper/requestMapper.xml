@@ -125,5 +125,11 @@
 	
 	</update>
 	
+	<select id="getApplyMember" parameterType="Integer" resultType="MemberVO">
+		select m.m_no, m.m_id, m.m_name, m.m_email, m.m_tel from (
+        select * from request r, (select * from apply) a
+		where r.r_no = a.r_no and r.r_no = ${value} and r_active=1) b, member m
+        where b.g_no = m.m_no;
+	</select>
 	
 </mapper>
