@@ -10,7 +10,9 @@
 <link
 	href="http://ts.daumcdn.net/custom/blog/0/606/skin/images/nanumgothic.css"
 	rel="stylesheet" type="text/css">
-	<link type="text/css" rel="stylesheet" href="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/vender.min.css?ver=V8YCtBUomNLhhiq">
+	<!-- <link type="text/css" rel="stylesheet" href="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/vender.min.css?ver=V8YCtBUomNLhhiq"> -->
+	<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/vendor.min.css" />
 <style>
 /* 폰트설정 */
 .t3 {
@@ -272,7 +274,7 @@
 
             #story .reviewer {
                 font-size: 16px;
-                color: #000
+                color: #000;
                 margin-top: 12px;
                 margin-bottom: 5px;
             }
@@ -443,12 +445,13 @@
 <script src="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/sg.min.js?ver=V8YCtBUomNLhhiq"></script>
 <!-- 별표생성기 -->
    
+   <c:if test="${UTYPE==0}">
+            <c:if test="${flag==0}">
    <div id="story" class="container-fluid">
         <div class="container">
 
             <div class="row story-items">
-            <c:if test="${UTYPE==0}">
-            <c:if test="${flag==0}">
+            
             <c:forEach var="apply" items="${apply}">
 
                 <div class="col-sm-4 col-md-4 thumbnail-wrap">
@@ -483,11 +486,12 @@
                     </div>
                 </div>
                 </c:forEach>
-                </c:if>
-                </c:if>
+                
             </div>
         </div>
     </div>
+    </c:if>
+                </c:if>
     
     <script>
     var settings = {
