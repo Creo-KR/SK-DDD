@@ -1,7 +1,5 @@
 package help.vo;
 
-import java.util.Date;
-
 public class ChatroomVO {
 	private Integer cr_no;
 	private MemberVO cr_user1;
@@ -11,6 +9,7 @@ public class ChatroomVO {
 	private Integer cr_active2;
 
 	private String lastMessage;
+	private Integer newMessageCnt;
 
 	public ChatroomVO() {
 	}
@@ -84,6 +83,14 @@ public class ChatroomVO {
 
 	public void setLastMessage(String lastMessage) {
 		this.lastMessage = lastMessage;
+	}
+
+	public Integer getNewMessageCnt() {
+		return newMessageCnt;
+	}
+
+	public void setNewMessageCnt(Integer newMessageCnt) {
+		this.newMessageCnt = newMessageCnt;
 	}
 
 	public String toString() {

@@ -19,7 +19,7 @@ public interface RequestDAO {
 	
 	public List<RequestVO> getAllRequestsByCategory(HashMap<String, Object> map);
 	
-	public int getAllRequestsByCategoryCount(Integer g_no);
+	public int getAllRequestsByCategoryCount(Integer m_no);
 	
 	public RequestVO getRequestDetail(Integer r_no);
 	

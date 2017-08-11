@@ -18,9 +18,15 @@
 	<div id="container">
 	
 	
-		<c:if test="${complete=='complete'}">
+		<c:if test="${alertType=='tradeComplete'}">
 			<script>
-				alert('완료되었습니다.');
+				alert('거래가 완료되었습니다.');
+ 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+			</script>
+		</c:if>
+		<c:if test="${alertType=='hireComplete'}">
+			<script>
+				alert('고용이 완료되었습니다.');
  				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
 			</script>
 		</c:if>
@@ -88,15 +94,14 @@
 					</c:forEach>
 				</table>
 				<ul class="paging1">
-					<c:if test="${pageMake1r.prev }">
+					<c:if test="${pageMaker.prev }">
 						<li><a
-							href='getAllRequestsByCategory.help?page=${pageMaker1.start -1}'>이전</a>
+							href='getAllRequestsByCategory.help?page=${pageMaker.start -1}'>이전</a>
 						</li>
 					</c:if>
-					<c:forEach begin="${pageMaker1.start }" end="${pageMaker1.end}"
+					<c:forEach begin="${pageMaker.start }" end="${pageMaker.end}"
 						var="idx">
-						<li
-							class='<c:out value="${idx == pageMaker1.page?'current':''}"/>'>
+						<li class='<c:out value="${idx == pageMaker.page?'current':''}"/>'>
 							<a href='getAllRequestsByCategory.help?page=${idx}'>${idx}</a>
 						</li>
 					</c:forEach>
@@ -140,7 +145,27 @@
 						</tbody>
 					</c:forEach>
 				</table>
+				<ul class="paging1">
+					<c:if test="${pageMaker2.prev }">
+						<li><a
+							href='getAllRequestsByCategory.help?page2=${pageMaker2.start -1}'>이전</a>
+						</li>
+					</c:if>
+					<c:forEach begin="${pageMaker2.start }" end="${pageMaker2.end}"
+						var="idx">
+						<li
+							class='<c:out value="${idx == pageMaker2.page?'current':''}"/>'>
+							<a href='getAllRequestsByCategory.help?page2=${idx}'>${idx}</a>
+						</li>
+					</c:forEach>
 
+					<c:if test="${pageMaker2.next }">
+						<li><a
+							href='getAllRequestsByCategory.help?page2=${pageMaker2.end +1}'>다음</a>
+						</li>
+					</c:if>
+				</ul>
+				<br>
 				<h1>
 					<요청서 목록> - 완료 
 				</h1>
@@ -170,6 +195,26 @@
 						</tbody>
 					</c:forEach>
 				</table>
+				<ul class="paging1">
+					<c:if test="${pageMaker3.prev }">
+						<li><a
+							href='getAllRequestsByCategory.help?page3=${pageMaker3.start -1}'>이전</a>
+						</li>
+					</c:if>
+					<c:forEach begin="${pageMaker3.start }" end="${pageMaker3.end}"
+						var="idx">
+						<li
+							class='<c:out value="${idx == pageMaker3.page?'current':''}"/>'>
+							<a href='getAllRequestsByCategory.help?page3=${idx}'>${idx}</a>
+						</li>
+					</c:forEach>
+
+					<c:if test="${pageMaker3.next }">
+						<li><a
+							href='getAllRequestsByCategory.help?page3=${pageMaker3.end +1}'>다음</a>
+						</li>
+					</c:if>
+				</ul>
 			</div>
 
 
