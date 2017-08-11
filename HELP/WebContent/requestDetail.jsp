@@ -52,7 +52,7 @@
 }
 
 .t3 thead tr:first-child th:first-child, .t3 td.ty3 {
-	border-left: 0;
+/* 	border-left: 0; */
 }
 
 .t3 th {

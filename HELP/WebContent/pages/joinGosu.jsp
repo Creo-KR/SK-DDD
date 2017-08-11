@@ -31,7 +31,7 @@
 									<td><input id="m_id" name="m_id" type="text"
 										height="30px" /> <a id="m_idcheck"  title="새창 열기" style="cursor: pointer;"
 										class="i5a_btn1">ID-Check</a> <br>(영문소문자/숫자, 4~16자)
-										<br><font id="idcheck" size="2" color="green"></font>
+										<br><font id="idcheck" size="2" color="green" required></font>
 										</td>
 										
 								</tr>
@@ -40,7 +40,7 @@
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>
 									<td><input id="m_pwd" name="m_pwd" fmaxlength="16"
-										value="" type="password" /> <br /> (영문 대소문자/숫자 4자~16자)
+										value="" type="password" required/> <br /> (영문 대소문자/숫자 4자~16자)
 										
 									</td>
 								</tr>
@@ -54,7 +54,7 @@
 										name="user_passwd_confirm" fw-filter="isFill&isMatch[passwd]"
 										fw-label="비밀번호 확인" fw-msg="비밀번호가 일치하지 않습니다."
 										autocomplete="off" maxlength="16" 0="disabled" value=""
-										type="password" />
+										type="password" required/>
 										<br><p id=errorMsg style="color: red"></p>
 										</td>
 								</tr>
@@ -68,7 +68,7 @@
 									<td><span id="nameContents"><input id="m_name"
 											name="m_name" fw-filter="isFill&isMax[30]" fw-label="이름"
 											fw-msg="" class="ec-member-name" placeholder=""
-											maxlength="30" value="" type="text" /></span></td>
+											maxlength="30" value="" type="text" required/></span></td>
 								</tr>
 
 								<tr>
@@ -88,7 +88,7 @@
 										fw-filter="isNumber&isFill" fw-label="휴대전화" fw-alone="N"
 										fw-msg="" value="" type="text" />-<input id="mobile3"
 										name="m_tel3" maxlength="4" fw-filter="isNumber&isFill"
-										fw-label="휴대전화" fw-alone="N" fw-msg="" value="" type="text" /></td>
+										fw-label="휴대전화" fw-alone="N" fw-msg="" value="" type="text" required/></td>
 								</tr>
 
 								<tr>
@@ -99,7 +99,7 @@
 										fw-label="이메일" fw-alone="N" fw-msg="" value="" type="text" />@<input
 										id="email2" name="email2" fw-filter="isFill" fw-label="이메일"
 										fw-alone="N" fw-msg="" readonly="readonly" value=""
-										type="text" /><select id="email3" name="m_email2">
+										type="text" required/><select id="email3" name="m_email2">
 											<option value="" selected="selected">- 이메일 선택 -</option>
 											<option value="naver.com">naver.com</option>
 											<option value="daum.net">daum.net</option>
