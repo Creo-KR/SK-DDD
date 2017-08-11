@@ -122,109 +122,27 @@ public class RequestController {
 	//	}
 
 	@RequestMapping(value = "/getAllRequestsByCategory.help", method = RequestMethod.GET)
-	public String getAllRequestsByCategory(Model model, HttpSession session,
-			 @RequestParam(required=false) Integer page, @RequestParam(required=false) Integer page2,
-			 @RequestParam(required=false) Integer page3
-			) {
+	public String getAllRequestsByCategory(Model model, HttpSession session) {
 		Integer m_no = (Integer) session.getAttribute("UNO");
-		// 대기중 페이징 처리
-		int count;
-		int pageResult;
-		PageMaker pageMaker = new PageMaker();
-		HashMap<String, Object> map = new HashMap<>();
-		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(m_no);
-		
-		
-		if (page == null) {
-			pageMaker.setPage(0);
-		} else {
-			pageMaker.setPage(page);
-		}
-		
-		pageResult = pageMaker.getPage();
-		
-		count = reqDAO.getAllRequestsByCategoryCount(m_no);
-		pageMaker.setCount(count);
-			
-		map.put("value", m_no);
-		map.put("page", pageResult);
-			
-		List<RequestVO> activeRequestValues = reqDAO.getAllRequestsByCategory(map);
-		model.addAttribute("pageMaker", pageMaker);
-		model.addAttribute("waitingListKey", activeRequestValues);
-		
-		//진행중 페이징 처리
-		int count2;
-		int pageResult2;
-		PageMaker pageMaker2 = new PageMaker();
-		HashMap<String, Object> progressTradeMap = new HashMap<>();
-		List<TradeVO> inProgressListKey = new ArrayList<>();
-		if (page2 == null) {
-			pageMaker2.setPage(0);
-		} else {
-			pageMaker2.setPage(page2);
-		}
-		
-		pageResult2 = pageMaker2.getPage();
-		count2 = tradeDAO.getInProgressTradeByGosuCount(m_no);
-		System.out.println(count2);	
-		pageMaker2.setCount(count2);
-		
-		for (Integer rno : inactiveRequestValues) {
-			progressTradeMap.put("rno", rno);
-			progressTradeMap.put("page", pageResult2);
-			
-			inProgressListKey = tradeDAO.getInProgressTradeByGosu(progressTradeMap);
-		}
-		model.addAttribute("inProgressListKey", inProgressListKey);
 
-				//completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
-			
-		//완료된 페이지
-		int count3;
-		int pageResult3;
-		PageMaker pageMaker3 = new PageMaker();
-		HashMap<String, Object> completedTradeMap = new HashMap<>();
-		List<TradeVO> completedTradeListKey = new ArrayList<>();
-		
-		if (page3 == null) {
-			pageMaker3.setPage(0);
-		} else {
-			pageMaker3.setPage(page3);
-		}
-		
-		pageResult3 = pageMaker3.getPage();
-		
-		count3 = tradeDAO.getCompletedTradeByGosuCount(m_no);
-			
-		pageMaker3.setCount(count3);
-		
-		for (Integer rno : inactiveRequestValues) {
-			completedTradeMap.put("rno", rno);
-			completedTradeMap.put("page", pageResult3);
-			
-			completedTradeListKey = tradeDAO.getCompletedTradeByGosu(completedTradeMap);
-		}
-			model.addAttribute("completedListKey", completedTradeListKey);
-		
-		//List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
-		//List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+		// List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
+		/*List<RequestVO> waitingListValue = new ArrayList<RequestVO>();*/
 
-		
-		
-		//List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
-		
-		
-		
-		/*		for (Integer rno : inactiveRequestValues) {
-					inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
-					completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
-				}*/
-		
-		
-		//model.addAttribute("waitingHireListKey", waitingHireValues);
-		
-		//model.addAttribute("completedListKey", completedTradeValues);
+		/*for (Integer cno : cnoList) {
+			waitingListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
+		}*/
+
+		List<RequestVO> waitingListValue = reqDAO.getAllRequestsByCategory(m_no);
+
+		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();
+		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+
+		inProgressTradeValues.addAll(tradeDAO.getInProgressTradeByGosu(m_no));
+		completedTradeValues.addAll(tradeDAO.getCompletedTradeByGosu(m_no));
+
+		model.addAttribute("waitingListKey", waitingListValue);
+		model.addAttribute("inProgressListKey", inProgressTradeValues);
+		model.addAttribute("completedListKey", completedTradeValues);
 
 		return "myRequestList4";
 	}
