@@ -13,11 +13,13 @@ public interface RequestDAO {
 	
 	public int removeRequest(Integer r_no);
 	
-	public List<RequestVO> getAllActiveRequestsByWriter(HashMap<String, Object> map);
+	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer);
 	
 	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer);
 	
-	public List<RequestVO> getAllRequestsByCategory(Integer c_no);
+	public List<RequestVO> getAllRequestsByCategory(HashMap<String, Object> map);
+	
+	public int getAllRequestsByCategoryCount(Integer g_no);
 	
 	public RequestVO getRequestDetail(Integer r_no);
 	
