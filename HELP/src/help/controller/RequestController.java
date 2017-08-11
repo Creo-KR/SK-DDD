@@ -94,7 +94,7 @@ public class RequestController {
 			completedTradeValues = tradeDAO.getCompletedTrade(rno);
 		}
 		
-		for(RequestVO vo : activeRequestValues) {
+		for(RequestVO vo : waitingHireValues) {
 			vo.setApplyCnt(reqDAO.getApplyCount(vo.getR_no()));
 		}
 
@@ -173,6 +173,20 @@ public class RequestController {
 		return "requestDetail";
 	}
 
+	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+	   public String hireGosu(@RequestParam Integer r_no, HttpSession session ) {
+		   TradeVO tradevo = new TradeVO();
+		   // 고수번호 임의값 2
+		   session.getAttribute("UNO");
+		   
+		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
+		   tradevo.setT_respondent(38); //고수
+		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
+		   tradeDAO.addTrade(tradevo);
+		   reqDAO.updateRequestForInactive(r_no);  
+	       return "";
+	   }
+	   
 	@RequestMapping(value = "/applyForRequest.help", method = RequestMethod.GET)
 	public ModelAndView applyForRequest(HttpServletRequest req, ModelAndView mv, RedirectView rv) {
 
@@ -194,24 +208,6 @@ public class RequestController {
 		}
 
 		return mv;
-	}
-
-	@RequestMapping(value = "/hireGosu.help", method = RequestMethod.GET)
-	public String hireGosu(@RequestParam Integer r_no, HttpSession session) {
-		TradeVO tradevo = new TradeVO();
-
-		// 고수번호 임의값 2
-
-		session.getAttribute("UNO");
-
-		tradevo.setT_requester((int) session.getAttribute("UNO")); //요청자
-		tradevo.setT_respondent(38); //고수
-		tradevo.setReq(new RequestVO(r_no));
-		; //요청 번호
-		tradeDAO.addTrade(tradevo);
-		reqDAO.updateRequestForInactive(r_no);
-
-		return "";
 	}
 
 	@RequestMapping(value = "/completeRequest.help", method = RequestMethod.GET)
