@@ -44,10 +44,10 @@ public class TradeVO {
 	}
  
 	//여기
-//	public Integer getR_no() {
-//		return req.getR_no();
-//	}
-//	
+	public Integer getR_no() {
+		return req.getR_no();
+	}
+	
 	public RequestVO getReq() {
 		return req;
 	}

@@ -224,7 +224,8 @@
 				</p>
 			</div>
 		</div>
-	</div>
+
+	
 	<%@ include file="commons/footer.jsp"%>
 
 	<script
