@@ -14,7 +14,7 @@
 <style>
 /* 폰트설정 */
 .t3 {
-	position: relative;
+/* 	position: relative; */
 	font-size: 13px;
 	font-family: 'Nanum Gothic'
 }
@@ -27,12 +27,12 @@
 }
 
 .t3 .tblWrap {
-	width: 100%;
+/* 	width: 100%; */
 	overflow: hidden;
 }
 
 .t3 table {
-	width: 90% !important;
+	width: 50% !important;
 	letter-spacing: -0.05em;
 	border-top: 3px solid #37315d;
 	border-bottom: 2px solid #e2e2e2;
@@ -298,19 +298,20 @@
 
 <%@ include file="commons/header.jsp"%>
 <body>
-	<div id="container">
-		<div class="main_contents">
+	<div id="container" >
+		<div class="main_contents" style="width:100%; align-content: center;">
 			<!-- 본문영역 -->
-			<div class="t3">
-				<h1>
+			
+			<div class="t3" style="width:100%;" align="center">
+				<h1 style="text-align: center">
 					&lt;요청서 상세 페이지&gt;
 				</h1>
 
-				<div class="tblWrap">
+				<div class="tblWrap" style="align-content: center">
 					<table>
 						<tr>
-							<th style="width: 200px">요청서 번호 :</th>
-							<td class="ty2">${requestDetailKey.r_no}</td>
+							<th style="width: 20%">요청서 번호 :</th>
+							<td class="ty2" >${requestDetailKey.r_no}</td>
 						</tr>
 						<tr>
 							<th>카테고리 :</th>
