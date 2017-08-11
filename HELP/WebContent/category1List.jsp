@@ -11,22 +11,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
-<style type="text/css">
-  ul {
-        list-style: none;
-        font-style: italic;
-        font-weight: bold;
-        font-size: 20px;
-        position: relative;
-        left: 20%;
-    }
-    ul li {
-        float: left;
-        margin: 0px 20px;
-    }
-    ul a {text-decoration: none; color: black;}
-    ul a:hover {color: red;}
-</style>
+
 </head>
 <%@ include file="commons/header.jsp"%>
 <body>
@@ -95,7 +80,7 @@
 			</div>
 
 				<br>
-			<ul class="pageUL"> 
+			<ul class="paging"> 
 				<c:if test="${pageMaker.prev }"> 
 					<li>
 						<a href='getCategoryRequest.help?category=${categoryNum}&page=${pageMaker.start -1}'>이전</a>

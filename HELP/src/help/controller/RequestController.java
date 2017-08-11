@@ -132,7 +132,6 @@ public class RequestController {
 		}
 
 		pageResult = pageMaker.getPage();
-		System.out.println(pageResult);
 		count = reqDAO.getAllRequestsByCategoryCount(g_no);
 		pageMaker.setCount(count);
 
