@@ -94,7 +94,7 @@ public class RequestController {
 			completedTradeValues = tradeDAO.getCompletedTrade(rno);
 		}
 		
-		for(RequestVO vo : activeRequestValues) {
+		for(RequestVO vo : waitingHireValues) {
 			vo.setApplyCnt(reqDAO.getApplyCount(vo.getR_no()));
 		}
 
@@ -224,7 +224,7 @@ public class RequestController {
 		
 		//model.addAttribute("completedListKey", completedTradeValues);
 
-		return "myRequestList3";
+		return "myRequestList4";
 	}
 
 	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
@@ -240,18 +240,22 @@ public class RequestController {
 	}
 
 	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-	   public String hireGosu(@RequestParam Integer r_no, HttpSession session ) {
+	   public String hireGosu(@RequestParam Integer r_no, @RequestParam Integer g_no, HttpSession session ) {
 		   TradeVO tradevo = new TradeVO();
-		   
-		   
-		   
 		   // 고수번호 임의값 2
-		   
 		   session.getAttribute("UNO");
 		   
 		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
-		   tradevo.setT_respondent(38); //고수
-		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
+		   tradevo.setT_respondent(g_no); //고수
+		   tradevo.setReq(new RequestVO(r_no)); //요청 번호
+		   
+		   
+		   System.out.println("uno>>"+session.getAttribute("UNO"));
+		   System.out.println("g_no>>"+g_no);
+		   System.out.println("r_no>>"+r_no);
+		   
+		   
+		   
 		   tradeDAO.addTrade(tradevo);
 		   reqDAO.updateRequestForInactive(r_no);  
 	       return "";
@@ -283,6 +287,6 @@ public class RequestController {
 	@RequestMapping(value = "/completeRequest.help", method = RequestMethod.GET)
 	public String completeRequest(@RequestParam Integer r_no) {
 		tradeDAO.updateTradeToBeCompleted(r_no);
-		return "redirect:/getRequestDetail.help?r_no=" + r_no + "&flag=0";
+		return "redirect:/getAllRequestsByWriter.help";
 	}
 }

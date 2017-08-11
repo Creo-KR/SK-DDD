@@ -16,6 +16,16 @@
 <body>
 
 	<div id="container">
+	
+	
+		<c:if test="${complete=='complete'}">
+			<script>
+				alert('완료되었습니다.');
+ 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+			</script>
+		</c:if>
+	
+	
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -30,6 +40,7 @@
 							<th>제목</th>
 							<th>등록일</th>
 							<th>상태</th>
+							<th>신청자수</th>
 						</tr>
 					</thead>
 
@@ -42,6 +53,7 @@
 								<td>${waitingHire.r_title}</td>
 								<td>${waitingHire.r_date}</td>
 								<td>고용 대기중</td>
+								<td>${waitingHire.applyCnt}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -251,7 +263,8 @@
 				</p>
 			</div>
 		</div>
-	</div>
+
+	
 	<%@ include file="commons/footer.jsp"%>
 
 	<script
