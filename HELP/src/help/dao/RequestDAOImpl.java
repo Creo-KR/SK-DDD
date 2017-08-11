@@ -72,4 +72,9 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.selectOne("requestMapper.getAllActiveByWriterCount", r_writer);
 	}
 	
+	@Override
+	public void updateRequestForInactive(Integer r_no) {
+		session.update("requestMapper.updateRequestForInactive", r_no);
+	}
+	
 }

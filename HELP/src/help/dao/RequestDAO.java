@@ -28,5 +28,6 @@ public interface RequestDAO {
 	
 	public int insertApply(ApplyVO vo);
 	
+	public void updateRequestForInactive(Integer r_no);
 	public int getAllActiveRequestsByWriterCount(Integer r_writer);
 }
