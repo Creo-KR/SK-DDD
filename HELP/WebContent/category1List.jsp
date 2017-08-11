@@ -80,7 +80,7 @@
 			</div>
 
 				<br>
-			<ul class="paging"> 
+			<ul class="paging1"> 
 				<c:if test="${pageMaker.prev }"> 
 					<li>
 						<a href='getCategoryRequest.help?category=${categoryNum}&page=${pageMaker.start -1}'>이전</a>

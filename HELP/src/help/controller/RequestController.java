@@ -158,7 +158,7 @@ public class RequestController {
 		//model.addAttribute("inProgressListKey", inProgressTradeValues);
 		//model.addAttribute("completedListKey", completedTradeValues);
 
-		return "myRequestList3";
+		return "myRequestList4";
 	}
 
 	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
