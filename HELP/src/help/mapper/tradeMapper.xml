@@ -30,76 +30,19 @@
       where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
    </select>
    
-   <select id="getInProgressTradeByGosu" parameterType="hashmap"
+ <select id="getInProgressTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-<!--       select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NULL
-       -->
-      	SELECT * FROM (
-		    SELECT ROWNUM rnum, b.*
-			FROM (
-				SELECT t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
-                FROM trade t, request r
-				WHERE t.r_no = r.r_no and t_respondent=#{value} 
-				AND t_enddate IS NULL
-				ORDER BY r.r_no DESC
-				) b
-			)
-		WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
-		AND ((#{page}) * 10)
    </select>
    
-      <select id="getInProgressTradeByGosuCount" parameterType="Integer"
-      resultType="Integer">
-      	SELECT count(*) FROM (
-		    SELECT b.*
-			FROM (
-				SELECT t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
-                FROM trade t, request r
-				WHERE t.r_no = r.r_no and t_respondent=#{value} 
-				AND t_enddate IS NULL
-				ORDER BY r.r_no DESC
-				) b
-			)
-   </select>
    
-   <select id="getCompletedTradeByGosu" parameterType="hashmap"
+    <select id="getCompletedTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-<!--       select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
-       -->
-        SELECT * FROM (
-		    SELECT ROWNUM rnum, b.*
-			FROM (
-				SELECT t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
-                FROM trade t, request r
-				WHERE t.r_no = r.r_no 
-				AND t_respondent=#{value} and t_enddate IS NOT NULL
-				ORDER BY r.r_no DESC
-				) b
-			)
-		WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
-		AND ((#{page}) * 10)
-   </select>
-   
-    <select id="getCompletedTradeByGosuCount" parameterType="Integer"
-      resultType="Integer">
-<!--       select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
-      from trade t, request r
-      where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
-       -->
-        SELECT count(*) FROM (
-		    SELECT b.*
-			FROM (
-				SELECT t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
-                FROM trade t, request r
-				WHERE t.r_no = r.r_no 
-				AND t_respondent=#{value} and t_enddate IS NOT NULL
-				ORDER BY r.r_no DESC
-				) b
-			)
    </select>
    
    <insert id="addTrade" parameterType="TradeVO">

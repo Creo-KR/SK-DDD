@@ -17,7 +17,7 @@ public interface RequestDAO {
 	
 	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer);
 	
-	public List<RequestVO> getAllRequestsByCategory(HashMap<String, Object> map);
+	public List<RequestVO> getAllRequestsByCategory(Integer m_no);
 	
 	public int getAllRequestsByCategoryCount(Integer m_no);
 	

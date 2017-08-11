@@ -39,8 +39,8 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 	
 	@Override
-	public List<RequestVO> getAllRequestsByCategory(HashMap<String, Object> map) {
-		return session.selectList("requestMapper.getAllRequestsByCategory", map);
+	public List<RequestVO> getAllRequestsByCategory(Integer m_no) {
+		return session.selectList("requestMapper.getAllRequestsByCategory", m_no);
 	}
 
 	@Override
