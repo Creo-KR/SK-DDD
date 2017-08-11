@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import help.vo.ApplyVO;
+import help.vo.MemberVO;
 import help.vo.RequestVO;
 
 @Repository
@@ -28,8 +29,8 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 
 	@Override
-	public List<RequestVO> getAllActiveRequestsByWriter(HashMap<String, Object> map) {
-		return session.selectList("requestMapper.getAllActiveRequestsByWriter", map);
+	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer) {
+		return session.selectList("requestMapper.getAllActiveRequestsByWriter", r_writer);
 	}
 	
 	@Override
@@ -38,8 +39,8 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 	
 	@Override
-	public List<RequestVO> getAllRequestsByCategory(Integer c_no) {
-		return session.selectList("requestMapper.getAllRequestsByCategory", c_no);
+	public List<RequestVO> getAllRequestsByCategory(HashMap<String, Object> map) {
+		return session.selectList("requestMapper.getAllRequestsByCategory", map);
 	}
 
 	@Override
@@ -67,14 +68,30 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.insert("requestMapper.insertApply", vo);
 	}
 
-	@Override
-	public int getAllActiveRequestsByWriterCount(Integer r_writer) {
-		return session.selectOne("requestMapper.getAllActiveByWriterCount", r_writer);
-	}
 	
 	@Override
 	public void updateRequestForInactive(Integer r_no) {
 		session.update("requestMapper.updateRequestForInactive", r_no);
+	}
+
+	@Override
+	public int getAllRequestsByCategoryCount(Integer g_no) {
+		return session.selectOne("requestMapper.getAllRequestsByCategoryCount", g_no);
+	}
+	
+	@Override
+	public List<MemberVO> getApplyMember(Integer r_no) {
+		return session.selectList("requestMapper.getApplyMember", r_no);
+	}
+
+	@Override
+	public int getAllActiveRequestsByWriterCount(Integer r_writer) {
+		return session.selectOne("requestMapper.getAllActiveRequestsByWriterCount", r_writer);
+	}
+	
+	@Override
+	public Integer getApplyCount(Integer r_no) {
+		return session.selectOne("requestMapper.getApplyCount", r_no);
 	}
 	
 }

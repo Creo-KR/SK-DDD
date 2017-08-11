@@ -34,6 +34,10 @@
 			data : $('#chat_room_input_frm').serialize(),
 			type : "post",
 			success : function sendHandler(data) {
+				if(${requestDetailKey.r_no != null}) {
+					window.location = "applyForRequest.help?rno=${requestDetailKey.r_no}";
+				}
+				
 				var split = data.split(',');
 				var frame = document.getElementById('chat_room_list_frame');
 				frame.src="viewChatroom.help?cr_no="+split[0]+"&cr_receiver="+split[1];
@@ -135,10 +139,11 @@
 
 		<div id="chat_room_input" class="chat_room_input">
 			<form id="chat_room_input_frm" onsubmit="sendChat(); return false;">
-				<input type="hidden" name="sender" value="${ss_cr_sender}" /> <input
-					type="hidden" name="receiver" value="${ss_cr_receiver.m_no}" /> <input
-					type="hidden" name="no" value="${ss_cr_no}" /> <input type="text"
-					name="text" class="chat_text" id="chat_text" autocomplete=off
+				<input type="hidden" name="sender" value="${ss_cr_sender}" /><input
+					type="hidden" name="receiver" value="${ss_cr_receiver.m_no}" /><input
+					type="hidden" name="no" value="${ss_cr_no}" /><input type="hidden"
+					name="request" value="${ss_cr_no}" /><input type="text" name="text"
+					class="chat_text" id="chat_text" autocomplete=off
 					placeholder="이곳에 메세지를 적어주세요." /> <input class="chat_send"
 					type="button" onclick="sendChat();" value="보내기">
 			</form>
