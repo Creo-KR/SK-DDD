@@ -78,20 +78,20 @@
 							<ul class="waintingPage">
 								<c:if test="${pageMake1r.prev }">
 									<li><a
-										href='getAllRequestsByWriter.help?page=${pageMaker1.start -1}'>이전</a>
+										href='getAllRequestsByCategory.help?page=${pageMaker1.start -1}'>이전</a>
 									</li>
 								</c:if>
 								<c:forEach begin="${pageMaker1.start }" end="${pageMaker1.end}"
 									var="idx">
 									<li
 										class='<c:out value="${idx == pageMaker1.page?'current':''}"/>'>
-										<a href='getAllRequestsByWriter.help?page=${idx}'>${idx}</a>
+										<a href='getAllRequestsByCategory.help?page=${idx}'>${idx}</a>
 									</li>
 								</c:forEach>
 
 								<c:if test="${pageMaker.next }">
 									<li><a
-										href='getAllRequestsByWriter.help?page=${pageMaker.end +1}'>다음</a>
+										href='getAllRequestsByCategory.help?page=${pageMaker.end +1}'>다음</a>
 									</li>
 								</c:if>
 							</ul>

@@ -23,37 +23,12 @@
 		<!-- values (R_NO_SEQ.NEXTVAL,#{c_no},#{r_title},#{r_content},1,SYSDATE,27) -->
 	</insert>
 
-	<select id="getAllActiveRequestsByWriter" parameterType="hashmap"
+	<select id="getAllActiveRequestsByWriter" parameterType="Integer"
 		resultType="RequestVO">
- 			SELECT * FROM (
-			SELECT ROWNUM rnum, b.*
-			FROM (
-				SELECT r_no, c_no, r_title, r_content, r_active, r_date, r_writer 
-                FROM request
-				WHERE r_active = 1
-				AND r.writer=#{value}
-				ORDER BY r_no DESC
-				) b
-			)
-			WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
-			AND ((#{page}) * 10)
-		<!-- select * from request where r_writer=#{value} and r_active=1 -->
+		select * from request where r_writer=#{value} and r_active=1
 	</select>
 
-	<select id="getAllActiveRequestsByWriterCount" parameterType="Integer"
-		resultType="RequestVO">
- 			SELECT count(*) FROM (
-			SELECT b.*
-			FROM (
-				SELECT r_no, c_no, r_title, r_content, r_active, r_date, r_writer 
-                FROM request
-				WHERE r_active = 1
-				AND r.writer=#{value}
-				ORDER BY r_no DESC
-				) b
-			)
-		<!-- select * from request where r_writer=#{value} and r_active=1 -->
-	</select>
+
 	
 	<select id="getAllInactiveRequestsByWriter" parameterType="Integer"
 		resultType="Integer">
@@ -67,13 +42,42 @@
 	<!-- r_active=0 -->
 	<!-- </select> -->
 
-	<select id="getAllRequestsByCategory" parameterType="Integer"
+	<select id="getAllRequestsByCategory" parameterType="hashmap"
 		resultType="RequestVO">
 		<!-- select * from request where c_no=#{value} and r_active=1 -->
-		select * from request r, (select * from apply where g_no = #{value}) a
-		where r.r_no = a.r_no and r_active=1 order by r.r_no
+<!-- 		select * from request r, (select * from apply where g_no = #{value}) a
+		where r.r_no = a.r_no and r_active=1 order by r.r_no -->
+		
+		SELECT * FROM (
+			SELECT ROWNUM rnum, b.*
+			FROM (
+				SELECT r.r_no, r.c_no, r.r_title, r.r_content, r.r_active, r.r_date, r.r_writer 
+                FROM request r, apply a
+				WHERE r.r_active = 1
+				AND g_no=#{value}
+				AND r.r_no = a.r_no
+				ORDER BY r.r_no DESC
+				) b
+			)
+		WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
+		AND ((#{page}) * 10)
 	</select>
 
+	<select id="getAllRequestsByCategoryCount" parameterType="Integer"
+		resultType="Integer">
+		SELECT count(*) FROM (
+			SELECT b.*
+			FROM (
+				SELECT r.r_no, r.c_no, r.r_title, r.r_content, r.r_active, r.r_date, r.r_writer 
+                FROM request r, apply a
+				WHERE r.r_active = 1
+				AND g_no=#{value}
+				AND r.r_no = a.r_no
+				ORDER BY r.r_no DESC
+				) b
+			)
+		<!-- select * from request where r_writer=#{value} and r_active=1 -->
+	</select>
 	<select id="getRequestDetail" parameterType="Integer"
 		resultType="RequestVO">
 		select * from request where r_no=#{value}
