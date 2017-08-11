@@ -82,16 +82,20 @@ public class RequestController {
 	public String getAllRequestsByWriter(Model model, HttpSession session,
 			@RequestParam(required = false) Integer page) {
 		Integer r_writer = (Integer) session.getAttribute("UNO");
-		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();
-		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+		List<TradeVO> inProgressTradeValues = null;
+		List<TradeVO> completedTradeValues = null;
 
 		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
 		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
 		List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
 
 		for (Integer rno : inactiveRequestValues) {
-			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
-			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
+			inProgressTradeValues = tradeDAO.getInProgressTrade(rno);
+			completedTradeValues = tradeDAO.getCompletedTrade(rno);
+		}
+		
+		for(RequestVO vo : activeRequestValues) {
+			vo.setApplyCnt(reqDAO.getApplyCount(vo.getR_no()));
 		}
 
 		model.addAttribute("waitingListKey", activeRequestValues);

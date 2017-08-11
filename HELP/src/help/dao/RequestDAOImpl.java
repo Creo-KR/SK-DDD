@@ -89,4 +89,9 @@ public class RequestDAOImpl implements RequestDAO {
 		return session.selectOne("requestMapper.getAllActiveRequestsByWriterCount", r_writer);
 	}
 	
+	@Override
+	public Integer getApplyCount(Integer r_no) {
+		return session.selectOne("requestMapper.getApplyCount", r_no);
+	}
+	
 }

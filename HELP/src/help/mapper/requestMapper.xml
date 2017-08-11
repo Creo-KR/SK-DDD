@@ -132,4 +132,8 @@
         where b.g_no = m.m_no;
 	</select>
 	
+	<select id="getApplyCount" parameterType="Integer" resultType="Integer">
+	select count(*) from apply where r_no = #{r_no};
+	</select>
+	
 </mapper>
