@@ -47,7 +47,7 @@ public class MemberController {
 	@RequestMapping(value="addMember.help", method=RequestMethod.POST)
 	public String addMember(
 			MemberVO member, Model model, @RequestParam String m_email2,
-			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=true) List<String> c_no
+			@RequestParam String m_tel2, @RequestParam String m_tel3, @RequestParam(value="c_no", required=false) List<String> c_no
 			) {
 		String phoneNumber = member.getM_tel() + "-" + m_tel2 + "-" + m_tel3;
 		String email = member.getM_email() + "@"  + m_email2;
@@ -67,6 +67,7 @@ public class MemberController {
 				service.addGosu(g);
 			}
 		} else {
+			member.setM_intro("");
 			service.addMember(member);
 		}
 		return "index";
