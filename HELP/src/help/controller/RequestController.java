@@ -167,11 +167,7 @@ public class RequestController {
 //	public String completeRequest() {
 //		
 //	}
-//	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
-//	   public String applyForRequest() {
-//	      
-//	   }
-//	   
+
 	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
 	   public String hireGosu() {
 		   TradeVO tradevo = new TradeVO();
@@ -182,8 +178,6 @@ public class RequestController {
 //		   tradevo.setReq(req);
 		   
 	      return "";
-	      
-	      
 	   }
 //	   
 //	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
