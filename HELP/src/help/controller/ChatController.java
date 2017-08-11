@@ -51,14 +51,21 @@ public class ChatController {
 			session.setAttribute("ss_cr_receiver", member.getMemberByNo(cr_receiver));
 
 			ChatroomVO room = service.getChatroomByNo(cr_no);
+			
+			boolean out = false;
 			if (room.getCr_user1().getM_no().equals(cr_receiver)) {
 				if (room.getCr_active1().equals(0))
-					session.setAttribute("ss_receiver", "out");
+					out = true;
 			} else if (room.getCr_user2().getM_no().equals(cr_receiver)) {
 				if (room.getCr_active2().equals(0))
-					session.setAttribute("ss_receiver", "out");
+					out = true;
 			}
-
+			
+			if(out)
+				session.setAttribute("ss_receiver", "out");
+			else
+				session.removeAttribute("ss_receiver");
+			
 			List<ChatVO> list = null;
 			list = service.getChatByChatroom(new ChatroomVO(cr_no));
 			mv.addObject("chat_list", list);
