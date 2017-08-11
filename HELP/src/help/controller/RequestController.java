@@ -168,10 +168,10 @@ public class RequestController {
 	
 	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
 	   public String applyForRequest(HttpServletRequest req) {
-		  ApplyVO vo = new ApplyVO();
-		  vo.setR_no(Integer.parseInt(req.getParameter("rno")));
-		  vo.setM_no(Integer.parseInt(req.getParameter("mno")));
-		  vo.setG_no(Integer.parseInt(req.getParameter("gno")));
+		  
+		  Integer r_no = Integer.parseInt(req.getParameter("rno"));
+		  RequestVO request = reqDAO.getRequestDetail(r_no);
+		  ApplyVO vo = new ApplyVO(request.getR_no(), request.getR_writer(), (Integer) req.getSession().getAttribute("UNO"));
 		  reqDAO.insertApply(vo);
 		  return "redirect:/redirectByUtype.help";
 	   }

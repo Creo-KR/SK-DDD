@@ -139,7 +139,7 @@
 #sub_visual.company span {background: no-repeat 10px 220px;}
 
 
-#container {overflow:hidden;}
+#container {overflow:hidden; min-height: 800px;}
 #container .contents {width:1000px; margin:0 auto; padding:55px 0 100px 0;}
 #container .contents .contents_inner {width:100%; overflow:hidden;}
 

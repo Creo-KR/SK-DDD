@@ -5,6 +5,13 @@ public class ApplyVO {
 	private Integer m_no;
 	private Integer g_no;
 
+	public ApplyVO(Integer r_no, Integer m_no, Integer g_no) {
+		super();
+		this.r_no = r_no;
+		this.m_no = m_no;
+		this.g_no = g_no;
+	}
+
 	public Integer getR_no() {
 		return r_no;
 	}
