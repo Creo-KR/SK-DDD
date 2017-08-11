@@ -1,5 +1,6 @@
 package help.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -16,8 +17,8 @@ public class TradeDAOImpl implements TradeDAO {
 	SqlSession session;
 	
 	@Override
-	public List<TradeVO> getInProgressTrade(Integer r_no) {
-		return session.selectList("tradeMapper.selectInProgressTrade", r_no);
+	public List<TradeVO> getInProgressTrade(HashMap<String, Object> ProgressTradeMap) {
+		return session.selectList("tradeMapper.selectInProgressTrade", map);
 	}
 
 	@Override

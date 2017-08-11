@@ -117,12 +117,13 @@ public class RequestController {
 	public String getAllRequestsByCategory(Model model, HttpSession session,
 			 @RequestParam(required=false) Integer page
 			) {
-		Integer g_no = (Integer) session.getAttribute("UNO");
+		Integer m_no = (Integer) session.getAttribute("UNO");
 		
 		int count;
 		int pageResult;
 		PageMaker pageMaker = new PageMaker();
 		HashMap<String, Object> map = new HashMap<>();
+		
 		
 		if(page == null) {
 			pageMaker.setPage(0);
@@ -131,22 +132,26 @@ public class RequestController {
 		}
 		
 		pageResult = pageMaker.getPage();
-		count = reqDAO.getAllRequestsByCategoryCount(g_no);
+		count = reqDAO.getAllRequestsByCategoryCount(m_no);
 		pageMaker.setCount(count);
 		
-		map.put("value", g_no);
+		map.put("value", m_no);
 		map.put("page", pageResult);
 		//List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
 		//List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
 		
 		List<RequestVO> activeRequestValues = reqDAO.getAllRequestsByCategory(map);
-		//List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
+		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(m_no);
 		//List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
 		
-/*		for (Integer rno : inactiveRequestValues) {
-			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
-			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
-		}*/
+		for (Integer rno : inactiveRequestValues) {
+			HashMap<String, Object> ProgressTradeMap = new HashMap<>();
+			ProgressTradeMap.put("rno", rno);
+			ProgressTradeMap.put("page", pageResult);
+			
+			tradeDAO.getInProgressTrade(ProgressTradeMap);
+			//completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
+		}
 		model.addAttribute("pageMaker1", pageMaker);
 		model.addAttribute("waitingListKey", activeRequestValues);
 		//model.addAttribute("waitingHireListKey", waitingHireValues);

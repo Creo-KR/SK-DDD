@@ -75,8 +75,8 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 
 	@Override
-	public int getAllRequestsByCategoryCount(Integer g_no) {
-		return session.selectOne("requestMapper.getAllRequestsByCategoryCount", g_no);
+	public int getAllRequestsByCategoryCount(Integer m_no) {
+		return session.selectOne("requestMapper.getAllRequestsByCategoryCount", m_no);
 	}
 	
 	@Override
