@@ -124,7 +124,7 @@
 		<div id="chat_room_titleBar" class="chat_room_titleBar">
 			<div id="chat_room_titleBar_name" class="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
 			<div id="chat_room_titleBar_btn" class="chat_room_titleBar_btn">
-				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img
+				<img src="images/check.png"><img
 					src="images/leave.png" onclick="javascript:leaveChatroom();"><img
 					src="images/close.png" onclick="javascript:divClose('chat_room');">
 			</div>
