@@ -28,8 +28,8 @@ public class RequestDAOImpl implements RequestDAO {
 	}
 
 	@Override
-	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer) {
-		return session.selectList("requestMapper.getAllActiveRequestsByWriter", r_writer);
+	public List<RequestVO> getAllActiveRequestsByWriter(HashMap<String, Object> map) {
+		return session.selectList("requestMapper.getAllActiveRequestsByWriter", map);
 	}
 	
 	@Override
@@ -65,6 +65,11 @@ public class RequestDAOImpl implements RequestDAO {
 	@Override
 	public int insertApply(ApplyVO vo) {
 		return session.insert("requestMapper.insertApply", vo);
+	}
+
+	@Override
+	public int getAllActiveRequestsByWriterCount(Integer r_writer) {
+		return session.selectOne("requestMapper.getAllActiveByWriterCount", r_writer);
 	}
 	
 }
