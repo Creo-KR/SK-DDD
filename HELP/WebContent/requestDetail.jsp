@@ -150,7 +150,6 @@
             </table>
          </div>
 
-<<<<<<< HEAD
          <div style="width: 100%; text-align: center">
             <!-- UTYPE(0=일반인, 1=사용자), flag(0=신청하기버튼) -->
             <c:if test="${UTYPE==1}">
@@ -160,7 +159,6 @@
                   신청하기</button>
                </c:if>
             </c:if>
-=======
 			<div style="width: 100%; text-align: center">
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=신청하기버튼) -->
 				<c:if test="${UTYPE==1}">
@@ -170,9 +168,7 @@
 							신청하기</button>
 					</c:if>
 				</c:if>
->>>>>>> branch 'master' of https://github.com/Creo-KR/SK-DDD
 
-<<<<<<< HEAD
             <!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
             <c:if test="${UTYPE==0}">
                <c:if test="${flag==0}">
@@ -187,7 +183,6 @@
                </c:if>
             </c:if>
          </div>
-=======
 				<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
 				<c:if test="${UTYPE==0}">
 					<c:if test="${flag==0}">
@@ -202,9 +197,7 @@
 					</c:if>
 				</c:if>
 			</div>
->>>>>>> branch 'master' of https://github.com/Creo-KR/SK-DDD
 
-<<<<<<< HEAD
       </div>
       <%@ include file="commons/footer.jsp"%>
       <script>
@@ -218,7 +211,6 @@
             window.location = "completeRequest.help";
          }
       </script>
-=======
 
 
 		</div>
@@ -269,7 +261,6 @@
 				window.location = "completeRequest.help";
 			}
 		</script>
->>>>>>> branch 'master' of https://github.com/Creo-KR/SK-DDD
 
 
 
