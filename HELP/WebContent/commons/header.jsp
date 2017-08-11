@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/board.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/layout.css" />
+	href="${pageContext.request.contextPath}/css/layout.css?ver=12" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/contents.css" />
 <link rel="stylesheet" type="text/css"
