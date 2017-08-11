@@ -25,7 +25,7 @@
 }
 
 .t3 .tblWrap {
-	width: 100%;
+/* 	width: 100%; */
 	overflow: hidden;
 }
 
@@ -45,7 +45,7 @@
 
 .t3 th, .t3 td {
 	padding: 10px 0;
-	font-weight: 400;
+ 	font-weight: 400;
 	text-align: center;
 	border-top: 1px solid #e2e2e2;
 	border-left: 1px solid #e2e2e2;
@@ -99,19 +99,17 @@
 
 <%@ include file="commons/header.jsp"%>
 <body>
-	<div id="container">
-		<div class="main_contents">
+	<div id="container" style="align-content: center; text-align: center">
+		<div class="main_contents" style="align-content: center; text-align: center" >
 			<!-- 본문영역 -->
-			<div class="t3">
-				<h1>
-					<요청서 상세 페이지>
-				</h1>
+			<div class="t3" style="width:60%; align-content: center; text-align: center" >
+				<h1 style="text-align: center"><요청서 상세 페이지></h1>
 
 				<div class="tblWrap">
 					<table>
 						<tr>
-							<th style="width: 200px">요청서 번호 :</th>
-							<td class="ty2">${requestDetailKey.r_no}</td>
+							<th style="width: 10%">요청서 번호 :</th>
+							<td class="ty2" style="width:30%">${requestDetailKey.r_no}</td>
 						</tr>
 						<tr>
 							<th>카테고리 :</th>
