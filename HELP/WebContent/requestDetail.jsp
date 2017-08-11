@@ -87,10 +87,7 @@
 		joinChatroom(${requestDetailKey.r_writer});
 	}
 
-	//고용하기 (일반인 - 일반인이 고수를 고용한다)
-	var hire_go = function() {
-		window.location = "hireGosu.help";
-	}
+
 
 	//완료하기 (일반인)
 	var complete_go = function() {
@@ -151,15 +148,6 @@
 								</c:forEach></td>
 						</tr>
 						<tr>
-							<th>완료여부</th>
-							<c:if test="${requestDetailKey.r_active == 1}">
-								<td class="ty2">대기중</td>
-							</c:if>
-							<c:if test="${requestDetailKey.r_active == 0}">
-								<td class="ty2">진행중</td>
-							</c:if>
-						</tr>
-						<tr>
 							<th>날짜</th>
 							<td class="ty2">${requestDetailKey.r_date}</td>
 						</tr>
@@ -178,11 +166,6 @@
 
 					<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
 					<c:if test="${UTYPE==0}">
-						<c:if test="${flag==0}">
-							<button onclick="hire_go()"
-								style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-								고용하기</button>
-						</c:if>
 						<c:if test="${flag==1}">
 							<button onclick="complete_go()"
 								style="font-weight: bold; margin-left: 15px; margin-top: 10px">
@@ -191,6 +174,67 @@
 					</c:if>
 				</div>
 			</div>
+			
+			 <div>
+         <c:if test="${UTYPE==0}">
+            <c:if test="${flag==0}">
+            <c:forEach var="apply" items="${apply}">
+               <div style="width: 100%; height: 200px; background-color: red">
+
+                  
+                  <div
+                     style="width: 33%; background-color: blue; display: inline-block">
+                     <table>
+                        <tr>
+                           <td style="width: 33%">이름</td>
+                           <td>${apply.m_name}</td>
+                        </tr>
+                        <tr>
+                           <td>전화번호</td>
+                           <td>${apply.m_tel}</td>
+                        </tr>
+                        <tr>
+                           <td>이메일 주소</td>
+                           <td>${apply.m_email}</td>
+                        </tr>
+                        <tr>
+                           <td>내용</td>
+                           <td>${apply.m_intro}</td>
+                        </tr>
+                        <tr>
+                           <td>
+                           <c:if test="${UTYPE==0}">
+                           <c:if test="${flag==0}">
+                                 <button onclick="hire_go()"
+                                    style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+                                    <script>
+                                	//고용하기 (일반인 - 일반인이 고수를 고용한다)
+                                	var hire_go = function() {
+                                		window.location = "hireGosu.help?r_no=${requestDetailKey.r_no}&g_no=${apply.m_no}";
+                                	}
+                                    </script>
+                                    
+                                    고용하기</button>
+                              </c:if>
+                              </c:if>
+                              </td>
+                        </tr>
+
+
+                     </table>
+                  </div>
+
+
+
+               </div>
+            </c:forEach>
+
+
+            </c:if>
+         </c:if>
+
+   </div>
+			
 
 		</div>
 	</div>

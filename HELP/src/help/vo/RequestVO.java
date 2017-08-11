@@ -15,14 +15,10 @@ public class RequestVO {
 		
 	}
 	
-	
-
 	public RequestVO(Integer r_no) {
 		super();
 		this.r_no = r_no;
 	}
-
-
 
 	public Integer getR_no() {
 		return r_no;

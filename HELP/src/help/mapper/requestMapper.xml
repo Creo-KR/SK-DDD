@@ -25,7 +25,8 @@
 
 	<select id="getAllActiveRequestsByWriter" parameterType="Integer"
 		resultType="RequestVO">
-		select * from request where r_writer=#{value} and r_active=1
+		select * from request where r_writer=#{value} and r_active=1 
+		order by r_no
 	</select>
 
 
@@ -114,15 +115,15 @@
 	</insert>
 
 	<select id="getRequestWaitingHire" parameterType="Integer" resultType="RequestVO">
-		select r.r_no, r.c_no, r.r_title, to_char(r_date,'yyyy.mm.dd hh24:mi') r_date
+		select distinct r.r_no,
+		r.c_no, r.r_title, to_char(r_date,
+		'yyyy.mm.dd hh24:mi') r_date
 		from request r, apply a
-		where r.r_no = a.r_no and r_writer=#{value}
-		order by r.r_no
+		where r.r_no = a.r_no and r_writer=#{value} and r_active=1 order by r_no
 	</select>
 	
 	<update id="updateRequestForInactive" parameterType="Integer">
 		  update request set r_active=0 where r_no=#{value}
-	
 	</update>
 	
 	<select id="getApplyMember" parameterType="Integer" resultType="MemberVO">
