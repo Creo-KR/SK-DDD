@@ -11,7 +11,7 @@
 <body>
 	<div id="container">
 
-		<div class="main_contents" style="padding: 130px 0px 0px;">
+		<div class="main_contents">
 			<!-- 본문영역 -->
 			<!-- <div class="dark_window"></div> -->
 			<div>

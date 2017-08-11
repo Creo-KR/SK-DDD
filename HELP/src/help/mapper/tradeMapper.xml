@@ -43,4 +43,16 @@
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
+   
+   <update id="updateTradeToBeCompleted" parameterType="Integer">
+   		update trade set t_enddate=sysdate where r_no=#{value}
+   </update>
+
+   <insert id="addTrade" parameterType="TradeVO">
+   		INSERT INTO trade (
+   			t_no, t_requester, t_respondent, t_enddate, r_no
+   			) VALUES (
+   			t_no_seq.NEXTVAL, t_requester=#{t_requester}, t_respondent=#{t_respondent}, SYSDATE, r_no=#{req.r_no}
+   			)
+   </insert>
 </mapper>

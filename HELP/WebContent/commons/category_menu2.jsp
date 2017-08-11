@@ -7,7 +7,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link type="text/css" rel="stylesheet" href="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/vender.min.css?ver=1PfeFGslHCk1iul">
-<link type="text/css" rel="stylesheet" href="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/sg.min.css?ver=1PfeFGslHCk1iul">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -152,11 +151,11 @@ h1.title {
 	height: 69px;
 }
 
-input[type=text]:focus {
+.input:focus {
 	border: 3px solid #555;
 }
 
-input[type=text] {
+.input {
 	border: 3px solid #555;
 	border-radius: 20px;
 	width: 60%;
@@ -164,7 +163,7 @@ input[type=text] {
 	font-size: 25px;
 }
 
-button {
+.button {
 	border-radius: 20px;
 	background: #555;
 	color: #fff;
@@ -191,12 +190,12 @@ button {
     border-bottom-right-radius: 4px;
 }
 
-button:hover, .hidden-xs:hover, #bbb:hover{
+.hidden-xs:hover, #bbb:hover{
 	background: #fff;
 	color: #555;
 }
 
-button:before, button:after, .hidden-xs:before, .hidden-xs:after, #bbb:before, #bbb:after {
+.hidden-xs:before, .hidden-xs:after, #bbb:before, #bbb:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -207,14 +206,14 @@ button:before, button:after, .hidden-xs:before, .hidden-xs:after, #bbb:before, #
 	transition: 400ms ease all;
 }
 
-button:after, .hidden-xs:after, #bbb:after {
+.hidden-xs:after, #bbb:after {
 	right: inherit;
 	top: inherit;
 	left: 0;
 	bottom: 0;
 }
 
-button:hover:before, button:hover:after, .hidden-xs:hover:before, .hidden-xs:hover:after, #bbb:hover:before, #bbb:hover:after {
+.hidden-xs:hover:before, .hidden-xs:hover:after, #bbb:hover:before, #bbb:hover:after {
 	width: 100%;
 	transition: 800ms ease all;
 }

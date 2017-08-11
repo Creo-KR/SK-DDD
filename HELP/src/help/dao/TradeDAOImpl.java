@@ -34,4 +34,9 @@ public class TradeDAOImpl implements TradeDAO {
 		return session.selectList("tradeMapper.getCompletedTradeByGosu", m_no);
 	}
 
+	@Override
+	public int updateTradeToBeCompleted(Integer r_no) {
+		return session.delete("tradeMapper.updateTradeToBeCompleted", r_no);
+	}
+
 }

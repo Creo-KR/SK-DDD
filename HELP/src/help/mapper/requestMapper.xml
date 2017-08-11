@@ -78,6 +78,9 @@
 		AND ((#{page}) * 10)
 	</select>
 	
+<!-- 	<select id="getRequestWaitingHire" parameterTpye="">
+		
+	</select> -->
 	<insert id="insertApply" parameterType="ApplyVO">
 		insert into apply
 		values (#{r_no}, #{m_no}, #{g_no})
