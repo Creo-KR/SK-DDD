@@ -177,13 +177,22 @@ public class RequestController {
 //	   }
 //	   
 	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-	   public String hireGosu() {
+	   public String hireGosu(@RequestParam Integer r_no, HttpSession session ) {
 		   TradeVO tradevo = new TradeVO();
-//		   tradevo.setT_no(t_no); //트레이드 번호
-//		   tradevo.setT_requester(t_requester);
-//		   tradevo.setT_respondent(t_respondent);
-//		   tradevo.setT_enddate(t_enddate);
-//		   tradevo.setReq(req);
+		   
+		   
+		   
+		   // 고수번호 임의값 2
+		   
+		   session.getAttribute("UNO");
+		   
+		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
+		   tradevo.setT_respondent(38); //고수
+		  // tradevo.setT_enddate(t_enddate);
+		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
+		   tradeDAO.addTrade(tradevo);
+		   
+		   
 		   
 	      return "";
 	      

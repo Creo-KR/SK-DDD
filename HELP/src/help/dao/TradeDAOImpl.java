@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import help.vo.MemberVO;
 import help.vo.TradeVO;
 
 @Repository
@@ -33,5 +34,13 @@ public class TradeDAOImpl implements TradeDAO {
 	public List<TradeVO> getCompletedTradeByGosu(Integer m_no) {
 		return session.selectList("tradeMapper.getCompletedTradeByGosu", m_no);
 	}
+	
+	@Override
+	public void addTrade(TradeVO vo){
+		session.insert("tradeMapper.addTrade", vo);
+				
+	}
+	
+
 
 }

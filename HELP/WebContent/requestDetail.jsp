@@ -241,7 +241,7 @@
 			
 			//고용하기 (일반인 - 일반인이 고수를 고용한다)
 			var hire_go = function() {
-				window.location = "hireGosu.help";
+				window.location = "hireGosu.help?r_no=${requestDetailKey.r_no}";
 			}
 			
 			//완료하기 (일반인)

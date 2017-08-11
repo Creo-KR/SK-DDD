@@ -43,4 +43,15 @@
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
+   
+   
+   <insert id="addTrade" parameterType="TradeVO">
+	insert into trade(
+		t_no, t_requester, t_respondent, r_no
+	) VALUES (
+		t_no_seq.NEXTVAL, #{t_requester}, #{t_respondent}, #{r_no}
+	)	
+	</insert>
+	
+
 </mapper>
