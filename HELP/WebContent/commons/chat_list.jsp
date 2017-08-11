@@ -21,7 +21,7 @@
 		var room = window.parent.document
 				.getElementById('chat_room_list_frame');
 		room.src = "viewChatroom.help?cr_no=" + no + "&cr_receiver=" + rcv;
-		if (${chatroom.newMessageCnt > 0}) {
+		if (document.getElementById('chat_room_list_new') != null) {
 			var newMessage = document.getElementById('chat_room_list_new');
 			newMessage.style.display = "none";
 		}
