@@ -1,6 +1,7 @@
 package help.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
@@ -18,6 +19,7 @@ import help.dao.GosuDAO;
 import help.dao.RequestDAO;
 import help.dao.TradeDAO;
 import help.vo.ApplyVO;
+import help.vo.PageMaker;
 import help.vo.RequestVO;
 import help.vo.TradeVO;
 
@@ -74,24 +76,42 @@ public class RequestController {
 	   }
 	   
 	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
-	public String getAllRequestsByWriter(Model model, HttpSession session) {
+	public String getAllRequestsByWriter(Model model, HttpSession session, 
+			@RequestParam(required=false) Integer page) {
+		int count;
+		int pageResult;
+		PageMaker pageMaker = new PageMaker();
+		HashMap<String, Object> map = new HashMap<>();
 		Integer r_writer = (Integer) session.getAttribute("UNO");
-		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
-		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
 		
-		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
-		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
-		List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
-		
-		for (Integer rno : inactiveRequestValues) {
-			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
-			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
+		if(page == null) {
+			pageMaker.setPage(0);
+		} else {
+			pageMaker.setPage(page);
 		}
 		
+		pageResult = pageMaker.getPage();
+		count = reqDAO.getAllActiveRequestsByWriterCount(r_writer);
+		pageMaker.setCount(count);
+		
+		map.put("value", r_writer);
+		map.put("page", page);
+		//List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
+		//List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+		
+		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(map);
+		//List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
+		//List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
+		
+/*		for (Integer rno : inactiveRequestValues) {
+			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
+			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
+		}*/
+		
 		model.addAttribute("waitingListKey", activeRequestValues);
-		model.addAttribute("waitingHireListKey", waitingHireValues);
-		model.addAttribute("inProgressListKey", inProgressTradeValues);
-		model.addAttribute("completedListKey", completedTradeValues);
+		//model.addAttribute("waitingHireListKey", waitingHireValues);
+		//model.addAttribute("inProgressListKey", inProgressTradeValues);
+		//model.addAttribute("completedListKey", completedTradeValues);
 		
 		return "myRequestList3";
 	}
@@ -168,7 +188,6 @@ public class RequestController {
 		   
 		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
 		   tradevo.setT_respondent(38); //고수
-		  // tradevo.setT_enddate(t_enddate);
 		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
 		   tradeDAO.addTrade(tradevo);
 		   reqDAO.updateRequestForInactive(r_no);
