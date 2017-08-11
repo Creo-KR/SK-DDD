@@ -142,7 +142,7 @@
 
 	<div id="container">
 
-		<div class="main_contents" style="padding: 130px 0px 50px;">
+		<div class="main_contents">
 			<!-- 본문영역 -->
 			<div>
 				<%@ include file="commons/category_menu2.jsp"%>

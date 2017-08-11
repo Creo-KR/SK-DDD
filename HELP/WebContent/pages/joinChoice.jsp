@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="container">
-		<div class="main_contents"   style="margin-left: 15%;padding: 255px 0px 50px;">
+		<div class="main_contents"">
 			<div id="sub-contents">
 			<div class="l-box">
 				<div id="de-select">

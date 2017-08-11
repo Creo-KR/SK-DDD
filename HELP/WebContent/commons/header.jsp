@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/board.css" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/layout.css?ver=2" />
+	href="${pageContext.request.contextPath}/css/layout.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/contents.css" />
 <link rel="stylesheet" type="text/css"
@@ -22,12 +22,12 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/sample.css" media="screen" />
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/chat.css?ver=1" />
+	href="${pageContext.request.contextPath}/css/chat.css" />
 	
 <!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/style.css?ver=2" type="text/css"
+	href="${pageContext.request.contextPath}/css/style.css" type="text/css"
 	media="screen" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/jquery.autocomplete.css" type="text/css"

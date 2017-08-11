@@ -71,7 +71,7 @@
 		resultType="RequestVO">
 		<!-- select * from request where c_no=#{value} and r_active=1 -->
 		select * from request r, (select * from apply where g_no = #{value}) a
-		where r.r_no = a.r_no and r_active=1
+		where r.r_no = a.r_no and r_active=1 order by r.r_no
 	</select>
 
 	<select id="getRequestDetail" parameterType="Integer"
@@ -88,9 +88,12 @@
 		SELECT * FROM (
 		SELECT ROWNUM rnum, r.*
 		FROM (
-		SELECT * FROM request
+		<!-- SELECT * FROM request
 		WHERE c_no=#{c_no}
-		ORDER BY r_no
+		ORDER BY r_no -->
+		SELECT * FROM request a
+		WHERE a.r_no not in (select r_no from apply where g_no = #{g_no}) and c_no=#{c_no} and a.r_active=1
+		ORDER BY a.r_no
 		) r
 		)
 		WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
