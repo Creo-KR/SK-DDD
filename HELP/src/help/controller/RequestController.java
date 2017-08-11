@@ -107,7 +107,7 @@ public class RequestController {
 			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
 			completedTradeValues.addAll(tradeDAO.getCompletedTrade(rno));
 		}*/
-		
+		model.addAttribute("pageMaker1", pageMaker);
 		model.addAttribute("waitingListKey", activeRequestValues);
 		//model.addAttribute("waitingHireListKey", waitingHireValues);
 		//model.addAttribute("inProgressListKey", inProgressTradeValues);
