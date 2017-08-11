@@ -191,6 +191,60 @@
 					</c:if>
 				</div>
 			</div>
+			
+			 <div>
+         <c:if test="${UTYPE==0}">
+            <c:if test="${flag==0}">
+            <c:forEach var="apply" items="${apply}">
+               <div style="width: 100%; height: 200px; background-color: red">
+
+                  
+                  <div
+                     style="width: 33%; background-color: blue; display: inline-block">
+                     <table>
+                        <tr>
+                           <td style="width: 33%">이름</td>
+                           <td>${apply.m_name}</td>
+                        </tr>
+                        <tr>
+                           <td>전화번호</td>
+                           <td>${apply.m_tel}</td>
+                        </tr>
+                        <tr>
+                           <td>이메일 주소</td>
+                           <td>${apply.m_email}</td>
+                        </tr>
+                        <tr>
+                           <td>내용</td>
+                           <td>${apply.m_intro}</td>
+                        </tr>
+                        <tr>
+                           <td>
+                           <c:if test="${UTYPE==0}">
+                           <c:if test="${flag==0}">
+                                 <button onclick="hire_go()"
+                                    style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+                                    고용하기</button>
+                              </c:if>
+                              </c:if>
+                              </td>
+                        </tr>
+
+
+                     </table>
+                  </div>
+
+
+
+               </div>
+            </c:forEach>
+
+
+            </c:if>
+         </c:if>
+
+   </div>
+			
 
 		</div>
 	</div>

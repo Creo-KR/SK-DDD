@@ -40,6 +40,7 @@
 							<th>제목</th>
 							<th>등록일</th>
 							<th>상태</th>
+							<th>신청자수</th>
 						</tr>
 					</thead>
 
@@ -52,6 +53,7 @@
 								<td>${waitingHire.r_title}</td>
 								<td>${waitingHire.r_date}</td>
 								<td>고용 대기중</td>
+								<td>${waitingHire.applyCnt}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
