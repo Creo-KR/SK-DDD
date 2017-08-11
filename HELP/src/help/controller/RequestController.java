@@ -46,9 +46,9 @@ public class RequestController {
 	public String redirectByUtype(HttpSession session) {
 		Integer memberType = (Integer) session.getAttribute("UTYPE");
 		if (memberType == 0)
-			return "redirect:/getAllRequestsByWriter.help";
+			return "redirect:/getAllRequestsByWriter.help?alertType=none";
 		else
-			return "redirect:/getAllRequestsByCategory.help";
+			return "redirect:/getAllRequestsByCategory.help?alertType=none";
 	}
 
 	@RequestMapping(value = "addRequest.help", method = RequestMethod.POST)
@@ -72,14 +72,14 @@ public class RequestController {
 		if (requestvo != null) {
 			int cnt = reqDAO.insertRequest(requestvo);
 			if (cnt == 1) {
-				return "redirect:/getAllRequestsByWriter.help";
+				return "redirect:/getAllRequestsByWriter.help?alertType=none";
 			}
 		}
 		return "";
 	}
 
 	@RequestMapping(value = "/getAllRequestsByWriter.help", method = RequestMethod.GET)
-	public String getAllRequestsByWriter(Model model, HttpSession session,
+	public String getAllRequestsByWriter(Model model, HttpSession session,@RequestParam String alertType,
 			@RequestParam(required = false) Integer page) {
 		Integer r_writer = (Integer) session.getAttribute("UNO");
 		List<TradeVO> inProgressTradeValues = null;
@@ -102,6 +102,8 @@ public class RequestController {
 		model.addAttribute("waitingHireListKey", waitingHireValues);
 		model.addAttribute("inProgressListKey", inProgressTradeValues);
 		model.addAttribute("completedListKey", completedTradeValues);
+		model.addAttribute("alertType",alertType);
+		
 
 		return "myRequestList3";
 	}
@@ -258,7 +260,7 @@ public class RequestController {
 		   
 		   tradeDAO.addTrade(tradevo);
 		   reqDAO.updateRequestForInactive(r_no);  
-	       return "";
+	       return "redirect:/getAllRequestsByWriter.help?alertType=hireComplete";
 	   }
 	   
 	@RequestMapping(value = "/applyForRequest.help", method = RequestMethod.GET)
@@ -287,6 +289,6 @@ public class RequestController {
 	@RequestMapping(value = "/completeRequest.help", method = RequestMethod.GET)
 	public String completeRequest(@RequestParam Integer r_no) {
 		tradeDAO.updateTradeToBeCompleted(r_no);
-		return "redirect:/getAllRequestsByWriter.help";
+		return "redirect:/getAllRequestsByWriter.help?alertType=tradeComplete";
 	}
 }
