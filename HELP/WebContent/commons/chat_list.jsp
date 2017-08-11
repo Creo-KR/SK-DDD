@@ -9,7 +9,8 @@
 	document.onclick = function(e) {
 		if (e.srcElement.id == "chatroom") {
 			viewChatroom(e.srcElement);
-		} else if (e.srcElement.parentElement != null && e.srcElement.parentElement.id == "chatroom") {
+		} else if (e.srcElement.parentElement != null
+				&& e.srcElement.parentElement.id == "chatroom") {
 			viewChatroom(e.srcElement.parentElement);
 		}
 	};
@@ -20,6 +21,8 @@
 		var room = window.parent.document
 				.getElementById('chat_room_list_frame');
 		room.src = "viewChatroom.help?cr_no=" + no + "&cr_receiver=" + rcv;
+		var newMessage = document.getElementById('chat_room_list_new');
+		newMessage.style.display = "none";
 		var display = window.parent.document.getElementById('chat_room');
 		display.style.display = "block";
 		sessionStorage.setItem("chat_room", "open");
@@ -41,7 +44,9 @@
 			</div>
 			<div class="chat_room_list_messasge">${chatroom.lastMessage}</div>
 			<div class="chat_room_list_date">${chatroom.cr_lastdate}</div>
-
+			<c:if test="${chatroom.newMessageCnt > 0}">
+				<div id="chat_room_list_new" class="chat_room_list_new">${chatroom.newMessageCnt}</div>
+			</c:if>
 		</div>
 	</c:forEach>
 </body>
