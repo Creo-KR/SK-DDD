@@ -51,14 +51,21 @@ public class ChatController {
 			session.setAttribute("ss_cr_receiver", member.getMemberByNo(cr_receiver));
 
 			ChatroomVO room = service.getChatroomByNo(cr_no);
+			
+			boolean out = false;
 			if (room.getCr_user1().getM_no().equals(cr_receiver)) {
 				if (room.getCr_active1().equals(0))
-					session.setAttribute("ss_receiver", "out");
+					out = true;
 			} else if (room.getCr_user2().getM_no().equals(cr_receiver)) {
 				if (room.getCr_active2().equals(0))
-					session.setAttribute("ss_receiver", "out");
+					out = true;
 			}
-
+			
+			if(out)
+				session.setAttribute("ss_receiver", "out");
+			else
+				session.removeAttribute("ss_receiver");
+			
 			List<ChatVO> list = null;
 			list = service.getChatByChatroom(new ChatroomVO(cr_no));
 			mv.addObject("chat_list", list);
@@ -75,19 +82,21 @@ public class ChatController {
 		Integer ch_sender = (Integer) session.getAttribute("UNO");
 		MemberVO ch_receiver = (MemberVO) session.getAttribute("ss_cr_receiver");
 		String receiver = (String) session.getAttribute("ss_receiver");
-
+		String apply = "";
 		if (cr_no == null) {
 			ChatroomVO chatroom = new ChatroomVO(0, new MemberVO(ch_sender), ch_receiver, null, 1, 1);
 			service.addChatroom(chatroom);
 			cr_no = chatroom.getCr_no();
 			session.setAttribute("ss_cr_no", cr_no);
+			apply = "apply";
+			
 		}
 
 		if (receiver == null || !receiver.equals("out"))
 			service.sendChat(new ChatVO(0, new MemberVO(ch_sender), ch_receiver, null, text, 0, new ChatroomVO(cr_no)));
 
 		try {
-			response.getWriter().print(cr_no+","+ch_receiver.getM_no());
+			response.getWriter().print(cr_no+","+ch_receiver.getM_no()+","+apply);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -347,7 +347,7 @@
 								</c:forEach></td>
 						</tr>
 						<tr>
-							<th>날짜</th>
+							<th>날짜 :</th>
 							<td class="ty2">${requestDetailKey.r_date}</td>
 						</tr>
 					</table>

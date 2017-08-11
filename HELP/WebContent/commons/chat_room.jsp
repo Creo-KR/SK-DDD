@@ -33,7 +33,7 @@ title.innerText = "${ss_cr_receiver.m_name}";
 		</div>
 	</c:if>
 	<script>
-	if(${chat.ch_check} == 0 && ${chat.ch_receiver.m_no} == ${UNO}) {
+	if(sessionStorage.getItem("chat_room") == "open" && ${chat.ch_check} == 0 && ${chat.ch_receiver.m_no} == ${UNO}) {
 		$.ajax({
 			url : "checkChat.help",
 			data : {ch_no:${chat.ch_no}},
