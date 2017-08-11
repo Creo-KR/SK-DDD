@@ -18,9 +18,15 @@
 	<div id="container">
 	
 	
-		<c:if test="${complete=='complete'}">
+		<c:if test="${alertType=='tradeComplete'}">
 			<script>
-				alert('완료되었습니다.');
+				alert('거래가 완료되었습니다.');
+ 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+			</script>
+		</c:if>
+		<c:if test="${alertType=='hireComplete'}">
+			<script>
+				alert('고용이 완료되었습니다.');
  				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
 			</script>
 		</c:if>
