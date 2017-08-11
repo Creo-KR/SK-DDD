@@ -270,7 +270,6 @@ public class RequestController {
 		RequestVO request = reqDAO.getRequestDetail(r_no);
 		ApplyVO vo = new ApplyVO(request.getR_no(), request.getR_writer(),
 				(Integer) req.getSession().getAttribute("UNO"));
-
 		try {
 			reqDAO.insertApply(vo);
 
@@ -282,7 +281,6 @@ public class RequestController {
 			mv.addObject("requestDetailKey", request);
 			mv.setViewName("requestDetail");
 		}
-
 		return mv;
 	}
 

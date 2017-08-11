@@ -34,11 +34,12 @@
 			data : $('#chat_room_input_frm').serialize(),
 			type : "post",
 			success : function sendHandler(data) {
-				if(${requestDetailKey.r_no != null}) {
+				var split = data.split(',');
+				
+				if(split[2] == "apply") {
 					window.location = "applyForRequest.help?rno=${requestDetailKey.r_no}";
 				}
 				
-				var split = data.split(',');
 				var frame = document.getElementById('chat_room_list_frame');
 				frame.src="viewChatroom.help?cr_no="+split[0]+"&cr_receiver="+split[1];
 				var frame2 = document.getElementById('chat_list_frame');
@@ -124,7 +125,7 @@
 		<div id="chat_room_titleBar" class="chat_room_titleBar">
 			<div id="chat_room_titleBar_name" class="chat_room_titleBar_name">${ss_cr_receiver.m_name}</div>
 			<div id="chat_room_titleBar_btn" class="chat_room_titleBar_btn">
-				<img src="images/check.png" onclick="javascript:joinChatroom(1);"><img
+				<img src="images/check.png"><img
 					src="images/leave.png" onclick="javascript:leaveChatroom();"><img
 					src="images/close.png" onclick="javascript:divClose('chat_room');">
 			</div>

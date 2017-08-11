@@ -52,7 +52,7 @@
    
       <select id="getInProgressTradeByGosuCount" parameterType="Integer"
       resultType="Integer">
-      	SELECT * FROM (
+      	SELECT count(*) FROM (
 		    SELECT b.*
 			FROM (
 				SELECT t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date

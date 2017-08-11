@@ -20,6 +20,7 @@ public class ChatServiceImpl implements ChatService {
 		List<ChatroomVO> list = dao.getChatroomListByUser(vo);
 		for (ChatroomVO v : list) {
 			v.setLastMessage(dao.getLastMessageByChatroom(v.getCr_no()));
+			v.setNewMessageCnt(dao.chatroomRefresh(new ChatVO(0, null, v.getCr_user1(), null, null, 0, v)));
 		}
 		return list;
 	}
@@ -60,7 +61,7 @@ public class ChatServiceImpl implements ChatService {
 			dao.leaveChatroom(room, 2);
 		}
 	}
-	
+
 	@Override
 	public ChatroomVO getChatroomByNo(Integer no) {
 		return dao.getChatroomByNo(new ChatroomVO(no));
