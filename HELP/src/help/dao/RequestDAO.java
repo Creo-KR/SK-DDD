@@ -12,7 +12,7 @@ public interface RequestDAO {
 	
 	public int removeRequest(Integer r_no);
 	
-	public List<RequestVO> getAllActiveRequestsByWriter(Integer r_writer);
+	public List<RequestVO> getAllActiveRequestsByWriter(HashMap<String, Object> map);
 	
 	public List<Integer> getAllInactiveRequestsByWriter(Integer r_writer);
 	
@@ -27,4 +27,7 @@ public interface RequestDAO {
 	public List<RequestVO> pageReqList(HashMap<String, Object> map);
 	
 	public int insertApply(ApplyVO vo);
+	
+	public void updateRequestForInactive(Integer r_no);
+	public int getAllActiveRequestsByWriterCount(Integer r_writer);
 }

@@ -42,7 +42,12 @@ public class TradeVO {
 	public void setT_enddate(String t_enddate) {
 		this.t_enddate = t_enddate;
 	}
-
+ 
+	//여기
+//	public Integer getR_no() {
+//		return req.getR_no();
+//	}
+//	
 	public RequestVO getReq() {
 		return req;
 	}
@@ -50,6 +55,8 @@ public class TradeVO {
 	public void setReq(RequestVO req) {
 		this.req = req;
 	}
+	
+	
 
 	@Override
 	public String toString() {
