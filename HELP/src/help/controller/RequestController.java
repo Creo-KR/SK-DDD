@@ -193,12 +193,8 @@ public class RequestController {
 		   tradevo.setT_respondent(38); //고수
 		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
 		   tradeDAO.addTrade(tradevo);
-		   reqDAO.updateRequestForInactive(r_no);
-		   
-		   
-		   
-		   
-	      return "";
+		   reqDAO.updateRequestForInactive(r_no);  
+	       return "";
 	   }
 	   
 		@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
