@@ -168,7 +168,6 @@ public class RequestController {
 		   
 		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
 		   tradevo.setT_respondent(38); //고수
-		  // tradevo.setT_enddate(t_enddate);
 		   tradevo.setReq(new RequestVO(r_no));; //요청 번호
 		   tradeDAO.addTrade(tradevo);
 		   

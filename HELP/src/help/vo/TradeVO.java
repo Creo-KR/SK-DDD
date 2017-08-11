@@ -43,10 +43,11 @@ public class TradeVO {
 		this.t_enddate = t_enddate;
 	}
  
-	public Integer getR_no() {
-		return req.getR_no();
-	}
-	
+	//여기
+//	public Integer getR_no() {
+//		return req.getR_no();
+//	}
+//	
 	public RequestVO getReq() {
 		return req;
 	}
