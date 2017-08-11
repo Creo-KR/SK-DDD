@@ -16,6 +16,16 @@
 <body>
 
 	<div id="container">
+	
+	
+		<c:if test="${complete=='complete'}">
+			<script>
+				alert('완료되었습니다.');
+ 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+			</script>
+		</c:if>
+	
+	
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -214,7 +224,8 @@
 				</p>
 			</div>
 		</div>
-	</div>
+
+	
 	<%@ include file="commons/footer.jsp"%>
 
 	<script
