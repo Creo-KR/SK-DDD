@@ -16,7 +16,7 @@
 			<div id="sub-contents">
 			<div class="l-box">
 				<div id="de-select">
-					<div class="select-box-l box-1">
+					<div class="select-box-l box-1" style="margin-left: 19%;" >
 						<h3>일반 회원 가입</h3>
 						<p>고수를 통하여 도움을 얻는 목적으로 회원 가입 하는 페이지</p>
 						<div class="select-box-s">
