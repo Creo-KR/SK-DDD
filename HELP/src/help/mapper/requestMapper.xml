@@ -32,8 +32,9 @@
 	
 	<select id="getAllInactiveRequestsByWriter" parameterType="Integer"
 		resultType="Integer">
-		select r_no from request where r_writer=#{value} and
-		r_active=0
+		select r_no from request 
+		where r_writer=#{value} and r_active=0
+		order by r_no
 	</select>
 
 	<!-- <select id="getAllInactiveRequestsByWriter" parameterType="Integer" -->
@@ -122,7 +123,6 @@
 	
 	<update id="updateRequestForInactive" parameterType="Integer">
 		  update request set r_active=0 where r_no=#{value}
-	
 	</update>
 	
 	<select id="getApplyMember" parameterType="Integer" resultType="MemberVO">
@@ -130,6 +130,10 @@
         select * from request r, (select * from apply) a
 		where r.r_no = a.r_no and r.r_no = ${value} and r_active=1) b, member m
         where b.g_no = m.m_no
+	</select>
+	
+	<select id="getApplyCount" parameterType="Integer" resultType="Integer">
+	select count(*) from apply where r_no=#{r_no}
 	</select>
 	
 </mapper>

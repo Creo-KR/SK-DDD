@@ -10,6 +10,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="css/requestList.css">
+
 </head>
 <%@ include file="commons/header.jsp"%>
 <body>
@@ -29,6 +30,7 @@
 							<th>제목</th>
 							<th>등록일</th>
 							<th>상태</th>
+							<th>신청자수</th>
 						</tr>
 					</thead>
 
@@ -41,6 +43,7 @@
 								<td>${waitingHire.r_title}</td>
 								<td>${waitingHire.r_date}</td>
 								<td>고용 대기중</td>
+								<td>${waitingHire.applyCnt}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -73,31 +76,27 @@
 							</tr>
 						</tbody>
 					</c:forEach>
-					<tr>
-						<td>
-							<ul class="waintingPage">
-								<c:if test="${pageMake1r.prev }">
-									<li><a
-										href='getAllRequestsByCategory.help?page=${pageMaker1.start -1}'>이전</a>
-									</li>
-								</c:if>
-								<c:forEach begin="${pageMaker1.start }" end="${pageMaker1.end}"
-									var="idx">
-									<li
-										class='<c:out value="${idx == pageMaker1.page?'current':''}"/>'>
-										<a href='getAllRequestsByCategory.help?page=${idx}'>${idx}</a>
-									</li>
-								</c:forEach>
-
-								<c:if test="${pageMaker.next }">
-									<li><a
-										href='getAllRequestsByCategory.help?page=${pageMaker.end +1}'>다음</a>
-									</li>
-								</c:if>
-							</ul>
-						</td>
-					</tr>
 				</table>
+				<ul class="paging1">
+					<c:if test="${pageMake1r.prev }">
+						<li><a
+							href='getAllRequestsByCategory.help?page=${pageMaker1.start -1}'>이전</a>
+						</li>
+					</c:if>
+					<c:forEach begin="${pageMaker1.start }" end="${pageMaker1.end}"
+						var="idx">
+						<li
+							class='<c:out value="${idx == pageMaker1.page?'current':''}"/>'>
+							<a href='getAllRequestsByCategory.help?page=${idx}'>${idx}</a>
+						</li>
+					</c:forEach>
+
+					<c:if test="${pageMaker.next }">
+						<li><a
+							href='getAllRequestsByCategory.help?page=${pageMaker.end +1}'>다음</a>
+						</li>
+					</c:if>
+				</ul>
 				<br>
 
 

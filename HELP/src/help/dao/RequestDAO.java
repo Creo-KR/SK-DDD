@@ -36,4 +36,6 @@ public interface RequestDAO {
 	public int getAllActiveRequestsByWriterCount(Integer r_writer);
 	
 	public List<MemberVO> getApplyMember(Integer r_no);
+	
+	public Integer getApplyCount(Integer r_no);
 }
