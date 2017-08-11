@@ -47,10 +47,10 @@
     }
     
     #print-modal-controls a.print {
-        background: url(/kor/images/common/icon-print.png) no-repeat 50% 50%;
+        background:  no-repeat 50% 50%;
     }
     #print-modal-controls a.close {
-        background: url(/kor/images/common/icon-close.png) no-repeat 50% 50%;
+        background:  no-repeat 50% 50%;
     }
 	
 .print-preview {

@@ -61,8 +61,7 @@
 								<dd class="pl01 none">계약이행실적증명 발급시스템</dd>
 								<dd class="txt">계약을 모두 이행한 사실을 증명할 수 있는 서류를 발급받으실 수 있습니다.</dd>
 								<dd class="txt">
-									<a href="redirectByUtype.help"
-										target="_blank" class="nw">이동 하기</a>
+									<a href="redirectByUtype.help" class="nw">이동 하기</a>
 								</dd>
 							</dl>
 							<dl>

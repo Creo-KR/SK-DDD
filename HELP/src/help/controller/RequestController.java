@@ -1,29 +1,23 @@
 package help.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import help.dao.GosuDAO;
 import help.dao.RequestDAO;
 import help.dao.TradeDAO;
-import help.service.MemberService;
-import help.vo.MemberVO;
-import help.vo.PageMaker;
+import help.vo.ApplyVO;
 import help.vo.RequestVO;
 import help.vo.TradeVO;
 
@@ -46,7 +40,6 @@ public class RequestController {
 	@RequestMapping("redirectByUtype.help")
 	public String redirectByUtype(HttpSession session) {
 		Integer memberType = (Integer) session.getAttribute("UTYPE");
-		System.out.println(">>memberType : " + memberType);
 		if (memberType == 0)
 			return "redirect:/getAllRequestsByWriter.help";
 		else 
@@ -83,12 +76,12 @@ public class RequestController {
 	@RequestMapping(value="/getAllRequestsByWriter.help", method=RequestMethod.GET)
 	public String getAllRequestsByWriter(Model model, HttpSession session) {
 		Integer r_writer = (Integer) session.getAttribute("UNO");
+		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
+		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
 		
 		List<RequestVO> activeRequestValues = reqDAO.getAllActiveRequestsByWriter(r_writer);
 		List<Integer> inactiveRequestValues = reqDAO.getAllInactiveRequestsByWriter(r_writer);
-		
-		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
-		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
+		List<RequestVO> waitingHireValues = reqDAO.getRequestWaitingHire(r_writer);
 		
 		for (Integer rno : inactiveRequestValues) {
 			inProgressTradeValues.addAll(tradeDAO.getInProgressTrade(rno));
@@ -96,6 +89,7 @@ public class RequestController {
 		}
 		
 		model.addAttribute("waitingListKey", activeRequestValues);
+		model.addAttribute("waitingHireListKey", waitingHireValues);
 		model.addAttribute("inProgressListKey", inProgressTradeValues);
 		model.addAttribute("completedListKey", completedTradeValues);
 		
@@ -120,11 +114,13 @@ public class RequestController {
 		Integer m_no = (Integer) session.getAttribute("UNO");
 		
 		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
-		List<RequestVO> waitingListValue = new ArrayList<RequestVO>();
+		/*List<RequestVO> waitingListValue = new ArrayList<RequestVO>();*/
 		
-		for (Integer cno : cnoList) {
+		/*for (Integer cno : cnoList) {
 			waitingListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
-		}
+		}*/
+		
+		List<RequestVO> waitingListValue = reqDAO.getAllRequestsByCategory(m_no);
 		
 		List<TradeVO> inProgressTradeValues = new ArrayList<TradeVO>();		
 		List<TradeVO> completedTradeValues = new ArrayList<TradeVO>();
@@ -151,11 +147,20 @@ public class RequestController {
 		return "requestDetail";
 	}
 	
-	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
-	public String applyForRequest(@RequestParam Integer r_no) {
-		
-		return "myRequestList3";
-	}
+	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+	   public String applyForRequest(HttpServletRequest req) {
+		  ApplyVO vo = new ApplyVO();
+		  vo.setR_no(Integer.parseInt(req.getParameter("rno")));
+		  vo.setM_no(Integer.parseInt(req.getParameter("mno")));
+		  vo.setG_no(Integer.parseInt(req.getParameter("gno")));
+		  reqDAO.insertApply(vo);
+		  return "redirect:/redirectByUtype.help";
+	   }
+//	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
+//	public String applyForRequest(@RequestParam Integer r_no) {
+//		
+//		return "myRequestList3";
+//	}
 	
 //	@RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
 //	public String hireGosu() {
@@ -171,10 +176,19 @@ public class RequestController {
 //	      
 //	   }
 //	   
-//	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-//	   public String hireGosu() {
-//	      
-//	   }
+	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
+	   public String hireGosu() {
+		   TradeVO tradevo = new TradeVO();
+//		   tradevo.setT_no(t_no); //트레이드 번호
+//		   tradevo.setT_requester(t_requester);
+//		   tradevo.setT_respondent(t_respondent);
+//		   tradevo.setT_enddate(t_enddate);
+//		   tradevo.setReq(req);
+		   
+	      return "";
+	      
+	      
+	   }
 //	   
 //	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
 //	   public String completeRequest() {

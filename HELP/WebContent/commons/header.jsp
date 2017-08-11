@@ -21,7 +21,11 @@
 	media="screen" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/sample.css" media="screen" />
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/chat.css?ver=1" />
+	
 <!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" /> -->
+
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/style.css?ver=2" type="text/css"
 	media="screen" />
@@ -35,8 +39,6 @@
 	src="${pageContext.request.contextPath}/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/m_design.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.jplayer.min.js"></script>
 <script type="text/javascript"
@@ -76,7 +78,7 @@
 				<a href="mypageDivision.help" class="eng" style="float: left; font-family: 'Cooper Black'; font-size: 18px;">MY
 					PAGE</a>
 					<a href="#" onclick="logout(); return false;" style="font-family: 'Cooper Black'; font-size: 18px;">LOGOUT</a>
-			</c:if><a onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
+			</c:if><a href="#" onclick="divOpen('chat_list')" style="font-family: 'Cooper Black'; font-size: 18px;">CHAT</a>
 		</div>
 
 		<script type='text/javascript'>
@@ -209,16 +211,6 @@
 
 
 <script>
-	$(function() {
-
-		$('.print').printPreview(".contents_inner", "1");
-
-		// Add keybinding (not recommended for production use)
-		$(document).bind('keydown', function(e) {
-			var code = (e.keyCode ? e.keyCode : e.which);
-		});
-	});
-
 	function lodingbar() {
 		document.getElementById('loding01').style.display = "block";
 		document.getElementById('loding02').style.display = "block";

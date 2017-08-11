@@ -54,7 +54,7 @@ ul.sdt_menu {
 
 h1.title {
 	text-indent: -9000px;
-	background: transparent url(title.png) no-repeat top left;
+	background: transparent no-repeat top left;
 	width: 633px;
 	height: 69px;
 }
@@ -69,7 +69,6 @@ input[type=text] {
 	width: 60%;
 	height: 60px;
 	font-size: 25px;
-	background-image: url('searchicon.png');
 }
 /* #add_request { */
 /* display: inline-block; */
@@ -211,16 +210,6 @@ button:hover:before, button:hover:after {
 	</div>
 	<!-- Category Box End -->
 	
-
-
-	<div>
-		<span class="reference"> <a
-			href="http://tympanus.net/codrops/2010/07/16/slide-down-box-menu/">back
-				to the Codrops Tutorial</a> <a
-			href="http://www.flickr.com/photos/arcticpuppy/sets/72157622090180990/">Images
-				by tibchris</a>
-		</span>
-	</div>
 
 
 	<!-- The JavaScript -->
