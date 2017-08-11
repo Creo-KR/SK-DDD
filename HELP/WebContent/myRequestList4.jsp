@@ -15,6 +15,10 @@
 <body>
 
 	<div id="container">
+	
+	
+	
+	
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 
@@ -36,7 +40,7 @@
 						<tbody>
 							<tr>
 								<td data-title="ID"><a
-									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=0">${waiting.r_no}</a></td>
+									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=4">${waiting.r_no}</a></td>
 								<td data-title="Name">${waiting.c_no}</td>
 								<td data-title="Link">${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">

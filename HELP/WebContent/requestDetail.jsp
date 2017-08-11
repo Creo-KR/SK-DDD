@@ -87,10 +87,7 @@
 		joinChatroom(${requestDetailKey.r_writer});
 	}
 
-	//고용하기 (일반인 - 일반인이 고수를 고용한다)
-	var hire_go = function() {
-		window.location = "hireGosu.help";
-	}
+
 
 	//완료하기 (일반인)
 	var complete_go = function() {
@@ -151,16 +148,7 @@
 								</c:forEach></td>
 						</tr>
 						<tr>
-							<th>완료여부</th>
-							<c:if test="${requestDetailKey.r_active == 1}">
-								<td class="ty2">대기중</td>
-							</c:if>
-							<c:if test="${requestDetailKey.r_active == 0}">
-								<td class="ty2">진행중</td>
-							</c:if>
-						</tr>
-						<tr>
-							<th>날짜</th>
+							<th>날짜 :</th>
 							<td class="ty2">${requestDetailKey.r_date}</td>
 						</tr>
 					</table>
@@ -178,11 +166,6 @@
 
 					<!-- UTYPE(0=일반인, 1=사용자), flag(0=고용버튼,1=완료하기버튼) -->
 					<c:if test="${UTYPE==0}">
-						<c:if test="${flag==0}">
-							<button onclick="hire_go()"
-								style="font-weight: bold; margin-left: 15px; margin-top: 10px">
-								고용하기</button>
-						</c:if>
 						<c:if test="${flag==1}">
 							<button onclick="complete_go()"
 								style="font-weight: bold; margin-left: 15px; margin-top: 10px">
@@ -224,6 +207,13 @@
                            <c:if test="${flag==0}">
                                  <button onclick="hire_go()"
                                     style="font-weight: bold; margin-left: 15px; margin-top: 10px">
+                                    <script>
+                                	//고용하기 (일반인 - 일반인이 고수를 고용한다)
+                                	var hire_go = function() {
+                                		window.location = "hireGosu.help?r_no=${requestDetailKey.r_no}&g_no=${apply.m_no}";
+                                	}
+                                    </script>
+                                    
                                     고용하기</button>
                               </c:if>
                               </c:if>
