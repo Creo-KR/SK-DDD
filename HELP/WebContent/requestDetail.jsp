@@ -246,7 +246,7 @@
 			
 			//완료하기 (일반인)
 			var complete_go = function() {
-				window.location = "completeRequest.help";
+				window.location = "completeRequest.help?r_no=${requestDetailKey.r_no}";
 			}
 		</script>
 </body>

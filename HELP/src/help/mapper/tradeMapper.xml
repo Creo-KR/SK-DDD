@@ -43,4 +43,8 @@
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
+   
+   <update id="updateTradeToBeCompleted" parameterType="Integer">
+   		update trade set t_enddate=sysdate where r_no=#{value}
+   </update>
 </mapper>
