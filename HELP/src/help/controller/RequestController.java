@@ -113,6 +113,8 @@ public class RequestController {
 		//model.addAttribute("inProgressListKey", inProgressTradeValues);
 		//model.addAttribute("completedListKey", completedTradeValues);
 		
+		model.addAttribute("complete","complete");
+		
 		return "myRequestList3";
 	}
 	
@@ -151,6 +153,7 @@ public class RequestController {
 		model.addAttribute("waitingListKey", waitingListValue);
 		model.addAttribute("inProgressListKey", inProgressTradeValues);
 		model.addAttribute("completedListKey", completedTradeValues);
+
 		
 		return "myRequestList4";
 	}
@@ -162,6 +165,8 @@ public class RequestController {
 		model.addAttribute("flag",flag);
 		model.addAttribute("requestDetailKey", vo);
 		//model.addAttribute("requestDetailKey",vo);
+		
+		
 
 		return "requestDetail";
 	}
@@ -199,9 +204,12 @@ public class RequestController {
 	   }
 	   
 		@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
-		public String completeRequest(@RequestParam Integer r_no) {
+		public String completeRequest(@RequestParam Integer r_no, Model model) {
 			tradeDAO.updateTradeToBeCompleted(r_no);
-			return "redirect:/getRequestDetail.help?r_no=" + r_no + "&flag=0";
+			
+			
+			
+			return "redirect:/getAllRequestsByWriter.help";
 		}
 }
 
