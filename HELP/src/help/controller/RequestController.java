@@ -113,7 +113,7 @@ public class RequestController {
 	public String getAllRequestsByCategory(Model model, HttpSession session) {
 		Integer m_no = (Integer) session.getAttribute("UNO");
 		
-		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
+		// List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
 		/*List<RequestVO> waitingListValue = new ArrayList<RequestVO>();*/
 		
 		/*for (Integer cno : cnoList) {
