@@ -113,7 +113,7 @@ public class RequestController {
 	public String getAllRequestsByCategory(Model model, HttpSession session) {
 		Integer m_no = (Integer) session.getAttribute("UNO");
 		
-		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
+		// List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
 		/*List<RequestVO> waitingListValue = new ArrayList<RequestVO>();*/
 		
 		/*for (Integer cno : cnoList) {
@@ -141,9 +141,8 @@ public class RequestController {
 		
 		model.addAttribute("flag",flag);
 		model.addAttribute("requestDetailKey", vo);
-		System.out.println();
-		model.addAttribute("requestDetailKey",vo);
-		
+		//model.addAttribute("requestDetailKey",vo);
+
 		return "requestDetail";
 	}
 	
@@ -156,26 +155,7 @@ public class RequestController {
 		  reqDAO.insertApply(vo);
 		  return "redirect:/redirectByUtype.help";
 	   }
-//	@RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
-//	public String applyForRequest(@RequestParam Integer r_no) {
-//		
-//		return "myRequestList3";
-//	}
-	
-//	@RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
-//	public String hireGosu() {
-//		
-//	}
-//	
-//	@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
-//	public String completeRequest() {
-//		
-//	}
-//	  @RequestMapping(value="/applyForRequest.help", method=RequestMethod.GET)
-//	   public String applyForRequest() {
-//	      
-//	   }
-//	   
+
 	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
 	   public String hireGosu(@RequestParam Integer r_no, HttpSession session ) {
 		   TradeVO tradevo = new TradeVO();
@@ -195,14 +175,12 @@ public class RequestController {
 		   
 		   
 	      return "";
-	      
-	      
 	   }
-//	   
-//	   @RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
-//	   public String completeRequest() {
-//	      
-//	   }
-
+	   
+		@RequestMapping(value="/completeRequest.help", method=RequestMethod.GET)
+		public String completeRequest(@RequestParam Integer r_no) {
+			tradeDAO.updateTradeToBeCompleted(r_no);
+			return "redirect:/getRequestDetail.help?r_no=" + r_no + "&flag=0";
+		}
 }
 

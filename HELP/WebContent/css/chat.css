@@ -69,6 +69,7 @@
 
 .chat_room_titleBar_btn img:hover {
 	background-color: rgba(244,244,244, 0.4);
+	border-radius: 6px;
 }
 
 .chat_window_titleBar_btn img {
@@ -80,6 +81,7 @@
 
 .chat_window_titleBar_btn img:hover {
 	background-color: rgba(244,244,244, 0.4);
+	border-radius: 6px;
 }
 
 .chat_room_list_frame {

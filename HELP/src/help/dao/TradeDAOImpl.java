@@ -43,4 +43,9 @@ public class TradeDAOImpl implements TradeDAO {
 	
 
 
+	@Override
+	public int updateTradeToBeCompleted(Integer r_no) {
+		return session.delete("tradeMapper.updateTradeToBeCompleted", r_no);
+	}
+
 }
