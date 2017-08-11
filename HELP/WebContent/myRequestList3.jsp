@@ -17,17 +17,17 @@
 
 	<div id="container">
 	
-	
 		<c:if test="${alertType=='tradeComplete'}">
 			<script>
 				alert('거래가 완료되었습니다.');
- 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+				window.location.href = "getAllRequestsByWriter.help?alertType=none";
 			</script>
 		</c:if>
 		<c:if test="${alertType=='hireComplete'}">
 			<script>
 				alert('고용이 완료되었습니다.');
- 				//window.location.href = "${pageContext.request.contextPath}myRequestList4.jsp";
+				window.close();
+				window.location.href = "getAllRequestsByWriter.help?alertType=none";
 			</script>
 		</c:if>
 	

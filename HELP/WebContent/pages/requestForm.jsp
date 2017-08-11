@@ -261,7 +261,7 @@ label.control-label {
 						</form>
 						<div>
 							<button onclick="cansel()" class='btn-lg btn-danger'
-								style="margin-left: 2px" type=''>취소</button>
+								style="margin-left: 2px" >취소</button>
 						</div>
 						<script>
 							var cansel = function() {
