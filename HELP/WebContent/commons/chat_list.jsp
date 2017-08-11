@@ -21,7 +21,7 @@
 				.getElementById('chat_room_list_frame');
 		room.src = "viewChatroom.help?cr_no=" + no + "&cr_receiver=" + rcv;
 		var display = window.parent.document.getElementById('chat_room');
-		display.style.display = "";
+		display.style.display = "block";
 		sessionStorage.setItem("chat_room", "open");
 	}
 </script>
