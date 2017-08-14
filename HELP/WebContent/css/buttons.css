@@ -699,8 +699,10 @@
 	transition: background-color 0.3s, color 0.3s;
 }
 .button--wapasha.button--inverted {
-	background: #fff;
-	color: #37474f;
+	/* background: #fff;
+	color: #37474f; */
+	background: #37474f;
+	color: #fff;
 }
 .button--wapasha::before {
 	content: '';
@@ -721,15 +723,15 @@
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .button--wapasha.button--inverted::before {
-	border-color: #ffffff;
+	border-color: #37474f;
 }
 .button--wapasha:hover {
 	background-color: #fff;
 	color: #3f51b5;
 }
 .button--wapasha.button--inverted:hover {
-	background-color: #37474f;
-	color: #ffffff;
+	background-color: #fff;
+	color: #37474f;
 }
 .button--wapasha:hover::before {
 	-webkit-transform: scale3d(1, 1, 1);
