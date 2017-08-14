@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>H.E.L.P</title>
 <%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css?ver=5" />
 <link rel="stylesheet" type="text/css"
