@@ -62,7 +62,7 @@ public class RequestController {
 		String question_answer = "";
 
 		for (int i = 0; i < question.length; i++) {
-			question_answer = question_answer + question[i] + answer[i] + "\n";
+			question_answer = question_answer + question[i] + "@!@" + answer[i] + "@!@";
 		}
 
 		requestvo.setR_title(title);
@@ -108,19 +108,6 @@ public class RequestController {
 		return "myRequestList3";
 	}
 
-	//	@RequestMapping(value="/getAllRequestsByCategory.help", method=RequestMethod.GET)
-	//	public ModelAndView getAllRequestsByCategory(HttpSession session) {
-	//		Integer m_no = (Integer) session.getAttribute("UNO");
-	//		List<Integer> cnoList = gosuDAO.getMyAllCategoryNo(m_no);
-	//		List<RequestVO> requestListValue = new ArrayList<RequestVO>();
-	//		
-	//		for (Integer cno : cnoList) {
-	//			requestListValue.addAll(reqDAO.getAllRequestsByCategory(cno));
-	//		}
-	//		
-	//		return new ModelAndView("gosuRequestList", "requestListKey", requestListValue);
-	//	}
-
 	@RequestMapping(value = "/getAllRequestsByCategory.help", method = RequestMethod.GET)
 	public String getAllRequestsByCategory(Model model, HttpSession session) {
 		Integer m_no = (Integer) session.getAttribute("UNO");
@@ -147,35 +134,51 @@ public class RequestController {
 		return "myRequestList4";
 	}
 
+//	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
+//	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
+//		RequestVO vo = reqDAO.getRequestDetail(r_no);
+//		List<MemberVO> list = reqDAO.getApplyMember(r_no);
+//		model.addAttribute("flag", flag);
+//		model.addAttribute("requestDetailKey", vo);
+//		model.addAttribute("apply", list);
+//		
+//		return "requestDetail";
+//	}
+	
 	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
-	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
+	public String getRequestDetail(Model model, @RequestParam Integer flag, @RequestParam Integer r_no, HttpSession session) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
+		String content = vo.getR_content();
+
+		String contentSplit[] = content.split("@!@");
+
+		// System.out.println(content);
+
+		// for(int i=0; i<contentSplit.length; i++) {
+		// System.out.println("contentSplit["+"] >>" + contentSplit[i]);
+		// }
+
 		List<MemberVO> list = reqDAO.getApplyMember(r_no);
+		model.addAttribute("contentSplit", contentSplit);
+		model.addAttribute("sessionType", session.getAttribute("UTYPE"));
+		
+
 		model.addAttribute("flag", flag);
 		model.addAttribute("requestDetailKey", vo);
 		model.addAttribute("apply", list);
-		//model.addAttribute("requestDetailKey",vo);
-
+		
 		return "requestDetail";
 	}
 
 	   @RequestMapping(value="/hireGosu.help", method=RequestMethod.GET)
 	   public String hireGosu(@RequestParam Integer r_no, @RequestParam Integer g_no, HttpSession session ) {
 		   TradeVO tradevo = new TradeVO();
-		   // 고수번호 임의값 2
 		   session.getAttribute("UNO");
 		   
 		   tradevo.setT_requester((int)session.getAttribute("UNO")); //요청자
 		   tradevo.setT_respondent(g_no); //고수
 		   tradevo.setReq(new RequestVO(r_no)); //요청 번호
-		   
-		   
-		   System.out.println("uno>>"+session.getAttribute("UNO"));
-		   System.out.println("g_no>>"+g_no);
-		   System.out.println("r_no>>"+r_no);
-		   
-		   
-		   
+
 		   tradeDAO.addTrade(tradevo);
 		   reqDAO.updateRequestForInactive(r_no);  
 	       return "redirect:/getAllRequestsByWriter.help?alertType=hireComplete";
@@ -183,7 +186,6 @@ public class RequestController {
 	   
 	@RequestMapping(value = "/applyForRequest.help", method = RequestMethod.GET)
 	public ModelAndView applyForRequest(HttpServletRequest req, ModelAndView mv, RedirectView rv) {
-
 		Integer r_no = Integer.parseInt(req.getParameter("rno"));
 		RequestVO request = reqDAO.getRequestDetail(r_no);
 		ApplyVO vo = new ApplyVO(request.getR_no(), request.getR_writer(),

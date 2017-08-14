@@ -101,7 +101,7 @@
 										src="http://img.echosting.cafe24.com/skin/base_ko_KR/member/ico_required.gif"
 										alt="필수" /></th>
 									<td>
-										<textarea rows="5" cols="30" name="m_intro"></textarea>
+										<textarea rows="5" cols="30" name="m_intro">${member.m_intro }</textarea>
 									</td>
 								</tr>
 							</tbody>

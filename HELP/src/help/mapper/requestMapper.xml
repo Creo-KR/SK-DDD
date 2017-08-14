@@ -19,21 +19,26 @@
 	<insert id="insertRequest" parameterType="RequestVO">
 		insert into request
 		values
-		(R_NO_SEQ.NEXTVAL,#{c_no},#{r_title},#{r_content},1,SYSDATE,#{r_writer})
+		(R_NO_SEQ.NEXTVAL,#{c_no},#{r_writer},#{r_title},#{r_content},1,SYSDATE)
 		<!-- values (R_NO_SEQ.NEXTVAL,#{c_no},#{r_title},#{r_content},1,SYSDATE,27) -->
 	</insert>
 
 	<select id="getAllActiveRequestsByWriter" parameterType="Integer"
 		resultType="RequestVO">
-		select * from request where r_writer=#{value} and r_active=1 
-		order by r_no
+		<!-- select * from request where r_writer=#{value} and r_active=1 -->
+		<!-- order by r_no -->
+		select r_no, c_no, r_title, r_active, to_char(r_date,'yy.mm.dd hh24:mi') r_date
+		from request
+		where r_writer=#{value} and r_no not in (select r.r_no
+												   from apply a, request r
+												  where a.r_no = r.r_no)
 	</select>
 
 
-	
+
 	<select id="getAllInactiveRequestsByWriter" parameterType="Integer"
 		resultType="Integer">
-		select r_no from request 
+		select r_no from request
 		where r_writer=#{value} and r_active=0
 		order by r_no
 	</select>
@@ -55,7 +60,8 @@
 
 	<select id="getRequestDetail" parameterType="Integer"
 		resultType="RequestVO">
-		select * from request where r_no=#{value}
+		select r_no, c_no, r_title, r_content, to_char(r_date,'yy.mm.dd hh24:mi') r_date  
+		from request where r_no=#{value}
 	</select>
 
 	<select id="countRequest" parameterType="Integer" resultType="Integer">
@@ -67,47 +73,47 @@
 		SELECT * FROM (
 		SELECT ROWNUM rnum, r.*
 		FROM (
-		<!-- SELECT * FROM request
-		WHERE c_no=#{c_no}
-		ORDER BY r_no -->
+		<!-- SELECT * FROM request WHERE c_no=#{c_no} ORDER BY r_no -->
 		SELECT * FROM request a
-		WHERE a.r_no not in (select r_no from apply where g_no = #{g_no}) and c_no=#{c_no} and a.r_active=1
+		WHERE a.r_no not in (select r_no from apply
+		where g_no = #{g_no}) and c_no=#{c_no} and a.r_active=1
 		ORDER BY a.r_no
 		) r
 		)
 		WHERE rnum BETWEEN ((#{page}-1) * 10 + 1)
 		AND ((#{page}) * 10)
 	</select>
-	
-<!-- 	<select id="getRequestWaitingHire" parameterTpye="">
-		
-	</select> -->
+
+	<!-- <select id="getRequestWaitingHire" parameterTpye=""> </select> -->
 	<insert id="insertApply" parameterType="ApplyVO">
 		insert into apply
-		values (#{r_no}, #{m_no}, #{g_no})
+		values
+		(#{r_no}, #{m_no}, #{g_no})
 	</insert>
 
-	<select id="getRequestWaitingHire" parameterType="Integer" resultType="RequestVO">
+	<select id="getRequestWaitingHire" parameterType="Integer"
+		resultType="RequestVO">
 		select distinct r.r_no,
-		r.c_no, r.r_title, to_char(r_date,
-		'yyyy.mm.dd hh24:mi') r_date
+		r.c_no, r.r_title,
+		to_char(r_date,'yy.mm.dd hh24:mi') r_date
 		from request r, apply a
-		where r.r_no = a.r_no and r_writer=#{value} and r_active=1 order by r_no
+		where r.r_no = a.r_no and r_writer=#{value} and r_active=1 order by
+		r_no
 	</select>
-	
+
 	<update id="updateRequestForInactive" parameterType="Integer">
-		  update request set r_active=0 where r_no=#{value}
+		update request set r_active=0 where r_no=#{value}
 	</update>
-	
+
 	<select id="getApplyMember" parameterType="Integer" resultType="MemberVO">
-		select m.m_no, m.m_id, m.m_name, m.m_email, m.m_tel from (
+		select m.m_no, m.m_id, m.m_name, m.m_email, m.m_tel, m.m_intro from (
         select * from request r, (select * from apply) a
 		where r.r_no = a.r_no and r.r_no = ${value} and r_active=1) b, member m
         where b.g_no = m.m_no
 	</select>
-	
+
 	<select id="getApplyCount" parameterType="Integer" resultType="Integer">
-	select count(*) from apply where r_no=#{r_no}
+		select count(*) from apply where r_no=#{r_no}
 	</select>
-	
+
 </mapper>
