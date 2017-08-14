@@ -60,7 +60,7 @@
 
 	<select id="getRequestDetail" parameterType="Integer"
 		resultType="RequestVO">
-		select r_no, c_no, r_title, r_content, to_char(r_date,'yy.mm.dd hh24:mi') r_date  
+		select r_no, c_no, r_title, r_content, to_char(r_date,'yy.mm.dd hh24:mi') r_date  , r_writer
 		from request where r_no=#{value}
 	</select>
 
