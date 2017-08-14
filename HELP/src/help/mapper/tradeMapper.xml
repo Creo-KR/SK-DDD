@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="tradeMapper">
 
+	<resultMap type="MemberVO" id="MemberVO">
+	  <id property="m_no" column="m_no"/>
+      <result property="m_name" column="m_name"/>
+    </resultMap>
+   
    <resultMap type="RequestVO" id="RequestVO">
       <id property="r_no" column="r_no"/>
       <result property="c_no" column="c_no"/>
@@ -14,35 +19,36 @@
       <result property="t_respondent" column="t_respondent" />
       <result property="t_enddate" column="t_enddate"  />
       <collection property="req" resultMap="RequestVO" />
+      <collection property="mem" resultMap="MemberVO" />
    </resultMap>
 
    <select id="selectInProgressTrade" parameterType="Integer"
       resultMap="TradeVO">
-      select t_respondent, t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date
-      from trade t, request r
-      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL
+      select t_respondent, t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date, m_name
+      from trade t, request r, member m
+      where t.r_no=r.r_no and t.t_respondent = m.m_no and r.r_no=#{value} and t_enddate IS NULL
    </select>
 
    <select id="selectCompletedTrade" parameterType="Integer"
       resultMap="TradeVO">
-      select t_respondent, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date
-      from trade t, request r
-      where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
+      select t_respondent, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date, m_name
+      from trade t, request r, member m
+      where t.r_no=r.r_no and t.t_respondent = m.m_no and r.r_no=#{value} and t_enddate IS NOT NULL
    </select>
    
  <select id="getInProgressTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date
-      from trade t, request r
-      where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NULL
+      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date, m_name
+      from trade t, request r, member m
+      where t.r_no = r.r_no and t_requester = m.m_no and t_respondent=#{value} and t_enddate IS NULL
    </select>
    
    
     <select id="getCompletedTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date
-      from trade t, request r
-      where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
+      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date, m_name
+      from trade t, request r, member m
+      where t.r_no = r.r_no and t_requester = m.m_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
    
    <insert id="addTrade" parameterType="TradeVO">
