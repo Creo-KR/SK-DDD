@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>H.E.L.P</title>
 
 <%@ include file="../commons/header.jsp"%>
 </head>
@@ -80,35 +80,35 @@
 								<dd class="txt">정비적격업체로 선정된 기업을 관리 및 시험 성적 QR코드 발행이 가능합니다.</dd>
 								<dd class="txt">
 									<a href="https://ewpsrm.ewp.co.kr:8443/cert/midex_login.jsp"
-										target="_blank" class="nw">자세히 보기</a>
+										target="" class="nw">자세히 보기</a>
 								</dd>
 							</dl>
 							<dl>
-								<dt>발전5사 정비적격기업 통합관리시스템</dt>
-								<dd class="pl04 none">발전5사 정비적격기업 통합관리시스템</dd>
-								<dd class="txt">5개의 발전사에 선정된 정비적격업체를 통합 운영&middot;관리하는
+								<dt>고수 찾기 시스템</dt>
+								<dd class="pl04 none">상세한 견적서를 통한 고수를 찾는 시스템</dd>
+								<dd class="txt">입력한 견적서를 통해서  고수가 내용을 확인하고&middot;대화하는
 									시스템입니다.</dd>
 								<dd class="txt">
-									<a href="https://withu.ewp.co.kr:8443/user" target="_blank"
+									<a href="" target=""
 										class="nw">자세히 보기</a>
 								</dd>
 							</dl>
 							<dl>
-								<dt>품질협업시스템</dt>
-								<dd class="pl05 none">품질협업시스템</dd>
-								<dd class="txt">품질 향상을 위하여 최상의 품질에 대한 정보를 제공해 드립니다.</dd>
+								<dt>의뢰자 찾기 시스템</dt>
+								<dd class="pl05 none">자신의 전문 분야에 대한 견적서 확인 시스템</dd>
+								<dd class="txt">견적서의 전문 분야 별로 분류하여 조회할 수 있도록 확인하는 시스템</dd>
 								<dd class="txt">
-									<a href="https://ewpsrm.ewp.co.kr:8443/cert/midex_login.jsp"
-										target="_blank" class="nw">자세히 보기</a>
+									<a href=""
+										target="" class="nw">자세히 보기</a>
 								</dd>
 							</dl>
 							<dl>
-								<dt>건설자료협업시스템</dt>
-								<dd class="pl06 none">건설자료협업시스템</dd>
-								<dd class="txt">건설과 관련된 자료를 수집하여 관련 기술자에게 정보를 제공해 드립니다.</dd>
+								<dt>고객 센터</dt>
+								<dd class="pl06 none">다양한 질문과 궁금한 점 확인</dd>
+								<dd class="txt">HELP 를 이용하면서 불편했던 점이나 궁금했던 점을 문의하세요</dd>
 								<dd class="txt">
-									<a href="https://epms.ewp.co.kr:8444/epms/devmenu/Index.jsp"
-										target="_blank" class="nw">자세히 보기</a>
+									<a href=""
+										target="" class="nw">자세히 보기</a>
 								</dd>
 							</dl>
 						</div>

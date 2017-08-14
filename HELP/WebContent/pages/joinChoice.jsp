@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>H.E.L.P</title>
 <%@ include file="../commons/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/joinChoice.css?ver=5" />
 <link rel="stylesheet" type="text/css"
@@ -21,7 +21,7 @@
 						<p>고수를 통하여 도움을 얻는 목적으로 회원 가입 하는 페이지</p>
 						<div class="select-box-s">
 							<h4>일반 회원의 권한</h4>
-							<p>견적서를 작성하고 고수들을 통해 원하는 분야의 답변을 얻을 수 있습니다. 자세한 내용은 고객센터를 통하여 문의 하시기 바랍니다.</p>
+							<p>요청서를 작성하고 고수들을 통해 원하는 분야의 답변을 얻을 수 있습니다. 자세한 내용은 고객센터를 통하여 문의 하시기 바랍니다.</p>
 							<div class="btn-box">
 								<a href="join.help?m_type=0" class="btn-green">가입하기</a>
 							</div>
@@ -29,8 +29,7 @@
 					</div>
 					<div class="select-box-l box-2" style="height: 435px;">
 						<h3>고수 회원 가입</h3>
-						<p>고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
-							<a href="about">작성된 견적서 조회</a>
+						<p style="margin-bottom: 45px;">고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
 						</p>
 						<div class="select-box-s" style="width: 430px;">
 							<h4>카테고리 종류</h4>
