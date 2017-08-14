@@ -20,10 +20,13 @@
 <div id="container" >
 	<div style="margin-top: 200px">
 		<div id="demo">
+		<h1 style="margin-top:12%; font-weight: bold; color: #555; font-family: 'Cooper Black'; text-align: center; font-size: 50px;">Request List</h1>
+		<br>
+		<br>
 			<div class="table-responsive-vertical shadow-z-1">
 
-				<h1>
-					<c:if test="${categoryNum == 1}">
+				<%--<h1>
+					 <c:if test="${categoryNum == 1}">
 						<td>피아노</td>
 					</c:if>
 					<c:if test="${categoryNum == 2}">
@@ -38,8 +41,8 @@
 					<c:if test="${categoryNum == 5}">
 						<td>결혼</td>
 					</c:if>
-					요청 목록
-				</h1>
+					요청 목록 
+				</h1>--%>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
 						<tr>
