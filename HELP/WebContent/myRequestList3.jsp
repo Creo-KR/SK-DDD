@@ -36,7 +36,7 @@
 			<div class="table-responsive-vertical shadow-z-1">
 
 				<h1>
-					<요청서 목록> - 고용 대기중 
+					&lt;요청서 목록&gt; - 고용 대기중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -122,7 +122,7 @@
 						</tbody>
 					</c:forEach>
 				</table>
-				<ul class="paging1">
+				<%-- <ul class="paging1">
 					<c:if test="${pageMaker.prev }">
 						<li><a
 							href='getAllRequestsByCategory.help?page=${pageMaker.start -1}'>이전</a>
@@ -140,7 +140,7 @@
 							href='getAllRequestsByCategory.help?page=${pageMaker.end +1}'>다음</a>
 						</li>
 					</c:if>
-				</ul>
+				</ul> --%>
 				<br>
 
 
@@ -186,7 +186,7 @@
 						</tbody>
 					</c:forEach>
 				</table>
-				<ul class="paging1">
+				<%-- <ul class="paging1">
 					<c:if test="${pageMaker2.prev }">
 						<li><a
 							href='getAllRequestsByCategory.help?page2=${pageMaker2.start -1}'>이전</a>
@@ -205,7 +205,7 @@
 							href='getAllRequestsByCategory.help?page2=${pageMaker2.end +1}'>다음</a>
 						</li>
 					</c:if>
-				</ul>
+				</ul> --%>
 				<br>
 				<h1>
 					<요청서 목록> - 완료 
@@ -250,7 +250,7 @@
 						</tbody>
 					</c:forEach>
 				</table>
-				<ul class="paging1">
+				<%-- <ul class="paging1">
 					<c:if test="${pageMaker3.prev }">
 						<li><a
 							href='getAllRequestsByCategory.help?page3=${pageMaker3.start -1}'>이전</a>
@@ -269,7 +269,7 @@
 							href='getAllRequestsByCategory.help?page3=${pageMaker3.end +1}'>다음</a>
 						</li>
 					</c:if>
-				</ul>
+				</ul> --%>
 			</div>
 
 
@@ -324,6 +324,7 @@
 				</p>
 			</div>
 		</div>
+	</div>
 
 
 		<%@ include file="commons/footer.jsp"%>
