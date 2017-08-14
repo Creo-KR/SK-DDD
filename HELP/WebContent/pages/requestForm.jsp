@@ -97,8 +97,8 @@ label.control-label {
 
 			<div class='container'>
 				<div class='panel panel-primary dialog-panel'>
-					<div class='panel-heading'>
-						<h5 style="text-align: center">HELP - 견적서 등록</h5>
+					<div class='panel-heading' style="background-color: #7F7F7F;">
+						<h5 style="text-align: center; background-color: #7F7F7F;" >HELP - 견적서 등록</h5>
 					</div>
 					<div class='panel-body'>
 
@@ -249,19 +249,19 @@ label.control-label {
 
 							<div>
 								<div style="margin-left: 40%">
-									<button class='btn-lg btn-primary' style="float: left;"
+									<button class='btn-lg btn-primary' style="float: left; background-color: #759489"
 										type='submit'>등록</button>
 								</div>
 								<div>
 									<button class='btn-lg btn-danger'
-										style="float: left; margin-left: 2px" type="reset">다시입력</button>
+										style="float: left; margin-left: 2px; background-color: #A566FF"" type="reset">다시입력</button>
 								</div>
 
 							</div>
 						</form>
 						<div>
 							<button onclick="cansel()" class='btn-lg btn-danger'
-								style="margin-left: 2px" >취소</button>
+								style="margin-left: 2px; background-color: #759489" >취소</button>
 						</div>
 						<script>
 							var cansel = function() {
