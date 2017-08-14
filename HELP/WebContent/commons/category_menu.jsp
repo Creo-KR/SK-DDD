@@ -133,7 +133,7 @@ button:hover:before, button:hover:after {
 	margin-left: 10%
 }
 </style>
-<title>Insert title here</title>
+<title>H.E.L.P</title>
 <script type="text/javascript">
 	$(function(){
 		var searchKeywords = [
