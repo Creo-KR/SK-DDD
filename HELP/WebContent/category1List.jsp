@@ -101,7 +101,7 @@
 
 
 			<!-- Table Constructor change table classes, you don't need it in your project -->
-			<div style="width: 45%; display: inline-block; vertical-align: top">
+			<!-- <div style="width: 45%; display: inline-block; vertical-align: top">
 				<h2>Table Constructor</h2>
 				<p>
 					<label for="table-bordered">Style: bordered</label> <select
@@ -146,7 +146,7 @@
 						<option value="table-mc-deep-orange">Deep Orange</option>
 					</select>
 				</p>
-			</div>
+			</div>-->
 		</div>
 	</div>
 	</div>

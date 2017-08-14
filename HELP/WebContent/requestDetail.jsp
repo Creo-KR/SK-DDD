@@ -292,7 +292,8 @@
 			<!-- 본문영역 -->
 
 			<div class="t3" style="width: 100%;" align="center">
-				<h1 style="text-align: center">&lt;요청서 상세 페이지&gt;</h1>
+			<h1 style="margin-top:3%; font-weight: bold; color: #555; font-family: 'Cooper Black'; text-align: center; font-size: 50px;">Request Detail Page</h1>
+				<!-- <h1 style="text-align: center">&lt;요청서 상세 페이지&gt;</h1> -->
 
 				<div class="tblWrap" style="align-content: center">
 					<table>
