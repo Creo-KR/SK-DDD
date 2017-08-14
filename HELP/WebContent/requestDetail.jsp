@@ -327,11 +327,7 @@
 							<th>내용</th>
 							<td class="ty2"><c:forEach var="content"
 									items="${contentSplit}">
-									<table style="border-style: hidden;">
-										<tr>
-											<td>${content}</td>
-										</tr>
-									</table>
+											${content}<br>
 								</c:forEach></td>
 						</tr>
 						<tr>
