@@ -13,16 +13,9 @@
 </head>
 <%@ include file="commons/header.jsp"%>
 <body>
-
 	<div id="container">
-	
-	
-	
-	
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
-
-
 				<h1>
 					<요청서 목록> - 대기중 
 				</h1>
@@ -30,9 +23,9 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
-							<th>완료여부</th>
+							<th>등록일</th>
 							<th>날짜</th>
 						</tr>
 					</thead>
@@ -61,11 +54,10 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>요청자</th>
-							<th>완료날짜</th>
 						</tr>
 					</thead>
 
@@ -77,7 +69,6 @@
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
 								<td>${inProgress.t_requester}</td>
-								<td>${inProgress.t_enddate}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -91,11 +82,11 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>요청자</th>
-							<th>완료날짜</th>
+							<th>완료일</th>
 						</tr>
 					</thead>
 
@@ -112,13 +103,7 @@
 						</tbody>
 					</c:forEach>
 				</table>
-
-
 			</div>
-
-
-
-
 
 			<!-- Table Constructor change table classes, you don't need it in your project -->
 			<div style="width: 45%; display: inline-block; vertical-align: top">
@@ -175,8 +160,5 @@
 		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 	<script src="js/requestList.js"></script>
-
-
-
 </body>
 </html>

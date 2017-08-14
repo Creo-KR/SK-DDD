@@ -60,7 +60,8 @@
 
 	<select id="getRequestDetail" parameterType="Integer"
 		resultType="RequestVO">
-		select * from request where r_no=#{value}
+		select r_no, c_no, r_title, r_content, to_char(r_date,'yy.mm.dd hh24:mi') r_date  
+		from request where r_no=#{value}
 	</select>
 
 	<select id="countRequest" parameterType="Integer" resultType="Integer">

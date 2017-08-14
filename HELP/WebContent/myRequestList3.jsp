@@ -42,7 +42,7 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>상태</th>
@@ -72,10 +72,10 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>완료여부</th>
-							<th>날짜</th>
+							<th>등록일</th>
 						</tr>
 					</thead>
 					<c:forEach var="waiting" items="${waitingListKey}">
@@ -123,11 +123,10 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>고수</th>
-							<th>완료날짜</th>
 						</tr>
 					</thead>
 
@@ -140,7 +139,6 @@
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
 								<td>${inProgress.t_respondent}</td>
-								<td>${inProgress.t_enddate}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -173,11 +171,11 @@
 					<thead>
 						<tr>
 							<th>요청서 번호</th>
-							<th>카테고리 번호</th>
+							<th>카테고리</th>
 							<th>제목</th>
 							<th>등록일</th>
 							<th>고수</th>
-							<th>완료날짜</th>
+							<th>완료일</th>
 						</tr>
 					</thead>
 

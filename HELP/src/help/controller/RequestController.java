@@ -62,7 +62,7 @@ public class RequestController {
 		String question_answer = "";
 
 		for (int i = 0; i < question.length; i++) {
-			question_answer = question_answer + question[i] + answer[i] + "\n";
+			question_answer = question_answer + question[i] + "@!@" + answer[i] + "@!@";
 		}
 
 		requestvo.setR_title(title);
@@ -134,10 +134,35 @@ public class RequestController {
 		return "myRequestList4";
 	}
 
+//	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
+//	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
+//		RequestVO vo = reqDAO.getRequestDetail(r_no);
+//		List<MemberVO> list = reqDAO.getApplyMember(r_no);
+//		model.addAttribute("flag", flag);
+//		model.addAttribute("requestDetailKey", vo);
+//		model.addAttribute("apply", list);
+//		
+//		return "requestDetail";
+//	}
+	
 	@RequestMapping(value = "/getRequestDetail.help", method = RequestMethod.GET)
-	public String getRequestDetail(@RequestParam Integer flag, @RequestParam Integer r_no, Model model) {
+	public String getRequestDetail(Model model, @RequestParam Integer flag, @RequestParam Integer r_no, HttpSession session) {
 		RequestVO vo = reqDAO.getRequestDetail(r_no);
+		String content = vo.getR_content();
+
+		String contentSplit[] = content.split("@!@");
+
+		// System.out.println(content);
+
+		// for(int i=0; i<contentSplit.length; i++) {
+		// System.out.println("contentSplit["+"] >>" + contentSplit[i]);
+		// }
+
 		List<MemberVO> list = reqDAO.getApplyMember(r_no);
+		model.addAttribute("contentSplit", contentSplit);
+		model.addAttribute("sessionType", session.getAttribute("UTYPE"));
+		
+
 		model.addAttribute("flag", flag);
 		model.addAttribute("requestDetailKey", vo);
 		model.addAttribute("apply", list);
