@@ -30,7 +30,6 @@
 					<div class="select-box-l box-2" style="height: 435px;">
 						<h3>고수 회원 가입</h3>
 						<p>고수로서 일반회원에게 고용을 요청할 수 있도록 하는 회원 가입 페이지<br />
-							<a href="about">작성된 견적서 조회</a>
 						</p>
 						<div class="select-box-s" style="width: 430px;">
 							<h4>카테고리 종류</h4>
