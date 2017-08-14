@@ -16,9 +16,6 @@
 
 	<div id="container">
 	
-	
-	
-	
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 

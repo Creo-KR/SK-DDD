@@ -11,6 +11,9 @@
 	href="https://soomgo.s3.ap-northeast-2.amazonaws.com/static/common/min/vender.min.css?ver=1PfeFGslHCk1iul">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.css" />
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <style>
@@ -168,9 +171,8 @@ h1.title {
 
 .button {
 	border-radius: 20px;
-	background: #555;
+	background: buttonshadow;
 	color: #fff;
-	border: none;
 	position: relative;
 	height: 60px;
 	font-size: 1.6em;
@@ -291,14 +293,17 @@ h1.title {
 				</form>
 
 				<c:if test="${sessionScope.UTYPE == 0}">
-					<button onclick="request_go()"
-						style="font-weight: bold; margin-left: 15px; margin-top: 10px; font-size: xx-large; 
-						font-style: oblique; background-color: gray; width: 200px;border-radius: 20px " >
+
+					<div style="margin-left: 180px">
+					<button onclick="request_go()" 
+					class="button button--wapasha button--round-l button--text-thick button--inverted"
+					style="align-content: center; text-align: center">
 						요청서 등록</button>
+				</div>
 				</c:if>
 			</div>
-			
-			
+
+
 		</div>
 		<div class="ticker">
 			<div class="ticker-wrap">
@@ -328,14 +333,7 @@ h1.title {
 		<!-- <div class="content" style="height:200px;"> -->
 		<div class="content" style="height: 200px; width: 0px; margin: auto;">
 
-			<!-- 검색 창 form Start-->
-			<!-- <div id="search_form" style="margin-left: 20%">
-			<input id="search" type="text" placeholder="    검색어를 입력하세요">
-			<button style="font-weight: bold;">Search</button>
-		</div> -->
-			<!-- 검색 창 form End-->
-
-			<!-- Category Box Start -->
+	
 
 
 			<div id="categoryBox"
@@ -393,13 +391,7 @@ h1.title {
 			</div>
 		</div>
 	</c:if>
-	<!-- Category Box End -->
 
-	<%-- 	<c:if test="${sessionScope.UTYPE == 0}"> --%>
-	<!-- 	<button onclick="request_go()" style="font-weight: bold; margin-left: 15px; margin-top: 10px"> -->
-	<!-- 					요청서 등록 -->
-	<!-- 				</button> -->
-	<%-- 	</c:if> --%>
 
 
 	<script type="text/javascript">
@@ -483,63 +475,62 @@ h1.title {
 		});
 	</script>
 	<script>
-    var imgNo = 1;
-    var imgLength = 6;
-
-    function setNextBg() {
-        imgNo = imgNo + 1;
-        if (imgNo ==  imgLength) {
-            imgNo = 1;
-        }
-        $("#mainCarousel").removeClass("hero01 hero02 hero03 hero04 hero05 hero06").addClass("hero0" + imgNo);
-    }
-
-    function preloader() {
-        // counter
-        var i = 0;
-
-        // create object
-        imageObj = new Image();
-
-        // set image list
-        images = new Array();
-
-        var windowWidth = $(window).width();
-        if (windowWidth > 768) {
-            images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01.jpg';
-            images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02.jpg';
-            images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03.jpg';
-
-            images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04.jpg';
-            images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05.jpg';
-            images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06.jpg';
-
-        } else {
-            images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01_m.jpg';
-            images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02_m.jpg';
-            images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03_m.jpg';
-
-            images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04_m.jpg';
-            images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05_m.jpg';
-            images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06_m.jpg';
-        }
-
-        // start preloading
-        for (i = 0; i < 6; i++) {
-            imageObj.src = images[i];
-        }
-    }
-
-    $(function() {
-        setInterval(function () {
-            setNextBg();
-        }, 8000);
-
-        setTimeout(function () {
-            preloader();
-        }, 3000);
-    });
-
-</script>
+		var imgNo = 1;
+		var imgLength = 6;
+	
+		function setNextBg() {
+			imgNo = imgNo + 1;
+			if (imgNo == imgLength) {
+				imgNo = 1;
+			}
+			$("#mainCarousel").removeClass("hero01 hero02 hero03 hero04 hero05 hero06").addClass("hero0" + imgNo);
+		}
+	
+		function preloader() {
+			// counter
+			var i = 0;
+	
+			// create object
+			imageObj = new Image();
+	
+			// set image list
+			images = new Array();
+	
+			var windowWidth = $(window).width();
+			if (windowWidth > 768) {
+				images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01.jpg';
+				images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02.jpg';
+				images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03.jpg';
+	
+				images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04.jpg';
+				images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05.jpg';
+				images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06.jpg';
+	
+			} else {
+				images[0] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_01_m.jpg';
+				images[1] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_02_m.jpg';
+				images[2] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_03_m.jpg';
+	
+				images[3] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_04_m.jpg';
+				images[4] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_05_m.jpg';
+				images[5] = 'https://soomgo.s3.ap-northeast-2.amazonaws.com/static/img/home/index_hero_06_m.jpg';
+			}
+	
+			// start preloading
+			for (i = 0; i < 6; i++) {
+				imageObj.src = images[i];
+			}
+		}
+	
+		$(function() {
+			setInterval(function() {
+				setNextBg();
+			}, 8000);
+	
+			setTimeout(function() {
+				preloader();
+			}, 3000);
+		});
+	</script>
 </body>
 </html>
