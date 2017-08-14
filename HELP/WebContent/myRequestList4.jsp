@@ -16,6 +16,7 @@
 	<div id="container">
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
+
 				<h1>
 					<요청서 목록> - 대기중 
 				</h1>
@@ -34,7 +35,21 @@
 							<tr>
 								<td data-title="ID"><a
 									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=4">${waiting.r_no}</a></td>
-								<td data-title="Name">${waiting.c_no}</td>
+								<c:if test="${waiting.c_no == 1}">
+									<td class="ty2" data-title="Name">피아노</td>
+								</c:if>
+								<c:if test="${waiting.c_no == 2}">
+									<td class="ty2" data-title="Name">이사</td>
+								</c:if>
+								<c:if test="${waiting.c_no == 3}">
+									<td class="ty2" data-title="Name">웹개발</td>
+								</c:if>
+								<c:if test="${waiting.c_no == 4}">
+									<td class="ty2" data-title="Name">포토샵</td>
+								</c:if>
+								<c:if test="${waiting.c_no == 5}">
+									<td class="ty2" data-title="Name">결혼</td>
+								</c:if>
 								<td data-title="Link">${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
 									<td data-title="Status">대기중</td>
@@ -65,7 +80,21 @@
 						<tbody>
 							<tr>
 								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}&flag=1">${inProgress.req.r_no}</a></td>
-								<td>${inProgress.req.c_no}</td>
+								<c:if test="${inProgress.req.c_no == 1}">
+									<td class="ty2" data-title="Name">피아노</td>
+								</c:if>
+								<c:if test="${inProgress.req.c_no == 2}">
+									<td class="ty2" data-title="Name">이사</td>
+								</c:if>
+								<c:if test="${inProgress.req.c_no == 3}">
+									<td class="ty2" data-title="Name">웹개발</td>
+								</c:if>
+								<c:if test="${inProgress.req.c_no == 4}">
+									<td class="ty2" data-title="Name">포토샵</td>
+								</c:if>
+								<c:if test="${inProgress.req.c_no == 5}">
+									<td class="ty2" data-title="Name">결혼</td>
+								</c:if>
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
 								<td>${inProgress.t_requester}</td>
@@ -94,7 +123,21 @@
 						<tbody>
 							<tr>
 								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}&flag=2">${completed.req.r_no}</a></td>
-								<td>${completed.req.c_no}</td>
+								<c:if test="${completed.req.c_no == 1}">
+									<td class="ty2" data-title="Name">피아노</td>
+								</c:if>
+								<c:if test="${completed.req.c_no == 2}">
+									<td class="ty2" data-title="Name">이사</td>
+								</c:if>
+								<c:if test="${completed.req.c_no == 3}">
+									<td class="ty2" data-title="Name">웹개발</td>
+								</c:if>
+								<c:if test="${completed.req.c_no == 4}">
+									<td class="ty2" data-title="Name">포토샵</td>
+								</c:if>
+								<c:if test="${completed.req.c_no == 5}">
+									<td class="ty2" data-title="Name">결혼</td>
+								</c:if>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
 								<td>${completed.t_requester}</td>
@@ -103,7 +146,13 @@
 						</tbody>
 					</c:forEach>
 				</table>
+
+
 			</div>
+
+
+
+
 
 			<!-- Table Constructor change table classes, you don't need it in your project -->
 			<div style="width: 45%; display: inline-block; vertical-align: top">
@@ -160,5 +209,8 @@
 		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 	<script src="js/requestList.js"></script>
+
+
+
 </body>
 </html>
