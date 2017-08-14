@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<h1><요청서 등록 페이지></h1>
+		<h1>&lt;요청서 등록 페이지&gt;</h1>
 		<form method="post" action="addRequest.help">
 			<table>
 				<tr>

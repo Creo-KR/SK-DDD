@@ -1,6 +1,5 @@
 package help.controller;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -102,7 +101,7 @@ public class MemberController {
 	//개인 정보 수정하기 위해 비밀번호 입력하여 DB 체크하는 Controller
 	@RequestMapping(value="updateMypage.help", method=RequestMethod.POST)
 	public String updateMypage(MemberVO vo, HttpSession session, Model model) {
-		PrintWriter out = null;
+		/*PrintWriter out = null;*/
 		vo.setM_id((String) session.getAttribute("UID"));
 		int count = service.pwdCheck(vo);
 		MemberVO member = service.getMember(vo.getM_id());

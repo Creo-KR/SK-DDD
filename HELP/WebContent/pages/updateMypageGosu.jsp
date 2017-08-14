@@ -47,7 +47,7 @@
 										alt="필수" /></th>
 									<td>기존 전화 번호 : <input type="text" value="${member.m_tel}" disabled="disabled">
 										
-										&nbsp&nbsp 수정할 전화 번호 : 
+										&nbsp;&nbsp; 수정할 전화 번호 : 
 										<select id="m_tel" name="m_tel">
 											<option value="010">010</option>
 											<option value="011">011</option>
@@ -450,11 +450,10 @@
 					<span class="btnArea center smp-btn-reg">
 						<a><button id="joinButton" type="submit" style="cursor: pointer;">SUBMIT</button></a>
 					</span>
-
+</div>
 				</div>
 			</form>
 			</div>
-
 		</div>
 		<%@ include file="../commons/footer.jsp"%>
 </body>

@@ -303,19 +303,19 @@
 						<tr>
 							<th>카테고리 :</th>
 							<c:if test="${requestDetailKey.c_no == 1}">
-								<td class="ty2" data-title="Name">피아노</td>
+								<td class="ty2">피아노</td>
 							</c:if>
 							<c:if test="${requestDetailKey.c_no == 2}">
-								<td class="ty2" data-title="Name">이사</td>
+								<td class="ty2">이사</td>
 							</c:if>
 							<c:if test="${requestDetailKey.c_no == 3}">
-								<td class="ty2" data-title="Name">웹 개발</td>
+								<td class="ty2">웹 개발</td>
 							</c:if>
 							<c:if test="${requestDetailKey.c_no == 4}">
-								<td class="ty2" data-title="Name">포토 샵</td>
+								<td class="ty2">포토 샵</td>
 							</c:if>
 							<c:if test="${requestDetailKey.c_no == 5}">
-								<td class="ty2" data-title="Name">결혼</td>
+								<td class="ty2">결혼</td>
 							</c:if>
 
 						</tr>

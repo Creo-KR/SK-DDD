@@ -254,7 +254,7 @@ label.control-label {
 								</div>
 								<div>
 									<button class='btn-lg btn-danger'
-										style="float: left; margin-left: 2px; background-color: #A566FF"" type="reset">다시입력</button>
+										style="float: left; margin-left: 2px; background-color: #A566FF" type="reset">다시입력</button>
 								</div>
 
 							</div>
@@ -285,7 +285,7 @@ label.control-label {
 
 
 	</div>
-	</div>
+	
 	<%@ include file="../commons/footer.jsp"%>
 </body>
 

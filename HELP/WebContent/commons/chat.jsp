@@ -133,7 +133,7 @@
 
 		<div id="chat_room_list">
 			<iframe id="chat_room_list_frame" class="chat_room_list_frame"
-				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}""></iframe>
+				src="viewChatroom.help?cr_no=${ss_cr_no}&cr_receiver=${ss_cr_receiver.m_no}"></iframe>
 		</div>
 
 
