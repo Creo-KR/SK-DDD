@@ -94,9 +94,9 @@ label.control-label {
 		<div class="main_contents">
 			<!-- 본문영역 -->
 
-
-			<div class='container'>
-				<div class='panel panel-primary dialog-panel'>
+		
+			<div class='container' style="margin-top: 30px">
+				<div class='panel panel-primary dialog-panel' style="">
 					<div class='panel-heading' style="background-color: #7F7F7F;">
 						<h5 style="text-align: center; background-color: #7F7F7F;" >HELP - 견적서 등록</h5>
 					</div>
@@ -249,19 +249,19 @@ label.control-label {
 
 							<div>
 								<div style="margin-left: 40%">
-									<button class='btn-lg btn-primary' style="float: left; background-color: #759489"
+									<button class='btn-lg btn-primary' style="float: left; background-color: #7F7F7F"
 										type='submit'>등록</button>
 								</div>
 								<div>
 									<button class='btn-lg btn-danger'
-										style="float: left; margin-left: 2px; background-color: #A566FF" type="reset">다시입력</button>
+										style="float: left; margin-left: 2px; color:#7F7F7F;background-color: #FFFFFF" type="reset">다시입력</button>
 								</div>
 
 							</div>
 						</form>
 						<div>
 							<button onclick="cansel()" class='btn-lg btn-danger'
-								style="margin-left: 2px; background-color: #759489" >취소</button>
+								style="margin-left: 2px; color:#7F7F7F;background-color: #FFFFFF" >취소</button>
 						</div>
 						<script>
 							var cansel = function() {
