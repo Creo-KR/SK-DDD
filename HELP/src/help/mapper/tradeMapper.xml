@@ -18,21 +18,21 @@
 
    <select id="selectInProgressTrade" parameterType="Integer"
       resultMap="TradeVO">
-      select t_respondent, t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_respondent, t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NULL
    </select>
 
    <select id="selectCompletedTrade" parameterType="Integer"
       resultMap="TradeVO">
-      select t_respondent, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_respondent, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no=r.r_no and r.r_no=#{value} and t_enddate IS NOT NULL
    </select>
    
  <select id="getInProgressTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NULL
    </select>
@@ -40,7 +40,7 @@
    
     <select id="getCompletedTradeByGosu" parameterType="Integer"
       resultMap="TradeVO">
-      select t_requester, to_char(t_enddate, 'yyyy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
+      select t_requester, to_char(t_enddate, 'yy.mm.dd hh24:mi') t_enddate, r.r_no, c_no, r_title, to_char(r_date, 'yyyy.mm.dd hh24:mi') r_date
       from trade t, request r
       where t.r_no = r.r_no and t_respondent=#{value} and t_enddate IS NOT NULL
    </select>
