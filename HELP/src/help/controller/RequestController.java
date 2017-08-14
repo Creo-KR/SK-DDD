@@ -1,7 +1,6 @@
 package help.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
@@ -22,7 +21,6 @@ import help.dao.RequestDAO;
 import help.dao.TradeDAO;
 import help.vo.ApplyVO;
 import help.vo.MemberVO;
-import help.vo.PageMaker;
 import help.vo.RequestVO;
 import help.vo.TradeVO;
 

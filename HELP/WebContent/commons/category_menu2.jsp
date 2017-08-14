@@ -297,7 +297,7 @@ h1.title {
 					<div style="margin-left: 180px">
 					<button onclick="request_go()" 
 					class="button button--wapasha button--round-l button--text-thick button--inverted"
-					style="align-content: center; text-align: center">
+					style="align-content: center; text-align: center; ">
 						요청서 등록</button>
 				</div>
 				</c:if>

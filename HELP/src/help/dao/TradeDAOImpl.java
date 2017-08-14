@@ -1,6 +1,5 @@
 package help.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,7 +7,6 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import help.vo.MemberVO;
 import help.vo.TradeVO;
 
 @Repository

@@ -430,7 +430,7 @@
 					<span class="btnArea center smp-btn-reg">
 						<a><button id="joinButton" type="submit" style="cursor: pointer;">SUBMIT</button></a>
 					</span>
-
+</div>
 				</div>
 			</form>
 			</div>

@@ -15,10 +15,13 @@
 <body>
 	<div id="container">
 		<div id="demo" style="margin-top: 200px">
+		<h1 style="margin-top:12%; font-weight: bold; color: #555; font-family: 'Cooper Black'; text-align: center; font-size: 50px;">My Request</h1>
+		<br>
+		<br>
 			<div class="table-responsive-vertical shadow-z-1">
 
 				<h1>
-					&lt;요청서 목록&gt; - 대기중 
+					대기중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -36,22 +39,20 @@
 								<td><a
 									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=4">${waiting.r_no}</a></td>
 								<c:if test="${waiting.c_no == 1}">
-									<td class="ty2" data-title="Name">피아노</td>
+									<td class="ty2">피아노</td>
 								</c:if>
 								<c:if test="${waiting.c_no == 2}">
-									<td class="ty2" data-title="Name">이사</td>
+									<td class="ty2">이사</td>
 								</c:if>
 								<c:if test="${waiting.c_no == 3}">
-									<td class="ty2" data-title="Name">웹개발</td>
+									<td class="ty2">웹개발</td>
 								</c:if>
 								<c:if test="${waiting.c_no == 4}">
-									<td class="ty2" data-title="Name">포토샵</td>
+									<td class="ty2">포토샵</td>
 								</c:if>
 								<c:if test="${waiting.c_no == 5}">
-									<td class="ty2" data-title="Name">결혼</td>
+									<td class="ty2">결혼</td>
 								</c:if>
-								<td data-title="Link">${waiting.r_title}</td>
-								<td>${waiting.c_no}</td>
 								<td>${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
 									<td>대기중</td>
@@ -65,7 +66,7 @@
 				<br>
 
 				<h1>
-					&lt;요청서 목록&gt; - 진행중 
+					진행중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -73,8 +74,8 @@
 							<th>요청서 번호</th>
 							<th>카테고리</th>
 							<th>제목</th>
-							<th>등록일</th>
 							<th>요청자</th>
+							<th>등록일</th>
 						</tr>
 					</thead>
 
@@ -83,31 +84,31 @@
 							<tr>
 								<td><a href="getRequestDetail.help?r_no=${inProgress.req.r_no}&flag=1">${inProgress.req.r_no}</a></td>
 								<c:if test="${inProgress.req.c_no == 1}">
-									<td class="ty2" data-title="Name">피아노</td>
+									<td class="ty2">피아노</td>
 								</c:if>
 								<c:if test="${inProgress.req.c_no == 2}">
-									<td class="ty2" data-title="Name">이사</td>
+									<td class="ty2">이사</td>
 								</c:if>
 								<c:if test="${inProgress.req.c_no == 3}">
-									<td class="ty2" data-title="Name">웹개발</td>
+									<td class="ty2">웹개발</td>
 								</c:if>
 								<c:if test="${inProgress.req.c_no == 4}">
-									<td class="ty2" data-title="Name">포토샵</td>
+									<td class="ty2">포토샵</td>
 								</c:if>
 								<c:if test="${inProgress.req.c_no == 5}">
-									<td class="ty2" data-title="Name">결혼</td>
+									<td class="ty2">결혼</td>
 								</c:if>
 								<td>${inProgress.req.r_title}</td>
-								<td>${inProgress.req.r_date}</td>
 								<td>${inProgress.mem.m_name}</td>
+								<td>${inProgress.req.r_date}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
 				</table>
 
-
+				<br>
 				<h1>
-					&lt;요청서 목록&gt; - 완료
+					완료
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -126,19 +127,19 @@
 							<tr>
 								<td><a href="getRequestDetail.help?r_no=${completed.req.r_no}&flag=2">${completed.req.r_no}</a></td>
 								<c:if test="${completed.req.c_no == 1}">
-									<td class="ty2" data-title="Name">피아노</td>
+									<td class="ty2">피아노</td>
 								</c:if>
 								<c:if test="${completed.req.c_no == 2}">
-									<td class="ty2" data-title="Name">이사</td>
+									<td class="ty2">이사</td>
 								</c:if>
 								<c:if test="${completed.req.c_no == 3}">
-									<td class="ty2" data-title="Name">웹개발</td>
+									<td class="ty2">웹개발</td>
 								</c:if>
 								<c:if test="${completed.req.c_no == 4}">
-									<td class="ty2" data-title="Name">포토샵</td>
+									<td class="ty2">포토샵</td>
 								</c:if>
 								<c:if test="${completed.req.c_no == 5}">
-									<td class="ty2" data-title="Name">결혼</td>
+									<td class="ty2">결혼</td>
 								</c:if>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
@@ -157,7 +158,7 @@
 
 
 			<!-- Table Constructor change table classes, you don't need it in your project -->
-			<div style="width: 45%; display: inline-block; vertical-align: top">
+			<!--<div style="width: 45%; display: inline-block; vertical-align: top">
 				<h2>Table Constructor</h2>
 				<p>
 					<label for="table-bordered">Style: bordered</label> <select
@@ -202,9 +203,11 @@
 						<option value="table-mc-deep-orange">Deep Orange</option>
 					</select>
 				</p>
-			</div>
+			</div> -->
 		</div>
 	</div>
+	<br>
+	<br>
 	<%@ include file="commons/footer.jsp"%>
 
 	<script

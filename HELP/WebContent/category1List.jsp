@@ -24,19 +24,19 @@
 
 				<h1>
 					<c:if test="${categoryNum == 1}">
-						<td data-title="Name">피아노</td>
+						<td>피아노</td>
 					</c:if>
 					<c:if test="${categoryNum == 2}">
-						<td data-title="Name">이사</td>
+						<td>이사</td>
 					</c:if>
 					<c:if test="${categoryNum == 3}">
-						<td data-title="Name">웹 개발</td>
+						<td>웹 개발</td>
 					</c:if>
 					<c:if test="${categoryNum == 4}">
-						<td data-title="Name">포토 샵</td>
+						<td>포토 샵</td>
 					</c:if>
 					<c:if test="${categoryNum == 5}">
-						<td data-title="Name">결혼</td>
+						<td>결혼</td>
 					</c:if>
 					요청 목록
 				</h1>
@@ -52,26 +52,26 @@
 					<c:forEach var="reqList" items="${reqList}">
 						<tbody>
 							<tr>
-								<td data-title="ID"><a
+								<td><a
 									href="getRequestDetail.help?r_no=${reqList.r_no}&flag=0">${reqList.r_no}</a></td>
 
 								<c:if test="${reqList.c_no == 1}">
-									<td data-title="Name">피아노</td>
+									<td>피아노</td>
 								</c:if>
 								<c:if test="${reqList.c_no == 2}">
-									<td data-title="Name">이사</td>
+									<td>이사</td>
 								</c:if>
 								<c:if test="${reqList.c_no == 3}">
-									<td data-title="Name">웹 개발</td>
+									<td>웹 개발</td>
 								</c:if>
 								<c:if test="${reqList.c_no == 4}">
-									<td data-title="Name">포토 샵</td>
+									<td>포토 샵</td>
 								</c:if>
 								<c:if test="${reqList.c_no == 5}">
-									<td data-title="Name">결혼</td>
+									<td>결혼</td>
 								</c:if>
-								<td data-title="Link">${reqList.r_title}</td>
-								<td data-title="Status">${reqList.r_date}</td>
+								<td>${reqList.r_title}</td>
+								<td>${reqList.r_date}</td>
 
 							</tr>
 						</tbody>
