@@ -88,7 +88,8 @@
 <style>  
         /* Story */
         #story {
-            background-color: #f4f5f6;
+            /* background-color: #f4f5f6; */
+            background-color: #fff;
             padding: 50px 0;
         }
 
@@ -203,13 +204,15 @@
 
             /* Story */
             #story {
-                background-color: #f4f5f6;
+                /* background-color: #f4f5f6; */
+                background-color: #fff;
                 padding: 100px 0;
             }
 
             #story .thumbnail {
                 padding: 0;
                 border-color: #e1e3e2;
+                border-width: 3px; 
             }
 
             #story .thumbnail-wrap {
