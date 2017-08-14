@@ -17,7 +17,7 @@
 		<div id="demo" style="margin-top: 200px">
 			<div class="table-responsive-vertical shadow-z-1">
 				<h1>
-					<요청서 목록> - 대기중 
+					&lt;요청서 목록&gt; - 대기중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -32,14 +32,14 @@
 					<c:forEach var="waiting" items="${waitingListKey}">
 						<tbody>
 							<tr>
-								<td data-title="ID"><a
+								<td><a
 									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=4">${waiting.r_no}</a></td>
-								<td data-title="Name">${waiting.c_no}</td>
-								<td data-title="Link">${waiting.r_title}</td>
+								<td>${waiting.c_no}</td>
+								<td>${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
-									<td data-title="Status">대기중</td>
+									<td>대기중</td>
 								</c:if>
-								<td data-title="Status">${waiting.r_date}</td>
+								<td>${waiting.r_date}</td>
 
 							</tr>
 						</tbody>
@@ -48,7 +48,7 @@
 				<br>
 
 				<h1>
-					<요청서 목록> - 진행중 
+					&lt;요청서 목록&gt; - 진행중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -68,7 +68,7 @@
 								<td>${inProgress.req.c_no}</td>
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
-								<td>${inProgress.t_requester}</td>
+								<td>${inProgress.mem.m_name}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -76,7 +76,7 @@
 
 
 				<h1>
-					<요청서 목록> - 완료
+					&lt;요청서 목록&gt; - 완료
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -97,7 +97,7 @@
 								<td>${completed.req.c_no}</td>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
-								<td>${completed.t_requester}</td>
+								<td>${completed.mem.m_name}</td>
 								<td>${completed.t_enddate}</td>
 							</tr>
 						</tbody>

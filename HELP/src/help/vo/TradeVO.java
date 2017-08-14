@@ -6,9 +6,10 @@ public class TradeVO {
 	private Integer t_respondent;
 	private String t_enddate;
 	private RequestVO req;
-	
+	private MemberVO mem;
+
 	public TradeVO() {
-		
+
 	}
 
 	public Integer getT_no() {
@@ -42,12 +43,12 @@ public class TradeVO {
 	public void setT_enddate(String t_enddate) {
 		this.t_enddate = t_enddate;
 	}
- 
-	//여기
+
+	// 여기
 	public Integer getR_no() {
 		return req.getR_no();
 	}
-	
+
 	public RequestVO getReq() {
 		return req;
 	}
@@ -55,12 +56,19 @@ public class TradeVO {
 	public void setReq(RequestVO req) {
 		this.req = req;
 	}
-	
-	
+
+	public MemberVO getMem() {
+		return mem;
+	}
+
+	public void setMem(MemberVO mem) {
+		this.mem = mem;
+	}
 
 	@Override
 	public String toString() {
 		return "TradeVO [t_no=" + t_no + ", t_requester=" + t_requester + ", t_respondent=" + t_respondent
-				+ ", t_enddate=" + t_enddate + ", req=" + req + "]";
+				+ ", t_enddate=" + t_enddate + ", req=" + req + ", mem=" + mem + "]";
 	}
+
 }
