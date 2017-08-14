@@ -81,7 +81,7 @@
 				</table>
 
 				<h1>
-					<요청서 목록> - 대기중 
+					&lt;요청서 목록&gt; - 대기중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -96,7 +96,7 @@
 					<c:forEach var="waiting" items="${waitingListKey}">
 						<tbody>
 							<tr>
-								<td data-title="ID"><a
+								<td><a
 									href="getRequestDetail.help?r_no=${waiting.r_no}&flag=3">${waiting.r_no}</a></td>
 								<c:if test="${waiting.c_no == 1}">
 									<td class="ty2" data-title="Name">피아노</td>
@@ -114,10 +114,12 @@
 									<td class="ty2" data-title="Name">결혼</td>
 								</c:if>
 								<td data-title="Link">${waiting.r_title}</td>
+								<td>${waiting.c_no}</td>
+								<td>${waiting.r_title}</td>
 								<c:if test="${waiting.r_active ==1 }">
-									<td data-title="Status">대기중</td>
+									<td>대기중</td>
 								</c:if>
-								<td data-title="Status">${waiting.r_date}</td>
+								<td>${waiting.r_date}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -146,7 +148,7 @@
 
 
 				<h1>
-					<요청서 목록> - 진행중 
+					&lt;요청서 목록&gt; - 진행중 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -181,7 +183,7 @@
 								</c:if>
 								<td>${inProgress.req.r_title}</td>
 								<td>${inProgress.req.r_date}</td>
-								<td>${inProgress.t_respondent}</td>
+								<td>${inProgress.mem.m_name}</td>
 							</tr>
 						</tbody>
 					</c:forEach>
@@ -208,7 +210,7 @@
 				</ul> --%>
 				<br>
 				<h1>
-					<요청서 목록> - 완료 
+					&lt;요청서 목록&gt; - 완료 
 				</h1>
 				<table id="table" class="table table-hover table-mc-light-blue">
 					<thead>
@@ -244,7 +246,7 @@
 								</c:if>
 								<td>${completed.req.r_title}</td>
 								<td>${completed.req.r_date}</td>
-								<td>${completed.t_respondent}</td>
+								<td>${completed.mem.m_name}</td>
 								<td>${completed.t_enddate}</td>
 							</tr>
 						</tbody>
